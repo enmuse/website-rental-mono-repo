@@ -20,6 +20,8 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DATA_FILE = REPO_ROOT / "data" / "clients.json"
 SITES_DIR = REPO_ROOT / "sites"
+BASE_DOMAIN = "preview.ridgelinetrade.com"
+BASE_URL = f"https://{BASE_DOMAIN}"
 
 def load_clients():
     with open(DATA_FILE, "r", encoding="utf-8") as f:
@@ -158,7 +160,7 @@ def generate_client_html(c):
   <title>{c['business_name']} | {c['city']}, NC {c['trade']}</title>
   <meta name="description" content="{c['tagline']}. Serving {', '.join(c['hub_towns'])}. Call {c['owner_name']} directly at {c['cell_phone']} for rapid quotes.">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://wnc-client-sites.pages.dev/sites/{c['slug']}/">
+  <link rel="canonical" href="{BASE_URL}/sites/{c['slug']}/">
   
   <!-- Open Graph -->
   <meta property="og:title" content="{c['business_name']} | Mountain {c['trade']}">
@@ -942,14 +944,14 @@ def generate_robots_txt(slug):
     return f"""User-agent: *
 Allow: /
 
-Sitemap: https://wnc-client-sites.pages.dev/sites/{slug}/sitemap.xml
+Sitemap: {BASE_URL}/sites/{slug}/sitemap.xml
 """
 
 def generate_sitemap_xml(slug):
     return f"""<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://wnc-client-sites.pages.dev/sites/{slug}/</loc>
+    <loc>{BASE_URL}/sites/{slug}/</loc>
     <lastmod>2026-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -981,7 +983,7 @@ def generate_master_portal_html(clients):
             f"and saw mobile visitors wait {old_lcp} for your page (scores {old_score}/100 on Google PageSpeed). In WNC, slow load times lose callers. "
             f"Your mountain craftsmanship is top tier, so I took photos of your actual work ({top_project_ref}), "
             f"optimized them, and built a high-speed mockup for you that hits 100/100 and loads in 0.4s: "
-            f"https://wnc-client-sites.pages.dev/sites/{c['slug']}/ "
+            f"{BASE_URL}/sites/{c['slug']}/ "
             f"If you like it, I host and maintain it for $49/mo flat—zero setup fee, no contracts, and you keep your domain. Let me know what you think!"
         )
         

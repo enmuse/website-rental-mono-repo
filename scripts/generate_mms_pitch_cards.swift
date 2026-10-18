@@ -198,7 +198,7 @@ for c in clients {
         .font: NSFont.systemFont(ofSize: 22, weight: .bold),
         .foregroundColor: NSColor(red: 96/255, green: 165/255, blue: 250/255, alpha: 1.0)
     ]
-    ("Preview Live Mockup: https://wnc-client-sites.pages.dev/sites/\(slug)/" as NSString).draw(at: NSPoint(x: 120, y: 320), withAttributes: linkAttrs)
+    ("Preview Live Mockup: https://preview.ridgelinetrade.com/sites/\(slug)/" as NSString).draw(at: NSPoint(x: 120, y: 320), withAttributes: linkAttrs)
 
     // 7. Footer Direct Operator Note
     let footerAttrs: [NSAttributedString.Key: Any] = [

@@ -3,8 +3,8 @@
 **Project:** `barebones3d/website-rental-mono-repo`  
 **Parent Entity:** Barebones 3D, L.L.C. d/b/a Ridgeline Trade Network  
 **Operational Lead:** Brandon (Hendersonville, NC)  
-**Public Edge Gateway:** [https://wnc-client-sites.pages.dev](https://wnc-client-sites.pages.dev)  
-**Private Operations Command (PIN: `8280`):** [https://wnc-client-sites.pages.dev/ops-control-828/](https://wnc-client-sites.pages.dev/ops-control-828/)  
+**Public Edge Gateway:** [https://preview.ridgelinetrade.com](https://preview.ridgelinetrade.com)  
+**Private Operations Command (PIN: `8280`):** [https://preview.ridgelinetrade.com/ops-control-828/](https://preview.ridgelinetrade.com/ops-control-828/)  
 **GitHub Repository:** `https://github.com/enmuse/website-rental-mono-repo`  
 
 ---
@@ -47,7 +47,7 @@ Copy and text these exact payloads from your personal mobile cell phone (`828-77
 * **Owner:** Andrew Owens  
 * **Direct Cell:** `(828) 808-9770`  
 * **Current Web:** `turningleaftreenc.com` (Scores **60/100** on Google PageSpeed; **9.9s** mobile load time)  
-* **Mockup Link:** `https://wnc-client-sites.pages.dev/sites/turning-leaf-tree/`  
+* **Mockup Link:** `https://preview.ridgelinetrade.com/sites/turning-leaf-tree/`  
 * **Featured Real Work:** Crane-Assisted Oak Take-Down in Black Mountain & Official Logo  
 * **MMS Image:** `assets/mms_cards/turning-leaf-tree_mms_audit.png`  
 * **Upsell Corridor:** `wnctreeremoval.com/metro-asheville/` ($1,250/mo)  
@@ -57,7 +57,7 @@ Copy and text these exact payloads from your personal mobile cell phone (`828-77
 Hey Andrew, this is Brandon in Hendersonville. Ran an automated Google speed test on Turning Leaf Tree and noticed mobile visitors wait 9.9 seconds for your page to load (scores 60/100 on Google PageSpeed). In WNC, slow mobile load times lose emergency calls.
 
 Your mountain tree work is top tier, so I took the photos of your actual crane jobs in Black Mountain, optimized them, and built a high-speed mockup for Turning Leaf that hits 100/100 and loads in 0.4s:
-https://wnc-client-sites.pages.dev/sites/turning-leaf-tree/
+https://preview.ridgelinetrade.com/sites/turning-leaf-tree/
 
 If you like it, I host and maintain it for $49/mo flat—zero setup fee, no contracts, and you keep your domain. Take a look on your phone and let me know what you think!
 ```
@@ -68,7 +68,7 @@ If you like it, I host and maintain it for $49/mo flat—zero setup fee, no cont
 * **Owner / CEO:** James  
 * **Direct Cell:** `(828) 510-7184`  
 * **Current Web:** `dirttworks.com` (Scores **65/100** on Google PageSpeed; **19.3s** mobile load time)  
-* **Mockup Link:** `https://wnc-client-sites.pages.dev/sites/dirtworks-septic/`  
+* **Mockup Link:** `https://preview.ridgelinetrade.com/sites/dirtworks-septic/`  
 * **Featured Real Work:** Luxury Estate Septic Pumping in Cashiers & Slope Drain Fields  
 * **MMS Image:** `assets/mms_cards/dirtworks-septic_mms_audit.png`  
 * **Upsell Corridor:** `wncsepticrepair.com/highlands-cashiers/` ($1,250/mo)  
@@ -78,7 +78,7 @@ If you like it, I host and maintain it for $49/mo flat—zero setup fee, no cont
 Hey James, this is Brandon down in Hendersonville. Ran an automated Google speed audit on dirttworks.com and saw mobile visitors on the plateau wait over 19 seconds for your page to load (scores 65/100). With high-altitude cell signal in Cashiers and Highlands, that lag loses emergency calls.
 
 I built an ultra-fast, luxury-grade mockup for Dirtworks highlighting your high-elevation estate pumping and slope drain fields that hits 100/100 on Google and loads in 0.4s flat:
-https://wnc-client-sites.pages.dev/sites/dirtworks-septic/
+https://preview.ridgelinetrade.com/sites/dirtworks-septic/
 
 I host and maintain it for $49/month flat with zero setup fee and no lock-in contracts. Check it out on your phone!
 ```
@@ -89,7 +89,7 @@ I host and maintain it for $49/month flat with zero setup fee and no lock-in con
 * **Owner:** Colton Tate  
 * **Direct Cell:** `(828) 674-0705` | Office: `(828) 674-4042`  
 * **Current Web:** `tatesgradingnc.com` (Scores **56/100**; **18.2s** mobile LCP!)  
-* **Mockup Link:** `https://wnc-client-sites.pages.dev/sites/tates-grading/`  
+* **Mockup Link:** `https://preview.ridgelinetrade.com/sites/tates-grading/`  
 * **Featured Real Work:** Peterbilt Mountain Dump Fleet, Kobelco Rock Hammer & Official Logo  
 * **MMS Image:** `assets/mms_cards/tates-grading_mms_audit.png`  
 * **Upsell Corridor:** `wncexcavating.com/southern-plateau/` ($1,250/mo)  
@@ -99,7 +99,7 @@ I host and maintain it for $49/month flat with zero setup fee and no lock-in con
 Hey Colton, Brandon here in Hendersonville. Ran an automated Google speed audit on tatesgradingnc.com and saw mobile visitors wait 18.2 seconds for the page to load (scores 56/100 on PageSpeed). In our mountain terrain, folks on spotty cell service will bounce before it opens. 
 
 Your heavy equipment and site prep work are top tier, so I pulled your actual job photos (Peterbilt dump fleet, Kobelco rock hammer, and company logo) and built a custom mockup that hits 100/100 and loads in 0.4s:
-https://wnc-client-sites.pages.dev/sites/tates-grading/
+https://preview.ridgelinetrade.com/sites/tates-grading/
 
 I host and maintain it for $49/mo flat with zero setup fee, no contracts, and direct click-to-call to your phone. Take a look when you get off the machine today!
 ```
@@ -110,7 +110,7 @@ I host and maintain it for $49/mo flat with zero setup fee, no contracts, and di
 * **Owner:** Rivera  
 * **Direct Cell:** `(828) 508-9155`  
 * **Current Web:** `riverasconstructionsllc.com` (Scores **74/100**; **5.5s** mobile LCP)  
-* **Mockup Link:** `https://wnc-client-sites.pages.dev/sites/riveras-roofing/`  
+* **Mockup Link:** `https://preview.ridgelinetrade.com/sites/riveras-roofing/`  
 * **Featured Real Work:** 24-Gauge Standing Seam Metal Roof in Sylva & Official Logo  
 * **MMS Image:** `assets/mms_cards/riveras-roofing_mms_audit.png`  
 * **Upsell Corridor:** `wncroofingrepair.com/central-west/` ($950/mo)  
@@ -120,7 +120,7 @@ I host and maintain it for $49/mo flat with zero setup fee, no contracts, and di
 Hey Rivera, this is Brandon over in Hendersonville. Ran a Google mobile performance test on your site and noticed it takes 5.5 seconds to load on phones. 
 
 I took the photos of your standing seam metal roofing jobs in Sylva and Cullowhee, compressed them, and built a dedicated mountain roofing mockup that hits 100/100 on Google and loads in 0.4 seconds:
-https://wnc-client-sites.pages.dev/sites/riveras-roofing/
+https://preview.ridgelinetrade.com/sites/riveras-roofing/
 
 I can host and update it for $49/mo flat with zero upfront cost. Take a look on your cell and let me know if you want it live on your domain.
 ```
@@ -131,7 +131,7 @@ I can host and update it for $49/mo flat with zero upfront cost. Take a look on 
 * **Owner:** Mateo  
 * **Direct Cell:** `(828) 407-9832`  
 * **Current Web:** `mateoscl.com` (Scores **52/100**; **6.8s** mobile load time)  
-* **Mockup Link:** `https://wnc-client-sites.pages.dev/sites/mateos-retaining-walls/`  
+* **Mockup Link:** `https://preview.ridgelinetrade.com/sites/mateos-retaining-walls/`  
 * **Featured Real Work:** Steep Hillside Boulder Wall in Saluda & Official Color Logo  
 * **MMS Image:** `assets/mms_cards/mateos-retaining-walls_mms_audit.png`  
 * **Upsell Corridor:** `wncretainingwall.com/southern-plateau/` ($950/mo)  
@@ -141,7 +141,7 @@ I can host and update it for $49/mo flat with zero upfront cost. Take a look on 
 Hey Mateo, Brandon here in Hendersonville. Checked your site on Google PageSpeed and noticed it scores 52/100 and takes almost 7 seconds on mobile phones. 
 
 Your boulder retaining walls and hardscapes in Saluda and Hendersonville are top-notch, so I took photos of your actual projects, optimized them, and built a high-speed mockup for Mateo's Retaining Walls that hits 100/100 and loads in 0.4s:
-https://wnc-client-sites.pages.dev/sites/mateos-retaining-walls/
+https://preview.ridgelinetrade.com/sites/mateos-retaining-walls/
 
 It's $49/mo flat to host and keep running, no contracts. Check out how clean your real work looks on your phone!
 ```
@@ -152,7 +152,7 @@ It's $49/mo flat to host and keep running, no contracts. Check out how clean you
 * **Owner / Manager:** Brian  
 * **Direct Cell:** `(828) 289-0315`  
 * **Current Web:** `tricitypavinginc.com` (Timed out on mobile speed test)  
-* **Mockup Link:** `https://wnc-client-sites.pages.dev/sites/tri-city-paving/`  
+* **Mockup Link:** `https://preview.ridgelinetrade.com/sites/tri-city-paving/`  
 * **Featured Real Work:** Residential Hot-Mix Asphalt Paving in Rutherfordton & Commercial Milling  
 * **MMS Image:** `assets/mms_cards/tri-city-paving_mms_audit.png`  
 * **Upsell Corridor:** `wncdrivewaypaving.com/east-foothills/` ($750/mo)  
@@ -162,7 +162,7 @@ It's $49/mo flat to host and keep running, no contracts. Check out how clean you
 Hey Brian, Brandon here in Hendersonville. Tried testing your website tricitypavinginc.com on Google mobile audit and it timed out because of server lag. 
 
 I built a heavy-duty asphalt paving and sealcoating mockup for Tri-City Paving highlighting your driveway paving in Rutherfordton that loads in 0.4s and scores 100/100 on Google:
-https://wnc-client-sites.pages.dev/sites/tri-city-paving/
+https://preview.ridgelinetrade.com/sites/tri-city-paving/
 
 I host and manage it for $49/month flat—no setup fees, no tech headaches. Take a peek on your phone!
 ```
@@ -173,7 +173,7 @@ I host and manage it for $49/month flat—no setup fees, no tech headaches. Take
 * **Owner:** Liam  
 * **Direct Cell:** `(336) 972-5941`  
 * **Current Web:** `capstonecrawlspace.com` (Timed out on Google mobile test)  
-* **Mockup Link:** `https://wnc-client-sites.pages.dev/sites/capstone-crawlspace/`  
+* **Mockup Link:** `https://preview.ridgelinetrade.com/sites/capstone-crawlspace/`  
 * **Featured Real Work:** 20-Mil CleanSpace Encapsulation in Boone & Official Logo  
 * **MMS Image:** `assets/mms_cards/capstone-crawlspace_mms_audit.png`  
 * **Upsell Corridor:** `wnccrawlspace.com/high-country-mining/` ($950/mo)  
@@ -183,7 +183,7 @@ I host and manage it for $49/month flat—no setup fees, no tech headaches. Take
 Hey Liam, Brandon here in Hendersonville. Ran an automated test on capstonecrawlspace.com and noticed the mobile server response timed out. Homeowners with mold or damp floors in Boone need fast answers.
 
 I took the photos of your 20-mil encapsulation work, optimized them, and built a clean 100/100 PageSpeed mockup for Capstone that loads in 0.4 seconds:
-https://wnc-client-sites.pages.dev/sites/capstone-crawlspace/
+https://preview.ridgelinetrade.com/sites/capstone-crawlspace/
 
 I host and update it for $49/month flat with no contracts. Let me know what you think!
 ```
@@ -194,7 +194,7 @@ I host and update it for $49/month flat with no contracts. Let me know what you 
 * **Owner:** Coomer  
 * **Direct Cell:** `(828) 337-2170`  
 * **Current Web:** `coomerswellandpump.com` (Scores **64/100**; **6.1s** load time)  
-* **Mockup Link:** `https://wnc-client-sites.pages.dev/sites/coomers-well-pump/`  
+* **Mockup Link:** `https://preview.ridgelinetrade.com/sites/coomers-well-pump/`  
 * **Featured Real Work:** Deep Well Pump Replacement in Waynesville & Official Logo  
 * **MMS Image:** `assets/mms_cards/coomers-well-pump_mms_audit.png`  
 * **Upsell Corridor:** `wncwatersystems.com/central-west/` ($950/mo)  
@@ -204,7 +204,7 @@ I host and update it for $49/month flat with no contracts. Let me know what you 
 Hey Coomer, this is Brandon in Hendersonville. When a family in Waynesville has no water, they search on their phone in a panic. Your current site takes over 6 seconds to load.
 
 I took the photos of your actual deep-well pump replacements in Haywood County, optimized them, and put together an emergency-first 100/100 speed mockup for Coomer's Well & Pump that loads in 0.4s:
-https://wnc-client-sites.pages.dev/sites/coomers-well-pump/
+https://preview.ridgelinetrade.com/sites/coomers-well-pump/
 
 $49/mo flat to host and maintain, zero setup fee. Check it out when you have a free minute!
 ```
@@ -215,7 +215,7 @@ $49/mo flat to host and maintain, zero setup fee. Check it out when you have a f
 * **Owner / Builder:** Dave  
 * **Direct Cell:** `(828) 230-0871`  
 * **Current Web:** `hendersonvilledeckbuilders.com` (Scores **46/100**; **7.9s** load time)  
-* **Mockup Link:** `https://wnc-client-sites.pages.dev/sites/wnc-decks/`  
+* **Mockup Link:** `https://preview.ridgelinetrade.com/sites/wnc-decks/`  
 * **Featured Real Work:** Two-Story Slope Composite Deck in Hendersonville & Official Logo  
 * **MMS Image:** `assets/mms_cards/wnc-decks_mms_audit.png`  
 * **Upsell Corridor:** `wncdeckbuilding.com/southern-plateau/` ($950/mo)  
@@ -225,7 +225,7 @@ $49/mo flat to host and maintain, zero setup fee. Check it out when you have a f
 Hey Dave, Brandon here in Hendersonville. Ran a Google test on your deck site and saw mobile visitors wait almost 8 seconds for the photos to show up (scores 46/100 on Google PageSpeed). 
 
 I took photos of your actual two-story mountain composite and cable railing builds in Hendersonville, optimized them, and built an ultra-fast mockup that scores 100/100 and loads in 0.4s:
-https://wnc-client-sites.pages.dev/sites/wnc-decks/
+https://preview.ridgelinetrade.com/sites/wnc-decks/
 
 I host and update it for $49/mo flat with zero upfront fee. Take a look on your cell!
 ```
@@ -236,7 +236,7 @@ I host and update it for $49/mo flat with zero upfront fee. Take a look on your 
 * **Owner:** Moss  
 * **Direct Cell:** `(828) 243-0506`  
 * **Current Web:** Directory sub-page on `hibuwebsites.com` (Scores **29/100**; **9.2s** load time)  
-* **Mockup Link:** `https://wnc-client-sites.pages.dev/sites/moss-log-homes/`  
+* **Mockup Link:** `https://preview.ridgelinetrade.com/sites/moss-log-homes/`  
 * **Featured Real Work:** Corn Cob Media Blasting in Lake Lure & Energy-Seal Chinking  
 * **MMS Image:** `assets/mms_cards/moss-log-homes_mms_audit.png`  
 * **Upsell Corridor:** `wncloghomerestoration.com/southern-plateau/` ($1,250/mo)  
@@ -246,7 +246,7 @@ I host and update it for $49/mo flat with zero upfront fee. Take a look on your 
 Hey Moss, this is Brandon in Hendersonville. Noticed your log cabin restoration business is running on a slow directory template that takes over 9 seconds to load on phones (scores 29/100 on Google).
 
 I created a custom mountain restoration site mockup for Moss Log Homes showcasing your media blasting in Lake Lure and synthetic chinking that scores 100/100 and loads in 0.4s:
-https://wnc-client-sites.pages.dev/sites/moss-log-homes/
+https://preview.ridgelinetrade.com/sites/moss-log-homes/
 
 I host and maintain it for $49/mo flat—no contracts, no tech hassles, and direct call buttons to your cell. Check it out on your phone!
 ```
@@ -276,8 +276,8 @@ When a contractor signs up:
 1. Log into your Cloudflare Dashboard (Account: `Brandon@enmusehealth.com's Account`).
 2. Go to **Workers & Pages** → Project: `wnc-client-sites` → **Custom domains** → **Set up a domain**.
 3. Enter their domain (e.g. `turningleaftreenc.com`).
-4. Cloudflare will display the CNAME target: `wnc-client-sites.pages.dev`.
-5. Have the client share their GoDaddy / Namecheap login or add a CNAME record pointing `@` and `www` to `wnc-client-sites.pages.dev`.
+4. Cloudflare will display the CNAME target: `preview.ridgelinetrade.com`.
+5. Have the client share their GoDaddy / Namecheap login or add a CNAME record pointing `@` and `www` to `preview.ridgelinetrade.com`.
 
 ---
 

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://wnc-client-sites.pages.dev/sites/riveras-roofing/sitemap.xml
+Sitemap: https://preview.ridgelinetrade.com/sites/riveras-roofing/sitemap.xml

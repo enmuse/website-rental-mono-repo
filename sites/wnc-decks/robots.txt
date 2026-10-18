@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://wnc-client-sites.pages.dev/sites/wnc-decks/sitemap.xml
+Sitemap: https://preview.ridgelinetrade.com/sites/wnc-decks/sitemap.xml

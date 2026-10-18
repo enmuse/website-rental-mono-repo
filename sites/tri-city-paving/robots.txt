@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://wnc-client-sites.pages.dev/sites/tri-city-paving/sitemap.xml
+Sitemap: https://preview.ridgelinetrade.com/sites/tri-city-paving/sitemap.xml

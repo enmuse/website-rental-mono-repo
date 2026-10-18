@@ -89,5 +89,5 @@ To maximize conversion rate and long-term retention, prospect selection must adh
 For each audited business, Brandon receives a ready-to-send SMS payload consisting of:
 1. **The Hook:** Acknowledge their craft and local reputation.
 2. **The Contrast:** Hard, undeniable Google PageSpeed numbers (Their current score e.g. 28/100 vs Our rebuilt mockup at 100/100).
-3. **The Proof:** A live preview link (`https://wnc-client-sites.pages.dev/sites/<client-slug>/`) with a high-resolution mobile screenshot.
+3. **The Proof:** A live preview link (`https://preview.ridgelinetrade.com/sites/<client-slug>/`) with a high-resolution mobile screenshot.
 4. **The No-Brainer Offer:** $49/mo flat rate, zero setup fee, no contracts, we handle domain pointing, updates, and fast hosting.

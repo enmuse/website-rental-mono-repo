@@ -4,7 +4,7 @@
 > Operating across the 8 economic corridors of Western North Carolina.  
 > Parent Entity: **Barebones 3D, L.L.C. d/b/a Ridgeline Trade Network** | Operational Lead: **Brandon** (Hendersonville, NC)
 
-[![Cloudflare Pages](https://img.shields.io/badge/Cloudflare_Pages-Live_Edge-orange?logo=cloudflare)](https://wnc-client-sites.pages.dev)
+[![Cloudflare Pages](https://img.shields.io/badge/Cloudflare_Pages-Live_Edge-orange?logo=cloudflare)](https://preview.ridgelinetrade.com)
 [![PageSpeed Score](https://img.shields.io/badge/Google_PageSpeed-100%2F100-emerald?logo=google)](https://pagespeed.web.dev/)
 [![Compliance Test Suite](https://img.shields.io/badge/Compliance-50%2F50_Passing-brightgreen)]()
 
@@ -12,7 +12,7 @@
 
 ## 🚀 Live Production Links
 
-* **Master Showcase & Client Portal:** [https://wnc-client-sites.pages.dev](https://wnc-client-sites.pages.dev)
+* **Master Showcase & Client Portal:** [https://preview.ridgelinetrade.com](https://preview.ridgelinetrade.com)
 * **GitHub Repository:** [https://github.com/enmuse/website-rental-mono-repo](https://github.com/enmuse/website-rental-mono-repo)
 
 ---
