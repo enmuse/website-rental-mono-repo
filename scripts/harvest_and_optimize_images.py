@@ -51,25 +51,25 @@ CLIENT_MEDIA_SOURCES = {
         ]
     },
     "turning-leaf-tree": {
-        "logo": "https://static.wixstatic.com/media/263c6eefe13c431681f9363e2e92ddb7.png/v1/fill/w_180,h_180,al_c,q_85,enc_avif,quality_auto/263c6eefe13c431681f9363e2e92ddb7.png",
+        "logo": "turning_leaf_logo.png",
         "projects": [
             {
-                "url": "https://static.wixstatic.com/media/5afe60462baf41e79586f3fdaf78d664.jpg/v1/fill/w_800,h_533,al_c,q_80/5afe60462baf41e79586f3fdaf78d664.jpg",
-                "title": "Crane-Assisted Mountain Oak Take-Down",
+                "url": "https://static.wixstatic.com/media/0ecbbd_7ffce077a5e840d0bf2cf39ecf7c32e5~mv2.jpg",
+                "title": "Crane-Assisted Mountain Canopy Take-Down",
                 "location": "Black Mountain, NC",
-                "desc": "Zero-impact technical rigging and crane lift removing hazardous 85-foot leaning red oak over a residential roofline."
+                "desc": "High-canopy climber coordinating crane-assisted sectional lifting of hazardous oak branches over residential roofline."
             },
             {
-                "url": "https://static.wixstatic.com/media/0ecbbd_cb8e0aa4e07e4bb081cddec3969d23ea.jpg/v1/crop/x_117,y_0,w_581,h_512/fill/w_800,h_705,al_c,q_80/0ecbbd_cb8e0aa4e07e4bb081cddec3969d23ea.jpg",
-                "title": "Technical Mountain Arborist Rigging & Rope Work",
-                "location": "Swannanoa / Asheville, NC",
-                "desc": "Controlled sectional lowering of heavy oak limbs in confined mountain residential lot."
+                "url": "https://static.wixstatic.com/media/0ecbbd_efaa0837f61c4708a38fe4112e36dbff~mv2.jpg",
+                "title": "Hazardous Oak Felling Beside Mountain Cabin",
+                "location": "Montreat / Swannanoa, NC",
+                "desc": "Commercial Stihl chainsaw precision felling cut on massive ancient oak trunk rigged with heavy tension straps."
             },
             {
-                "url": "https://static.wixstatic.com/media/0ecbbd_a20b11c73a71dd3d2cd95ce2e43bce4a.jpg/v1/fill/w_800,h_913,al_c,q_80/0ecbbd_a20b11c73a71dd3d2cd95ce2e43bce4a.jpg",
-                "title": "Steep-Slope Canopy Thinning & View Restoration",
-                "location": "Montreat, NC",
-                "desc": "Selective crown reduction and hazardous deadwood extraction preserving long-range Blue Ridge views."
+                "url": "https://static.wixstatic.com/media/0ecbbd_742f38c353f24bf78e7f9ffc6e737fc0~mv2.jpg",
+                "title": "Knuckleboom Crane Log Loading & Heavy Timber Haul",
+                "location": "Asheville / Buncombe County, NC",
+                "desc": "Knuckleboom grapple crane hoisting large hardwood sawlogs onto custom flatbed hauler for clean timber recycling."
             }
         ]
     },

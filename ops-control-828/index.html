@@ -230,12 +230,68 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
+      gap: 0.85rem;
       margin-bottom: 1rem;
+    }
+    .card-title-group {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      min-width: 0;
+      flex: 1;
+    }
+    .card-logo-badge {
+      width: 52px;
+      height: 52px;
+      flex-shrink: 0;
+      border-radius: 8px;
+      background: #ffffff;
+      padding: 4px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card-logo-badge img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+    .card-title-text {
+      min-width: 0;
+      flex: 1;
     }
     .card-header h3 {
       font-size: 1.15rem;
       font-weight: 800;
       color: #ffffff;
+      margin-bottom: 0.2rem;
+      line-height: 1.3;
+    }
+    .client-title-link {
+      color: #ffffff;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: color 0.15s ease;
+    }
+    .client-title-link:hover {
+      color: #60a5fa;
+      text-decoration: underline;
+    }
+    .ext-icon {
+      font-size: 0.82em;
+      opacity: 0.7;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+    .client-title-link:hover .ext-icon {
+      opacity: 1;
+      transform: translate(2px, -2px);
     }
     .card-meta {
       font-size: 0.8rem;
@@ -680,7 +736,7 @@
               <button class="btn-sms" onclick="copySmsPitch('turning-leaf-tree')">Copy SMS</button>
               <button class="btn-sms" onclick="copyStripeLink('https://buy.stripe.com/8x29AV87Q6e6er98xJ1wY00', '$49/mo')" style="background: #10b981;">$49 Link</button>
             </div>
-            <textarea id="sms-text-turning-leaf-tree" style="display:none;">Hey Andrew Owens, Brandon here in Hendersonville. Ran an automated Google speed test on your web presence for Turning Leaf Tree and saw mobile visitors wait 9.9s for your page (scores 60/100 on Google PageSpeed). In WNC, slow load times lose callers. Your mountain craftsmanship is top tier, so I took photos of your actual work (Crane-Assisted Mountain Oak Take-Down), optimized them, and built a high-speed mockup for you that hits 100/100 and loads in 0.4s: https://preview.ridgelinetrade.com/sites/turning-leaf-tree/ If you like it, I host and maintain it for $49/mo flat—zero setup fee, no contracts, and you keep your domain. Let me know what you think!</textarea>
+            <textarea id="sms-text-turning-leaf-tree" style="display:none;">Hey Andrew Owens, Brandon here in Hendersonville. Ran an automated Google speed test on your web presence for Turning Leaf Tree and saw mobile visitors wait 9.9s for your page (scores 60/100 on Google PageSpeed). In WNC, slow load times lose callers. Your mountain craftsmanship is top tier, so I took photos of your actual work (Crane-Assisted Mountain Canopy Take-Down), optimized them, and built a high-speed mockup for you that hits 100/100 and loads in 0.4s: https://preview.ridgelinetrade.com/sites/turning-leaf-tree/ If you like it, I host and maintain it for $49/mo flat—zero setup fee, no contracts, and you keep your domain. Let me know what you think!</textarea>
           </td>
         </tr>
         
@@ -1032,9 +1088,16 @@
       
         <div class="client-dossier-card">
           <div class="card-header">
-            <div>
-              <h3>Tate's Grading (Colton Enterprises)</h3>
-              <div class="card-meta">Hendersonville, NC • Henderson County, NC</div>
+            <div class="card-title-group">
+              <div class="card-logo-badge"><img src="/sites/tates-grading/images/logo.png" alt="Tate's Grading (Colton Enterprises) Logo" class="card-logo-img" width="48" height="48" loading="lazy"></div>
+              <div class="card-title-text">
+                <h3>
+                  <a href="https://tatesgradingnc.com" target="_blank" rel="noopener noreferrer" class="client-title-link" title="Visit current live website: https://tatesgradingnc.com">
+                    Tate's Grading (Colton Enterprises) <span class="ext-icon">↗</span>
+                  </a>
+                </h3>
+                <div class="card-meta">Hendersonville, NC • Henderson County, NC</div>
+              </div>
             </div>
             <span class="corridor-tag">Corridor 2</span>
           </div>
@@ -1147,9 +1210,16 @@
         
         <div class="client-dossier-card">
           <div class="card-header">
-            <div>
-              <h3>Turning Leaf Tree Service</h3>
-              <div class="card-meta">Black Mountain, NC • Buncombe County, NC</div>
+            <div class="card-title-group">
+              <div class="card-logo-badge"><img src="/sites/turning-leaf-tree/images/logo.png" alt="Turning Leaf Tree Service Logo" class="card-logo-img" width="48" height="48" loading="lazy"></div>
+              <div class="card-title-text">
+                <h3>
+                  <a href="https://turningleaftreenc.com" target="_blank" rel="noopener noreferrer" class="client-title-link" title="Visit current live website: https://turningleaftreenc.com">
+                    Turning Leaf Tree Service <span class="ext-icon">↗</span>
+                  </a>
+                </h3>
+                <div class="card-meta">Black Mountain, NC • Buncombe County, NC</div>
+              </div>
             </div>
             <span class="corridor-tag">Corridor 3</span>
           </div>
@@ -1157,15 +1227,15 @@
           <div class="thumb-strip-wrap">
             
             <div class="thumb-box">
-              <img src="/sites/turning-leaf-tree/images/project-1.jpg" alt="Crane-Assisted Mountain Oak Take-Down" width="100" height="65" loading="lazy" decoding="async">
+              <img src="/sites/turning-leaf-tree/images/project-1.jpg" alt="Crane-Assisted Mountain Canopy Take-Down" width="100" height="65" loading="lazy" decoding="async">
             </div>
             
             <div class="thumb-box">
-              <img src="/sites/turning-leaf-tree/images/project-2.jpg" alt="Technical Mountain Arborist Rigging & Rope Work" width="100" height="65" loading="lazy" decoding="async">
+              <img src="/sites/turning-leaf-tree/images/project-2.jpg" alt="Hazardous Oak Felling Beside Mountain Cabin" width="100" height="65" loading="lazy" decoding="async">
             </div>
             
             <div class="thumb-box">
-              <img src="/sites/turning-leaf-tree/images/project-3.jpg" alt="Steep-Slope Canopy Thinning & View Restoration" width="100" height="65" loading="lazy" decoding="async">
+              <img src="/sites/turning-leaf-tree/images/project-3.jpg" alt="Knuckleboom Crane Log Loading & Heavy Timber Haul" width="100" height="65" loading="lazy" decoding="async">
             </div>
             
           </div>
@@ -1191,7 +1261,7 @@
             </div>
             <div class="field-row">
               <span class="field-title">Featured Project:</span>
-              <span class="field-val" style="font-size: 0.8rem; color: #cbd5e1;">Crane-Assisted Mountain Oak Take-Down</span>
+              <span class="field-val" style="font-size: 0.8rem; color: #cbd5e1;">Crane-Assisted Mountain Canopy Take-Down</span>
             </div>
             <div class="field-row">
               <span class="field-title">Monthly Rental Rate:</span>
@@ -1258,9 +1328,16 @@
         
         <div class="client-dossier-card">
           <div class="card-header">
-            <div>
-              <h3>Rivera's Construction & Roofing LLC</h3>
-              <div class="card-meta">Sylva, NC • Jackson County, NC</div>
+            <div class="card-title-group">
+              <div class="card-logo-badge"><img src="/sites/riveras-roofing/images/logo.png" alt="Rivera's Construction & Roofing LLC Logo" class="card-logo-img" width="48" height="48" loading="lazy"></div>
+              <div class="card-title-text">
+                <h3>
+                  <a href="https://riverasconstructionsllc.com" target="_blank" rel="noopener noreferrer" class="client-title-link" title="Visit current live website: https://riverasconstructionsllc.com">
+                    Rivera's Construction & Roofing LLC <span class="ext-icon">↗</span>
+                  </a>
+                </h3>
+                <div class="card-meta">Sylva, NC • Jackson County, NC</div>
+              </div>
             </div>
             <span class="corridor-tag">Corridor 4</span>
           </div>
@@ -1369,9 +1446,16 @@
         
         <div class="client-dossier-card">
           <div class="card-header">
-            <div>
-              <h3>Dirtworks Septic & Environmental, LLC</h3>
-              <div class="card-meta">Cashiers, NC • Jackson & Macon Counties, NC</div>
+            <div class="card-title-group">
+              <div class="card-logo-badge"><img src="/sites/dirtworks-septic/images/logo.png" alt="Dirtworks Septic & Environmental, LLC Logo" class="card-logo-img" width="48" height="48" loading="lazy"></div>
+              <div class="card-title-text">
+                <h3>
+                  <a href="https://dirttworks.com" target="_blank" rel="noopener noreferrer" class="client-title-link" title="Visit current live website: https://dirttworks.com">
+                    Dirtworks Septic & Environmental, LLC <span class="ext-icon">↗</span>
+                  </a>
+                </h3>
+                <div class="card-meta">Cashiers, NC • Jackson & Macon Counties, NC</div>
+              </div>
             </div>
             <span class="corridor-tag">Corridor 1</span>
           </div>
@@ -1480,9 +1564,16 @@
         
         <div class="client-dossier-card">
           <div class="card-header">
-            <div>
-              <h3>Mateo's Construction & Retaining Walls LLC</h3>
-              <div class="card-meta">Hendersonville, NC • Henderson & Polk Counties, NC</div>
+            <div class="card-title-group">
+              <div class="card-logo-badge"><img src="/sites/mateos-retaining-walls/images/logo.png" alt="Mateo's Construction & Retaining Walls LLC Logo" class="card-logo-img" width="48" height="48" loading="lazy"></div>
+              <div class="card-title-text">
+                <h3>
+                  <a href="https://mateoscl.com" target="_blank" rel="noopener noreferrer" class="client-title-link" title="Visit current live website: https://mateoscl.com">
+                    Mateo's Construction & Retaining Walls LLC <span class="ext-icon">↗</span>
+                  </a>
+                </h3>
+                <div class="card-meta">Hendersonville, NC • Henderson & Polk Counties, NC</div>
+              </div>
             </div>
             <span class="corridor-tag">Corridor 2</span>
           </div>
@@ -1591,9 +1682,16 @@
         
         <div class="client-dossier-card">
           <div class="card-header">
-            <div>
-              <h3>Tri-City Paving Inc.</h3>
-              <div class="card-meta">Rutherfordton, NC • Rutherford & McDowell Counties, NC</div>
+            <div class="card-title-group">
+              <div class="card-logo-badge"><img src="/sites/tri-city-paving/images/logo.png" alt="Tri-City Paving Inc. Logo" class="card-logo-img" width="48" height="48" loading="lazy"></div>
+              <div class="card-title-text">
+                <h3>
+                  <a href="https://tricitypavinginc.com" target="_blank" rel="noopener noreferrer" class="client-title-link" title="Visit current live website: https://tricitypavinginc.com">
+                    Tri-City Paving Inc. <span class="ext-icon">↗</span>
+                  </a>
+                </h3>
+                <div class="card-meta">Rutherfordton, NC • Rutherford & McDowell Counties, NC</div>
+              </div>
             </div>
             <span class="corridor-tag">Corridor 7</span>
           </div>
@@ -1702,9 +1800,16 @@
         
         <div class="client-dossier-card">
           <div class="card-header">
-            <div>
-              <h3>Capstone Crawlspace Solutions</h3>
-              <div class="card-meta">Boone, NC • Watauga & Avery Counties, NC</div>
+            <div class="card-title-group">
+              <div class="card-logo-badge"><img src="/sites/capstone-crawlspace/images/logo.png" alt="Capstone Crawlspace Solutions Logo" class="card-logo-img" width="48" height="48" loading="lazy"></div>
+              <div class="card-title-text">
+                <h3>
+                  <a href="https://capstonecrawlspace.com" target="_blank" rel="noopener noreferrer" class="client-title-link" title="Visit current live website: https://capstonecrawlspace.com">
+                    Capstone Crawlspace Solutions <span class="ext-icon">↗</span>
+                  </a>
+                </h3>
+                <div class="card-meta">Boone, NC • Watauga & Avery Counties, NC</div>
+              </div>
             </div>
             <span class="corridor-tag">Corridor 5</span>
           </div>
@@ -1813,9 +1918,16 @@
         
         <div class="client-dossier-card">
           <div class="card-header">
-            <div>
-              <h3>Coomer's Well & Pump Services</h3>
-              <div class="card-meta">Waynesville, NC • Haywood County, NC</div>
+            <div class="card-title-group">
+              <div class="card-logo-badge"><img src="/sites/coomers-well-pump/images/logo.png" alt="Coomer's Well & Pump Services Logo" class="card-logo-img" width="48" height="48" loading="lazy"></div>
+              <div class="card-title-text">
+                <h3>
+                  <a href="https://coomerswellandpump.com" target="_blank" rel="noopener noreferrer" class="client-title-link" title="Visit current live website: https://coomerswellandpump.com">
+                    Coomer's Well & Pump Services <span class="ext-icon">↗</span>
+                  </a>
+                </h3>
+                <div class="card-meta">Waynesville, NC • Haywood County, NC</div>
+              </div>
             </div>
             <span class="corridor-tag">Corridor 4</span>
           </div>
@@ -1924,9 +2036,16 @@
         
         <div class="client-dossier-card">
           <div class="card-header">
-            <div>
-              <h3>WNC Decks & Mountain Outdoor Living</h3>
-              <div class="card-meta">Hendersonville, NC • Henderson & Buncombe Counties, NC</div>
+            <div class="card-title-group">
+              <div class="card-logo-badge"><img src="/sites/wnc-decks/images/logo.png" alt="WNC Decks & Mountain Outdoor Living Logo" class="card-logo-img" width="48" height="48" loading="lazy"></div>
+              <div class="card-title-text">
+                <h3>
+                  <a href="https://hendersonvilledeckbuilders.com" target="_blank" rel="noopener noreferrer" class="client-title-link" title="Visit current live website: https://hendersonvilledeckbuilders.com">
+                    WNC Decks & Mountain Outdoor Living <span class="ext-icon">↗</span>
+                  </a>
+                </h3>
+                <div class="card-meta">Hendersonville, NC • Henderson & Buncombe Counties, NC</div>
+              </div>
             </div>
             <span class="corridor-tag">Corridor 2</span>
           </div>
@@ -2035,9 +2154,16 @@
         
         <div class="client-dossier-card">
           <div class="card-header">
-            <div>
-              <h3>Moss Log Home Restoration & Care</h3>
-              <div class="card-meta">Hendersonville, NC • Henderson, Transylvania & Rutherford Counties, NC</div>
+            <div class="card-title-group">
+              <div class="card-logo-badge"><img src="/sites/moss-log-homes/images/logo.png" alt="Moss Log Home Restoration & Care Logo" class="card-logo-img" width="48" height="48" loading="lazy"></div>
+              <div class="card-title-text">
+                <h3>
+                  <a href="https://hibu.com" target="_blank" rel="noopener noreferrer" class="client-title-link" title="Visit current live website: Legacy Directory Page on hibu">
+                    Moss Log Home Restoration & Care <span class="ext-icon">↗</span>
+                  </a>
+                </h3>
+                <div class="card-meta">Hendersonville, NC • Henderson, Transylvania & Rutherford Counties, NC</div>
+              </div>
             </div>
             <span class="corridor-tag">Corridor 2</span>
           </div>

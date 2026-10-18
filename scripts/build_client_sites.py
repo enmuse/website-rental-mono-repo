@@ -280,8 +280,11 @@ def generate_client_html(c):
       max-height: 42px;
       width: auto;
       object-fit: contain;
-      border-radius: 4px;
+      border-radius: 6px;
       display: block;
+      background: #ffffff;
+      padding: 4px 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     }}
     .brand-name-sub {{
       font-size: 1.05rem;
@@ -737,52 +740,6 @@ def generate_client_html(c):
     .footer-col p {{
       margin-bottom: 0.5rem;
     }}
-    .footer-meta-bar {{
-      max-width: 1100px;
-      margin: 0 auto 1.75rem;
-      padding: 1.25rem 1.5rem;
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid var(--card-border);
-      border-radius: 10px;
-      display: flex;
-      flex-direction: column;
-      gap: 0.85rem;
-      font-size: 0.82rem;
-      line-height: 1.5;
-    }}
-    .meta-row {{
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 0.65rem;
-    }}
-    .meta-badge {{
-      display: inline-flex;
-      align-items: center;
-      padding: 0.2rem 0.6rem;
-      border-radius: 6px;
-      font-weight: 700;
-      font-size: 0.72rem;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }}
-    .meta-badge.domain {{
-      background: rgba(59, 130, 246, 0.15);
-      color: #60a5fa;
-      border: 1px solid rgba(59, 130, 246, 0.3);
-    }}
-    .meta-badge.host {{
-      background: rgba(16, 185, 129, 0.15);
-      color: #34d399;
-      border: 1px solid rgba(16, 185, 129, 0.3);
-    }}
-    .meta-text {{
-      color: var(--text-muted);
-    }}
-    .meta-text strong {{
-      color: #e2e8f0;
-    }}
     .footer-bottom {{
       max-width: 1100px;
       margin: 0 auto;
@@ -983,18 +940,6 @@ def generate_client_html(c):
       </div>
     </div>
 
-    <!-- Domain Registration & Cloud Infrastructure Trust Banner -->
-    <div class="footer-meta-bar">
-      <div class="meta-row">
-        <span class="meta-badge domain">Domain Registration</span>
-        <span class="meta-text">Domain <strong>{domain_display}</strong> is officially registered to <strong>{c['business_name']}</strong> ({c['owner_name']}, Authorized Registrant • {c['city']}, NC).</span>
-      </div>
-      <div class="meta-row">
-        <span class="meta-badge host">Cloud Hosting</span>
-        <span class="meta-text">High-performance edge infrastructure hosted on <strong>Cloudflare Anycast Global Edge Network</strong>. Maintained by <strong>Ridgeline Trade Network</strong>.</span>
-      </div>
-    </div>
-
     <div class="footer-bottom">
       <div>
         © 2026 {c['business_name']}. All rights reserved. Locally operated in {c['city']}, NC.
@@ -1180,12 +1125,32 @@ def generate_master_portal_html(clients):
             exp_val_class = ''
             urgent_banner_html = ''
 
+        current_web = c.get("current_website", "")
+        if str(current_web).startswith("http"):
+            website_link_url = current_web
+        elif "hibu" in str(current_web).lower():
+            website_link_url = "https://hibu.com"
+        else:
+            website_link_url = f"https://{current_web}"
+
+        if c.get("has_custom_logo") and c.get("logo_path"):
+            logo_html = f'<div class="card-logo-badge"><img src="/sites/{c["slug"]}/{c["logo_path"]}" alt="{c["business_name"]} Logo" class="card-logo-img" width="48" height="48" loading="lazy"></div>'
+        else:
+            logo_html = f'<div class="card-logo-badge" style="background: rgba(255,255,255,0.08); color: #60a5fa; font-weight: 800; font-size: 1.1rem;">{c["business_name"][:2].upper()}</div>'
+
         client_cards += f"""
         <div class="client-dossier-card">
           <div class="card-header">
-            <div>
-              <h3>{c['business_name']}</h3>
-              <div class="card-meta">{c['city']}, NC • {c['county']}</div>
+            <div class="card-title-group">
+              {logo_html}
+              <div class="card-title-text">
+                <h3>
+                  <a href="{website_link_url}" target="_blank" rel="noopener noreferrer" class="client-title-link" title="Visit current live website: {c.get('current_website', '')}">
+                    {c['business_name']} <span class="ext-icon">↗</span>
+                  </a>
+                </h3>
+                <div class="card-meta">{c['city']}, NC • {c['county']}</div>
+              </div>
             </div>
             <span class="corridor-tag">{c['corridor_name'].split('—')[0].strip()}</span>
           </div>
@@ -1513,12 +1478,68 @@ def generate_master_portal_html(clients):
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
+      gap: 0.85rem;
       margin-bottom: 1rem;
+    }}
+    .card-title-group {{
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      min-width: 0;
+      flex: 1;
+    }}
+    .card-logo-badge {{
+      width: 52px;
+      height: 52px;
+      flex-shrink: 0;
+      border-radius: 8px;
+      background: #ffffff;
+      padding: 4px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }}
+    .card-logo-badge img {{
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }}
+    .card-title-text {{
+      min-width: 0;
+      flex: 1;
     }}
     .card-header h3 {{
       font-size: 1.15rem;
       font-weight: 800;
       color: #ffffff;
+      margin-bottom: 0.2rem;
+      line-height: 1.3;
+    }}
+    .client-title-link {{
+      color: #ffffff;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: color 0.15s ease;
+    }}
+    .client-title-link:hover {{
+      color: #60a5fa;
+      text-decoration: underline;
+    }}
+    .ext-icon {{
+      font-size: 0.82em;
+      opacity: 0.7;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }}
+    .client-title-link:hover .ext-icon {{
+      opacity: 1;
+      transform: translate(2px, -2px);
     }}
     .card-meta {{
       font-size: 0.8rem;
