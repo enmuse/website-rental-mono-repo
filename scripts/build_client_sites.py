@@ -39,6 +39,12 @@ def generate_client_html(c):
     phone_clean = c["cell_phone"].replace("(", "").replace(")", "").replace(" ", "").replace("-", "")
     sms_number = c.get("direct_sms_number", f"+1{phone_clean}")
     
+    current_web = c.get("current_website", "")
+    if current_web.startswith("http"):
+        domain_display = current_web.replace("https://", "").replace("http://", "").replace("www.", "").rstrip("/")
+    else:
+        domain_display = f"{c['slug']}.com"
+    
     # 1. Brand Logo / Header
     if c.get("has_custom_logo") and c.get("logo_path"):
         brand_header_html = f"""
@@ -724,6 +730,52 @@ def generate_client_html(c):
     .footer-col p {{
       margin-bottom: 0.5rem;
     }}
+    .footer-meta-bar {{
+      max-width: 1100px;
+      margin: 0 auto 1.75rem;
+      padding: 1.25rem 1.5rem;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      font-size: 0.82rem;
+      line-height: 1.5;
+    }}
+    .meta-row {{
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+    }}
+    .meta-badge {{
+      display: inline-flex;
+      align-items: center;
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.72rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }}
+    .meta-badge.domain {{
+      background: rgba(59, 130, 246, 0.15);
+      color: #60a5fa;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+    }}
+    .meta-badge.host {{
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }}
+    .meta-text {{
+      color: var(--text-muted);
+    }}
+    .meta-text strong {{
+      color: #e2e8f0;
+    }}
     .footer-bottom {{
       max-width: 1100px;
       margin: 0 auto;
@@ -923,12 +975,25 @@ def generate_client_html(c):
         <p style="color: #10b981; font-weight: 600; margin-top: 1rem;">• Fully Licensed & Insured in NC</p>
       </div>
     </div>
+
+    <!-- Domain Registration & Cloud Infrastructure Trust Banner -->
+    <div class="footer-meta-bar">
+      <div class="meta-row">
+        <span class="meta-badge domain">Domain Registration</span>
+        <span class="meta-text">Domain <strong>{domain_display}</strong> is officially registered to <strong>{c['business_name']}</strong> ({c['owner_name']}, Authorized Registrant • {c['city']}, NC).</span>
+      </div>
+      <div class="meta-row">
+        <span class="meta-badge host">Cloud Hosting</span>
+        <span class="meta-text">High-performance edge infrastructure hosted on <strong>Cloudflare Anycast Global Edge Network</strong>. Maintained by <strong>Ridgeline Trade Network</strong>.</span>
+      </div>
+    </div>
+
     <div class="footer-bottom">
       <div>
         © 2026 {c['business_name']}. All rights reserved. Locally operated in {c['city']}, NC.
       </div>
       <div>
-        Mountain Precision Digital Architecture
+        100/100 PageSpeed Edge Architecture • Western North Carolina
       </div>
     </div>
   </footer>
