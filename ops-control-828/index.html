@@ -333,6 +333,118 @@
     }
     .card-action-btn.secondary:hover { background: rgba(255, 255, 255, 0.15); }
 
+    /* DNS & WHOIS Intelligence Card */
+    .dns-intel-card {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 1.1rem;
+      margin: 1rem 0 1.25rem;
+    }
+    .dns-intel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+    .dns-intel-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #94a3b8;
+    }
+    .dns-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .dns-badge.godaddy { background: rgba(37, 99, 235, 0.2); color: #60a5fa; border: 1px solid rgba(37, 99, 235, 0.4); }
+    .dns-badge.wix { background: rgba(168, 85, 247, 0.2); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.4); }
+    .dns-badge.squarespace { background: rgba(20, 184, 166, 0.2); color: #2dd4bf; border: 1px solid rgba(20, 184, 166, 0.4); }
+    .dns-badge.domainpeople { background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.4); }
+    .dns-badge.hibu { background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.4); }
+    .dns-badge.default { background: rgba(100, 116, 139, 0.2); color: #cbd5e1; border: 1px solid rgba(100, 116, 139, 0.4); }
+
+    .dns-intel-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 0.5rem 0.75rem;
+      font-size: 0.8rem;
+      margin-bottom: 0.75rem;
+    }
+    .dns-intel-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .dns-label {
+      color: #64748b;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .dns-val {
+      color: #e2e8f0;
+      word-break: break-all;
+    }
+    .dns-val.monospace {
+      font-family: monospace;
+      font-size: 0.72rem;
+      color: #93c5fd;
+    }
+    .dns-intel-action {
+      background: rgba(245, 158, 11, 0.08);
+      border-left: 3px solid #f59e0b;
+      padding: 0.6rem 0.85rem;
+      border-radius: 0 6px 6px 0;
+      font-size: 0.78rem;
+      color: #fef3c7;
+      line-height: 1.45;
+      margin-bottom: 0.85rem;
+    }
+    .dns-btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .btn-dns-login {
+      flex: 1;
+      min-width: 130px;
+      padding: 0.45rem 0.75rem;
+      background: #1e293b;
+      border: 1px solid #334155;
+      color: #cbd5e1;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border-radius: 6px;
+      text-align: center;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-dns-login:hover {
+      background: #334155;
+      color: #fff;
+    }
+    .btn-dns-copy {
+      flex: 1;
+      min-width: 130px;
+      padding: 0.45rem 0.75rem;
+      background: rgba(59, 130, 246, 0.15);
+      border: 1px solid rgba(59, 130, 246, 0.35);
+      color: #60a5fa;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-dns-copy:hover {
+      background: rgba(59, 130, 246, 0.25);
+    }
+
     /* Strategy Section */
     .strategy-box {
       background: linear-gradient(180deg, rgba(30, 41, 59, 0.5) 0%, rgba(15, 23, 42, 0.5) 100%);
@@ -456,6 +568,7 @@
             <th>Business & Trade</th>
             <th>Network Corridor</th>
             <th>Owner & Direct Phone</th>
+            <th>DNS Host & Registrar</th>
             <th>Their Current Speed</th>
             <th>Our Rental Speed</th>
             <th>Outreach Actions</th>
@@ -475,6 +588,13 @@
           <td>
             <strong>Colton Tate</strong><br>
             <a href="tel:8286740705" class="phone-link">(828) 674-0705</a>
+          </td>
+          <td>
+            <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">DomainPeople</div>
+            <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">DomainPeople</div>
+            <div style="font-size: 0.7rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px; display: inline-block;">
+              ns4.g10.cfdns.co.uk.
+            </div>
           </td>
           <td>
             <span class="speed-pill score-mid">56/100</span><br>
@@ -508,6 +628,13 @@
             <a href="tel:8288089770" class="phone-link">(828) 808-9770</a>
           </td>
           <td>
+            <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">Wix DNS</div>
+            <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">Wix.com Ltd.</div>
+            <div style="font-size: 0.7rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px; display: inline-block;">
+              ns3.wixdns.net.
+            </div>
+          </td>
+          <td>
             <span class="speed-pill score-mid">60/100</span><br>
             <span class="sub-text">FCP 3.0s | LCP 9.9s</span>
           </td>
@@ -537,6 +664,13 @@
           <td>
             <strong>Rivera</strong><br>
             <a href="tel:8285089155" class="phone-link">(828) 508-9155</a>
+          </td>
+          <td>
+            <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">GoDaddy</div>
+            <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">GoDaddy.com</div>
+            <div style="font-size: 0.7rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px; display: inline-block;">
+              ns28.domaincontrol.com.
+            </div>
           </td>
           <td>
             <span class="speed-pill score-mid">74/100</span><br>
@@ -570,6 +704,13 @@
             <a href="tel:8285107184" class="phone-link">(828) 510-7184</a>
           </td>
           <td>
+            <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">Squarespace (Google Domains)</div>
+            <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">Squarespace Domains II LLC</div>
+            <div style="font-size: 0.7rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px; display: inline-block;">
+              ns-cloud-e3.googledomains.com.
+            </div>
+          </td>
+          <td>
             <span class="speed-pill score-bad">42/100</span><br>
             <span class="sub-text">FCP 3.8s | LCP 7.6s</span>
           </td>
@@ -599,6 +740,13 @@
           <td>
             <strong>Mateo</strong><br>
             <a href="tel:8284079832" class="phone-link">(828) 407-9832</a>
+          </td>
+          <td>
+            <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">GoDaddy</div>
+            <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">GoDaddy.com</div>
+            <div style="font-size: 0.7rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px; display: inline-block;">
+              ns39.domaincontrol.com.
+            </div>
           </td>
           <td>
             <span class="speed-pill score-mid">52/100</span><br>
@@ -632,6 +780,13 @@
             <a href="tel:8282890315" class="phone-link">(828) 289-0315</a>
           </td>
           <td>
+            <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">GoDaddy</div>
+            <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">GoDaddy.com</div>
+            <div style="font-size: 0.7rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px; display: inline-block;">
+              ns03.domaincontrol.com.
+            </div>
+          </td>
+          <td>
             <span class="speed-pill score-bad">38/100</span><br>
             <span class="sub-text">FCP 4.2s | LCP 8.1s</span>
           </td>
@@ -661,6 +816,13 @@
           <td>
             <strong>Liam</strong><br>
             <a href="tel:3369725941" class="phone-link">(336) 972-5941</a>
+          </td>
+          <td>
+            <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">Wix DNS</div>
+            <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">Wix.com Ltd.</div>
+            <div style="font-size: 0.7rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px; display: inline-block;">
+              ns12.wixdns.net.
+            </div>
           </td>
           <td>
             <span class="speed-pill score-mid">58/100</span><br>
@@ -694,6 +856,13 @@
             <a href="tel:8283372170" class="phone-link">(828) 337-2170</a>
           </td>
           <td>
+            <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">GoDaddy</div>
+            <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">GoDaddy.com</div>
+            <div style="font-size: 0.7rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px; display: inline-block;">
+              mia.ns.cloudflare.com.
+            </div>
+          </td>
+          <td>
             <span class="speed-pill score-mid">64/100</span><br>
             <span class="sub-text">FCP 2.8s | LCP 6.1s</span>
           </td>
@@ -725,6 +894,13 @@
             <a href="tel:8282300871" class="phone-link">(828) 230-0871</a>
           </td>
           <td>
+            <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">GoDaddy</div>
+            <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">GoDaddy.com</div>
+            <div style="font-size: 0.7rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px; display: inline-block;">
+              ns04.domaincontrol.com.
+            </div>
+          </td>
+          <td>
             <span class="speed-pill score-bad">46/100</span><br>
             <span class="sub-text">FCP 3.5s | LCP 7.9s</span>
           </td>
@@ -754,6 +930,13 @@
           <td>
             <strong>Moss</strong><br>
             <a href="tel:8282430506" class="phone-link">(828) 243-0506</a>
+          </td>
+          <td>
+            <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">None / Hibu Hosted</div>
+            <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">Hibu Directory (No Custom Domain)</div>
+            <div style="font-size: 0.7rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px; display: inline-block;">
+              hibu proprietary network
+            </div>
           </td>
           <td>
             <span class="speed-pill score-bad">29/100</span><br>
@@ -841,6 +1024,39 @@
             </div>
           </div>
           
+          <!-- WHOIS & DNS Delegation Intelligence -->
+          <div class="dns-intel-card">
+            <div class="dns-intel-header">
+              <span class="dns-intel-tag">🔍 DNS & WHOIS Intelligence</span>
+              <span class="dns-badge domainpeople">DomainPeople</span>
+            </div>
+            <div class="dns-intel-grid">
+              <div class="dns-intel-item">
+                <span class="dns-label">Current Domain</span>
+                <span class="dns-val" style="color: #60a5fa; font-weight: 600;">tatesgradingnc.com</span>
+              </div>
+              <div class="dns-intel-item">
+                <span class="dns-label">Official Registrar</span>
+                <span class="dns-val">DomainPeople</span>
+              </div>
+              <div class="dns-intel-item">
+                <span class="dns-label">Active Nameservers</span>
+                <span class="dns-val monospace">ns4.g10.cfdns.co.uk., ns1.g10.cfdns.net.</span>
+              </div>
+              <div class="dns-intel-item">
+                <span class="dns-label">Domain Expiry</span>
+                <span class="dns-val">2026-11-21</span>
+              </div>
+            </div>
+            <div class="dns-intel-action">
+              <strong>👉 DNS Delegation Play:</strong> DomainPeople: Log into portal -> Manage DNS records -> Point CNAME
+            </div>
+            <div class="dns-btn-row">
+              <a href="https://www.domainpeople.com/login" target="_blank" rel="noopener" class="btn-dns-login">Open DomainPeople Portal ↗</a>
+              <button class="btn-dns-copy" onclick="copyDnsInstructions('tatesgradingnc.com')">Copy CNAME Setup Script</button>
+            </div>
+          </div>
+          
           <div class="card-footer">
             <a href="/sites/tates-grading/" target="_blank" class="card-action-btn primary">Open Live Mockup ↗</a>
             <button class="card-action-btn secondary" onclick="copySmsPitch('tates-grading')">Copy SMS Pitch</button>
@@ -903,6 +1119,39 @@
             <div class="field-row">
               <span class="field-title">Network Upsell Target:</span>
               <span class="field-val corridor-target">wnctreeremoval.com/metro-asheville/ ($1,250/mo)</span>
+            </div>
+          </div>
+          
+          <!-- WHOIS & DNS Delegation Intelligence -->
+          <div class="dns-intel-card">
+            <div class="dns-intel-header">
+              <span class="dns-intel-tag">🔍 DNS & WHOIS Intelligence</span>
+              <span class="dns-badge wix">Wix DNS</span>
+            </div>
+            <div class="dns-intel-grid">
+              <div class="dns-intel-item">
+                <span class="dns-label">Current Domain</span>
+                <span class="dns-val" style="color: #60a5fa; font-weight: 600;">turningleaftreenc.com</span>
+              </div>
+              <div class="dns-intel-item">
+                <span class="dns-label">Official Registrar</span>
+                <span class="dns-val">Wix.com Ltd.</span>
+              </div>
+              <div class="dns-intel-item">
+                <span class="dns-label">Active Nameservers</span>
+                <span class="dns-val monospace">ns3.wixdns.net., ns2.wixdns.net.</span>
+              </div>
+              <div class="dns-intel-item">
+                <span class="dns-label">Domain Expiry</span>
+                <span class="dns-val">2027-11-09</span>
+              </div>
+            </div>
+            <div class="dns-intel-action">
+              <strong>👉 DNS Delegation Play:</strong> Wix: Log into Wix Dashboard -> Settings -> Domains -> Manage DNS -> Add CNAME
+            </div>
+            <div class="dns-btn-row">
+              <a href="https://manage.wix.com/dashboard" target="_blank" rel="noopener" class="btn-dns-login">Open Wix Portal ↗</a>
+              <button class="btn-dns-copy" onclick="copyDnsInstructions('turningleaftreenc.com')">Copy CNAME Setup Script</button>
             </div>
           </div>
           
@@ -971,6 +1220,39 @@
             </div>
           </div>
           
+          <!-- WHOIS & DNS Delegation Intelligence -->
+          <div class="dns-intel-card">
+            <div class="dns-intel-header">
+              <span class="dns-intel-tag">🔍 DNS & WHOIS Intelligence</span>
+              <span class="dns-badge godaddy">GoDaddy</span>
+            </div>
+            <div class="dns-intel-grid">
+              <div class="dns-intel-item">
+                <span class="dns-label">Current Domain</span>
+                <span class="dns-val" style="color: #60a5fa; font-weight: 600;">riverasconstructionsllc.com</span>
+              </div>
+              <div class="dns-intel-item">
+                <span class="dns-label">Official Registrar</span>
+                <span class="dns-val">GoDaddy.com</span>
+              </div>
+              <div class="dns-intel-item">
+                <span class="dns-label">Active Nameservers</span>
+                <span class="dns-val monospace">ns28.domaincontrol.com., ns27.domaincontrol.com.</span>
+              </div>
+              <div class="dns-intel-item">
+                <span class="dns-label">Domain Expiry</span>
+                <span class="dns-val">2027-07-30</span>
+              </div>
+            </div>
+            <div class="dns-intel-action">
+              <strong>👉 DNS Delegation Play:</strong> GoDaddy: Ask for Delegate Access (account.godaddy.com/access) or login credentials
+            </div>
+            <div class="dns-btn-row">
+              <a href="https://dcc.godaddy.com/manage/dns" target="_blank" rel="noopener" class="btn-dns-login">Open GoDaddy Portal ↗</a>
+              <button class="btn-dns-copy" onclick="copyDnsInstructions('riverasconstructionsllc.com')">Copy CNAME Setup Script</button>
+            </div>
+          </div>
+          
           <div class="card-footer">
             <a href="/sites/riveras-roofing/" target="_blank" class="card-action-btn primary">Open Live Mockup ↗</a>
             <button class="card-action-btn secondary" onclick="copySmsPitch('riveras-roofing')">Copy SMS Pitch</button>
@@ -1033,6 +1315,39 @@
             <div class="field-row">
               <span class="field-title">Network Upsell Target:</span>
               <span class="field-val corridor-target">wncsepticrepair.com/highlands-cashiers/ ($1,250/mo)</span>
+            </div>
+          </div>
+          
+          <!-- WHOIS & DNS Delegation Intelligence -->
+          <div class="dns-intel-card">
+            <div class="dns-intel-header">
+              <span class="dns-intel-tag">🔍 DNS & WHOIS Intelligence</span>
+              <span class="dns-badge squarespace">Squarespace (Google Domains)</span>
+            </div>
+            <div class="dns-intel-grid">
+              <div class="dns-intel-item">
+                <span class="dns-label">Current Domain</span>
+                <span class="dns-val" style="color: #60a5fa; font-weight: 600;">dirttworks.com</span>
+              </div>
+              <div class="dns-intel-item">
+                <span class="dns-label">Official Registrar</span>
+                <span class="dns-val">Squarespace Domains II LLC</span>
+              </div>
+              <div class="dns-intel-item">
+                <span class="dns-label">Active Nameservers</span>
+                <span class="dns-val monospace">ns-cloud-e3.googledomains.com., ns-cloud-e4.googledomains.com.</span>
+              </div>
+              <div class="dns-intel-item">
+                <span class="dns-label">Domain Expiry</span>
+                <span class="dns-val">2027-04-27</span>
+              </div>
+            </div>
+            <div class="dns-intel-action">
+              <strong>👉 DNS Delegation Play:</strong> Squarespace: Log in -> Domains -> DNS Settings -> Add Custom Record CNAME
+            </div>
+            <div class="dns-btn-row">
+              <a href="https://account.squarespace.com/domains" target="_blank" rel="noopener" class="btn-dns-login">Open Squarespace Portal ↗</a>
+              <button class="btn-dns-copy" onclick="copyDnsInstructions('dirttworks.com')">Copy CNAME Setup Script</button>
             </div>
           </div>
           
@@ -1101,6 +1416,39 @@
             </div>
           </div>
           
+          <!-- WHOIS & DNS Delegation Intelligence -->
+          <div class="dns-intel-card">
+            <div class="dns-intel-header">
+              <span class="dns-intel-tag">🔍 DNS & WHOIS Intelligence</span>
+              <span class="dns-badge godaddy">GoDaddy</span>
+            </div>
+            <div class="dns-intel-grid">
+              <div class="dns-intel-item">
+                <span class="dns-label">Current Domain</span>
+                <span class="dns-val" style="color: #60a5fa; font-weight: 600;">mateoscl.com</span>
+              </div>
+              <div class="dns-intel-item">
+                <span class="dns-label">Official Registrar</span>
+                <span class="dns-val">GoDaddy.com</span>
+              </div>
+              <div class="dns-intel-item">
+                <span class="dns-label">Active Nameservers</span>
+                <span class="dns-val monospace">ns39.domaincontrol.com., ns40.domaincontrol.com.</span>
+              </div>
+              <div class="dns-intel-item">
+                <span class="dns-label">Domain Expiry</span>
+                <span class="dns-val">2027-08-06</span>
+              </div>
+            </div>
+            <div class="dns-intel-action">
+              <strong>👉 DNS Delegation Play:</strong> GoDaddy: Ask for Delegate Access (account.godaddy.com/access) or login credentials
+            </div>
+            <div class="dns-btn-row">
+              <a href="https://dcc.godaddy.com/manage/dns" target="_blank" rel="noopener" class="btn-dns-login">Open GoDaddy Portal ↗</a>
+              <button class="btn-dns-copy" onclick="copyDnsInstructions('mateoscl.com')">Copy CNAME Setup Script</button>
+            </div>
+          </div>
+          
           <div class="card-footer">
             <a href="/sites/mateos-retaining-walls/" target="_blank" class="card-action-btn primary">Open Live Mockup ↗</a>
             <button class="card-action-btn secondary" onclick="copySmsPitch('mateos-retaining-walls')">Copy SMS Pitch</button>
@@ -1163,6 +1511,39 @@
             <div class="field-row">
               <span class="field-title">Network Upsell Target:</span>
               <span class="field-val corridor-target">wncdrivewaypaving.com/east-foothills/ ($750/mo)</span>
+            </div>
+          </div>
+          
+          <!-- WHOIS & DNS Delegation Intelligence -->
+          <div class="dns-intel-card">
+            <div class="dns-intel-header">
+              <span class="dns-intel-tag">🔍 DNS & WHOIS Intelligence</span>
+              <span class="dns-badge godaddy">GoDaddy</span>
+            </div>
+            <div class="dns-intel-grid">
+              <div class="dns-intel-item">
+                <span class="dns-label">Current Domain</span>
+                <span class="dns-val" style="color: #60a5fa; font-weight: 600;">tricitypavinginc.com</span>
+              </div>
+              <div class="dns-intel-item">
+                <span class="dns-label">Official Registrar</span>
+                <span class="dns-val">GoDaddy.com</span>
+              </div>
+              <div class="dns-intel-item">
+                <span class="dns-label">Active Nameservers</span>
+                <span class="dns-val monospace">ns03.domaincontrol.com., ns04.domaincontrol.com.</span>
+              </div>
+              <div class="dns-intel-item">
+                <span class="dns-label">Domain Expiry</span>
+                <span class="dns-val">2028-01-24</span>
+              </div>
+            </div>
+            <div class="dns-intel-action">
+              <strong>👉 DNS Delegation Play:</strong> GoDaddy: Ask for Delegate Access (account.godaddy.com/access) or login credentials
+            </div>
+            <div class="dns-btn-row">
+              <a href="https://dcc.godaddy.com/manage/dns" target="_blank" rel="noopener" class="btn-dns-login">Open GoDaddy Portal ↗</a>
+              <button class="btn-dns-copy" onclick="copyDnsInstructions('tricitypavinginc.com')">Copy CNAME Setup Script</button>
             </div>
           </div>
           
@@ -1231,6 +1612,39 @@
             </div>
           </div>
           
+          <!-- WHOIS & DNS Delegation Intelligence -->
+          <div class="dns-intel-card">
+            <div class="dns-intel-header">
+              <span class="dns-intel-tag">🔍 DNS & WHOIS Intelligence</span>
+              <span class="dns-badge wix">Wix DNS</span>
+            </div>
+            <div class="dns-intel-grid">
+              <div class="dns-intel-item">
+                <span class="dns-label">Current Domain</span>
+                <span class="dns-val" style="color: #60a5fa; font-weight: 600;">capstonecrawlspace.com</span>
+              </div>
+              <div class="dns-intel-item">
+                <span class="dns-label">Official Registrar</span>
+                <span class="dns-val">Wix.com Ltd.</span>
+              </div>
+              <div class="dns-intel-item">
+                <span class="dns-label">Active Nameservers</span>
+                <span class="dns-val monospace">ns12.wixdns.net., ns13.wixdns.net.</span>
+              </div>
+              <div class="dns-intel-item">
+                <span class="dns-label">Domain Expiry</span>
+                <span class="dns-val">2027-04-07</span>
+              </div>
+            </div>
+            <div class="dns-intel-action">
+              <strong>👉 DNS Delegation Play:</strong> Wix: Log into Wix Dashboard -> Settings -> Domains -> Manage DNS -> Add CNAME
+            </div>
+            <div class="dns-btn-row">
+              <a href="https://manage.wix.com/dashboard" target="_blank" rel="noopener" class="btn-dns-login">Open Wix Portal ↗</a>
+              <button class="btn-dns-copy" onclick="copyDnsInstructions('capstonecrawlspace.com')">Copy CNAME Setup Script</button>
+            </div>
+          </div>
+          
           <div class="card-footer">
             <a href="/sites/capstone-crawlspace/" target="_blank" class="card-action-btn primary">Open Live Mockup ↗</a>
             <button class="card-action-btn secondary" onclick="copySmsPitch('capstone-crawlspace')">Copy SMS Pitch</button>
@@ -1293,6 +1707,39 @@
             <div class="field-row">
               <span class="field-title">Network Upsell Target:</span>
               <span class="field-val corridor-target">wncwatersystems.com/central-west/ ($950/mo)</span>
+            </div>
+          </div>
+          
+          <!-- WHOIS & DNS Delegation Intelligence -->
+          <div class="dns-intel-card">
+            <div class="dns-intel-header">
+              <span class="dns-intel-tag">🔍 DNS & WHOIS Intelligence</span>
+              <span class="dns-badge godaddy">GoDaddy</span>
+            </div>
+            <div class="dns-intel-grid">
+              <div class="dns-intel-item">
+                <span class="dns-label">Current Domain</span>
+                <span class="dns-val" style="color: #60a5fa; font-weight: 600;">coomerswellandpump.com</span>
+              </div>
+              <div class="dns-intel-item">
+                <span class="dns-label">Official Registrar</span>
+                <span class="dns-val">GoDaddy.com</span>
+              </div>
+              <div class="dns-intel-item">
+                <span class="dns-label">Active Nameservers</span>
+                <span class="dns-val monospace">mia.ns.cloudflare.com., derek.ns.cloudflare.com.</span>
+              </div>
+              <div class="dns-intel-item">
+                <span class="dns-label">Domain Expiry</span>
+                <span class="dns-val">2027-11-23</span>
+              </div>
+            </div>
+            <div class="dns-intel-action">
+              <strong>👉 DNS Delegation Play:</strong> GoDaddy: Ask for Delegate Access (account.godaddy.com/access) or login credentials
+            </div>
+            <div class="dns-btn-row">
+              <a href="https://dcc.godaddy.com/manage/dns" target="_blank" rel="noopener" class="btn-dns-login">Open GoDaddy Portal ↗</a>
+              <button class="btn-dns-copy" onclick="copyDnsInstructions('coomerswellandpump.com')">Copy CNAME Setup Script</button>
             </div>
           </div>
           
@@ -1361,6 +1808,39 @@
             </div>
           </div>
           
+          <!-- WHOIS & DNS Delegation Intelligence -->
+          <div class="dns-intel-card">
+            <div class="dns-intel-header">
+              <span class="dns-intel-tag">🔍 DNS & WHOIS Intelligence</span>
+              <span class="dns-badge godaddy">GoDaddy</span>
+            </div>
+            <div class="dns-intel-grid">
+              <div class="dns-intel-item">
+                <span class="dns-label">Current Domain</span>
+                <span class="dns-val" style="color: #60a5fa; font-weight: 600;">hendersonvilledeckbuilders.com</span>
+              </div>
+              <div class="dns-intel-item">
+                <span class="dns-label">Official Registrar</span>
+                <span class="dns-val">GoDaddy.com</span>
+              </div>
+              <div class="dns-intel-item">
+                <span class="dns-label">Active Nameservers</span>
+                <span class="dns-val monospace">ns04.domaincontrol.com., ns03.domaincontrol.com.</span>
+              </div>
+              <div class="dns-intel-item">
+                <span class="dns-label">Domain Expiry</span>
+                <span class="dns-val">2027-10-11</span>
+              </div>
+            </div>
+            <div class="dns-intel-action">
+              <strong>👉 DNS Delegation Play:</strong> GoDaddy: Ask for Delegate Access (account.godaddy.com/access) or login credentials
+            </div>
+            <div class="dns-btn-row">
+              <a href="https://dcc.godaddy.com/manage/dns" target="_blank" rel="noopener" class="btn-dns-login">Open GoDaddy Portal ↗</a>
+              <button class="btn-dns-copy" onclick="copyDnsInstructions('hendersonvilledeckbuilders.com')">Copy CNAME Setup Script</button>
+            </div>
+          </div>
+          
           <div class="card-footer">
             <a href="/sites/wnc-decks/" target="_blank" class="card-action-btn primary">Open Live Mockup ↗</a>
             <button class="card-action-btn secondary" onclick="copySmsPitch('wnc-decks')">Copy SMS Pitch</button>
@@ -1423,6 +1903,39 @@
             <div class="field-row">
               <span class="field-title">Network Upsell Target:</span>
               <span class="field-val corridor-target">wncloghomerestoration.com/southern-plateau/ ($1,250/mo)</span>
+            </div>
+          </div>
+          
+          <!-- WHOIS & DNS Delegation Intelligence -->
+          <div class="dns-intel-card">
+            <div class="dns-intel-header">
+              <span class="dns-intel-tag">🔍 DNS & WHOIS Intelligence</span>
+              <span class="dns-badge hibu">None / Hibu Hosted</span>
+            </div>
+            <div class="dns-intel-grid">
+              <div class="dns-intel-item">
+                <span class="dns-label">Current Domain</span>
+                <span class="dns-val" style="color: #60a5fa; font-weight: 600;">hibuwebsites.com (Sub-directory)</span>
+              </div>
+              <div class="dns-intel-item">
+                <span class="dns-label">Official Registrar</span>
+                <span class="dns-val">Hibu Directory (No Custom Domain)</span>
+              </div>
+              <div class="dns-intel-item">
+                <span class="dns-label">Active Nameservers</span>
+                <span class="dns-val monospace">hibu proprietary network</span>
+              </div>
+              <div class="dns-intel-item">
+                <span class="dns-label">Domain Expiry</span>
+                <span class="dns-val">N/A</span>
+              </div>
+            </div>
+            <div class="dns-intel-action">
+              <strong>👉 DNS Delegation Play:</strong> No custom domain owned! Register mossloghomesnc.com on Cloudflare (/yr) for instant setup
+            </div>
+            <div class="dns-btn-row">
+              <a href="https://dash.cloudflare.com/" target="_blank" rel="noopener" class="btn-dns-login">Open None Portal ↗</a>
+              <button class="btn-dns-copy" onclick="copyDnsInstructions('hibuwebsites.com (Sub-directory)')">Copy CNAME Setup Script</button>
             </div>
           </div>
           
@@ -1500,6 +2013,20 @@
       navigator.clipboard.writeText(url).then(() => {
         const toast = document.getElementById('copy-toast');
         toast.textContent = '✓ Copied ' + label + ' Checkout Link to clipboard!';
+        toast.style.display = 'block';
+        setTimeout(() => {
+          toast.style.display = 'none';
+        }, 3000);
+      }).catch(err => {
+        alert('Could not copy link: ' + err);
+      });
+    }
+
+    function copyDnsInstructions(domain) {
+      const text = "Record Type: CNAME\nHost / Name: @ (and www)\nPoints To / Target: preview.ridgelinetrade.com\nTTL: Auto (or 3600)";
+      navigator.clipboard.writeText(text).then(() => {
+        const toast = document.getElementById('copy-toast');
+        toast.textContent = '✓ Copied CNAME Setup Records for ' + domain + ' to clipboard!';
         toast.style.display = 'block';
         setTimeout(() => {
           toast.style.display = 'none';

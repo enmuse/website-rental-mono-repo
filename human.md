@@ -46,6 +46,8 @@ Copy and text these exact payloads from your personal mobile cell phone (`828-77
 * **Owner:** Andrew Owens  
 * **Direct Cell:** `(828) 808-9770`  
 * **Current Web:** `turningleaftreenc.com` (Scores **60/100** on Google PageSpeed; **9.9s** mobile load time)  
+* **Registrar & DNS:** **Wix.com Ltd.** (Nameservers: `ns3.wixdns.net`, `ns2.wixdns.net`)  
+* **DNS Delegation Play:** Ask for Wix account login or have him go to *Wix Dashboard → Settings → Domains → Manage DNS → Add CNAME*.  
 * **Mockup Link:** `https://preview.ridgelinetrade.com/sites/turning-leaf-tree/`  
 * **Featured Real Work:** Crane-Assisted Oak Take-Down in Black Mountain & Official Logo  
 * **MMS Image:** `assets/mms_cards/turning-leaf-tree_mms_audit.png`  
@@ -67,6 +69,8 @@ If you like it, I host and maintain it for $49/mo flat—zero setup fee, no cont
 * **Owner / CEO:** James  
 * **Direct Cell:** `(828) 510-7184`  
 * **Current Web:** `dirttworks.com` (Scores **65/100** on Google PageSpeed; **19.3s** mobile load time)  
+* **Registrar & DNS:** **Squarespace Domains / Google Domains** (Nameservers: `ns-cloud-e3.googledomains.com`)  
+* **DNS Delegation Play:** Ask for Squarespace login or have him navigate to *Domains → Custom DNS Records → Add CNAME*.  
 * **Mockup Link:** `https://preview.ridgelinetrade.com/sites/dirtworks-septic/`  
 * **Featured Real Work:** Luxury Estate Septic Pumping in Cashiers & Slope Drain Fields  
 * **MMS Image:** `assets/mms_cards/dirtworks-septic_mms_audit.png`  
@@ -88,6 +92,8 @@ I host and maintain it for $49/month flat with zero setup fee and no lock-in con
 * **Owner:** Colton Tate  
 * **Direct Cell:** `(828) 674-0705` | Office: `(828) 674-4042`  
 * **Current Web:** `tatesgradingnc.com` (Scores **56/100**; **18.2s** mobile LCP!)  
+* **Registrar & DNS:** **DomainPeople, Inc.** (Nameservers: `ns4.g10.cfdns.co.uk`)  
+* **DNS Delegation Play:** Ask Colton for his DomainPeople/Hostinger credentials or email invite.  
 * **Mockup Link:** `https://preview.ridgelinetrade.com/sites/tates-grading/`  
 * **Featured Real Work:** Peterbilt Mountain Dump Fleet, Kobelco Rock Hammer & Official Logo  
 * **MMS Image:** `assets/mms_cards/tates-grading_mms_audit.png`  
@@ -109,6 +115,8 @@ I host and maintain it for $49/mo flat with zero setup fee, no contracts, and di
 * **Owner:** Rivera  
 * **Direct Cell:** `(828) 508-9155`  
 * **Current Web:** `riverasconstructionsllc.com` (Scores **74/100**; **5.5s** mobile LCP)  
+* **Registrar & DNS:** **GoDaddy.com, LLC** (Nameservers: `ns28.domaincontrol.com`)  
+* **DNS Delegation Play:** Ask Rivera for GoDaddy Delegate Access (*account.godaddy.com/access* to your email) or GoDaddy login.  
 * **Mockup Link:** `https://preview.ridgelinetrade.com/sites/riveras-roofing/`  
 * **Featured Real Work:** 24-Gauge Standing Seam Metal Roof in Sylva & Official Logo  
 * **MMS Image:** `assets/mms_cards/riveras-roofing_mms_audit.png`  
@@ -117,7 +125,7 @@ I host and maintain it for $49/mo flat with zero setup fee, no contracts, and di
 **SMS Text Payload:**
 ```text
 Hey Rivera, this is Brandon over in Hendersonville. Ran a Google mobile performance test on your site and noticed it takes 5.5 seconds to load on phones. 
-
+ 
 I took the photos of your standing seam metal roofing jobs in Sylva and Cullowhee, compressed them, and built a dedicated mountain roofing mockup that hits 100/100 on Google and loads in 0.4 seconds:
 https://preview.ridgelinetrade.com/sites/riveras-roofing/
 
@@ -130,6 +138,8 @@ I can host and update it for $49/mo flat with zero upfront cost. Take a look on 
 * **Owner:** Mateo  
 * **Direct Cell:** `(828) 407-9832`  
 * **Current Web:** `mateoscl.com` (Scores **52/100**; **6.8s** mobile load time)  
+* **Registrar & DNS:** **GoDaddy.com, LLC** (Nameservers: `ns39.domaincontrol.com`)  
+* **DNS Delegation Play:** GoDaddy Delegate Access (*account.godaddy.com/access*) or text login.  
 * **Mockup Link:** `https://preview.ridgelinetrade.com/sites/mateos-retaining-walls/`  
 * **Featured Real Work:** Steep Hillside Boulder Wall in Saluda & Official Color Logo  
 * **MMS Image:** `assets/mms_cards/mateos-retaining-walls_mms_audit.png`  
@@ -151,6 +161,8 @@ It's $49/mo flat to host and keep running, no contracts. Check out how clean you
 * **Owner / Manager:** Brian  
 * **Direct Cell:** `(828) 289-0315`  
 * **Current Web:** `tricitypavinginc.com` (Timed out on mobile speed test)  
+* **Registrar & DNS:** **GoDaddy.com, LLC** (Nameservers: `ns03.domaincontrol.com`)  
+* **DNS Delegation Play:** GoDaddy Delegate Access (*account.godaddy.com/access*) or text login.  
 * **Mockup Link:** `https://preview.ridgelinetrade.com/sites/tri-city-paving/`  
 * **Featured Real Work:** Residential Hot-Mix Asphalt Paving in Rutherfordton & Commercial Milling  
 * **MMS Image:** `assets/mms_cards/tri-city-paving_mms_audit.png`  
@@ -172,6 +184,8 @@ I host and manage it for $49/month flat—no setup fees, no tech headaches. Take
 * **Owner:** Liam  
 * **Direct Cell:** `(336) 972-5941`  
 * **Current Web:** `capstonecrawlspace.com` (Timed out on Google mobile test)  
+* **Registrar & DNS:** **Wix.com Ltd.** (Nameservers: `ns12.wixdns.net`)  
+* **DNS Delegation Play:** Wix Dashboard login or invite via *Settings → Roles & Permissions*.  
 * **Mockup Link:** `https://preview.ridgelinetrade.com/sites/capstone-crawlspace/`  
 * **Featured Real Work:** 20-Mil CleanSpace Encapsulation in Boone & Official Logo  
 * **MMS Image:** `assets/mms_cards/capstone-crawlspace_mms_audit.png`  
@@ -193,6 +207,8 @@ I host and update it for $49/month flat with no contracts. Let me know what you 
 * **Owner:** Coomer  
 * **Direct Cell:** `(828) 337-2170`  
 * **Current Web:** `coomerswellandpump.com` (Scores **64/100**; **6.1s** load time)  
+* **Registrar & DNS:** **GoDaddy Registrar + Cloudflare DNS** (`mia.ns.cloudflare.com`)  
+* **DNS Delegation Play:** Point CNAME directly in Cloudflare or GoDaddy DNS.  
 * **Mockup Link:** `https://preview.ridgelinetrade.com/sites/coomers-well-pump/`  
 * **Featured Real Work:** Deep Well Pump Replacement in Waynesville & Official Logo  
 * **MMS Image:** `assets/mms_cards/coomers-well-pump_mms_audit.png`  
@@ -214,6 +230,8 @@ $49/mo flat to host and maintain, zero setup fee. Check it out when you have a f
 * **Owner / Builder:** Dave  
 * **Direct Cell:** `(828) 230-0871`  
 * **Current Web:** `hendersonvilledeckbuilders.com` (Scores **46/100**; **7.9s** load time)  
+* **Registrar & DNS:** **GoDaddy.com, LLC** (Nameservers: `ns04.domaincontrol.com`)  
+* **DNS Delegation Play:** GoDaddy Delegate Access (*account.godaddy.com/access*) or text login.  
 * **Mockup Link:** `https://preview.ridgelinetrade.com/sites/wnc-decks/`  
 * **Featured Real Work:** Two-Story Slope Composite Deck in Hendersonville & Official Logo  
 * **MMS Image:** `assets/mms_cards/wnc-decks_mms_audit.png`  
@@ -235,6 +253,8 @@ I host and update it for $49/mo flat with zero upfront fee. Take a look on your 
 * **Owner:** Moss  
 * **Direct Cell:** `(828) 243-0506`  
 * **Current Web:** Directory sub-page on `hibuwebsites.com` (Scores **29/100**; **9.2s** load time)  
+* **Registrar & DNS:** **Hibu Directory (No Independent Custom Domain Owned)**  
+* **DNS Delegation Play:** Register `mossloghomesnc.com` on Cloudflare ($10/yr) for the client. Link it in his Google Business Profile!  
 * **Mockup Link:** `https://preview.ridgelinetrade.com/sites/moss-log-homes/`  
 * **Featured Real Work:** Corn Cob Media Blasting in Lake Lure & Energy-Seal Chinking  
 * **MMS Image:** `assets/mms_cards/moss-log-homes_mms_audit.png`  

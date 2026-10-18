@@ -20,6 +20,7 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DATA_FILE = REPO_ROOT / "data" / "clients.json"
 STRIPE_FILE = REPO_ROOT / "data" / "stripe_products.json"
+WHOIS_FILE = REPO_ROOT / "data" / "whois_info.json"
 SITES_DIR = REPO_ROOT / "sites"
 BASE_DOMAIN = "preview.ridgelinetrade.com"
 BASE_URL = f"https://{BASE_DOMAIN}"
@@ -31,6 +32,12 @@ def load_clients():
 def load_stripe_products():
     if STRIPE_FILE.exists():
         with open(STRIPE_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return {}
+
+def load_whois_info():
+    if WHOIS_FILE.exists():
+        with open(WHOIS_FILE, "r", encoding="utf-8") as f:
             return json.load(f)
     return {}
 
@@ -1034,6 +1041,7 @@ def generate_sitemap_xml(slug):
 def generate_master_portal_html(clients):
     """Generates the master showcase portal at /index.html with interactive audit, SMS copy, and live demo links."""
     stripe_catalog = load_stripe_products()
+    whois_catalog = load_whois_info()
     rental_link = stripe_catalog.get("website_rental_49", {}).get("payment_link", "https://buy.stripe.com/8x29AV87Q6e6er98xJ1wY00")
     tier_a_link = stripe_catalog.get("corridor_lease_tier_a_1250", {}).get("payment_link", "https://buy.stripe.com/fZueVf4VEfOG0Aj4ht1wY01")
     tier_b_link = stripe_catalog.get("corridor_lease_tier_b_950", {}).get("payment_link", "https://buy.stripe.com/3cI7sNco69qi6YH29l1wY02")
@@ -1065,6 +1073,17 @@ def generate_master_portal_html(clients):
             f"If you like it, I host and maintain it for $49/mo flat—zero setup fee, no contracts, and you keep your domain. Let me know what you think!"
         )
         
+        # WHOIS & DNS Info
+        whois = whois_catalog.get(c["slug"], {})
+        registrar = whois.get("registrar", "Unknown")
+        dns_provider = whois.get("dns_provider", "Custom DNS")
+        dns_badge = whois.get("dns_badge", "default")
+        nameservers = whois.get("nameservers", [])
+        login_url = whois.get("login_url", "#")
+        action_tip = whois.get("action_tip", "Point CNAME @ and www to preview.ridgelinetrade.com")
+        expires = whois.get("expires", "")
+        domain_target = whois.get("domain", c.get("current_website", ""))
+        
         table_rows += f"""
         <tr>
           <td>
@@ -1078,6 +1097,13 @@ def generate_master_portal_html(clients):
           <td>
             <strong>{c['owner_name']}</strong><br>
             <a href="tel:{phone_clean}" class="phone-link">{c['cell_phone']}</a>
+          </td>
+          <td>
+            <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">{dns_provider}</div>
+            <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">{registrar.split(',')[0]}</div>
+            <div style="font-size: 0.7rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px; display: inline-block;">
+              {nameservers[0] if nameservers else 'No Custom NS'}
+            </div>
           </td>
           <td>
             <span class="speed-pill {score_class}">{old_score}/100</span><br>
@@ -1151,6 +1177,39 @@ def generate_master_portal_html(clients):
             <div class="field-row">
               <span class="field-title">Network Upsell Target:</span>
               <span class="field-val corridor-target">{c['upsell_corridor_deal']}</span>
+            </div>
+          </div>
+          
+          <!-- WHOIS & DNS Delegation Intelligence -->
+          <div class="dns-intel-card">
+            <div class="dns-intel-header">
+              <span class="dns-intel-tag">🔍 DNS & WHOIS Intelligence</span>
+              <span class="dns-badge {dns_badge}">{dns_provider}</span>
+            </div>
+            <div class="dns-intel-grid">
+              <div class="dns-intel-item">
+                <span class="dns-label">Current Domain</span>
+                <span class="dns-val" style="color: #60a5fa; font-weight: 600;">{domain_target}</span>
+              </div>
+              <div class="dns-intel-item">
+                <span class="dns-label">Official Registrar</span>
+                <span class="dns-val">{registrar.split(',')[0]}</span>
+              </div>
+              <div class="dns-intel-item">
+                <span class="dns-label">Active Nameservers</span>
+                <span class="dns-val monospace">{', '.join(nameservers) if nameservers else 'None registered'}</span>
+              </div>
+              <div class="dns-intel-item">
+                <span class="dns-label">Domain Expiry</span>
+                <span class="dns-val">{expires if expires else 'N/A'}</span>
+              </div>
+            </div>
+            <div class="dns-intel-action">
+              <strong>👉 DNS Delegation Play:</strong> {action_tip}
+            </div>
+            <div class="dns-btn-row">
+              <a href="{login_url}" target="_blank" rel="noopener" class="btn-dns-login">Open {dns_provider.split(' ')[0]} Portal ↗</a>
+              <button class="btn-dns-copy" onclick="copyDnsInstructions('{domain_target}')">Copy CNAME Setup Script</button>
             </div>
           </div>
           
@@ -1497,6 +1556,118 @@ def generate_master_portal_html(clients):
     }}
     .card-action-btn.secondary:hover {{ background: rgba(255, 255, 255, 0.15); }}
 
+    /* DNS & WHOIS Intelligence Card */
+    .dns-intel-card {{
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 1.1rem;
+      margin: 1rem 0 1.25rem;
+    }}
+    .dns-intel-header {{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }}
+    .dns-intel-tag {{
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #94a3b8;
+    }}
+    .dns-badge {{
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }}
+    .dns-badge.godaddy {{ background: rgba(37, 99, 235, 0.2); color: #60a5fa; border: 1px solid rgba(37, 99, 235, 0.4); }}
+    .dns-badge.wix {{ background: rgba(168, 85, 247, 0.2); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.4); }}
+    .dns-badge.squarespace {{ background: rgba(20, 184, 166, 0.2); color: #2dd4bf; border: 1px solid rgba(20, 184, 166, 0.4); }}
+    .dns-badge.domainpeople {{ background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.4); }}
+    .dns-badge.hibu {{ background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.4); }}
+    .dns-badge.default {{ background: rgba(100, 116, 139, 0.2); color: #cbd5e1; border: 1px solid rgba(100, 116, 139, 0.4); }}
+
+    .dns-intel-grid {{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 0.5rem 0.75rem;
+      font-size: 0.8rem;
+      margin-bottom: 0.75rem;
+    }}
+    .dns-intel-item {{
+      display: flex;
+      flex-direction: column;
+    }}
+    .dns-label {{
+      color: #64748b;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      font-weight: 600;
+    }}
+    .dns-val {{
+      color: #e2e8f0;
+      word-break: break-all;
+    }}
+    .dns-val.monospace {{
+      font-family: monospace;
+      font-size: 0.72rem;
+      color: #93c5fd;
+    }}
+    .dns-intel-action {{
+      background: rgba(245, 158, 11, 0.08);
+      border-left: 3px solid #f59e0b;
+      padding: 0.6rem 0.85rem;
+      border-radius: 0 6px 6px 0;
+      font-size: 0.78rem;
+      color: #fef3c7;
+      line-height: 1.45;
+      margin-bottom: 0.85rem;
+    }}
+    .dns-btn-row {{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }}
+    .btn-dns-login {{
+      flex: 1;
+      min-width: 130px;
+      padding: 0.45rem 0.75rem;
+      background: #1e293b;
+      border: 1px solid #334155;
+      color: #cbd5e1;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border-radius: 6px;
+      text-align: center;
+      text-decoration: none;
+      transition: background 0.2s;
+    }}
+    .btn-dns-login:hover {{
+      background: #334155;
+      color: #fff;
+    }}
+    .btn-dns-copy {{
+      flex: 1;
+      min-width: 130px;
+      padding: 0.45rem 0.75rem;
+      background: rgba(59, 130, 246, 0.15);
+      border: 1px solid rgba(59, 130, 246, 0.35);
+      color: #60a5fa;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }}
+    .btn-dns-copy:hover {{
+      background: rgba(59, 130, 246, 0.25);
+    }}
+
     /* Strategy Section */
     .strategy-box {{
       background: linear-gradient(180deg, rgba(30, 41, 59, 0.5) 0%, rgba(15, 23, 42, 0.5) 100%);
@@ -1620,6 +1791,7 @@ def generate_master_portal_html(clients):
             <th>Business & Trade</th>
             <th>Network Corridor</th>
             <th>Owner & Direct Phone</th>
+            <th>DNS Host & Registrar</th>
             <th>Their Current Speed</th>
             <th>Our Rental Speed</th>
             <th>Outreach Actions</th>
@@ -1704,6 +1876,20 @@ def generate_master_portal_html(clients):
       navigator.clipboard.writeText(url).then(() => {{
         const toast = document.getElementById('copy-toast');
         toast.textContent = '✓ Copied ' + label + ' Checkout Link to clipboard!';
+        toast.style.display = 'block';
+        setTimeout(() => {{
+          toast.style.display = 'none';
+        }}, 3000);
+      }}).catch(err => {{
+        alert('Could not copy link: ' + err);
+      }});
+    }}
+
+    function copyDnsInstructions(domain) {{
+      const text = "Record Type: CNAME\\nHost / Name: @ (and www)\\nPoints To / Target: preview.ridgelinetrade.com\\nTTL: Auto (or 3600)";
+      navigator.clipboard.writeText(text).then(() => {{
+        const toast = document.getElementById('copy-toast');
+        toast.textContent = '✓ Copied CNAME Setup Records for ' + domain + ' to clipboard!';
         toast.style.display = 'block';
         setTimeout(() => {{
           toast.style.display = 'none';

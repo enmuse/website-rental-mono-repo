@@ -1,0 +1,186 @@
+{
+  "tates-grading": {
+    "domain": "tatesgradingnc.com",
+    "registrar": "DomainPeople, Inc.",
+    "nameservers": [
+      "ns4.g10.cfdns.co.uk.",
+      "ns1.g10.cfdns.net."
+    ],
+    "a_records": [
+      "216.152.143.240"
+    ],
+    "created": "2023-11-21",
+    "expires": "2026-11-21",
+    "dns_provider": "DomainPeople",
+    "dns_badge": "domainpeople",
+    "login_url": "https://www.domainpeople.com/login",
+    "delegate_url": "https://www.domainpeople.com/login",
+    "action_tip": "DomainPeople: Log into portal -> Manage DNS records -> Point CNAME"
+  },
+  "turning-leaf-tree": {
+    "domain": "turningleaftreenc.com",
+    "registrar": "Wix.com Ltd.",
+    "nameservers": [
+      "ns3.wixdns.net.",
+      "ns2.wixdns.net."
+    ],
+    "a_records": [
+      "185.230.63.186",
+      "185.230.63.107"
+    ],
+    "created": "2014-11-09",
+    "expires": "2027-11-09",
+    "dns_provider": "Wix DNS",
+    "dns_badge": "wix",
+    "login_url": "https://manage.wix.com/dashboard",
+    "delegate_url": "https://manage.wix.com/",
+    "action_tip": "Wix: Log into Wix Dashboard -> Settings -> Domains -> Manage DNS -> Add CNAME"
+  },
+  "riveras-roofing": {
+    "domain": "riverasconstructionsllc.com",
+    "registrar": "GoDaddy.com, LLC",
+    "nameservers": [
+      "ns28.domaincontrol.com.",
+      "ns27.domaincontrol.com."
+    ],
+    "a_records": [
+      "75.2.60.5"
+    ],
+    "created": "2025-07-30",
+    "expires": "2027-07-30",
+    "dns_provider": "GoDaddy",
+    "dns_badge": "godaddy",
+    "login_url": "https://dcc.godaddy.com/manage/dns",
+    "delegate_url": "https://account.godaddy.com/access",
+    "action_tip": "GoDaddy: Ask for Delegate Access (account.godaddy.com/access) or login credentials"
+  },
+  "dirtworks-septic": {
+    "domain": "dirttworks.com",
+    "registrar": "Squarespace Domains II LLC",
+    "nameservers": [
+      "ns-cloud-e3.googledomains.com.",
+      "ns-cloud-e4.googledomains.com."
+    ],
+    "a_records": [
+      "216.24.57.18",
+      "216.24.57.16"
+    ],
+    "created": "2026-04-27",
+    "expires": "2027-04-27",
+    "dns_provider": "Squarespace (Google Domains)",
+    "dns_badge": "squarespace",
+    "login_url": "https://account.squarespace.com/domains",
+    "delegate_url": "https://account.squarespace.com/",
+    "action_tip": "Squarespace: Log in -> Domains -> DNS Settings -> Add Custom Record CNAME"
+  },
+  "mateos-retaining-walls": {
+    "domain": "mateoscl.com",
+    "registrar": "GoDaddy.com, LLC",
+    "nameservers": [
+      "ns39.domaincontrol.com.",
+      "ns40.domaincontrol.com."
+    ],
+    "a_records": [
+      "199.16.172.252",
+      "199.16.173.173"
+    ],
+    "created": "2021-08-06",
+    "expires": "2027-08-06",
+    "dns_provider": "GoDaddy",
+    "dns_badge": "godaddy",
+    "login_url": "https://dcc.godaddy.com/manage/dns",
+    "delegate_url": "https://account.godaddy.com/access",
+    "action_tip": "GoDaddy: Ask for Delegate Access (account.godaddy.com/access) or login credentials"
+  },
+  "tri-city-paving": {
+    "domain": "tricitypavinginc.com",
+    "registrar": "GoDaddy.com, LLC",
+    "nameservers": [
+      "ns03.domaincontrol.com.",
+      "ns04.domaincontrol.com."
+    ],
+    "a_records": [
+      "13.248.243.5",
+      "76.223.105.230"
+    ],
+    "created": "2019-01-24",
+    "expires": "2028-01-24",
+    "dns_provider": "GoDaddy",
+    "dns_badge": "godaddy",
+    "login_url": "https://dcc.godaddy.com/manage/dns",
+    "delegate_url": "https://account.godaddy.com/access",
+    "action_tip": "GoDaddy: Ask for Delegate Access (account.godaddy.com/access) or login credentials"
+  },
+  "capstone-crawlspace": {
+    "domain": "capstonecrawlspace.com",
+    "registrar": "Wix.com Ltd.",
+    "nameservers": [
+      "ns12.wixdns.net.",
+      "ns13.wixdns.net."
+    ],
+    "a_records": [
+      "185.230.63.171",
+      "185.230.63.107"
+    ],
+    "created": "2026-04-07",
+    "expires": "2027-04-07",
+    "dns_provider": "Wix DNS",
+    "dns_badge": "wix",
+    "login_url": "https://manage.wix.com/dashboard",
+    "delegate_url": "https://manage.wix.com/",
+    "action_tip": "Wix: Log into Wix Dashboard -> Settings -> Domains -> Manage DNS -> Add CNAME"
+  },
+  "coomers-well-pump": {
+    "domain": "coomerswellandpump.com",
+    "registrar": "GoDaddy.com, LLC",
+    "nameservers": [
+      "mia.ns.cloudflare.com.",
+      "derek.ns.cloudflare.com."
+    ],
+    "a_records": [
+      "199.16.172.143",
+      "199.16.173.5"
+    ],
+    "created": "2020-11-23",
+    "expires": "2027-11-23",
+    "dns_provider": "GoDaddy",
+    "dns_badge": "godaddy",
+    "login_url": "https://dcc.godaddy.com/manage/dns",
+    "delegate_url": "https://account.godaddy.com/access",
+    "action_tip": "GoDaddy: Ask for Delegate Access (account.godaddy.com/access) or login credentials"
+  },
+  "wnc-decks": {
+    "domain": "hendersonvilledeckbuilders.com",
+    "registrar": "GoDaddy.com, LLC",
+    "nameservers": [
+      "ns04.domaincontrol.com.",
+      "ns03.domaincontrol.com."
+    ],
+    "a_records": [
+      "13.248.243.5",
+      "76.223.105.230"
+    ],
+    "created": "2024-10-11",
+    "expires": "2027-10-11",
+    "dns_provider": "GoDaddy",
+    "dns_badge": "godaddy",
+    "login_url": "https://dcc.godaddy.com/manage/dns",
+    "delegate_url": "https://account.godaddy.com/access",
+    "action_tip": "GoDaddy: Ask for Delegate Access (account.godaddy.com/access) or login credentials"
+  },
+  "moss-log-homes": {
+    "domain": "hibuwebsites.com (Sub-directory)",
+    "registrar": "Hibu Directory (No Custom Domain)",
+    "nameservers": [
+      "hibu proprietary network"
+    ],
+    "a_records": [],
+    "created": "",
+    "expires": "",
+    "dns_provider": "None / Hibu Hosted",
+    "dns_badge": "hibu",
+    "login_url": "https://dash.cloudflare.com/",
+    "delegate_url": "https://dash.cloudflare.com/",
+    "action_tip": "No custom domain owned! Register mossloghomesnc.com on Cloudflare (/yr) for instant setup"
+  }
+}
