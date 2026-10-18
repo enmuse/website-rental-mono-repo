@@ -3,7 +3,8 @@
 **Project:** `barebones3d/website-rental-mono-repo`  
 **Parent Entity:** Barebones 3D, L.L.C. d/b/a Ridgeline Trade Network  
 **Operational Lead:** Brandon (Hendersonville, NC)  
-**Live Cloudflare Pages Hub:** [https://wnc-client-sites.pages.dev](https://wnc-client-sites.pages.dev)  
+**Public Edge Gateway:** [https://wnc-client-sites.pages.dev](https://wnc-client-sites.pages.dev)  
+**Private Operations Command (PIN: `8280`):** [https://wnc-client-sites.pages.dev/ops-control-828/](https://wnc-client-sites.pages.dev/ops-control-828/)  
 **GitHub Repository:** `https://github.com/enmuse/website-rental-mono-repo`  
 
 ---

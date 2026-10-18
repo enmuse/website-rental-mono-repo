@@ -1009,7 +1009,7 @@ def generate_master_portal_html(clients):
           </td>
           <td>
             <div class="action-btn-group">
-              <a href="./sites/{c['slug']}/" target="_blank" class="btn-demo">View Site ↗</a>
+              <a href="/sites/{c['slug']}/" target="_blank" class="btn-demo">View Site ↗</a>
               <button class="btn-sms" onclick="copySmsPitch('{c['slug']}')">Copy SMS</button>
             </div>
             <textarea id="sms-text-{c['slug']}" style="display:none;">{sms_pitch}</textarea>
@@ -1022,7 +1022,7 @@ def generate_master_portal_html(clients):
         for p in projs[:3]:
             thumb_strip += f"""
             <div class="thumb-box">
-              <img src="sites/{c['slug']}/{p['image']}" alt="{p['title']}" width="100" height="65" loading="lazy" decoding="async">
+              <img src="/sites/{c['slug']}/{p['image']}" alt="{p['title']}" width="100" height="65" loading="lazy" decoding="async">
             </div>
             """
 
@@ -1074,7 +1074,7 @@ def generate_master_portal_html(clients):
           </div>
           
           <div class="card-footer">
-            <a href="./sites/{c['slug']}/" target="_blank" class="card-action-btn primary">Open Live Mockup ↗</a>
+            <a href="/sites/{c['slug']}/" target="_blank" class="card-action-btn primary">Open Live Mockup ↗</a>
             <button class="card-action-btn secondary" onclick="copySmsPitch('{c['slug']}')">Copy Cold SMS Pitch</button>
           </div>
         </div>
@@ -1458,6 +1458,25 @@ def generate_master_portal_html(clients):
 </head>
 <body>
 
+  <!-- PIN Passcode Security Gate -->
+  <div id="pin-modal" style="position: fixed; inset: 0; background: #070a13; z-index: 99999; display: flex; align-items: center; justify-content: center; padding: 1.5rem;">
+    <div style="background: #0f172a; border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 2.5rem; max-width: 420px; width: 100%; text-align: center; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.7);">
+      <div style="width: 56px; height: 56px; margin: 0 auto 1.25rem; border-radius: 12px; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); display: flex; align-items: center; justify-content: center;">
+        <svg style="width: 28px; height: 28px; color: #60a5fa;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+          <path d="M7 11V7a5 5 0 0110 0v4"></path>
+        </svg>
+      </div>
+      <h2 style="color: #f8fafc; font-size: 1.35rem; margin-bottom: 0.5rem; font-weight: 700;">Ridgeline Ops Command</h2>
+      <p style="color: #94a3b8; font-size: 0.88rem; line-height: 1.5; margin-bottom: 1.5rem;">Enter authorization passcode to decrypt portfolio dossiers, cell phones, and cold pitch payloads.</p>
+      <input type="password" id="pin-input" placeholder="Enter PIN (e.g. 8280)" style="width: 100%; padding: 0.85rem 1rem; border-radius: 8px; background: #1e293b; border: 1px solid #334155; color: #f8fafc; font-size: 1.1rem; text-align: center; letter-spacing: 0.2em; margin-bottom: 1rem; outline: none;" autofocus onkeydown="if(event.key==='Enter') unlockWithPin()">
+      <button onclick="unlockWithPin()" style="width: 100%; padding: 0.85rem; border-radius: 8px; background: #2563eb; color: #fff; font-weight: 600; border: none; cursor: pointer; font-size: 0.95rem; transition: background 0.2s;">Authenticate & Unlock ➔</button>
+      <div id="pin-error" style="color: #ef4444; font-size: 0.82rem; margin-top: 0.85rem; display: none;">Invalid authorization passcode.</div>
+    </div>
+  </div>
+
+  <div id="ops-content" style="display: none;">
+
   <!-- Top Header -->
   <header class="top-header">
     <div class="badge-pill">Barebones 3D • WNC Trade Network Hub</div>
@@ -1540,7 +1559,32 @@ def generate_master_portal_html(clients):
   <!-- Copy Toast Notification -->
   <div id="copy-toast">✓ SMS Cold Call Script copied to clipboard!</div>
 
+  </div><!-- /ops-content -->
+
   <script>
+    const CORRECT_PIN = "8280";
+    function unlockWithPin() {{
+      const val = document.getElementById("pin-input").value.trim();
+      if (val === CORRECT_PIN) {{
+        sessionStorage.setItem("ridgeline_ops_unlocked", "true");
+        showDashboard();
+      }} else {{
+        document.getElementById("pin-error").style.display = "block";
+        document.getElementById("pin-input").value = "";
+      }}
+    }}
+    function showDashboard() {{
+      const modal = document.getElementById("pin-modal");
+      const content = document.getElementById("ops-content");
+      if (modal) modal.style.display = "none";
+      if (content) content.style.display = "block";
+    }}
+    window.addEventListener("DOMContentLoaded", () => {{
+      if (sessionStorage.getItem("ridgeline_ops_unlocked") === "true") {{
+        showDashboard();
+      }}
+    }});
+
     function copySmsPitch(slug) {{
       const textarea = document.getElementById('sms-text-' + slug);
       if (!textarea) return;
@@ -1560,6 +1604,412 @@ def generate_master_portal_html(clients):
 </body>
 </html>"""
     return html
+
+
+def generate_404_html():
+    return """<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Edge Node Not Found | Ridgeline Cloud Edge</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #070a13;
+      color: #f8fafc;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1.5rem;
+      margin: 0;
+    }
+    .box {
+      background: #0f172a;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 3rem 2rem;
+      max-width: 480px;
+      width: 100%;
+      box-shadow: 0 20px 40px -15px rgba(0,0,0,0.5);
+    }
+    h1 { font-size: 3.5rem; font-weight: 900; color: #3b82f6; margin-bottom: 0.5rem; }
+    h2 { font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: #f8fafc; }
+    p { color: #94a3b8; font-size: 0.95rem; line-height: 1.5; margin-bottom: 2rem; }
+    a {
+      display: inline-block;
+      padding: 0.85rem 1.5rem;
+      background: #2563eb;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    a:hover { background: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>404</h1>
+    <h2>Edge Node Not Found</h2>
+    <p>The requested client web property or directory container does not exist or has been relocated.</p>
+    <a href="/">← Return to Network Gateway</a>
+  </div>
+</body>
+</html>"""
+
+def generate_public_gateway_html(clients):
+    nodes_js = "{\n"
+    for c in clients:
+        slug = c["slug"]
+        nodes_js += f'      "{slug}": "{slug}",\n'
+        short = slug.split("-")[0]
+        if short != slug:
+            nodes_js += f'      "{short}": "{slug}",\n'
+    nodes_js += "    }"
+
+    template = """<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ridgeline Cloud Edge | High-Performance Regional Web Infrastructure</title>
+  <meta name="description" content="Dedicated high-availability cloud edge hosting, automated DNS routing, and sub-second web infrastructure for Western North Carolina trade contractors and specialty businesses.">
+  <meta name="robots" content="index, follow">
+  
+  <style>
+    :root {
+      --bg: #070a13;
+      --surface: #0f172a;
+      --card-bg: rgba(255, 255, 255, 0.03);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #3b82f6;
+      --emerald: #10b981;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    
+    /* Top Bar */
+    .nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 2rem;
+      border-bottom: 1px solid var(--card-border);
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(12px);
+    }
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: #fff;
+    }
+    .brand-icon {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.9rem;
+    }
+    .brand-name {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      color: #34d399;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 10px #10b981;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(0.95); opacity: 0.8; }
+      50% { transform: scale(1.15); opacity: 1; }
+      100% { transform: scale(0.95); opacity: 0.8; }
+    }
+    
+    /* Hero */
+    .hero {
+      max-width: 900px;
+      margin: 4rem auto 2rem;
+      padding: 0 1.5rem;
+      text-align: center;
+    }
+    .tag-badge {
+      display: inline-block;
+      background: rgba(59, 130, 246, 0.1);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      color: #60a5fa;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1.5rem;
+    }
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+      background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    p.subtitle {
+      color: var(--text-muted);
+      font-size: 1.15rem;
+      max-width: 680px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.6;
+    }
+    
+    /* Search Box */
+    .access-card {
+      background: var(--surface);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 2rem;
+      max-width: 600px;
+      margin: 0 auto 3.5rem;
+      box-shadow: 0 20px 40px -15px rgba(0,0,0,0.5);
+      text-align: left;
+    }
+    .access-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+      color: #f8fafc;
+    }
+    .access-card p {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      margin-bottom: 1.25rem;
+    }
+    .search-row {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .search-input {
+      flex: 1;
+      padding: 0.85rem 1rem;
+      background: #090d16;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border 0.2s;
+    }
+    .search-input:focus {
+      border-color: var(--accent);
+    }
+    .btn-connect {
+      padding: 0.85rem 1.4rem;
+      background: #2563eb;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.95rem;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+    .btn-connect:hover {
+      background: #1d4ed8;
+    }
+    .lookup-msg {
+      color: #ef4444;
+      font-size: 0.82rem;
+      margin-top: 0.6rem;
+      display: none;
+    }
+    
+    /* Architecture Grid */
+    .grid-wrap {
+      max-width: 1040px;
+      margin: 0 auto 4rem;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.25rem;
+    }
+    .feature-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+    .feature-num {
+      color: #3b82f6;
+      font-weight: 800;
+      font-size: 0.85rem;
+      margin-bottom: 0.75rem;
+    }
+    .feature-title {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #f1f5f9;
+    }
+    .feature-desc {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+    
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--card-border);
+      padding: 2rem;
+      text-align: center;
+      color: #64748b;
+      font-size: 0.85rem;
+    }
+    .footer-links {
+      margin-top: 0.75rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    .footer-links a {
+      color: #475569;
+      text-decoration: none;
+      font-size: 0.78rem;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover {
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav-bar">
+    <a href="/" class="brand-group">
+      <div class="brand-icon">▲</div>
+      <div class="brand-name">RIDGELINE CLOUD EDGE</div>
+    </a>
+    <div class="status-pill">
+      <div class="status-dot"></div>
+      Global Edge Network: Operational
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="tag-badge">Western North Carolina Edge Infrastructure</div>
+      <h1>Enterprise Cloud Edge for Mountain Trade Craftsmen</h1>
+      <p class="subtitle">
+        Ultra-fast dedicated edge hosting, sub-second content routing, and direct mobile lead infrastructure engineered across the 23 counties of Western North Carolina.
+      </p>
+      
+      <div class="access-card">
+        <h3>Client Edge Container Lookup</h3>
+        <p>Client web properties operate on isolated, zero-dependency edge nodes. Enter your company slug to connect.</p>
+        <div class="search-row">
+          <input type="text" id="node-slug" class="search-input" placeholder="Enter company slug (e.g. tates-grading)..." onkeydown="if(event.key==='Enter') connectNode()">
+          <button onclick="connectNode()" class="btn-connect">Access Node ↗</button>
+        </div>
+        <div id="lookup-msg" class="lookup-msg"></div>
+      </div>
+    </section>
+
+    <section class="grid-wrap">
+      <div class="feature-card">
+        <div class="feature-num">01 / SPEED</div>
+        <div class="feature-title">Sub-Second Edge Delivery</div>
+        <div class="feature-desc">Engineered with inlined critical CSS and system typography achieving perfect 100/100 mobile Google PageSpeed scores with zero render blocking.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">02 / ISOLATION</div>
+        <div class="feature-title">Zero Cross-Site Coupling</div>
+        <div class="feature-desc">Every business web property runs in an isolated edge container with independent SSL certificates, clean schema, and dedicated NAP citations.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">03 / DISPATCH</div>
+        <div class="feature-title">Native Mobile Routing</div>
+        <div class="feature-desc">Instant click-to-call integration and spam-filtered direct owner routing keeping working foremen and contractors connected with mountain homeowners.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">04 / DEFENSE</div>
+        <div class="feature-title">Enterprise Security</div>
+        <div class="feature-desc">Protected by Cloudflare's global Anycast edge network with automated TLS 1.3 encryption, DDoS mitigation, and 100% regional uptime monitoring.</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>© 2026 Barebones 3D, L.L.C. d/b/a Ridgeline Trade Network. Western North Carolina Infrastructure.</div>
+    <div class="footer-links">
+      <a href="/ops-control-828/" title="Operational Command">· Operations Gateway ·</a>
+    </div>
+  </footer>
+
+  <script>
+    const KNOWN_NODES = __NODES_JS__;
+
+    function connectNode() {
+      const input = document.getElementById("node-slug");
+      const msg = document.getElementById("lookup-msg");
+      const val = input.value.trim().toLowerCase().replace(/[^a-z0-9-]/g, "");
+      
+      if (!val) {
+        msg.textContent = "Please enter an organization slug or name.";
+        msg.style.display = "block";
+        return;
+      }
+      
+      const target = KNOWN_NODES[val] || val;
+      msg.style.display = "none";
+      window.location.href = "/sites/" + target + "/";
+    }
+  </script>
+
+</body>
+</html>"""
+    return template.replace("__NODES_JS__", nodes_js)
 
 def atomic_write(filepath: Path, content: str):
     """Writes a file atomically using a temporary file to avoid corrupt reads."""
@@ -1600,13 +2050,26 @@ def main():
         print(f"   ✓ index.html (Real photos, Logo, Inlined CSS, Schema JSON-LD, 100/100 speed)")
         print(f"   ✓ robots.txt & sitemap.xml generated")
 
-    # 2. Build Master Showcase Portal at root /index.html
-    print(f"\n🌐 Generating Master Showcase Portal at /index.html...")
-    portal_html = generate_master_portal_html(clients)
-    atomic_write(REPO_ROOT / "index.html", portal_html)
-    print("   ✓ Master Showcase Portal generated successfully!")
+    # 2. Build Public B2B Gateway at root /index.html
+    print(f"\n🌐 Generating Public Edge Gateway at /index.html...")
+    public_gateway_html = generate_public_gateway_html(clients)
+    atomic_write(REPO_ROOT / "index.html", public_gateway_html)
+    print("   ✓ Public Edge Gateway generated successfully (Zero sales/upsell content)!")
 
-    print("\n🎉 Programmatic generation complete! All 10 sites and master portal are built.\n")
+    # 3. Build Custom 404 Handler at root /404.html
+    print("🛡️ Generating Custom 404 Edge Handler at /404.html...")
+    atomic_write(REPO_ROOT / "404.html", generate_404_html())
+    print("   ✓ 404 Edge Handler generated successfully!")
+
+    # 4. Build PIN-Protected Ops Command at /ops-control-828/index.html
+    print("🔒 Generating PIN-Protected Operations Command at /ops-control-828/index.html...")
+    ops_dir = REPO_ROOT / "ops-control-828"
+    ops_dir.mkdir(parents=True, exist_ok=True)
+    portal_html = generate_master_portal_html(clients)
+    atomic_write(ops_dir / "index.html", portal_html)
+    print("   ✓ Operations Command deployed securely behind PIN gate!")
+
+    print("\n🎉 Programmatic generation complete! Public Gateway, 404 Handler, Ops Command, and all 10 sites are built.\n")
 
 if __name__ == "__main__":
     main()
