@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wnc-client-sites.pages.dev/sites/mateos-retaining-walls/sitemap.xml

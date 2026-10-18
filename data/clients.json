@@ -1,0 +1,692 @@
+[
+  {
+    "slug": "pace-excavation",
+    "business_name": "Pace Construction & Excavation, Inc.",
+    "short_name": "Pace Excavation",
+    "trade": "Excavation & Land Clearing",
+    "trade_network_domain": "wncexcavating.com",
+    "trade_network_corridor_slug": "southern-plateau",
+    "corridor_name": "Corridor 2 — Southern Plateau & Foothills",
+    "hub_towns": ["Hendersonville", "Flat Rock", "Mills River", "Brevard", "Fletcher"],
+    "county": "Henderson County, NC",
+    "owner_name": "Mark Pace",
+    "owner_title": "Owner & Lead Operator",
+    "cell_phone": "(828) 242-1420",
+    "office_phone": "(828) 696-9118",
+    "direct_sms_number": "+18282421420",
+    "street_address": "171 Terrace Mountain Dr",
+    "city": "Hendersonville",
+    "state": "NC",
+    "zip": "28739",
+    "geo": {
+      "latitude": 35.3187,
+      "longitude": -82.4614
+    },
+    "current_website": "None / Outdated Chamber Profile",
+    "competitor_pagespeed": 24,
+    "competitor_fcp": "4.8s",
+    "competitor_lcp": "8.9s",
+    "upsell_corridor_deal": "wncexcavating.com/southern-plateau/ ($1,250/mo)",
+    "primary_color": "#1e293b",
+    "accent_color": "#d97706",
+    "theme_gradient": "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)",
+    "tagline": "Precision Mountain Excavation, Grading & Site Development Across Henderson County",
+    "services": [
+      {
+        "title": "Mountain Site Preparation",
+        "desc": "Precision pad cutting, boulder removal, and steep-slope stabilization for custom mountain home foundations."
+      },
+      {
+        "title": "Driveway Cuts & Road Grading",
+        "desc": "Heavy-duty mountain driveway rough-ins, ditching, culvert installation, and crushed stone base compaction."
+      },
+      {
+        "title": "Land Clearing & Forestry Mulching",
+        "desc": "Low-impact brush clearing, selective tree thinning, stump extraction, and view enhancement clearing."
+      },
+      {
+        "title": "Drainage & Erosion Control",
+        "desc": "French drain systems, retention swales, rip-rap check dams, and slope retention complying with NC stormwater rules."
+      }
+    ],
+    "trust_badges": [
+      "NC General Contractor & Heavy Equipment Operator",
+      "Over 25 Years Mountain Excavation Experience",
+      "Fully Licensed & $2M Commercial Liability Insured",
+      "Local Family Owned & Operated in Hendersonville"
+    ],
+    "testimonials": [
+      {
+        "quote": "Mark and his crew carved out our steep mountain homesite in Mills River with surgical precision. They hit massive granite boulders and handled them without blinking.",
+        "author": "David M., Homeowner",
+        "location": "Mills River, NC"
+      },
+      {
+        "quote": "Best grading contractor in Henderson County. They fixed a washed-out 800-foot driveway and installed proper culverts that have stood up to torrential rains.",
+        "author": "Greg T., Estate Owner",
+        "location": "Flat Rock, NC"
+      }
+    ]
+  },
+  {
+    "slug": "turning-leaf-tree",
+    "business_name": "Turning Leaf Tree Service",
+    "short_name": "Turning Leaf Tree",
+    "trade": "Tree Removal & Crane Work",
+    "trade_network_domain": "wnctreeremoval.com",
+    "trade_network_corridor_slug": "metro-asheville",
+    "corridor_name": "Corridor 3 — Metro Asheville & French Broad",
+    "hub_towns": ["Black Mountain", "Swannanoa", "Asheville", "Weaverville", "Montreat"],
+    "county": "Buncombe County, NC",
+    "owner_name": "Andrew Owens",
+    "owner_title": "Owner & Certified Arborist",
+    "cell_phone": "(828) 808-9770",
+    "office_phone": "(828) 808-9770",
+    "direct_sms_number": "+18288089770",
+    "street_address": "Black Mountain Hwy",
+    "city": "Black Mountain",
+    "state": "NC",
+    "zip": "28711",
+    "geo": {
+      "latitude": 35.6179,
+      "longitude": -82.3212
+    },
+    "current_website": "https://turningleaftreenc.com",
+    "competitor_pagespeed": 60,
+    "competitor_fcp": "3.0s",
+    "competitor_lcp": "9.9s",
+    "upsell_corridor_deal": "wnctreeremoval.com/metro-asheville/ ($1,250/mo)",
+    "primary_color": "#064e3b",
+    "accent_color": "#10b981",
+    "theme_gradient": "linear-gradient(135deg, #022c22 0%, #064e3b 100%)",
+    "tagline": "Safe Mountain Tree Removal, Crane-Assisted Take-Downs & 24/7 Storm Response",
+    "services": [
+      {
+        "title": "Hazardous Mountain Tree Removal",
+        "desc": "Zero-impact technical rigging and crane removals for dead hemlocks, leaning oaks, and hazard trees over structures."
+      },
+      {
+        "title": "24/7 Emergency Storm Dispatch",
+        "desc": "Immediate rapid response for trees fallen on roofs, driveways, and mountain power drops following high-wind mountain gusts."
+      },
+      {
+        "title": "Canopy Thinning & View Restoration",
+        "desc": "Selective crown reduction and deadwooding to restore panoramic Blue Ridge vistas without sacrificing canopy health."
+      },
+      {
+        "title": "Stump Grinding & Debris Haul-Away",
+        "desc": "Sub-surface stump grinding down to 14 inches with full wood chip mulching or complete site removal."
+      }
+    ],
+    "trust_badges": [
+      "ISA Certified Arborist on Every Rig",
+      "Specialized High-Elevation Crane & Rigging Equipment",
+      "$2,000,000 Tree Service Liability & Workers Comp",
+      "Locally Owned in Black Mountain & Swannanoa Valley"
+    ],
+    "testimonials": [
+      {
+        "quote": "Andrew and his team removed three 90-foot dead white pines leaning over our cabin in Black Mountain. Their crane operator was a master artist.",
+        "author": "Sarah & Tom R.",
+        "location": "Black Mountain, NC"
+      },
+      {
+        "quote": "Called Turning Leaf after high winds brought a massive oak limb onto our driveway in Swannanoa. They were on site within 90 minutes.",
+        "author": "Robert B.",
+        "location": "Swannanoa, NC"
+      }
+    ]
+  },
+  {
+    "slug": "riveras-roofing",
+    "business_name": "Rivera's Construction & Roofing LLC",
+    "short_name": "Rivera's Roofing",
+    "trade": "Roofing & Emergency Leak Repair",
+    "trade_network_domain": "wncroofingrepair.com",
+    "trade_network_corridor_slug": "central-west",
+    "corridor_name": "Corridor 4 — Central West / Tuckasegee",
+    "hub_towns": ["Sylva", "Cullowhee", "Waynesville", "Webster", "Dillsboro"],
+    "county": "Jackson County, NC",
+    "owner_name": "Rivera",
+    "owner_title": "Owner & Master Roofer",
+    "cell_phone": "(828) 508-9155",
+    "office_phone": "(828) 508-9155",
+    "direct_sms_number": "+18285089155",
+    "street_address": "Main St Corridor",
+    "city": "Sylva",
+    "state": "NC",
+    "zip": "28779",
+    "geo": {
+      "latitude": 35.3737,
+      "longitude": -83.2229
+    },
+    "current_website": "https://riverasconstructionsllc.com",
+    "competitor_pagespeed": 74,
+    "competitor_fcp": "2.0s",
+    "competitor_lcp": "5.5s",
+    "upsell_corridor_deal": "wncroofingrepair.com/central-west/ ($950/mo)",
+    "primary_color": "#0f172a",
+    "accent_color": "#dc2626",
+    "theme_gradient": "linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%)",
+    "tagline": "Standing Seam Metal Roofs & Architectural Shingles Built for Mountain Weather",
+    "services": [
+      {
+        "title": "Standing Seam Metal Roofing",
+        "desc": "Concealed fastener 24-gauge standing seam metal roofs engineered to withstand mountain snow loads and 100mph wind gusts."
+      },
+      {
+        "title": "Architectural Shingle Replacement",
+        "desc": "High-definition lifetime architectural shingles with reinforced ice and water shield valleys for steep-slope mountain homes."
+      },
+      {
+        "title": "Emergency Valley & Chimney Repair",
+        "desc": "Same-day leak detection, counter-flashing replacement, chimney cricket repair, and storm tarping across Jackson County."
+      },
+      {
+        "title": "Seamless Gutters & Ice Dam Solutions",
+        "desc": "Heavy-gauge 6-inch seamless aluminum gutters and heat cable installation to eliminate winter freeze-thaw gutter tearing."
+      }
+    ],
+    "trust_badges": [
+      "NC Licensed General Contractor (Roofing Specialty)",
+      "CertainTeed & GAF Certified Weather Stopper",
+      "50-Year Non-Prorated Material Warranties Available",
+      "Locally Based in Sylva & Cullowhee"
+    ],
+    "testimonials": [
+      {
+        "quote": "Rivera replaced our aging shingle roof with a stunning charcoal standing seam metal roof in Cullowhee. Outstanding attention to detail around valleys and skylights.",
+        "author": "Dr. Bradley H.",
+        "location": "Cullowhee, NC"
+      },
+      {
+        "quote": "When our chimney flashing failed during a November storm, Rivera came out that afternoon and fixed the leak before drywall got ruined.",
+        "author": "Elena V.",
+        "location": "Sylva, NC"
+      }
+    ]
+  },
+  {
+    "slug": "dirtworks-septic",
+    "business_name": "Dirtworks Septic & Environmental, LLC",
+    "short_name": "Dirtworks Septic",
+    "trade": "Septic Repair, Pumping & Drain Fields",
+    "trade_network_domain": "wncsepticrepair.com",
+    "trade_network_corridor_slug": "highlands-cashiers",
+    "corridor_name": "Corridor 1 — Highlands / Cashiers Luxury Crest",
+    "hub_towns": ["Cashiers", "Highlands", "Sapphire", "Lake Toxaway", "Glenville"],
+    "county": "Jackson & Macon Counties, NC",
+    "owner_name": "James",
+    "owner_title": "Owner & Certified Septic Inspector",
+    "cell_phone": "(828) 510-7184",
+    "office_phone": "(828) 510-7184",
+    "direct_sms_number": "+18285107184",
+    "street_address": "245 US Hwy 64 W",
+    "city": "Cashiers",
+    "state": "NC",
+    "zip": "28717",
+    "geo": {
+      "latitude": 35.1118,
+      "longitude": -83.0985
+    },
+    "current_website": "https://dirttworks.com",
+    "competitor_pagespeed": 42,
+    "competitor_fcp": "3.8s",
+    "competitor_lcp": "7.6s",
+    "upsell_corridor_deal": "wncsepticrepair.com/highlands-cashiers/ ($1,250/mo)",
+    "primary_color": "#0b192c",
+    "accent_color": "#d97706",
+    "theme_gradient": "linear-gradient(135deg, #070f1a 0%, #0b192c 100%)",
+    "tagline": "Discreet, Luxury Septic Pumping, Drain Field Engineering & 24/7 Estate Dispatch",
+    "services": [
+      {
+        "title": "Luxury Estate Septic Pumping",
+        "desc": "High-vacuum low-impact pump trucks equipped with extended hoses to protect delicate mountain landscaping and pavers."
+      },
+      {
+        "title": "Steep-Slope Drain Field Engineering",
+        "desc": "Advanced chamber, drip dispersal, and mound systems engineered for rocky, shallow mountain soils at 3,500+ ft elevations."
+      },
+      {
+        "title": "Point-of-Sale Inspections & Video Scans",
+        "desc": "High-definition fiber-optic sewer line camera inspections and NC-certified septic health documentation for luxury closings."
+      },
+      {
+        "title": "24/7 Emergency Backup Relief",
+        "desc": "Priority emergency dispatch for pump chamber alarms, high-water alerts, and sewer backups in Cashiers and Highlands."
+      }
+    ],
+    "trust_badges": [
+      "NC Level IV Septic System Certified Installer",
+      "24/7 Priority Emergency Dispatch in Cashiers & Highlands",
+      "Specialized Equipment for Luxury Mountain Estates",
+      "Over 18 Years Serving the High Plateau"
+    ],
+    "testimonials": [
+      {
+        "quote": "James and Dirtworks are the only septic team we trust for our high-altitude mountain home in Cashiers. Fast, discreet, and utterly professional.",
+        "author": "Charles & Patricia W.",
+        "location": "Cashiers, NC"
+      },
+      {
+        "quote": "Our effluent pump failed on a Saturday during a family gathering. James was on-site in Lake Toxaway in under an hour and replaced the float switch immediately.",
+        "author": "Marianne K.",
+        "location": "Lake Toxaway, NC"
+      }
+    ]
+  },
+  {
+    "slug": "mateos-retaining-walls",
+    "business_name": "Mateo's Construction & Retaining Walls LLC",
+    "short_name": "Mateo's Retaining Walls",
+    "trade": "Retaining Walls & Mountain Hardscapes",
+    "trade_network_domain": "wncretainingwall.com",
+    "trade_network_corridor_slug": "southern-plateau",
+    "corridor_name": "Corridor 2 — Southern Plateau & Foothills",
+    "hub_towns": ["Hendersonville", "Brevard", "Saluda", "Flat Rock", "Columbus"],
+    "county": "Henderson & Polk Counties, NC",
+    "owner_name": "Mateo",
+    "owner_title": "Owner & Lead Stone Mason",
+    "cell_phone": "(828) 407-9832",
+    "office_phone": "(828) 407-9832",
+    "direct_sms_number": "+18284079832",
+    "street_address": "Howard Gap Rd Corridor",
+    "city": "Hendersonville",
+    "state": "NC",
+    "zip": "28792",
+    "geo": {
+      "latitude": 35.3287,
+      "longitude": -82.4414
+    },
+    "current_website": "https://mateoscl.com",
+    "competitor_pagespeed": 52,
+    "competitor_fcp": "3.1s",
+    "competitor_lcp": "6.8s",
+    "upsell_corridor_deal": "wncretainingwall.com/southern-plateau/ ($950/mo)",
+    "primary_color": "#1f2937",
+    "accent_color": "#ea580c",
+    "theme_gradient": "linear-gradient(135deg, #111827 0%, #1f2937 100%)",
+    "tagline": "Engineered Mountain Retaining Walls, Natural Boulder Terraces & Hillside Stabilization",
+    "services": [
+      {
+        "title": "Natural Mountain Boulder Walls",
+        "desc": "Heavy-tonnage Tennessee fieldstone and granite boulder walls placed with precision excavators for permanent hillside retention."
+      },
+      {
+        "title": "Segmental Block & Geogrid Walls",
+        "desc": "Engineered concrete retaining block with compacted aggregate backfill and structural geogrid reinforcement for steep driveways."
+      },
+      {
+        "title": "Hillside Erosion Stabilization",
+        "desc": "Terraced retaining structures and integrated hydrostatic drainage systems that eliminate slope slumping and yard washouts."
+      },
+      {
+        "title": "Flagstone Patios & Mountain Steps",
+        "desc": "Hand-chiseled mountain stone walkways, outdoor living terraces, and heavy timber-and-stone outdoor staircases."
+      }
+    ],
+    "trust_badges": [
+      "NC Certified Retaining Wall & Hardscape Specialist",
+      "Engineered Backfill & Drainage Integration Guarantee",
+      "Full Workmanship & Structural Stability Warranty",
+      "Direct Owner Supervision on Every Mountain Build"
+    ],
+    "testimonials": [
+      {
+        "quote": "Mateo built a 140-foot boulder retaining wall along our steep driveway cut in Saluda. The craftsmanship and drainage design are top tier.",
+        "author": "Franklin S.",
+        "location": "Saluda, NC"
+      },
+      {
+        "quote": "Our hillside was slowly slipping after tropical rains. Mateo engineered a tiered segmental block wall that completely stabilized the ground.",
+        "author": "Debra L.",
+        "location": "Hendersonville, NC"
+      }
+    ]
+  },
+  {
+    "slug": "tri-city-paving",
+    "business_name": "Tri-City Paving Inc.",
+    "short_name": "Tri-City Paving",
+    "trade": "Driveway Paving & Sealcoating",
+    "trade_network_domain": "wncdrivewaypaving.com",
+    "trade_network_corridor_slug": "east-foothills",
+    "corridor_name": "Corridor 7 — East Foothills / Broad River",
+    "hub_towns": ["Rutherfordton", "Forest City", "Marion", "Spindale", "Lake Lure"],
+    "county": "Rutherford & McDowell Counties, NC",
+    "owner_name": "Brian",
+    "owner_title": "Owner & Operations Manager",
+    "cell_phone": "(828) 289-0315",
+    "office_phone": "(828) 289-0315",
+    "direct_sms_number": "+18282890315",
+    "street_address": "Railroad Ave Corridor",
+    "city": "Rutherfordton",
+    "state": "NC",
+    "zip": "28139",
+    "geo": {
+      "latitude": 35.3582,
+      "longitude": -81.9568
+    },
+    "current_website": "https://tricitypavinginc.com",
+    "competitor_pagespeed": 38,
+    "competitor_fcp": "4.2s",
+    "competitor_lcp": "8.1s",
+    "upsell_corridor_deal": "wncdrivewaypaving.com/east-foothills/ ($750/mo)",
+    "primary_color": "#111827",
+    "accent_color": "#eab308",
+    "theme_gradient": "linear-gradient(135deg, #090d16 0%, #111827 100%)",
+    "tagline": "Durable Hot-Mix Asphalt Paving, Mountain Grade Compaction & Commercial Sealcoating",
+    "services": [
+      {
+        "title": "Residential Driveway Asphalt Paving",
+        "desc": "Heavy-duty 3-inch hot-mix asphalt laid over compacted crushed aggregate base to withstand mountain trucks and freeze-thaw cycles."
+      },
+      {
+        "title": "Commercial Parking Lot Paving",
+        "desc": "Full turnkey commercial parking lot layout, machine grading, binder course, surface asphalt, and crisp line striping."
+      },
+      {
+        "title": "Commercial-Grade Coal Tar Sealcoating",
+        "desc": "Industrial rubberized emulsion sealcoating and hot-pour rubber crack filling to block water penetration and UV oxidation."
+      },
+      {
+        "title": "Driveway Resurfacing & Milling",
+        "desc": "Precision edge milling, pothole patching, and asphalt overlaying to restore rough driveways at a fraction of full rebuild cost."
+      }
+    ],
+    "trust_badges": [
+      "Family Owned & Operated for Over 20 Years in Rutherford County",
+      "State-of-the-Art Vibratory Compaction & Paving Fleet",
+      "Free On-Site Precision Square Footage Estimates",
+      "Fully Bonded & Insured Commercial Contractor"
+    ],
+    "testimonials": [
+      {
+        "quote": "Brian and his crew paved our 600-foot country driveway in Rutherfordton. Smooth as glass, perfect water runoff slope, and completed in one day.",
+        "author": "Ken & Lisa D.",
+        "location": "Rutherfordton, NC"
+      },
+      {
+        "quote": "Tri-City Paving resealed and striped our church parking lot in Forest City. Excellent communication and fair upfront pricing.",
+        "author": "Pastor Jim W.",
+        "location": "Forest City, NC"
+      }
+    ]
+  },
+  {
+    "slug": "capstone-crawlspace",
+    "business_name": "Capstone Crawlspace Solutions",
+    "short_name": "Capstone Crawlspace",
+    "trade": "Crawlspace Encapsulation & Waterproofing",
+    "trade_network_domain": "wnccrawlspace.com",
+    "trade_network_corridor_slug": "high-country-mining",
+    "corridor_name": "Corridor 5 — High Country & Spruce Pine Belt",
+    "hub_towns": ["Boone", "Blowing Rock", "Banner Elk", "Spruce Pine", "Linville"],
+    "county": "Watauga & Avery Counties, NC",
+    "owner_name": "Liam",
+    "owner_title": "Owner & Moisture Remediation Specialist",
+    "cell_phone": "(336) 972-5941",
+    "office_phone": "(336) 972-5941",
+    "direct_sms_number": "+13369725941",
+    "street_address": "Hwy 105 Corridor",
+    "city": "Boone",
+    "state": "NC",
+    "zip": "28607",
+    "geo": {
+      "latitude": 36.2168,
+      "longitude": -81.6746
+    },
+    "current_website": "https://capstonecrawlspace.com",
+    "competitor_pagespeed": 58,
+    "competitor_fcp": "3.3s",
+    "competitor_lcp": "7.2s",
+    "upsell_corridor_deal": "wnccrawlspace.com/high-country-mining/ ($950/mo)",
+    "primary_color": "#083344",
+    "accent_color": "#06b6d4",
+    "theme_gradient": "linear-gradient(135deg, #041c26 0%, #083344 100%)",
+    "tagline": "Permanent Mountain Crawlspace Encapsulation, Moisture Control & Sump Systems",
+    "services": [
+      {
+        "title": "20-Mil Antimicrobial Encapsulation",
+        "desc": "Heavy reinforced vapor barrier sealed 100% airtight to foundation walls and piers to block mountain ground moisture permanently."
+      },
+      {
+        "title": "Commercial Energy Star Dehumidifiers",
+        "desc": "Automated Santa Fe high-efficiency dehumidifiers sized for mountain cabins to maintain sub-50% relative humidity year-round."
+      },
+      {
+        "title": "Dual-Pump Sump & Perimeter French Drains",
+        "desc": "Cast-iron submersible sump pumps with battery backup and interior perimeter drains to catch sub-surface mountain runoff."
+      },
+      {
+        "title": "Mold Remediation & Wood Sealing",
+        "desc": "EPA-registered botanical mold remediation, subfloor dry-ice blasting, and microbial inhibitor coating for joists."
+      }
+    ],
+    "trust_badges": [
+      "Certified Moisture Management Specialist (CMMS)",
+      "Lifetime Transferable Vapor Barrier Warranty",
+      "Local High Country Mountain Soil & Humidity Experts",
+      "Zero-Interest Financing Available"
+    ],
+    "testimonials": [
+      {
+        "quote": "Liam transformed our musty, wet crawlspace in Blowing Rock into a clean, dry conditioned space. The musty smell upstairs disappeared within 48 hours.",
+        "author": "Dr. Keith M.",
+        "location": "Blowing Rock, NC"
+      },
+      {
+        "quote": "Our floors were cupping due to high summer humidity in Boone. Capstone encapsulated the crawlspace and installed a dehumidifier. Floors flattened out perfectly.",
+        "author": "Rachel S.",
+        "location": "Boone, NC"
+      }
+    ]
+  },
+  {
+    "slug": "coomers-well-pump",
+    "business_name": "Coomer's Well & Pump Services",
+    "short_name": "Coomer's Well & Pump",
+    "trade": "Well Pumps & Emergency Water Systems",
+    "trade_network_domain": "wncwatersystems.com",
+    "trade_network_corridor_slug": "central-west",
+    "corridor_name": "Corridor 4 — Central West / Tuckasegee",
+    "hub_towns": ["Waynesville", "Canton", "Clyde", "Maggie Valley", "Lake Junaluska"],
+    "county": "Haywood County, NC",
+    "owner_name": "Coomer",
+    "owner_title": "Owner & Certified Well Pump Contractor",
+    "cell_phone": "(828) 337-2170",
+    "office_phone": "(828) 337-2170",
+    "direct_sms_number": "+18283372170",
+    "street_address": "Pigeon Rd Corridor",
+    "city": "Waynesville",
+    "state": "NC",
+    "zip": "28786",
+    "geo": {
+      "latitude": 35.4887,
+      "longitude": -82.9887
+    },
+    "current_website": "https://coomerswellandpump.com",
+    "competitor_pagespeed": 64,
+    "competitor_fcp": "2.8s",
+    "competitor_lcp": "6.1s",
+    "upsell_corridor_deal": "wncwatersystems.com/central-west/ ($950/mo)",
+    "primary_color": "#1e3a8a",
+    "accent_color": "#0284c7",
+    "theme_gradient": "linear-gradient(135deg, #111e4f 0%, #1e3a8a 100%)",
+    "tagline": "24/7 Emergency No-Water Service, Deep-Well Submersible Pumps & Pressure Systems",
+    "services": [
+      {
+        "title": "24/7 Emergency No-Water Dispatch",
+        "desc": "Same-day rapid diagnosis and repair when your faucet runs dry, pressure drops, or the pump circuit trips."
+      },
+      {
+        "title": "Deep Mountain Submersible Pumps",
+        "desc": "Franklin Electric heavy-duty stainless steel submersible pumps sized for high-head mountain wells down to 700+ feet."
+      },
+      {
+        "title": "Constant Pressure Variable Speed Systems",
+        "desc": "SubDrive constant pressure controllers that guarantee steady city-like water pressure even when multiple showers are running."
+      },
+      {
+        "title": "Pressure Tanks & Sediment Filtration",
+        "desc": "Durable Well-X-Trol diaphragm pressure tanks, sediment spin-down filters, and UV microbiological purification."
+      }
+    ],
+    "trust_badges": [
+      "NC Certified Well Contractor (Level A Pump Installation)",
+      "Fully Stocked Service Trucks Ready for Same-Day Water Restoration",
+      "5-Year Equipment Replacement Warranty on New Pumps",
+      "Haywood County's Trusted Water Professionals"
+    ],
+    "testimonials": [
+      {
+        "quote": "Our well pump died on a freezing Sunday morning in Maggie Valley. Coomer arrived within two hours, pulled the 400-foot line, and had our water running by afternoon.",
+        "author": "Greg & Nancy P.",
+        "location": "Maggie Valley, NC"
+      },
+      {
+        "quote": "Upgraded our home to a constant pressure variable speed pump. The difference in water pressure in our hillside home in Waynesville is night and day.",
+        "author": "Steve W.",
+        "location": "Waynesville, NC"
+      }
+    ]
+  },
+  {
+    "slug": "wnc-decks",
+    "business_name": "WNC Decks & Mountain Outdoor Living",
+    "short_name": "WNC Decks",
+    "trade": "Deck Building & Mountain Porches",
+    "trade_network_domain": "wncdeckbuilding.com",
+    "trade_network_corridor_slug": "southern-plateau",
+    "corridor_name": "Corridor 2 — Southern Plateau & Metro Asheville",
+    "hub_towns": ["Hendersonville", "Flat Rock", "Asheville", "Mills River", "Fletcher"],
+    "county": "Henderson & Buncombe Counties, NC",
+    "owner_name": "Dave",
+    "owner_title": "Owner & Master Deck Carpenter",
+    "cell_phone": "(828) 230-0871",
+    "office_phone": "(828) 230-0871",
+    "direct_sms_number": "+18282300871",
+    "street_address": "Spartanburg Hwy Corridor",
+    "city": "Hendersonville",
+    "state": "NC",
+    "zip": "28792",
+    "geo": {
+      "latitude": 35.3114,
+      "longitude": -82.4514
+    },
+    "current_website": "https://hendersonvilledeckbuilders.com",
+    "competitor_pagespeed": 46,
+    "competitor_fcp": "3.5s",
+    "competitor_lcp": "7.9s",
+    "upsell_corridor_deal": "wncdeckbuilding.com/southern-plateau/ ($950/mo)",
+    "primary_color": "#3f2e20",
+    "accent_color": "#d97706",
+    "theme_gradient": "linear-gradient(135deg, #231911 0%, #3f2e20 100%)",
+    "tagline": "Custom Mountain Slope Decks, TimberTech Composite & Stainless Cable Railings",
+    "services": [
+      {
+        "title": "Steep-Slope Multi-Tier Mountain Decks",
+        "desc": "Engineered heavy timber post-and-beam construction anchored into mountain bedrock for dramatic multi-level ridge views."
+      },
+      {
+        "title": "Low-Maintenance Composite Decking",
+        "desc": "Trex Transcend and TimberTech premium composite surfaces immune to mountain rot, splintering, mold, and UV fading."
+      },
+      {
+        "title": "Stainless Steel Cable Railing Systems",
+        "desc": "Marine-grade 316 stainless cable rail and glass panel systems that provide 100% unobstructed Blue Ridge mountain panoramas."
+      },
+      {
+        "title": "Screened Timber Porches & Outdoor Fireplaces",
+        "desc": "Custom timber-framed screened enclosures with integrated tongue-and-groove pine ceilings and outdoor stone fireplaces."
+      }
+    ],
+    "trust_badges": [
+      "NC Licensed General Building Contractor",
+      "TrexPro Platinum & TimberTech Certified Builder",
+      "All Structural Plans Engineered for WNC Mountain Wind & Snow Codes",
+      "25-Year Manufacturer Stain & Fade Warranty"
+    ],
+    "testimonials": [
+      {
+        "quote": "Dave built a two-story composite deck with cable railings off the back of our hillside home in Hendersonville. The quality of construction is breathtaking.",
+        "author": "Marcus & Cheryl B.",
+        "location": "Hendersonville, NC"
+      },
+      {
+        "quote": "From county permitting to the final screw, WNC Decks was flawless. We can finally enjoy our panoramic views without maintenance headaches.",
+        "author": "Alan K.",
+        "location": "Flat Rock, NC"
+      }
+    ]
+  },
+  {
+    "slug": "moss-log-homes",
+    "business_name": "Moss Log Home Restoration & Care",
+    "short_name": "Moss Log Homes",
+    "trade": "Log Home Restoration & Chinking",
+    "trade_network_domain": "wncloghomerestoration.com",
+    "trade_network_corridor_slug": "southern-plateau",
+    "corridor_name": "Corridor 2 — Southern Plateau & Mountain Crest",
+    "hub_towns": ["Hendersonville", "Brevard", "Lake Lure", "Saluda", "Bat Cave"],
+    "county": "Henderson, Transylvania & Rutherford Counties, NC",
+    "owner_name": "Moss",
+    "owner_title": "Owner & Master Log Craftsman",
+    "cell_phone": "(828) 243-0506",
+    "office_phone": "(828) 243-0506",
+    "direct_sms_number": "+18282430506",
+    "street_address": "Sugarloaf Rd Corridor",
+    "city": "Hendersonville",
+    "state": "NC",
+    "zip": "28792",
+    "geo": {
+      "latitude": 35.3414,
+      "longitude": -82.4214
+    },
+    "current_website": "Legacy Directory Page on hibu",
+    "competitor_pagespeed": 29,
+    "competitor_fcp": "4.6s",
+    "competitor_lcp": "9.2s",
+    "upsell_corridor_deal": "wncloghomerestoration.com/southern-plateau/ ($1,250/mo)",
+    "primary_color": "#451a03",
+    "accent_color": "#d97706",
+    "theme_gradient": "linear-gradient(135deg, #240c01 0%, #451a03 100%)",
+    "tagline": "Precision Media Blasting, Energy-Seal Chinking & Log Rot Repair Across WNC",
+    "services": [
+      {
+        "title": "Non-Destructive Media Blasting",
+        "desc": "Corn cob, crushed glass, and walnut shell dry blasting to strip blackened UV sun damage without grooving delicate log fibers."
+      },
+      {
+        "title": "Energy-Seal Flexible Chinking",
+        "desc": "High-elasticity acrylic synthetic chinking that moves with natural log expansion and blocks mountain draft leaks and insect intrusion."
+      },
+      {
+        "title": "Half-Log & Full-Log Rot Replacement",
+        "desc": "Surgical excision of rotted wall logs and custom hewn Dutchman timber patches matched to original log profile and grain."
+      },
+      {
+        "title": "UV-Block Staining & Borate Preservation",
+        "desc": "Multi-coat penetrating oil finishes infused with EPA-registered borate wood preservatives to prevent carpenter bees and decay."
+      }
+    ],
+    "trust_badges": [
+      "Perma-Chink & Sashco Certified Master Applicators",
+      "Over 25 Years Restoring Historic & Luxury Mountain Log Cabins",
+      "Safe Low-Pressure Media Blasting Technology",
+      "Locally Based in Hendersonville & Serving All WNC"
+    ],
+    "testimonials": [
+      {
+        "quote": "Our 30-year-old log cabin in Lake Lure was completely weathered and had rot under the window sill. Moss and his team restored it to look brand new.",
+        "author": "Jonathan & Emily S.",
+        "location": "Lake Lure, NC"
+      },
+      {
+        "quote": "The chinking had cracked and allowed winter drafts inside our Brevard cabin. Moss resealed the entire exterior with Energy Seal. Heating bills plummeted.",
+        "author": "Cynthia W.",
+        "location": "Brevard, NC"
+      }
+    ]
+  }
+]

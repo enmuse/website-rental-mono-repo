@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wnc-client-sites.pages.dev/sites/moss-log-homes/sitemap.xml
