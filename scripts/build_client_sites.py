@@ -908,8 +908,8 @@ def generate_client_html(c):
         {"".join([f"<p>• {s['title']}</p>" for s in c["services"]])}
       </div>
       <div class="footer-col">
-        <h4>Corridor Coverage</h4>
-        <p>{c['corridor_name']}</p>
+        <h4>Areas We Serve</h4>
+        <p>{c['county']} & Surrounding Communities</p>
         <p>{', '.join(c['hub_towns'])}</p>
         <p style="color: #10b981; font-weight: 600; margin-top: 1rem;">• Fully Licensed & Insured in NC</p>
       </div>
