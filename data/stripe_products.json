@@ -1,0 +1,38 @@
+{
+  "website_rental_49": {
+    "name": "WNC Trade Contractor Website Rental",
+    "product_id": "prod_VSvT3YcvcgcyfT",
+    "price_id": "price_1URzc6R7kBc65bwPyyw3Q9mL",
+    "amount_usd": 49.0,
+    "interval": "month",
+    "payment_link": "https://buy.stripe.com/8x29AV87Q6e6er98xJ1wY00",
+    "badge": "$49.00 / month flat"
+  },
+  "corridor_lease_tier_a_1250": {
+    "name": "WNC Trade Network \u2014 Exclusive Corridor Lease (Tier A)",
+    "product_id": "prod_VSvTr7HmCbvZbR",
+    "price_id": "price_1URzc8R7kBc65bwPdXLwmD2M",
+    "amount_usd": 1250.0,
+    "interval": "month",
+    "payment_link": "https://buy.stripe.com/fZueVf4VEfOG0Aj4ht1wY01",
+    "badge": "$1,250.00 / month"
+  },
+  "corridor_lease_tier_b_950": {
+    "name": "WNC Trade Network \u2014 Exclusive Corridor Lease (Tier B)",
+    "product_id": "prod_VSvTIACldda50k",
+    "price_id": "price_1URzcAR7kBc65bwPrLsCTDcy",
+    "amount_usd": 950.0,
+    "interval": "month",
+    "payment_link": "https://buy.stripe.com/3cI7sNco69qi6YH29l1wY02",
+    "badge": "$950.00 / month"
+  },
+  "corridor_lease_tier_c_750": {
+    "name": "WNC Trade Network \u2014 Exclusive Corridor Lease (Tier C)",
+    "product_id": "prod_VSvTGCV4xyn1mE",
+    "price_id": "price_1URzcCR7kBc65bwPHVIeYvK6",
+    "amount_usd": 750.0,
+    "interval": "month",
+    "payment_link": "https://buy.stripe.com/5kQcN7co6eKCaaT01d1wY03",
+    "badge": "$750.00 / month"
+  }
+}

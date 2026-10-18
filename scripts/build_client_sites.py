@@ -19,6 +19,7 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DATA_FILE = REPO_ROOT / "data" / "clients.json"
+STRIPE_FILE = REPO_ROOT / "data" / "stripe_products.json"
 SITES_DIR = REPO_ROOT / "sites"
 BASE_DOMAIN = "preview.ridgelinetrade.com"
 BASE_URL = f"https://{BASE_DOMAIN}"
@@ -26,6 +27,12 @@ BASE_URL = f"https://{BASE_DOMAIN}"
 def load_clients():
     with open(DATA_FILE, "r", encoding="utf-8") as f:
         return json.load(f)
+
+def load_stripe_products():
+    if STRIPE_FILE.exists():
+        with open(STRIPE_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return {}
 
 def generate_client_html(c):
     """Generates the single-file, 100/100 PageSpeed, conversion-optimized HTML for a client."""
@@ -961,6 +968,12 @@ def generate_sitemap_xml(slug):
 
 def generate_master_portal_html(clients):
     """Generates the master showcase portal at /index.html with interactive audit, SMS copy, and live demo links."""
+    stripe_catalog = load_stripe_products()
+    rental_link = stripe_catalog.get("website_rental_49", {}).get("payment_link", "https://buy.stripe.com/8x29AV87Q6e6er98xJ1wY00")
+    tier_a_link = stripe_catalog.get("corridor_lease_tier_a_1250", {}).get("payment_link", "https://buy.stripe.com/fZueVf4VEfOG0Aj4ht1wY01")
+    tier_b_link = stripe_catalog.get("corridor_lease_tier_b_950", {}).get("payment_link", "https://buy.stripe.com/3cI7sNco69qi6YH29l1wY02")
+    tier_c_link = stripe_catalog.get("corridor_lease_tier_c_750", {}).get("payment_link", "https://buy.stripe.com/5kQcN7co6eKCaaT01d1wY03")
+    
     table_rows = ""
     client_cards = ""
     
@@ -1013,6 +1026,7 @@ def generate_master_portal_html(clients):
             <div class="action-btn-group">
               <a href="/sites/{c['slug']}/" target="_blank" class="btn-demo">View Site ↗</a>
               <button class="btn-sms" onclick="copySmsPitch('{c['slug']}')">Copy SMS</button>
+              <button class="btn-sms" onclick="copyStripeLink('{rental_link}', '$49/mo')" style="background: #10b981;">$49 Link</button>
             </div>
             <textarea id="sms-text-{c['slug']}" style="display:none;">{sms_pitch}</textarea>
           </td>
@@ -1077,7 +1091,8 @@ def generate_master_portal_html(clients):
           
           <div class="card-footer">
             <a href="/sites/{c['slug']}/" target="_blank" class="card-action-btn primary">Open Live Mockup ↗</a>
-            <button class="card-action-btn secondary" onclick="copySmsPitch('{c['slug']}')">Copy Cold SMS Pitch</button>
+            <button class="card-action-btn secondary" onclick="copySmsPitch('{c['slug']}')">Copy SMS Pitch</button>
+            <button class="card-action-btn" onclick="copyStripeLink('{rental_link}', '$49/mo Website Rental')" style="background: #10b981; color: #fff; border: 1px solid #059669;">Copy $49/mo Link</button>
           </div>
         </div>
         """
@@ -1510,6 +1525,23 @@ def generate_master_portal_html(clients):
 
   <div class="container">
     
+    <!-- Stripe Quick Actions Bar -->
+    <div style="background: rgba(99, 102, 241, 0.08); border: 1px solid rgba(99, 102, 241, 0.25); border-radius: 12px; padding: 1.25rem 1.5rem; margin-bottom: 2rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;">
+      <div>
+        <div style="font-weight: 700; color: #818cf8; font-size: 0.95rem; margin-bottom: 0.25rem; display: flex; align-items: center; gap: 0.5rem;">
+          <span>💳 Live Stripe Checkout & Lease Links</span>
+          <span style="font-size: 0.75rem; background: rgba(16, 185, 129, 0.2); color: #34d399; padding: 0.15rem 0.5rem; border-radius: 9999px;">Active</span>
+        </div>
+        <div style="font-size: 0.82rem; color: #94a3b8;">Click to copy ready-to-send payment links configured with company name & mobile phone capture.</div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+        <button onclick="copyStripeLink('{rental_link}', '$49/mo Website Rental')" style="background: #10b981; color: #fff; border: none; padding: 0.55rem 0.95rem; border-radius: 6px; font-weight: 600; font-size: 0.82rem; cursor: pointer; transition: opacity 0.2s;">Copy $49/mo Link</button>
+        <button onclick="copyStripeLink('{tier_a_link}', 'Tier A ($1,250/mo)')" style="background: #3b82f6; color: #fff; border: none; padding: 0.55rem 0.95rem; border-radius: 6px; font-weight: 600; font-size: 0.82rem; cursor: pointer; transition: opacity 0.2s;">Tier A ($1,250/mo)</button>
+        <button onclick="copyStripeLink('{tier_b_link}', 'Tier B ($950/mo)')" style="background: #6366f1; color: #fff; border: none; padding: 0.55rem 0.95rem; border-radius: 6px; font-weight: 600; font-size: 0.82rem; cursor: pointer; transition: opacity 0.2s;">Tier B ($950/mo)</button>
+        <button onclick="copyStripeLink('{tier_c_link}', 'Tier C ($750/mo)')" style="background: #8b5cf6; color: #fff; border: none; padding: 0.55rem 0.95rem; border-radius: 6px; font-weight: 600; font-size: 0.82rem; cursor: pointer; transition: opacity 0.2s;">Tier C ($750/mo)</button>
+      </div>
+    </div>
+    
     <!-- Executive Comparison Table -->
     <div class="section-title">
       <span>Contractor Audit & Speed Comparison Matrix</span>
@@ -1593,12 +1625,26 @@ def generate_master_portal_html(clients):
       
       navigator.clipboard.writeText(textarea.value).then(() => {{
         const toast = document.getElementById('copy-toast');
+        toast.textContent = '✓ Copied Cold SMS Pitch to clipboard!';
         toast.style.display = 'block';
         setTimeout(() => {{
           toast.style.display = 'none';
         }}, 3000);
       }}).catch(err => {{
         alert('Could not copy automatically: ' + err);
+      }});
+    }}
+
+    function copyStripeLink(url, label) {{
+      navigator.clipboard.writeText(url).then(() => {{
+        const toast = document.getElementById('copy-toast');
+        toast.textContent = '✓ Copied ' + label + ' Checkout Link to clipboard!';
+        toast.style.display = 'block';
+        setTimeout(() => {{
+          toast.style.display = 'none';
+        }}, 3000);
+      }}).catch(err => {{
+        alert('Could not copy link: ' + err);
       }});
     }}
   </script>

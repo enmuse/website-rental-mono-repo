@@ -426,6 +426,23 @@
 
   <div class="container">
     
+    <!-- Stripe Quick Actions Bar -->
+    <div style="background: rgba(99, 102, 241, 0.08); border: 1px solid rgba(99, 102, 241, 0.25); border-radius: 12px; padding: 1.25rem 1.5rem; margin-bottom: 2rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;">
+      <div>
+        <div style="font-weight: 700; color: #818cf8; font-size: 0.95rem; margin-bottom: 0.25rem; display: flex; align-items: center; gap: 0.5rem;">
+          <span>💳 Live Stripe Checkout & Lease Links</span>
+          <span style="font-size: 0.75rem; background: rgba(16, 185, 129, 0.2); color: #34d399; padding: 0.15rem 0.5rem; border-radius: 9999px;">Active</span>
+        </div>
+        <div style="font-size: 0.82rem; color: #94a3b8;">Click to copy ready-to-send payment links configured with company name & mobile phone capture.</div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+        <button onclick="copyStripeLink('https://buy.stripe.com/8x29AV87Q6e6er98xJ1wY00', '$49/mo Website Rental')" style="background: #10b981; color: #fff; border: none; padding: 0.55rem 0.95rem; border-radius: 6px; font-weight: 600; font-size: 0.82rem; cursor: pointer; transition: opacity 0.2s;">Copy $49/mo Link</button>
+        <button onclick="copyStripeLink('https://buy.stripe.com/fZueVf4VEfOG0Aj4ht1wY01', 'Tier A ($1,250/mo)')" style="background: #3b82f6; color: #fff; border: none; padding: 0.55rem 0.95rem; border-radius: 6px; font-weight: 600; font-size: 0.82rem; cursor: pointer; transition: opacity 0.2s;">Tier A ($1,250/mo)</button>
+        <button onclick="copyStripeLink('https://buy.stripe.com/3cI7sNco69qi6YH29l1wY02', 'Tier B ($950/mo)')" style="background: #6366f1; color: #fff; border: none; padding: 0.55rem 0.95rem; border-radius: 6px; font-weight: 600; font-size: 0.82rem; cursor: pointer; transition: opacity 0.2s;">Tier B ($950/mo)</button>
+        <button onclick="copyStripeLink('https://buy.stripe.com/5kQcN7co6eKCaaT01d1wY03', 'Tier C ($750/mo)')" style="background: #8b5cf6; color: #fff; border: none; padding: 0.55rem 0.95rem; border-radius: 6px; font-weight: 600; font-size: 0.82rem; cursor: pointer; transition: opacity 0.2s;">Tier C ($750/mo)</button>
+      </div>
+    </div>
+    
     <!-- Executive Comparison Table -->
     <div class="section-title">
       <span>Contractor Audit & Speed Comparison Matrix</span>
@@ -471,6 +488,7 @@
             <div class="action-btn-group">
               <a href="/sites/tates-grading/" target="_blank" class="btn-demo">View Site ↗</a>
               <button class="btn-sms" onclick="copySmsPitch('tates-grading')">Copy SMS</button>
+              <button class="btn-sms" onclick="copyStripeLink('https://buy.stripe.com/8x29AV87Q6e6er98xJ1wY00', '$49/mo')" style="background: #10b981;">$49 Link</button>
             </div>
             <textarea id="sms-text-tates-grading" style="display:none;">Hey Colton Tate, Brandon here in Hendersonville. Ran an automated Google speed test on your web presence for Tate's Grading and saw mobile visitors wait 18.2s for your page (scores 56/100 on Google PageSpeed). In WNC, slow load times lose callers. Your mountain craftsmanship is top tier, so I took photos of your actual work (Mountain Site Hauling & Peterbilt Dump Fleet), optimized them, and built a high-speed mockup for you that hits 100/100 and loads in 0.4s: https://preview.ridgelinetrade.com/sites/tates-grading/ If you like it, I host and maintain it for $49/mo flat—zero setup fee, no contracts, and you keep your domain. Let me know what you think!</textarea>
           </td>
@@ -501,6 +519,7 @@
             <div class="action-btn-group">
               <a href="/sites/turning-leaf-tree/" target="_blank" class="btn-demo">View Site ↗</a>
               <button class="btn-sms" onclick="copySmsPitch('turning-leaf-tree')">Copy SMS</button>
+              <button class="btn-sms" onclick="copyStripeLink('https://buy.stripe.com/8x29AV87Q6e6er98xJ1wY00', '$49/mo')" style="background: #10b981;">$49 Link</button>
             </div>
             <textarea id="sms-text-turning-leaf-tree" style="display:none;">Hey Andrew Owens, Brandon here in Hendersonville. Ran an automated Google speed test on your web presence for Turning Leaf Tree and saw mobile visitors wait 9.9s for your page (scores 60/100 on Google PageSpeed). In WNC, slow load times lose callers. Your mountain craftsmanship is top tier, so I took photos of your actual work (Crane-Assisted Mountain Oak Take-Down), optimized them, and built a high-speed mockup for you that hits 100/100 and loads in 0.4s: https://preview.ridgelinetrade.com/sites/turning-leaf-tree/ If you like it, I host and maintain it for $49/mo flat—zero setup fee, no contracts, and you keep your domain. Let me know what you think!</textarea>
           </td>
@@ -531,6 +550,7 @@
             <div class="action-btn-group">
               <a href="/sites/riveras-roofing/" target="_blank" class="btn-demo">View Site ↗</a>
               <button class="btn-sms" onclick="copySmsPitch('riveras-roofing')">Copy SMS</button>
+              <button class="btn-sms" onclick="copyStripeLink('https://buy.stripe.com/8x29AV87Q6e6er98xJ1wY00', '$49/mo')" style="background: #10b981;">$49 Link</button>
             </div>
             <textarea id="sms-text-riveras-roofing" style="display:none;">Hey Rivera, Brandon here in Hendersonville. Ran an automated Google speed test on your web presence for Rivera's Roofing and saw mobile visitors wait 5.5s for your page (scores 74/100 on Google PageSpeed). In WNC, slow load times lose callers. Your mountain craftsmanship is top tier, so I took photos of your actual work (Architectural Shingle Roofing Installation), optimized them, and built a high-speed mockup for you that hits 100/100 and loads in 0.4s: https://preview.ridgelinetrade.com/sites/riveras-roofing/ If you like it, I host and maintain it for $49/mo flat—zero setup fee, no contracts, and you keep your domain. Let me know what you think!</textarea>
           </td>
@@ -561,6 +581,7 @@
             <div class="action-btn-group">
               <a href="/sites/dirtworks-septic/" target="_blank" class="btn-demo">View Site ↗</a>
               <button class="btn-sms" onclick="copySmsPitch('dirtworks-septic')">Copy SMS</button>
+              <button class="btn-sms" onclick="copyStripeLink('https://buy.stripe.com/8x29AV87Q6e6er98xJ1wY00', '$49/mo')" style="background: #10b981;">$49 Link</button>
             </div>
             <textarea id="sms-text-dirtworks-septic" style="display:none;">Hey James, Brandon here in Hendersonville. Ran an automated Google speed test on your web presence for Dirtworks Septic and saw mobile visitors wait 7.6s for your page (scores 42/100 on Google PageSpeed). In WNC, slow load times lose callers. Your mountain craftsmanship is top tier, so I took photos of your actual work (Highlands Private Estate Septic Pumping), optimized them, and built a high-speed mockup for you that hits 100/100 and loads in 0.4s: https://preview.ridgelinetrade.com/sites/dirtworks-septic/ If you like it, I host and maintain it for $49/mo flat—zero setup fee, no contracts, and you keep your domain. Let me know what you think!</textarea>
           </td>
@@ -591,6 +612,7 @@
             <div class="action-btn-group">
               <a href="/sites/mateos-retaining-walls/" target="_blank" class="btn-demo">View Site ↗</a>
               <button class="btn-sms" onclick="copySmsPitch('mateos-retaining-walls')">Copy SMS</button>
+              <button class="btn-sms" onclick="copyStripeLink('https://buy.stripe.com/8x29AV87Q6e6er98xJ1wY00', '$49/mo')" style="background: #10b981;">$49 Link</button>
             </div>
             <textarea id="sms-text-mateos-retaining-walls" style="display:none;">Hey Mateo, Brandon here in Hendersonville. Ran an automated Google speed test on your web presence for Mateo's Retaining Walls and saw mobile visitors wait 6.8s for your page (scores 52/100 on Google PageSpeed). In WNC, slow load times lose callers. Your mountain craftsmanship is top tier, so I took photos of your actual work (Steep Hillside Boulder Retaining Wall), optimized them, and built a high-speed mockup for you that hits 100/100 and loads in 0.4s: https://preview.ridgelinetrade.com/sites/mateos-retaining-walls/ If you like it, I host and maintain it for $49/mo flat—zero setup fee, no contracts, and you keep your domain. Let me know what you think!</textarea>
           </td>
@@ -621,6 +643,7 @@
             <div class="action-btn-group">
               <a href="/sites/tri-city-paving/" target="_blank" class="btn-demo">View Site ↗</a>
               <button class="btn-sms" onclick="copySmsPitch('tri-city-paving')">Copy SMS</button>
+              <button class="btn-sms" onclick="copyStripeLink('https://buy.stripe.com/8x29AV87Q6e6er98xJ1wY00', '$49/mo')" style="background: #10b981;">$49 Link</button>
             </div>
             <textarea id="sms-text-tri-city-paving" style="display:none;">Hey Brian, Brandon here in Hendersonville. Ran an automated Google speed test on your web presence for Tri-City Paving and saw mobile visitors wait 8.1s for your page (scores 38/100 on Google PageSpeed). In WNC, slow load times lose callers. Your mountain craftsmanship is top tier, so I took photos of your actual work (Residential Driveway Hot-Mix Asphalt Paving), optimized them, and built a high-speed mockup for you that hits 100/100 and loads in 0.4s: https://preview.ridgelinetrade.com/sites/tri-city-paving/ If you like it, I host and maintain it for $49/mo flat—zero setup fee, no contracts, and you keep your domain. Let me know what you think!</textarea>
           </td>
@@ -651,6 +674,7 @@
             <div class="action-btn-group">
               <a href="/sites/capstone-crawlspace/" target="_blank" class="btn-demo">View Site ↗</a>
               <button class="btn-sms" onclick="copySmsPitch('capstone-crawlspace')">Copy SMS</button>
+              <button class="btn-sms" onclick="copyStripeLink('https://buy.stripe.com/8x29AV87Q6e6er98xJ1wY00', '$49/mo')" style="background: #10b981;">$49 Link</button>
             </div>
             <textarea id="sms-text-capstone-crawlspace" style="display:none;">Hey Liam, Brandon here in Hendersonville. Ran an automated Google speed test on your web presence for Capstone Crawlspace and saw mobile visitors wait 7.2s for your page (scores 58/100 on Google PageSpeed). In WNC, slow load times lose callers. Your mountain craftsmanship is top tier, so I took photos of your actual work (20-Mil Antimicrobial CleanSpace Encapsulation), optimized them, and built a high-speed mockup for you that hits 100/100 and loads in 0.4s: https://preview.ridgelinetrade.com/sites/capstone-crawlspace/ If you like it, I host and maintain it for $49/mo flat—zero setup fee, no contracts, and you keep your domain. Let me know what you think!</textarea>
           </td>
@@ -681,6 +705,7 @@
             <div class="action-btn-group">
               <a href="/sites/coomers-well-pump/" target="_blank" class="btn-demo">View Site ↗</a>
               <button class="btn-sms" onclick="copySmsPitch('coomers-well-pump')">Copy SMS</button>
+              <button class="btn-sms" onclick="copyStripeLink('https://buy.stripe.com/8x29AV87Q6e6er98xJ1wY00', '$49/mo')" style="background: #10b981;">$49 Link</button>
             </div>
             <textarea id="sms-text-coomers-well-pump" style="display:none;">Hey Coomer, Brandon here in Hendersonville. Ran an automated Google speed test on your web presence for Coomer's Well & Pump and saw mobile visitors wait 6.1s for your page (scores 64/100 on Google PageSpeed). In WNC, slow load times lose callers. Your mountain craftsmanship is top tier, so I took photos of your actual work (Coomer's Well & Pump Mobile Service Rig), optimized them, and built a high-speed mockup for you that hits 100/100 and loads in 0.4s: https://preview.ridgelinetrade.com/sites/coomers-well-pump/ If you like it, I host and maintain it for $49/mo flat—zero setup fee, no contracts, and you keep your domain. Let me know what you think!</textarea>
           </td>
@@ -711,6 +736,7 @@
             <div class="action-btn-group">
               <a href="/sites/wnc-decks/" target="_blank" class="btn-demo">View Site ↗</a>
               <button class="btn-sms" onclick="copySmsPitch('wnc-decks')">Copy SMS</button>
+              <button class="btn-sms" onclick="copyStripeLink('https://buy.stripe.com/8x29AV87Q6e6er98xJ1wY00', '$49/mo')" style="background: #10b981;">$49 Link</button>
             </div>
             <textarea id="sms-text-wnc-decks" style="display:none;">Hey Dave, Brandon here in Hendersonville. Ran an automated Google speed test on your web presence for WNC Decks and saw mobile visitors wait 7.9s for your page (scores 46/100 on Google PageSpeed). In WNC, slow load times lose callers. Your mountain craftsmanship is top tier, so I took photos of your actual work (Steep Hillside Mountain Deck Framing), optimized them, and built a high-speed mockup for you that hits 100/100 and loads in 0.4s: https://preview.ridgelinetrade.com/sites/wnc-decks/ If you like it, I host and maintain it for $49/mo flat—zero setup fee, no contracts, and you keep your domain. Let me know what you think!</textarea>
           </td>
@@ -741,6 +767,7 @@
             <div class="action-btn-group">
               <a href="/sites/moss-log-homes/" target="_blank" class="btn-demo">View Site ↗</a>
               <button class="btn-sms" onclick="copySmsPitch('moss-log-homes')">Copy SMS</button>
+              <button class="btn-sms" onclick="copyStripeLink('https://buy.stripe.com/8x29AV87Q6e6er98xJ1wY00', '$49/mo')" style="background: #10b981;">$49 Link</button>
             </div>
             <textarea id="sms-text-moss-log-homes" style="display:none;">Hey Moss, Brandon here in Hendersonville. Ran an automated Google speed test on your web presence for Moss Log Homes and saw mobile visitors wait 9.2s for your page (scores 29/100 on Google PageSpeed). In WNC, slow load times lose callers. Your mountain craftsmanship is top tier, so I took photos of your actual work (Low-Pressure Corn Cob Media Blasting), optimized them, and built a high-speed mockup for you that hits 100/100 and loads in 0.4s: https://preview.ridgelinetrade.com/sites/moss-log-homes/ If you like it, I host and maintain it for $49/mo flat—zero setup fee, no contracts, and you keep your domain. Let me know what you think!</textarea>
           </td>
@@ -816,7 +843,8 @@
           
           <div class="card-footer">
             <a href="/sites/tates-grading/" target="_blank" class="card-action-btn primary">Open Live Mockup ↗</a>
-            <button class="card-action-btn secondary" onclick="copySmsPitch('tates-grading')">Copy Cold SMS Pitch</button>
+            <button class="card-action-btn secondary" onclick="copySmsPitch('tates-grading')">Copy SMS Pitch</button>
+            <button class="card-action-btn" onclick="copyStripeLink('https://buy.stripe.com/8x29AV87Q6e6er98xJ1wY00', '$49/mo Website Rental')" style="background: #10b981; color: #fff; border: 1px solid #059669;">Copy $49/mo Link</button>
           </div>
         </div>
         
@@ -880,7 +908,8 @@
           
           <div class="card-footer">
             <a href="/sites/turning-leaf-tree/" target="_blank" class="card-action-btn primary">Open Live Mockup ↗</a>
-            <button class="card-action-btn secondary" onclick="copySmsPitch('turning-leaf-tree')">Copy Cold SMS Pitch</button>
+            <button class="card-action-btn secondary" onclick="copySmsPitch('turning-leaf-tree')">Copy SMS Pitch</button>
+            <button class="card-action-btn" onclick="copyStripeLink('https://buy.stripe.com/8x29AV87Q6e6er98xJ1wY00', '$49/mo Website Rental')" style="background: #10b981; color: #fff; border: 1px solid #059669;">Copy $49/mo Link</button>
           </div>
         </div>
         
@@ -944,7 +973,8 @@
           
           <div class="card-footer">
             <a href="/sites/riveras-roofing/" target="_blank" class="card-action-btn primary">Open Live Mockup ↗</a>
-            <button class="card-action-btn secondary" onclick="copySmsPitch('riveras-roofing')">Copy Cold SMS Pitch</button>
+            <button class="card-action-btn secondary" onclick="copySmsPitch('riveras-roofing')">Copy SMS Pitch</button>
+            <button class="card-action-btn" onclick="copyStripeLink('https://buy.stripe.com/8x29AV87Q6e6er98xJ1wY00', '$49/mo Website Rental')" style="background: #10b981; color: #fff; border: 1px solid #059669;">Copy $49/mo Link</button>
           </div>
         </div>
         
@@ -1008,7 +1038,8 @@
           
           <div class="card-footer">
             <a href="/sites/dirtworks-septic/" target="_blank" class="card-action-btn primary">Open Live Mockup ↗</a>
-            <button class="card-action-btn secondary" onclick="copySmsPitch('dirtworks-septic')">Copy Cold SMS Pitch</button>
+            <button class="card-action-btn secondary" onclick="copySmsPitch('dirtworks-septic')">Copy SMS Pitch</button>
+            <button class="card-action-btn" onclick="copyStripeLink('https://buy.stripe.com/8x29AV87Q6e6er98xJ1wY00', '$49/mo Website Rental')" style="background: #10b981; color: #fff; border: 1px solid #059669;">Copy $49/mo Link</button>
           </div>
         </div>
         
@@ -1072,7 +1103,8 @@
           
           <div class="card-footer">
             <a href="/sites/mateos-retaining-walls/" target="_blank" class="card-action-btn primary">Open Live Mockup ↗</a>
-            <button class="card-action-btn secondary" onclick="copySmsPitch('mateos-retaining-walls')">Copy Cold SMS Pitch</button>
+            <button class="card-action-btn secondary" onclick="copySmsPitch('mateos-retaining-walls')">Copy SMS Pitch</button>
+            <button class="card-action-btn" onclick="copyStripeLink('https://buy.stripe.com/8x29AV87Q6e6er98xJ1wY00', '$49/mo Website Rental')" style="background: #10b981; color: #fff; border: 1px solid #059669;">Copy $49/mo Link</button>
           </div>
         </div>
         
@@ -1136,7 +1168,8 @@
           
           <div class="card-footer">
             <a href="/sites/tri-city-paving/" target="_blank" class="card-action-btn primary">Open Live Mockup ↗</a>
-            <button class="card-action-btn secondary" onclick="copySmsPitch('tri-city-paving')">Copy Cold SMS Pitch</button>
+            <button class="card-action-btn secondary" onclick="copySmsPitch('tri-city-paving')">Copy SMS Pitch</button>
+            <button class="card-action-btn" onclick="copyStripeLink('https://buy.stripe.com/8x29AV87Q6e6er98xJ1wY00', '$49/mo Website Rental')" style="background: #10b981; color: #fff; border: 1px solid #059669;">Copy $49/mo Link</button>
           </div>
         </div>
         
@@ -1200,7 +1233,8 @@
           
           <div class="card-footer">
             <a href="/sites/capstone-crawlspace/" target="_blank" class="card-action-btn primary">Open Live Mockup ↗</a>
-            <button class="card-action-btn secondary" onclick="copySmsPitch('capstone-crawlspace')">Copy Cold SMS Pitch</button>
+            <button class="card-action-btn secondary" onclick="copySmsPitch('capstone-crawlspace')">Copy SMS Pitch</button>
+            <button class="card-action-btn" onclick="copyStripeLink('https://buy.stripe.com/8x29AV87Q6e6er98xJ1wY00', '$49/mo Website Rental')" style="background: #10b981; color: #fff; border: 1px solid #059669;">Copy $49/mo Link</button>
           </div>
         </div>
         
@@ -1264,7 +1298,8 @@
           
           <div class="card-footer">
             <a href="/sites/coomers-well-pump/" target="_blank" class="card-action-btn primary">Open Live Mockup ↗</a>
-            <button class="card-action-btn secondary" onclick="copySmsPitch('coomers-well-pump')">Copy Cold SMS Pitch</button>
+            <button class="card-action-btn secondary" onclick="copySmsPitch('coomers-well-pump')">Copy SMS Pitch</button>
+            <button class="card-action-btn" onclick="copyStripeLink('https://buy.stripe.com/8x29AV87Q6e6er98xJ1wY00', '$49/mo Website Rental')" style="background: #10b981; color: #fff; border: 1px solid #059669;">Copy $49/mo Link</button>
           </div>
         </div>
         
@@ -1328,7 +1363,8 @@
           
           <div class="card-footer">
             <a href="/sites/wnc-decks/" target="_blank" class="card-action-btn primary">Open Live Mockup ↗</a>
-            <button class="card-action-btn secondary" onclick="copySmsPitch('wnc-decks')">Copy Cold SMS Pitch</button>
+            <button class="card-action-btn secondary" onclick="copySmsPitch('wnc-decks')">Copy SMS Pitch</button>
+            <button class="card-action-btn" onclick="copyStripeLink('https://buy.stripe.com/8x29AV87Q6e6er98xJ1wY00', '$49/mo Website Rental')" style="background: #10b981; color: #fff; border: 1px solid #059669;">Copy $49/mo Link</button>
           </div>
         </div>
         
@@ -1392,7 +1428,8 @@
           
           <div class="card-footer">
             <a href="/sites/moss-log-homes/" target="_blank" class="card-action-btn primary">Open Live Mockup ↗</a>
-            <button class="card-action-btn secondary" onclick="copySmsPitch('moss-log-homes')">Copy Cold SMS Pitch</button>
+            <button class="card-action-btn secondary" onclick="copySmsPitch('moss-log-homes')">Copy SMS Pitch</button>
+            <button class="card-action-btn" onclick="copyStripeLink('https://buy.stripe.com/8x29AV87Q6e6er98xJ1wY00', '$49/mo Website Rental')" style="background: #10b981; color: #fff; border: 1px solid #059669;">Copy $49/mo Link</button>
           </div>
         </div>
         
@@ -1449,12 +1486,26 @@
       
       navigator.clipboard.writeText(textarea.value).then(() => {
         const toast = document.getElementById('copy-toast');
+        toast.textContent = '✓ Copied Cold SMS Pitch to clipboard!';
         toast.style.display = 'block';
         setTimeout(() => {
           toast.style.display = 'none';
         }, 3000);
       }).catch(err => {
         alert('Could not copy automatically: ' + err);
+      });
+    }
+
+    function copyStripeLink(url, label) {
+      navigator.clipboard.writeText(url).then(() => {
+        const toast = document.getElementById('copy-toast');
+        toast.textContent = '✓ Copied ' + label + ' Checkout Link to clipboard!';
+        toast.style.display = 'block';
+        setTimeout(() => {
+          toast.style.display = 'none';
+        }, 3000);
+      }).catch(err => {
+        alert('Could not copy link: ' + err);
       });
     }
   </script>

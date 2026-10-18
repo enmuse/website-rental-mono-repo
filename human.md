@@ -29,9 +29,8 @@
 │                      REMAINING WORK                          │
 │                                                              │
 │  1. Send Cold Text Outreach to 10 Contractors (~15 mins)     │
-│  2. Stripe $49/mo Recurring Subscription Link (~5 mins)      │
-│  3. Custom Domain Delegation upon Client Signup (~3 mins)    │
-│  4. 60-Day Corridor Lease Upsell Execution (On autopilot)   │
+│  2. Custom Domain Delegation upon Client Signup (~3 mins)    │
+│  3. 60-Day Corridor Lease Upsell Execution (On autopilot)   │
 └──────────────────────────────────────────────────────────────┘
 ```
 
@@ -253,24 +252,23 @@ I host and maintain it for $49/mo flat—no contracts, no tech hassles, and dire
 
 ---
 
-### Task 2: Stripe $49/mo Recurring Subscription Link (~5 minutes)
+### ✅ Stripe Subscription Links (Live & Ready)
 
-1. Log into your **Stripe Dashboard** ([dashboard.stripe.com](https://dashboard.stripe.com)).
-2. Go to **Product catalog** → **Add product**:
-   - **Name:** `WNC Contractor Website Rental & Cloud Hosting`
-   - **Description:** `Monthly hosting, Cloudflare edge CDN, SSL certificate maintenance, and on-demand phone/address updates.`
-   - **Pricing Model:** Flat rate
-   - **Price:** `$49.00`
-   - **Billing Period:** Monthly (Recurring)
-3. Click **Save product** and click **Create payment link**.
-4. When a contractor replies *"Sounds good, how do we start?"*, reply:
-   ```text
-   Awesome! You can activate the $49/mo hosting right here: [PASTE_STRIPE_LINK]. As soon as it's active, I'll point your domain name so it goes live immediately!
-   ```
+* **$49/mo Website Rental Payment Link:**  
+  👉 **`https://buy.stripe.com/8x29AV87Q6e6er98xJ1wY00`**  
+  *(Configured with Contractor Company Name and Mobile Phone collection)*
+
+When a contractor replies *"Sounds good, how do we start?"*, text back:
+```text
+Awesome! You can activate your $49/mo hosting right here:
+https://buy.stripe.com/8x29AV87Q6e6er98xJ1wY00
+
+As soon as that's active, I'll point your domain name so your new high-speed site goes live immediately!
+```
 
 ---
 
-### Task 3: Custom Domain Delegation (~3 minutes per onboarding)
+### Task 2: Custom Domain Delegation (~3 minutes per onboarding)
 
 When a contractor signs up:
 1. Log into your Cloudflare Dashboard (Account: `Brandon@enmusehealth.com's Account`).
@@ -281,7 +279,7 @@ When a contractor signs up:
 
 ---
 
-### Task 4: The 60-Day Rank-and-Rent Upsell Sequence
+### Task 3: The 60-Day Rank-and-Rent Upsell Sequence
 
 Once a client has been happily paying $49/mo for 60 days:
 1. Check call volume in Twilio on the matching WNC Trade domain corridor (e.g., `wnctreeremoval.com/metro-asheville/`).
@@ -289,7 +287,15 @@ Once a client has been happily paying $49/mo for 60 days:
    ```text
    Hey [Owner Name], hope your new site has been treating you well! 
    
-   Quick heads up: We own the #1 ranked territory asset wnc[trade].com for [Corridor Name]. Last month it generated [X] phone calls for [service] in your county. We are leasing the exclusive phone routing for the entire corridor for a flat $950/mo (no per-lead fees). 
+   Quick heads up: We own the #1 ranked territory asset wnc[trade].com for [Corridor Name]. Last month it generated [X] phone calls for [service] in your county. We are leasing the exclusive phone routing for the entire corridor for a flat monthly fee (no per-lead fees). 
    
    Since you're already a trusted partner, I'm giving you first right of refusal before offering it to other crews in the area. Let me know if you want to hop on a 5-minute call!
    ```
+3. When they agree to lease the corridor, send them their tier's checkout link:
+   * **Tier A ($1,250/mo)** *(Metro Asheville Tree, Southern Plateau Excavation, Highlands Septic, Log Homes)*:  
+     👉 `https://buy.stripe.com/fZueVf4VEfOG0Aj4ht1wY01`
+   * **Tier B ($950/mo)** *(Roofing, Retaining Walls, Crawlspace, Water Systems, Deck Building)*:  
+     👉 `https://buy.stripe.com/3cI7sNco69qi6YH29l1wY02`
+   * **Tier C ($750/mo)** *(Driveway Paving & Grading)*:  
+     👉 `https://buy.stripe.com/5kQcN7co6eKCaaT01d1wY03`
+
