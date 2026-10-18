@@ -1,8 +1,8 @@
 [
   {
-    "slug": "pace-excavation",
-    "business_name": "Pace Construction & Excavation, Inc.",
-    "short_name": "Pace Excavation",
+    "slug": "tates-grading",
+    "business_name": "Tate's Grading (Colton Enterprises)",
+    "short_name": "Tate's Grading",
     "trade": "Excavation & Land Clearing",
     "trade_network_domain": "wncexcavating.com",
     "trade_network_corridor_slug": "southern-plateau",
@@ -15,90 +15,90 @@
       "Fletcher"
     ],
     "county": "Henderson County, NC",
-    "owner_name": "Mark Pace",
+    "owner_name": "Colton Tate",
     "owner_title": "Owner & Lead Operator",
-    "cell_phone": "(828) 242-1420",
-    "office_phone": "(828) 696-9118",
-    "direct_sms_number": "+18282421420",
-    "street_address": "171 Terrace Mountain Dr",
+    "cell_phone": "(828) 674-0705",
+    "office_phone": "(828) 674-4042",
+    "direct_sms_number": "+18286740705",
+    "street_address": "3442 Howard Gap Rd",
     "city": "Hendersonville",
     "state": "NC",
-    "zip": "28739",
+    "zip": "28792",
     "geo": {
-      "latitude": 35.3187,
-      "longitude": -82.4614
+      "latitude": 35.3615,
+      "longitude": -82.4178
     },
-    "current_website": "None / Outdated Chamber Profile",
-    "competitor_pagespeed": 24,
-    "competitor_fcp": "4.8s",
-    "competitor_lcp": "8.9s",
-    "upsell_corridor_deal": "wncexcavating.com/southern-plateau/ ($1,250/mo)",
+    "current_website": "https://tatesgradingnc.com",
+    "competitor_pagespeed": 56,
+    "competitor_fcp": "4.2s",
+    "competitor_lcp": "18.2s",
+    "upsell_corridor_deal": "wncexcavating.com/southern-plateau/ (,250/mo)",
     "primary_color": "#1e293b",
     "accent_color": "#d97706",
     "theme_gradient": "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)",
-    "tagline": "Precision Mountain Excavation, Grading & Site Development Across Henderson County",
+    "tagline": "Heavy Mountain Excavation, Complete Site Prep & Precision Grading Across Henderson County",
     "services": [
       {
-        "title": "Mountain Site Preparation",
-        "desc": "Precision pad cutting, boulder removal, and steep-slope stabilization for custom mountain home foundations."
+        "title": "Complete Mountain Site Preparation",
+        "desc": "Full residential and commercial site clearing, heavy boulder extraction, and engineered pad leveling for custom mountain homes."
       },
       {
-        "title": "Driveway Cuts & Road Grading",
-        "desc": "Heavy-duty mountain driveway rough-ins, ditching, culvert installation, and crushed stone base compaction."
+        "title": "Mountain Road & Driveway Cuts",
+        "desc": "Heavy-duty mountain road rough-ins, ditching, culvert installation, and multi-layer crushed stone compaction."
       },
       {
-        "title": "Land Clearing & Forestry Mulching",
-        "desc": "Low-impact brush clearing, selective tree thinning, stump extraction, and view enhancement clearing."
+        "title": "Excavation & Slope Bench Grading",
+        "desc": "Precision bench cutting on steep mountain slopes, foundation footer trenching, and utility line trenching."
       },
       {
-        "title": "Drainage & Erosion Control",
-        "desc": "French drain systems, retention swales, rip-rap check dams, and slope retention complying with NC stormwater rules."
+        "title": "Septic System Installation & Land Clearing",
+        "desc": "Certified Henderson County septic tank and drain field excavation, forestry clearing, and root raking."
       }
     ],
     "trust_badges": [
-      "NC General Contractor & Heavy Equipment Operator",
-      "Over 25 Years Mountain Excavation Experience",
-      "Fully Licensed & $2M Commercial Liability Insured",
-      "Local Family Owned & Operated in Hendersonville"
+      "NC Licensed General Contractor & Heavy Equipment Operator",
+      "Over 20 Years Western North Carolina Mountain Excavation Experience",
+      "Fully Licensed & M Commercial Liability Insured",
+      "Local Family Owned & Operated on Howard Gap Rd, Hendersonville"
     ],
     "testimonials": [
       {
-        "quote": "Mark and his crew carved out our steep mountain homesite in Mills River with surgical precision. They hit massive granite boulders and handled them without blinking.",
-        "author": "David M., Homeowner",
-        "location": "Mills River, NC"
+        "quote": "Colton and the Tate's crew carved out our steep mountain homesite in Hendersonville through solid granite. Their Peterbilt dump trucks and Kobelco operators are absolute masters.",
+        "author": "Mark S., General Contractor",
+        "location": "Hendersonville, NC"
       },
       {
-        "quote": "Best grading contractor in Henderson County. They fixed a washed-out 800-foot driveway and installed proper culverts that have stood up to torrential rains.",
-        "author": "Greg T., Estate Owner",
+        "quote": "Tate's Grading installed our complete mountain driveway and septic system in Flat Rock. Heavy rains hit right after and not an ounce of gravel washed out. Unmatched quality.",
+        "author": "David R., Homeowner",
         "location": "Flat Rock, NC"
       }
     ],
-    "has_custom_logo": false,
-    "logo_path": null,
+    "has_custom_logo": true,
+    "logo_path": "images/logo.png",
     "projects": [
       {
         "image": "images/project-1.jpg",
-        "title": "Mountain Homesite Pad Prep & Granite Excavation",
-        "location": "Mills River / Hendersonville, NC",
-        "desc": "Precision bench cutting and heavy excavator rock hammer clearing for custom residential foundation.",
-        "width": 640,
-        "height": 426
+        "title": "Mountain Site Hauling & Peterbilt Dump Fleet",
+        "location": "Howard Gap / Hendersonville, NC",
+        "desc": "Heavy aggregate hauling and precision fill delivery for multi-tier mountain building pad development.",
+        "width": 560,
+        "height": 373
       },
       {
         "image": "images/project-2.jpg",
-        "title": "Steep Mountain Driveway Cut & Rough-In",
-        "location": "Flat Rock, NC",
-        "desc": "14-foot wide mountain driveway cut, ditching, culvert installation, and heavy stone compaction.",
-        "width": 640,
-        "height": 426
+        "title": "Kobelco Rock Hammer & Steep Slope Cut",
+        "location": "Mills River / Flat Rock, NC",
+        "desc": "Heavy hydraulic rock hammer breaking through solid Blue Ridge granite for custom mountain foundation.",
+        "width": 560,
+        "height": 373
       },
       {
         "image": "images/project-3.jpg",
-        "title": "Low-Impact Forestry Mulching & Land Clearing",
-        "location": "Fletcher, NC",
-        "desc": "Selective brush clearing and root extraction preserving mature mountain hardwoods.",
-        "width": 640,
-        "height": 426
+        "title": "Precision Foundation Bench Grading & Drainage",
+        "location": "Henderson County, NC",
+        "desc": "Engineered multi-level site pad compaction, culvert installation, and erosion control swales.",
+        "width": 560,
+        "height": 373
       }
     ]
   },
@@ -184,24 +184,24 @@
         "title": "Crane-Assisted Mountain Oak Take-Down",
         "location": "Black Mountain, NC",
         "desc": "Zero-impact technical rigging and crane lift removing hazardous 85-foot leaning red oak over a residential roofline.",
-        "width": 640,
-        "height": 426
+        "width": 560,
+        "height": 373
       },
       {
         "image": "images/project-2.jpg",
-        "title": "Dead Hemlock Slope Clearing & Rigging",
+        "title": "Technical Mountain Arborist Rigging & Rope Work",
         "location": "Swannanoa / Asheville, NC",
-        "desc": "Controlled sectional felling of beetle-damaged hemlocks along steep 40-degree mountain ridge.",
-        "width": 640,
-        "height": 426
+        "desc": "Controlled sectional lowering of heavy oak limbs in confined mountain residential lot.",
+        "width": 560,
+        "height": 373
       },
       {
         "image": "images/project-3.jpg",
-        "title": "Panoramic Mountain View Enhancement",
+        "title": "Steep-Slope Canopy Thinning & View Restoration",
         "location": "Montreat, NC",
-        "desc": "Selective crown reduction and deadwooding restoring 180-degree Blue Ridge mountain vistas.",
-        "width": 640,
-        "height": 426
+        "desc": "Selective crown reduction and hazardous deadwood extraction preserving long-range Blue Ridge views.",
+        "width": 560,
+        "height": 373
       }
     ]
   },
@@ -279,32 +279,32 @@
         "location": "Sylva, NC"
       }
     ],
-    "has_custom_logo": false,
-    "logo_path": null,
+    "has_custom_logo": true,
+    "logo_path": "images/logo.png",
     "projects": [
       {
         "image": "images/project-1.jpg",
-        "title": "24-Gauge Standing Seam Metal Roof",
-        "location": "Sylva, NC",
-        "desc": "Concealed fastener charcoal standing seam metal roofing engineered for heavy mountain snow loads and high winds.",
-        "width": 640,
-        "height": 426
+        "title": "Architectural Shingle Roofing Installation",
+        "location": "Sylva / Cullowhee, NC",
+        "desc": "Lifetime high-definition architectural shingles installed with dual synthetic underlayment for mountain wind resistance.",
+        "width": 560,
+        "height": 373
       },
       {
         "image": "images/project-2.jpg",
-        "title": "Architectural Shingle & Ice Shield Installation",
-        "location": "Cullowhee, NC",
-        "desc": "Lifetime high-definition architectural shingles with double ice & water shield membrane in steep roof valleys.",
-        "width": 640,
-        "height": 426
+        "title": "Commercial & Residential Flat EPDM Membrane",
+        "location": "Waynesville, NC",
+        "desc": "Fully-adhered 60-mil EPDM rubber roofing system engineered for freeze-thaw mountain drainage.",
+        "width": 560,
+        "height": 373
       },
       {
         "image": "images/project-3.jpg",
-        "title": "Stone Chimney Counter-Flashing & Cricket Repair",
-        "location": "Waynesville, NC",
-        "desc": "Lead and copper custom bent flashing terminating chronic winter leaks behind stone chimney.",
-        "width": 640,
-        "height": 426
+        "title": "Steep Valley Flashing & Seamless Gutter System",
+        "location": "Jackson County, NC",
+        "desc": "Heavy gauge aluminum valley flashing and 6-inch seamless gutters managing mountain roof runoff.",
+        "width": 560,
+        "height": 373
       }
     ]
   },
@@ -382,32 +382,32 @@
         "location": "Lake Toxaway, NC"
       }
     ],
-    "has_custom_logo": false,
-    "logo_path": null,
+    "has_custom_logo": true,
+    "logo_path": "images/logo.png",
     "projects": [
       {
         "image": "images/project-1.jpg",
-        "title": "Luxury Mountain Estate Septic Pumping",
-        "location": "Cashiers, NC",
+        "title": "Highlands Private Estate Septic Pumping",
+        "location": "Highlands, NC",
         "desc": "High-vacuum low-impact pump truck servicing 1,500-gallon concrete septic tank on high-altitude private estate.",
-        "width": 640,
-        "height": 426
+        "width": 560,
+        "height": 373
       },
       {
         "image": "images/project-2.jpg",
-        "title": "High-Elevation Slope Drain Field Engineering",
-        "location": "Highlands / Lake Toxaway, NC",
-        "desc": "Engineered chamber drain field installation compliant with Jackson County shallow soil percolation standards.",
-        "width": 640,
-        "height": 426
+        "title": "Tank Riser & Baffle Excavation Replacement",
+        "location": "Cashiers / Lake Toxaway, NC",
+        "desc": "Heavy mini-excavator uncovering deep tank lids, replacing cracked inlet baffles, and sealing poly risers to grade.",
+        "width": 560,
+        "height": 373
       },
       {
         "image": "images/project-3.jpg",
-        "title": "Fiber-Optic Sewer Camera Inspection",
-        "location": "Sapphire, NC",
-        "desc": "High-definition diagnostic inspection verifying baffle integrity and line clearing for luxury home purchase.",
-        "width": 640,
-        "height": 426
+        "title": "Mountain Septic Field Diagnostic Pumping Rig",
+        "location": "Sapphire / Glenville, NC",
+        "desc": "Full line jetting and vacuum clearing restoring proper hydrostatic flow to mountain slope drain fields.",
+        "width": 560,
+        "height": 373
       }
     ]
   },
@@ -493,24 +493,24 @@
         "title": "Steep Hillside Boulder Retaining Wall",
         "location": "Saluda / Hendersonville, NC",
         "desc": "Heavy natural mountain granite boulder placement for slope stabilization along a private residential driveway.",
-        "width": 640,
-        "height": 426
+        "width": 560,
+        "height": 373
       },
       {
         "image": "images/project-2.jpg",
-        "title": "Segmental Retaining Block & Integrated Drainage",
+        "title": "Multi-Tier Granite Boulder Slope Retention",
         "location": "Flat Rock, NC",
-        "desc": "Engineered concrete retaining block wall with perforated hydrostatic relief drainage pipes.",
-        "width": 640,
-        "height": 426
+        "desc": "Engineered multi-tier boulder terracing with geotextile fabric and deep crushed aggregate backfill.",
+        "width": 560,
+        "height": 373
       },
       {
         "image": "images/project-3.jpg",
-        "title": "Natural Flagstone Steps & Terraced Patio",
-        "location": "Brevard, NC",
-        "desc": "Hand-chiseled Tennessee fieldstone mountain steps integrating multi-level outdoor living.",
-        "width": 640,
-        "height": 426
+        "title": "Segmental Block & Mountain Hydrostatic Drainage",
+        "location": "Brevard / Hendersonville, NC",
+        "desc": "Engineered retaining wall system with integrated perforated drainage pipes preventing hydrostatic pressure.",
+        "width": 560,
+        "height": 373
       }
     ]
   },
@@ -588,32 +588,32 @@
         "location": "Forest City, NC"
       }
     ],
-    "has_custom_logo": false,
-    "logo_path": null,
+    "has_custom_logo": true,
+    "logo_path": "images/logo.png",
     "projects": [
       {
         "image": "images/project-1.jpg",
         "title": "Residential Driveway Hot-Mix Asphalt Paving",
         "location": "Rutherfordton, NC",
         "desc": "3-inch compacted surface asphalt paved over high-density aggregate base for 500-ft mountain driveway.",
-        "width": 640,
-        "height": 426
+        "width": 560,
+        "height": 373
       },
       {
         "image": "images/project-2.jpg",
-        "title": "Commercial Parking Lot Milling & Resurfacing",
+        "title": "Commercial & Residential Asphalt Compaction",
         "location": "Forest City, NC",
         "desc": "Full edge milling, tack coat bonding, and vibratory roller compaction with clean traffic striping.",
-        "width": 640,
-        "height": 426
+        "width": 560,
+        "height": 373
       },
       {
         "image": "images/project-3.jpg",
-        "title": "Industrial Rubberized Coal Tar Sealcoating",
-        "location": "Marion / Spindale, NC",
-        "desc": "Deep black protective sealcoat and hot-pour rubber crack filling preventing winter moisture penetration.",
-        "width": 640,
-        "height": 426
+        "title": "Waterfront Mountain Estate Heavy Base Paving",
+        "location": "Lake Lure / Spindale, NC",
+        "desc": "Deep aggregate base compaction and seamless hot-mix paving designed for heavy vehicle mountain access.",
+        "width": 560,
+        "height": 373
       }
     ]
   },
@@ -699,24 +699,24 @@
         "title": "20-Mil Antimicrobial CleanSpace Encapsulation",
         "location": "Boone, NC",
         "desc": "Complete crawlspace vapor barrier sealed airtight to foundation walls with perimeter drainage integration.",
-        "width": 640,
-        "height": 426
+        "width": 560,
+        "height": 373
       },
       {
         "image": "images/project-2.jpg",
         "title": "Commercial Energy Star Dehumidifier Installation",
         "location": "Blowing Rock, NC",
         "desc": "Automated high-capacity Santa Fe dehumidifier maintaining sub-50% relative humidity to prevent wood rot.",
-        "width": 640,
-        "height": 426
+        "width": 560,
+        "height": 373
       },
       {
         "image": "images/project-3.jpg",
-        "title": "Submersible Cast-Iron Sump Pump Basin",
+        "title": "Full Mountain Crawlspace Wall Sealing & Insulation",
         "location": "Banner Elk, NC",
-        "desc": "Dual-pump emergency battery backup system managing heavy seasonal snowmelt intrusion.",
-        "width": 640,
-        "height": 426
+        "desc": "Rigid foam insulation and mechanical air sealing eliminating freezing mountain drafts and subfloor moisture.",
+        "width": 560,
+        "height": 373
       }
     ]
   },
@@ -799,27 +799,27 @@
     "projects": [
       {
         "image": "images/project-1.jpg",
-        "title": "Deep Well Submersible Pump Replacement",
+        "title": "Coomer's Well & Pump Mobile Service Rig",
         "location": "Waynesville, NC",
-        "desc": "Heavy-duty Franklin Electric high-head stainless pump installed at 520 ft depth in rocky mountain shale.",
-        "width": 640,
-        "height": 426
+        "desc": "Heavy-duty boom hoist truck equipped for 24/7 mountain well pullouts and deep submersible pump installations.",
+        "width": 560,
+        "height": 373
       },
       {
         "image": "images/project-2.jpg",
-        "title": "Constant Pressure Tank & Water Conditioning",
+        "title": "Deep Well Submersible Pump Replacement",
         "location": "Canton / Maggie Valley, NC",
-        "desc": "Well-X-Trol diaphragm pressure tank with whole-house iron and sediment filtration.",
-        "width": 640,
-        "height": 426
+        "desc": "Heavy-duty Franklin Electric high-head stainless pump installed at 520 ft depth in rocky mountain shale.",
+        "width": 560,
+        "height": 373
       },
       {
         "image": "images/project-3.jpg",
-        "title": "24/7 Emergency Well Head Diagnostic Rig",
-        "location": "Clyde, NC",
-        "desc": "Rapid electrical and pressure switch diagnostic testing to restore flow on freezing morning outage.",
-        "width": 640,
-        "height": 426
+        "title": "Constant Pressure Tank & Water Conditioning",
+        "location": "Clyde / Haywood County, NC",
+        "desc": "Well-X-Trol diaphragm pressure tank with whole-house iron and sediment filtration.",
+        "width": 560,
+        "height": 373
       }
     ]
   },
@@ -902,27 +902,27 @@
     "projects": [
       {
         "image": "images/project-1.jpg",
-        "title": "Two-Story Mountain Slope Composite Deck",
+        "title": "Steep Hillside Mountain Deck Framing",
         "location": "Hendersonville, NC",
-        "desc": "Engineered heavy timber post-and-beam deck with Trex Transcend composite flooring and marine cable rails.",
-        "width": 640,
-        "height": 426
+        "desc": "Engineered heavy timber post-and-beam construction anchored into mountain bedrock.",
+        "width": 560,
+        "height": 373
       },
       {
         "image": "images/project-2.jpg",
-        "title": "Timber-Framed Screened Porch with Pine Ceilings",
+        "title": "Heavy Timber Post-and-Beam Outdoor Living Space",
         "location": "Flat Rock, NC",
-        "desc": "Custom tongue-and-groove vaulted porch ceiling with integrated ceiling fans and recessed lighting.",
-        "width": 640,
-        "height": 426
+        "desc": "Custom rough-sawn structural framing with integrated multi-tier access stairs and panoramic views.",
+        "width": 560,
+        "height": 373
       },
       {
         "image": "images/project-3.jpg",
-        "title": "316 Marine Stainless Steel Cable Railing",
-        "location": "Asheville, NC",
-        "desc": "Sleek low-profile cable railing providing completely unobstructed Blue Ridge mountain views.",
-        "width": 640,
-        "height": 426
+        "title": "Composite Decking & Modern Cable Railing",
+        "location": "Asheville / Mills River, NC",
+        "desc": "Low-maintenance composite boards paired with 316 marine stainless steel cable railing.",
+        "width": 560,
+        "height": 373
       }
     ]
   },
@@ -1000,32 +1000,32 @@
         "location": "Brevard, NC"
       }
     ],
-    "has_custom_logo": false,
-    "logo_path": null,
+    "has_custom_logo": true,
+    "logo_path": "images/logo.png",
     "projects": [
       {
         "image": "images/project-1.jpg",
         "title": "Low-Pressure Corn Cob Media Blasting",
         "location": "Hendersonville / Lake Lure, NC",
         "desc": "Safe organic dry media blasting removing 25 years of blackened UV weathering down to raw virgin pine.",
-        "width": 640,
-        "height": 426
+        "width": 560,
+        "height": 373
       },
       {
         "image": "images/project-2.jpg",
         "title": "Energy-Seal Flexible Synthetic Chinking",
         "location": "Brevard, NC",
         "desc": "High-performance elastomeric chinking installed between log courses eliminating winter drafts.",
-        "width": 640,
-        "height": 426
+        "width": 560,
+        "height": 373
       },
       {
         "image": "images/project-3.jpg",
         "title": "Custom Dutchman Log Rot Repair & UV Staining",
         "location": "Saluda / Bat Cave, NC",
         "desc": "Surgical extraction of rotted lower sill logs with hand-hewn Dutchman replacements and penetrating oil stain.",
-        "width": 640,
-        "height": 426
+        "width": 560,
+        "height": 373
       }
     ]
   }

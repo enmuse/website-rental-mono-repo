@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://wnc-client-sites.pages.dev/sites/pace-excavation/sitemap.xml

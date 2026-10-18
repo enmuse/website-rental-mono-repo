@@ -53,7 +53,7 @@ website-rental-mono-repo/
 │   ├── deploy_cloudflare_pages.py     # Programmatic Cloudflare Pages edge deployer
 │   └── generate_mms_pitch_cards.swift # Native Swift/AppKit graphic card generator
 └── sites/                             # 10 completely isolated contractor web properties
-    ├── pace-excavation/               # Pace Construction & Excavation (Hendersonville, NC)
+    ├── tates-grading/                 # Tate's Grading (Hendersonville, NC)
     ├── turning-leaf-tree/             # Turning Leaf Tree Service (Black Mountain, NC)
     ├── riveras-roofing/               # Rivera's Construction & Roofing (Sylva, NC)
     ├── dirtworks-septic/              # Dirtworks Septic & Environmental (Cashiers, NC)
@@ -76,7 +76,7 @@ website-rental-mono-repo/
 
 ### Strict Non-Compete SEO Strategy
 - **WNC Trade Network (`wnc[trade].com`):** Dominates high-volume generic corridor keywords (*"emergency tree removal asheville"*, *"land clearing western north carolina"*).
-- **Client Rental Sites (`sites/<client>/`):** Configured strictly for **Brand Entity & Local NAP Citation SEO** (*"Turning Leaf Tree Service"*, *"Mark Pace Excavating Hendersonville"*). They capture direct referrals and citation traffic without competing with the rank-and-rent asset.
+- **Client Rental Sites (`sites/<client>/`):** Configured strictly for **Brand Entity & Local NAP Citation SEO** (*"Turning Leaf Tree Service"*, *"Tate's Grading Hendersonville"*). They capture direct referrals and citation traffic without competing with the rank-and-rent asset.
 
 ---
 

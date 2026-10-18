@@ -84,23 +84,23 @@ I host and maintain it for $49/month flat with zero setup fee and no lock-in con
 
 ---
 
-#### 3. Pace Construction & Excavation, Inc. (Corridor 2 — Southern Plateau)
-* **Owner:** Mark Pace  
-* **Direct Cell:** `(828) 242-1420` | Office: `(828) 696-9118`  
-* **Current Web:** Outdated directory profile (No mobile site)  
-* **Mockup Link:** `https://wnc-client-sites.pages.dev/sites/pace-excavation/`  
-* **Featured Real Work:** Mountain Pad Excavation in Mills River & Steep Driveway Cuts  
-* **MMS Image:** `assets/mms_cards/pace-excavation_mms_audit.png`  
+#### 3. Tate's Grading (Colton Enterprises) (Corridor 2 — Southern Plateau)
+* **Owner:** Colton Tate  
+* **Direct Cell:** `(828) 674-0705` | Office: `(828) 674-4042`  
+* **Current Web:** `tatesgradingnc.com` (Scores **56/100**; **18.2s** mobile LCP!)  
+* **Mockup Link:** `https://wnc-client-sites.pages.dev/sites/tates-grading/`  
+* **Featured Real Work:** Peterbilt Mountain Dump Fleet, Kobelco Rock Hammer & Official Logo  
+* **MMS Image:** `assets/mms_cards/tates-grading_mms_audit.png`  
 * **Upsell Corridor:** `wncexcavating.com/southern-plateau/` ($1,250/mo)  
 
 **SMS Text Payload:**
 ```text
-Hey Mark, this is Brandon here in Hendersonville. Noticed Pace Excavation doesn't have a modern mobile-first website for folks looking up your work in Mills River and Flat Rock. 
+Hey Colton, Brandon here in Hendersonville. Ran an automated Google speed audit on tatesgradingnc.com and saw mobile visitors wait 18.2 seconds for the page to load (scores 56/100 on PageSpeed). In our mountain terrain, folks on spotty cell service will bounce before it opens. 
 
-I put together a clean, high-performance site mockup showcasing your steep mountain pad prep and rock excavation. It scores a perfect 100/100 on Google and loads in 0.4 seconds:
-https://wnc-client-sites.pages.dev/sites/pace-excavation/
+Your heavy equipment and site prep work are top tier, so I pulled your actual job photos (Peterbilt dump fleet, Kobelco rock hammer, and company logo) and built a custom mockup that hits 100/100 and loads in 0.4s:
+https://wnc-client-sites.pages.dev/sites/tates-grading/
 
-I offer to host and keep it running for $49/month flat—no setup fees, no contracts, and click-to-call straight to your cell. Take a look when you're off the machine today!
+I host and maintain it for $49/mo flat with zero setup fee, no contracts, and direct click-to-call to your phone. Take a look when you get off the machine today!
 ```
 
 ---
