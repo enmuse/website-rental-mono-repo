@@ -1082,8 +1082,28 @@ def generate_master_portal_html(clients):
         login_url = whois.get("login_url", "#")
         action_tip = whois.get("action_tip", "Point CNAME @ and www to preview.ridgelinetrade.com")
         expires = whois.get("expires", "")
+        expires_formatted = whois.get("expires_formatted", expires if expires else "N/A")
+        expiration_status = whois.get("expiration_status", "N/A")
+        is_expiring_soon = whois.get("is_expiring_soon", False)
+        days_until_exp = whois.get("days_until_expiration")
+        domain_age_short = whois.get("domain_age_short", "N/A")
+        domain_age_display = whois.get("domain_age_display", "N/A")
+        authority_tier = whois.get("authority_tier", "")
         domain_target = whois.get("domain", c.get("current_website", ""))
         
+        # Table age and expiration badges
+        if domain_age_short != "N/A":
+            table_age_pill = f'<span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="{domain_age_display}">🎂 Age: {domain_age_short}</span>'
+        else:
+            table_age_pill = f'<span style="font-size: 0.68rem; color: #94a3b8; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;">No Custom Domain</span>'
+
+        if is_expiring_soon:
+            table_exp_pill = f'<span style="font-size: 0.68rem; font-weight: 700; color: #f87171; background: rgba(239, 68, 68, 0.18); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(239, 68, 68, 0.4);" title="{expiration_status}">⚠️ Exp: {expires_formatted} ({days_until_exp}d)</span>'
+        elif expires_formatted != "N/A":
+            table_exp_pill = f'<span style="font-size: 0.68rem; color: #cbd5e1; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;" title="{expiration_status}">📅 Exp: {expires_formatted}</span>'
+        else:
+            table_exp_pill = ""
+
         table_rows += f"""
         <tr>
           <td>
@@ -1101,8 +1121,12 @@ def generate_master_portal_html(clients):
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">{dns_provider}</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">{registrar.split(',')[0]}</div>
-            <div style="font-size: 0.7rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px; display: inline-block;">
-              {nameservers[0] if nameservers else 'No Custom NS'}
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
+              {table_age_pill}
+              {table_exp_pill}
+            </div>
+            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
+              NS: {nameservers[0] if nameservers else 'No Custom NS'}
             </div>
           </td>
           <td>
@@ -1132,6 +1156,29 @@ def generate_master_portal_html(clients):
               <img src="/sites/{c['slug']}/{p['image']}" alt="{p['title']}" width="100" height="65" loading="lazy" decoding="async">
             </div>
             """
+
+        # Dossier card badges
+        if authority_tier and authority_tier != "Unregistered":
+            age_badge_html = f'<span class="dns-tag-badge veteran">{authority_tier}</span>'
+        else:
+            age_badge_html = ''
+
+        if is_expiring_soon:
+            exp_badge_html = f'<span class="dns-tag-badge alert">⚠️ {days_until_exp}d left!</span>'
+            exp_val_class = 'exp-alert'
+            urgent_banner_html = f"""
+            <div style="background: rgba(239, 68, 68, 0.12); border-left: 3px solid #ef4444; padding: 0.65rem 0.85rem; border-radius: 0 6px 6px 0; font-size: 0.78rem; color: #fca5a5; line-height: 1.45; margin-bottom: 0.75rem;">
+              <strong>⚠️ URGENT DOMAIN EXPIRATION:</strong> Domain expires on <strong>{expires_formatted}</strong> ({days_until_exp} days remaining). High-trust outreach angle: Alert {c['owner_name']} so his website/email doesn't drop, or offer to transfer domain registration to Cloudflare wholesale ($10/yr)!
+            </div>
+            """
+        elif expires_formatted != "N/A":
+            exp_badge_html = f'<span style="font-size: 0.72rem; color: #94a3b8;"> ({expiration_status})</span>'
+            exp_val_class = ''
+            urgent_banner_html = ''
+        else:
+            exp_badge_html = ''
+            exp_val_class = ''
+            urgent_banner_html = ''
 
         client_cards += f"""
         <div class="client-dossier-card">
@@ -1196,14 +1243,27 @@ def generate_master_portal_html(clients):
                 <span class="dns-val">{registrar.split(',')[0]}</span>
               </div>
               <div class="dns-intel-item">
+                <span class="dns-label">Domain Age</span>
+                <span class="dns-val" style="color: #a7f3d0; font-weight: 600;">
+                  {domain_age_display} {age_badge_html}
+                </span>
+              </div>
+              <div class="dns-intel-item">
+                <span class="dns-label">Domain Expiration</span>
+                <span class="dns-val {exp_val_class}">
+                  {expires_formatted} {exp_badge_html}
+                </span>
+              </div>
+              <div class="dns-intel-item">
                 <span class="dns-label">Active Nameservers</span>
                 <span class="dns-val monospace">{', '.join(nameservers) if nameservers else 'None registered'}</span>
               </div>
               <div class="dns-intel-item">
-                <span class="dns-label">Domain Expiry</span>
-                <span class="dns-val">{expires if expires else 'N/A'}</span>
+                <span class="dns-label">DNS Routing Setup</span>
+                <span class="dns-val" style="color: #fbbf24;">Awaiting CNAME Pointing</span>
               </div>
             </div>
+            {urgent_banner_html}
             <div class="dns-intel-action">
               <strong>👉 DNS Delegation Play:</strong> {action_tip}
             </div>
@@ -1594,10 +1654,10 @@ def generate_master_portal_html(clients):
 
     .dns-intel-grid {{
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 0.5rem 0.75rem;
+      grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+      gap: 0.65rem 0.85rem;
       font-size: 0.8rem;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.85rem;
     }}
     .dns-intel-item {{
       display: flex;
@@ -1608,15 +1668,39 @@ def generate_master_portal_html(clients):
       font-size: 0.7rem;
       text-transform: uppercase;
       font-weight: 600;
+      margin-bottom: 0.15rem;
     }}
     .dns-val {{
       color: #e2e8f0;
-      word-break: break-all;
+      word-break: break-word;
     }}
     .dns-val.monospace {{
       font-family: monospace;
       font-size: 0.72rem;
       color: #93c5fd;
+    }}
+    .dns-val.exp-alert {{
+      color: #f87171 !important;
+      font-weight: 700;
+    }}
+    .dns-tag-badge {{
+      display: inline-block;
+      font-size: 0.66rem;
+      font-weight: 600;
+      padding: 0.1rem 0.35rem;
+      border-radius: 4px;
+      margin-left: 0.35rem;
+      vertical-align: middle;
+    }}
+    .dns-tag-badge.alert {{
+      background: rgba(239, 68, 68, 0.2);
+      color: #fca5a5;
+      border: 1px solid rgba(239, 68, 68, 0.4);
+    }}
+    .dns-tag-badge.veteran {{
+      background: rgba(16, 185, 129, 0.15);
+      color: #6ee7b7;
+      border: 1px solid rgba(16, 185, 129, 0.3);
     }}
     .dns-intel-action {{
       background: rgba(245, 158, 11, 0.08);
@@ -1791,7 +1875,7 @@ def generate_master_portal_html(clients):
             <th>Business & Trade</th>
             <th>Network Corridor</th>
             <th>Owner & Direct Phone</th>
-            <th>DNS Host & Registrar</th>
+            <th>DNS Host, Age & Expiry</th>
             <th>Their Current Speed</th>
             <th>Our Rental Speed</th>
             <th>Outreach Actions</th>

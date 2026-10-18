@@ -15,7 +15,16 @@
     "dns_badge": "domainpeople",
     "login_url": "https://www.domainpeople.com/login",
     "delegate_url": "https://www.domainpeople.com/login",
-    "action_tip": "DomainPeople: Log into portal -> Manage DNS records -> Point CNAME"
+    "action_tip": "DomainPeople: Log into portal -> Manage DNS records -> Point CNAME",
+    "domain_age_years": 3,
+    "domain_age_short": "3 yrs",
+    "domain_age_display": "3 Years (Registered Nov 2023)",
+    "authority_tier": "Growing Authority (1-4 yrs)",
+    "days_until_expiration": 34,
+    "expires_formatted": "Nov 21, 2026",
+    "expires_month": "Nov 2026",
+    "expiration_status": "Expiring Soon (34 days left!)",
+    "is_expiring_soon": true
   },
   "turning-leaf-tree": {
     "domain": "turningleaftreenc.com",
@@ -34,7 +43,16 @@
     "dns_badge": "wix",
     "login_url": "https://manage.wix.com/dashboard",
     "delegate_url": "https://manage.wix.com/",
-    "action_tip": "Wix: Log into Wix Dashboard -> Settings -> Domains -> Manage DNS -> Add CNAME"
+    "action_tip": "Wix: Log into Wix Dashboard -> Settings -> Domains -> Manage DNS -> Add CNAME",
+    "domain_age_years": 12,
+    "domain_age_short": "12 yrs",
+    "domain_age_display": "12 Years (Registered Nov 2014)",
+    "authority_tier": "Veteran Authority (10+ yrs)",
+    "days_until_expiration": 387,
+    "expires_formatted": "Nov 09, 2027",
+    "expires_month": "Nov 2027",
+    "expiration_status": "Renews Nov 2027 (387d)",
+    "is_expiring_soon": false
   },
   "riveras-roofing": {
     "domain": "riverasconstructionsllc.com",
@@ -52,7 +70,16 @@
     "dns_badge": "godaddy",
     "login_url": "https://dcc.godaddy.com/manage/dns",
     "delegate_url": "https://account.godaddy.com/access",
-    "action_tip": "GoDaddy: Ask for Delegate Access (account.godaddy.com/access) or login credentials"
+    "action_tip": "GoDaddy: Ask for Delegate Access (account.godaddy.com/access) or login credentials",
+    "domain_age_years": 1,
+    "domain_age_short": "1 yr",
+    "domain_age_display": "1 Year (Registered Jul 2025)",
+    "authority_tier": "Growing Authority (1-4 yrs)",
+    "days_until_expiration": 285,
+    "expires_formatted": "Jul 30, 2027",
+    "expires_month": "Jul 2027",
+    "expiration_status": "Renews Jul 2027 (285d)",
+    "is_expiring_soon": false
   },
   "dirtworks-septic": {
     "domain": "dirttworks.com",
@@ -71,7 +98,16 @@
     "dns_badge": "squarespace",
     "login_url": "https://account.squarespace.com/domains",
     "delegate_url": "https://account.squarespace.com/",
-    "action_tip": "Squarespace: Log in -> Domains -> DNS Settings -> Add Custom Record CNAME"
+    "action_tip": "Squarespace: Log in -> Domains -> DNS Settings -> Add Custom Record CNAME",
+    "domain_age_years": 0.5,
+    "domain_age_short": "6 mo",
+    "domain_age_display": "6 Months (Registered Apr 2026)",
+    "authority_tier": "New Domain (< 1 yr)",
+    "days_until_expiration": 191,
+    "expires_formatted": "Apr 27, 2027",
+    "expires_month": "Apr 2027",
+    "expiration_status": "Renews Apr 2027 (191d)",
+    "is_expiring_soon": false
   },
   "mateos-retaining-walls": {
     "domain": "mateoscl.com",
@@ -90,7 +126,16 @@
     "dns_badge": "godaddy",
     "login_url": "https://dcc.godaddy.com/manage/dns",
     "delegate_url": "https://account.godaddy.com/access",
-    "action_tip": "GoDaddy: Ask for Delegate Access (account.godaddy.com/access) or login credentials"
+    "action_tip": "GoDaddy: Ask for Delegate Access (account.godaddy.com/access) or login credentials",
+    "domain_age_years": 5,
+    "domain_age_short": "5 yrs",
+    "domain_age_display": "5 Years (Registered Aug 2021)",
+    "authority_tier": "Established (5+ yrs)",
+    "days_until_expiration": 292,
+    "expires_formatted": "Aug 06, 2027",
+    "expires_month": "Aug 2027",
+    "expiration_status": "Renews Aug 2027 (292d)",
+    "is_expiring_soon": false
   },
   "tri-city-paving": {
     "domain": "tricitypavinginc.com",
@@ -109,7 +154,16 @@
     "dns_badge": "godaddy",
     "login_url": "https://dcc.godaddy.com/manage/dns",
     "delegate_url": "https://account.godaddy.com/access",
-    "action_tip": "GoDaddy: Ask for Delegate Access (account.godaddy.com/access) or login credentials"
+    "action_tip": "GoDaddy: Ask for Delegate Access (account.godaddy.com/access) or login credentials",
+    "domain_age_years": 8,
+    "domain_age_short": "8 yrs",
+    "domain_age_display": "8 Years (Registered Jan 2019)",
+    "authority_tier": "Established (5+ yrs)",
+    "days_until_expiration": 463,
+    "expires_formatted": "Jan 24, 2028",
+    "expires_month": "Jan 2028",
+    "expiration_status": "Renews Jan 2028 (463d)",
+    "is_expiring_soon": false
   },
   "capstone-crawlspace": {
     "domain": "capstonecrawlspace.com",
@@ -128,7 +182,16 @@
     "dns_badge": "wix",
     "login_url": "https://manage.wix.com/dashboard",
     "delegate_url": "https://manage.wix.com/",
-    "action_tip": "Wix: Log into Wix Dashboard -> Settings -> Domains -> Manage DNS -> Add CNAME"
+    "action_tip": "Wix: Log into Wix Dashboard -> Settings -> Domains -> Manage DNS -> Add CNAME",
+    "domain_age_years": 0.5,
+    "domain_age_short": "6 mo",
+    "domain_age_display": "6 Months (Registered Apr 2026)",
+    "authority_tier": "New Domain (< 1 yr)",
+    "days_until_expiration": 171,
+    "expires_formatted": "Apr 07, 2027",
+    "expires_month": "Apr 2027",
+    "expiration_status": "Renews Apr 2027 (171d)",
+    "is_expiring_soon": false
   },
   "coomers-well-pump": {
     "domain": "coomerswellandpump.com",
@@ -147,7 +210,16 @@
     "dns_badge": "godaddy",
     "login_url": "https://dcc.godaddy.com/manage/dns",
     "delegate_url": "https://account.godaddy.com/access",
-    "action_tip": "GoDaddy: Ask for Delegate Access (account.godaddy.com/access) or login credentials"
+    "action_tip": "GoDaddy: Ask for Delegate Access (account.godaddy.com/access) or login credentials",
+    "domain_age_years": 6,
+    "domain_age_short": "6 yrs",
+    "domain_age_display": "6 Years (Registered Nov 2020)",
+    "authority_tier": "Established (5+ yrs)",
+    "days_until_expiration": 401,
+    "expires_formatted": "Nov 23, 2027",
+    "expires_month": "Nov 2027",
+    "expiration_status": "Renews Nov 2027 (401d)",
+    "is_expiring_soon": false
   },
   "wnc-decks": {
     "domain": "hendersonvilledeckbuilders.com",
@@ -166,7 +238,16 @@
     "dns_badge": "godaddy",
     "login_url": "https://dcc.godaddy.com/manage/dns",
     "delegate_url": "https://account.godaddy.com/access",
-    "action_tip": "GoDaddy: Ask for Delegate Access (account.godaddy.com/access) or login credentials"
+    "action_tip": "GoDaddy: Ask for Delegate Access (account.godaddy.com/access) or login credentials",
+    "domain_age_years": 2,
+    "domain_age_short": "2 yrs",
+    "domain_age_display": "2 Years (Registered Oct 2024)",
+    "authority_tier": "Growing Authority (1-4 yrs)",
+    "days_until_expiration": 358,
+    "expires_formatted": "Oct 11, 2027",
+    "expires_month": "Oct 2027",
+    "expiration_status": "Renews Oct 2027 (358d)",
+    "is_expiring_soon": false
   },
   "moss-log-homes": {
     "domain": "hibuwebsites.com (Sub-directory)",
@@ -181,6 +262,15 @@
     "dns_badge": "hibu",
     "login_url": "https://dash.cloudflare.com/",
     "delegate_url": "https://dash.cloudflare.com/",
-    "action_tip": "No custom domain owned! Register mossloghomesnc.com on Cloudflare (/yr) for instant setup"
+    "action_tip": "No custom domain owned! Register mossloghomesnc.com on Cloudflare (/yr) for instant setup",
+    "domain_age_years": null,
+    "domain_age_short": "N/A",
+    "domain_age_display": "No Custom Domain",
+    "authority_tier": "Unregistered",
+    "days_until_expiration": null,
+    "expires_formatted": "N/A",
+    "expires_month": "N/A",
+    "expiration_status": "No Domain to Expire",
+    "is_expiring_soon": false
   }
 }

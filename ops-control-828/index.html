@@ -371,10 +371,10 @@
 
     .dns-intel-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 0.5rem 0.75rem;
+      grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+      gap: 0.65rem 0.85rem;
       font-size: 0.8rem;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.85rem;
     }
     .dns-intel-item {
       display: flex;
@@ -385,15 +385,39 @@
       font-size: 0.7rem;
       text-transform: uppercase;
       font-weight: 600;
+      margin-bottom: 0.15rem;
     }
     .dns-val {
       color: #e2e8f0;
-      word-break: break-all;
+      word-break: break-word;
     }
     .dns-val.monospace {
       font-family: monospace;
       font-size: 0.72rem;
       color: #93c5fd;
+    }
+    .dns-val.exp-alert {
+      color: #f87171 !important;
+      font-weight: 700;
+    }
+    .dns-tag-badge {
+      display: inline-block;
+      font-size: 0.66rem;
+      font-weight: 600;
+      padding: 0.1rem 0.35rem;
+      border-radius: 4px;
+      margin-left: 0.35rem;
+      vertical-align: middle;
+    }
+    .dns-tag-badge.alert {
+      background: rgba(239, 68, 68, 0.2);
+      color: #fca5a5;
+      border: 1px solid rgba(239, 68, 68, 0.4);
+    }
+    .dns-tag-badge.veteran {
+      background: rgba(16, 185, 129, 0.15);
+      color: #6ee7b7;
+      border: 1px solid rgba(16, 185, 129, 0.3);
     }
     .dns-intel-action {
       background: rgba(245, 158, 11, 0.08);
@@ -568,7 +592,7 @@
             <th>Business & Trade</th>
             <th>Network Corridor</th>
             <th>Owner & Direct Phone</th>
-            <th>DNS Host & Registrar</th>
+            <th>DNS Host, Age & Expiry</th>
             <th>Their Current Speed</th>
             <th>Our Rental Speed</th>
             <th>Outreach Actions</th>
@@ -592,8 +616,12 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">DomainPeople</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">DomainPeople</div>
-            <div style="font-size: 0.7rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px; display: inline-block;">
-              ns4.g10.cfdns.co.uk.
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="3 Years (Registered Nov 2023)">🎂 Age: 3 yrs</span>
+              <span style="font-size: 0.68rem; font-weight: 700; color: #f87171; background: rgba(239, 68, 68, 0.18); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(239, 68, 68, 0.4);" title="Expiring Soon (34 days left!)">⚠️ Exp: Nov 21, 2026 (34d)</span>
+            </div>
+            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
+              NS: ns4.g10.cfdns.co.uk.
             </div>
           </td>
           <td>
@@ -630,8 +658,12 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">Wix DNS</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">Wix.com Ltd.</div>
-            <div style="font-size: 0.7rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px; display: inline-block;">
-              ns3.wixdns.net.
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="12 Years (Registered Nov 2014)">🎂 Age: 12 yrs</span>
+              <span style="font-size: 0.68rem; color: #cbd5e1; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;" title="Renews Nov 2027 (387d)">📅 Exp: Nov 09, 2027</span>
+            </div>
+            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
+              NS: ns3.wixdns.net.
             </div>
           </td>
           <td>
@@ -668,8 +700,12 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">GoDaddy</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">GoDaddy.com</div>
-            <div style="font-size: 0.7rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px; display: inline-block;">
-              ns28.domaincontrol.com.
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="1 Year (Registered Jul 2025)">🎂 Age: 1 yr</span>
+              <span style="font-size: 0.68rem; color: #cbd5e1; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;" title="Renews Jul 2027 (285d)">📅 Exp: Jul 30, 2027</span>
+            </div>
+            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
+              NS: ns28.domaincontrol.com.
             </div>
           </td>
           <td>
@@ -706,8 +742,12 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">Squarespace (Google Domains)</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">Squarespace Domains II LLC</div>
-            <div style="font-size: 0.7rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px; display: inline-block;">
-              ns-cloud-e3.googledomains.com.
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="6 Months (Registered Apr 2026)">🎂 Age: 6 mo</span>
+              <span style="font-size: 0.68rem; color: #cbd5e1; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;" title="Renews Apr 2027 (191d)">📅 Exp: Apr 27, 2027</span>
+            </div>
+            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
+              NS: ns-cloud-e3.googledomains.com.
             </div>
           </td>
           <td>
@@ -744,8 +784,12 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">GoDaddy</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">GoDaddy.com</div>
-            <div style="font-size: 0.7rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px; display: inline-block;">
-              ns39.domaincontrol.com.
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="5 Years (Registered Aug 2021)">🎂 Age: 5 yrs</span>
+              <span style="font-size: 0.68rem; color: #cbd5e1; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;" title="Renews Aug 2027 (292d)">📅 Exp: Aug 06, 2027</span>
+            </div>
+            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
+              NS: ns39.domaincontrol.com.
             </div>
           </td>
           <td>
@@ -782,8 +826,12 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">GoDaddy</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">GoDaddy.com</div>
-            <div style="font-size: 0.7rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px; display: inline-block;">
-              ns03.domaincontrol.com.
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="8 Years (Registered Jan 2019)">🎂 Age: 8 yrs</span>
+              <span style="font-size: 0.68rem; color: #cbd5e1; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;" title="Renews Jan 2028 (463d)">📅 Exp: Jan 24, 2028</span>
+            </div>
+            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
+              NS: ns03.domaincontrol.com.
             </div>
           </td>
           <td>
@@ -820,8 +868,12 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">Wix DNS</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">Wix.com Ltd.</div>
-            <div style="font-size: 0.7rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px; display: inline-block;">
-              ns12.wixdns.net.
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="6 Months (Registered Apr 2026)">🎂 Age: 6 mo</span>
+              <span style="font-size: 0.68rem; color: #cbd5e1; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;" title="Renews Apr 2027 (171d)">📅 Exp: Apr 07, 2027</span>
+            </div>
+            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
+              NS: ns12.wixdns.net.
             </div>
           </td>
           <td>
@@ -858,8 +910,12 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">GoDaddy</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">GoDaddy.com</div>
-            <div style="font-size: 0.7rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px; display: inline-block;">
-              mia.ns.cloudflare.com.
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="6 Years (Registered Nov 2020)">🎂 Age: 6 yrs</span>
+              <span style="font-size: 0.68rem; color: #cbd5e1; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;" title="Renews Nov 2027 (401d)">📅 Exp: Nov 23, 2027</span>
+            </div>
+            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
+              NS: mia.ns.cloudflare.com.
             </div>
           </td>
           <td>
@@ -896,8 +952,12 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">GoDaddy</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">GoDaddy.com</div>
-            <div style="font-size: 0.7rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px; display: inline-block;">
-              ns04.domaincontrol.com.
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="2 Years (Registered Oct 2024)">🎂 Age: 2 yrs</span>
+              <span style="font-size: 0.68rem; color: #cbd5e1; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;" title="Renews Oct 2027 (358d)">📅 Exp: Oct 11, 2027</span>
+            </div>
+            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
+              NS: ns04.domaincontrol.com.
             </div>
           </td>
           <td>
@@ -934,8 +994,12 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">None / Hibu Hosted</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">Hibu Directory (No Custom Domain)</div>
-            <div style="font-size: 0.7rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px; display: inline-block;">
-              hibu proprietary network
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
+              <span style="font-size: 0.68rem; color: #94a3b8; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;">No Custom Domain</span>
+              
+            </div>
+            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
+              NS: hibu proprietary network
             </div>
           </td>
           <td>
@@ -1020,7 +1084,7 @@
             </div>
             <div class="field-row">
               <span class="field-title">Network Upsell Target:</span>
-              <span class="field-val corridor-target">wncexcavating.com/southern-plateau/ (,250/mo)</span>
+              <span class="field-val corridor-target">wncexcavating.com/southern-plateau/ ($1,250/mo)</span>
             </div>
           </div>
           
@@ -1040,14 +1104,31 @@
                 <span class="dns-val">DomainPeople</span>
               </div>
               <div class="dns-intel-item">
+                <span class="dns-label">Domain Age</span>
+                <span class="dns-val" style="color: #a7f3d0; font-weight: 600;">
+                  3 Years (Registered Nov 2023) <span class="dns-tag-badge veteran">Growing Authority (1-4 yrs)</span>
+                </span>
+              </div>
+              <div class="dns-intel-item">
+                <span class="dns-label">Domain Expiration</span>
+                <span class="dns-val exp-alert">
+                  Nov 21, 2026 <span class="dns-tag-badge alert">⚠️ 34d left!</span>
+                </span>
+              </div>
+              <div class="dns-intel-item">
                 <span class="dns-label">Active Nameservers</span>
                 <span class="dns-val monospace">ns4.g10.cfdns.co.uk., ns1.g10.cfdns.net.</span>
               </div>
               <div class="dns-intel-item">
-                <span class="dns-label">Domain Expiry</span>
-                <span class="dns-val">2026-11-21</span>
+                <span class="dns-label">DNS Routing Setup</span>
+                <span class="dns-val" style="color: #fbbf24;">Awaiting CNAME Pointing</span>
               </div>
             </div>
+            
+            <div style="background: rgba(239, 68, 68, 0.12); border-left: 3px solid #ef4444; padding: 0.65rem 0.85rem; border-radius: 0 6px 6px 0; font-size: 0.78rem; color: #fca5a5; line-height: 1.45; margin-bottom: 0.75rem;">
+              <strong>⚠️ URGENT DOMAIN EXPIRATION:</strong> Domain expires on <strong>Nov 21, 2026</strong> (34 days remaining). High-trust outreach angle: Alert Colton Tate so his website/email doesn't drop, or offer to transfer domain registration to Cloudflare wholesale ($10/yr)!
+            </div>
+            
             <div class="dns-intel-action">
               <strong>👉 DNS Delegation Play:</strong> DomainPeople: Log into portal -> Manage DNS records -> Point CNAME
             </div>
@@ -1138,14 +1219,27 @@
                 <span class="dns-val">Wix.com Ltd.</span>
               </div>
               <div class="dns-intel-item">
+                <span class="dns-label">Domain Age</span>
+                <span class="dns-val" style="color: #a7f3d0; font-weight: 600;">
+                  12 Years (Registered Nov 2014) <span class="dns-tag-badge veteran">Veteran Authority (10+ yrs)</span>
+                </span>
+              </div>
+              <div class="dns-intel-item">
+                <span class="dns-label">Domain Expiration</span>
+                <span class="dns-val ">
+                  Nov 09, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (Renews Nov 2027 (387d))</span>
+                </span>
+              </div>
+              <div class="dns-intel-item">
                 <span class="dns-label">Active Nameservers</span>
                 <span class="dns-val monospace">ns3.wixdns.net., ns2.wixdns.net.</span>
               </div>
               <div class="dns-intel-item">
-                <span class="dns-label">Domain Expiry</span>
-                <span class="dns-val">2027-11-09</span>
+                <span class="dns-label">DNS Routing Setup</span>
+                <span class="dns-val" style="color: #fbbf24;">Awaiting CNAME Pointing</span>
               </div>
             </div>
+            
             <div class="dns-intel-action">
               <strong>👉 DNS Delegation Play:</strong> Wix: Log into Wix Dashboard -> Settings -> Domains -> Manage DNS -> Add CNAME
             </div>
@@ -1236,14 +1330,27 @@
                 <span class="dns-val">GoDaddy.com</span>
               </div>
               <div class="dns-intel-item">
+                <span class="dns-label">Domain Age</span>
+                <span class="dns-val" style="color: #a7f3d0; font-weight: 600;">
+                  1 Year (Registered Jul 2025) <span class="dns-tag-badge veteran">Growing Authority (1-4 yrs)</span>
+                </span>
+              </div>
+              <div class="dns-intel-item">
+                <span class="dns-label">Domain Expiration</span>
+                <span class="dns-val ">
+                  Jul 30, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (Renews Jul 2027 (285d))</span>
+                </span>
+              </div>
+              <div class="dns-intel-item">
                 <span class="dns-label">Active Nameservers</span>
                 <span class="dns-val monospace">ns28.domaincontrol.com., ns27.domaincontrol.com.</span>
               </div>
               <div class="dns-intel-item">
-                <span class="dns-label">Domain Expiry</span>
-                <span class="dns-val">2027-07-30</span>
+                <span class="dns-label">DNS Routing Setup</span>
+                <span class="dns-val" style="color: #fbbf24;">Awaiting CNAME Pointing</span>
               </div>
             </div>
+            
             <div class="dns-intel-action">
               <strong>👉 DNS Delegation Play:</strong> GoDaddy: Ask for Delegate Access (account.godaddy.com/access) or login credentials
             </div>
@@ -1334,14 +1441,27 @@
                 <span class="dns-val">Squarespace Domains II LLC</span>
               </div>
               <div class="dns-intel-item">
+                <span class="dns-label">Domain Age</span>
+                <span class="dns-val" style="color: #a7f3d0; font-weight: 600;">
+                  6 Months (Registered Apr 2026) <span class="dns-tag-badge veteran">New Domain (< 1 yr)</span>
+                </span>
+              </div>
+              <div class="dns-intel-item">
+                <span class="dns-label">Domain Expiration</span>
+                <span class="dns-val ">
+                  Apr 27, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (Renews Apr 2027 (191d))</span>
+                </span>
+              </div>
+              <div class="dns-intel-item">
                 <span class="dns-label">Active Nameservers</span>
                 <span class="dns-val monospace">ns-cloud-e3.googledomains.com., ns-cloud-e4.googledomains.com.</span>
               </div>
               <div class="dns-intel-item">
-                <span class="dns-label">Domain Expiry</span>
-                <span class="dns-val">2027-04-27</span>
+                <span class="dns-label">DNS Routing Setup</span>
+                <span class="dns-val" style="color: #fbbf24;">Awaiting CNAME Pointing</span>
               </div>
             </div>
+            
             <div class="dns-intel-action">
               <strong>👉 DNS Delegation Play:</strong> Squarespace: Log in -> Domains -> DNS Settings -> Add Custom Record CNAME
             </div>
@@ -1432,14 +1552,27 @@
                 <span class="dns-val">GoDaddy.com</span>
               </div>
               <div class="dns-intel-item">
+                <span class="dns-label">Domain Age</span>
+                <span class="dns-val" style="color: #a7f3d0; font-weight: 600;">
+                  5 Years (Registered Aug 2021) <span class="dns-tag-badge veteran">Established (5+ yrs)</span>
+                </span>
+              </div>
+              <div class="dns-intel-item">
+                <span class="dns-label">Domain Expiration</span>
+                <span class="dns-val ">
+                  Aug 06, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (Renews Aug 2027 (292d))</span>
+                </span>
+              </div>
+              <div class="dns-intel-item">
                 <span class="dns-label">Active Nameservers</span>
                 <span class="dns-val monospace">ns39.domaincontrol.com., ns40.domaincontrol.com.</span>
               </div>
               <div class="dns-intel-item">
-                <span class="dns-label">Domain Expiry</span>
-                <span class="dns-val">2027-08-06</span>
+                <span class="dns-label">DNS Routing Setup</span>
+                <span class="dns-val" style="color: #fbbf24;">Awaiting CNAME Pointing</span>
               </div>
             </div>
+            
             <div class="dns-intel-action">
               <strong>👉 DNS Delegation Play:</strong> GoDaddy: Ask for Delegate Access (account.godaddy.com/access) or login credentials
             </div>
@@ -1530,14 +1663,27 @@
                 <span class="dns-val">GoDaddy.com</span>
               </div>
               <div class="dns-intel-item">
+                <span class="dns-label">Domain Age</span>
+                <span class="dns-val" style="color: #a7f3d0; font-weight: 600;">
+                  8 Years (Registered Jan 2019) <span class="dns-tag-badge veteran">Established (5+ yrs)</span>
+                </span>
+              </div>
+              <div class="dns-intel-item">
+                <span class="dns-label">Domain Expiration</span>
+                <span class="dns-val ">
+                  Jan 24, 2028 <span style="font-size: 0.72rem; color: #94a3b8;"> (Renews Jan 2028 (463d))</span>
+                </span>
+              </div>
+              <div class="dns-intel-item">
                 <span class="dns-label">Active Nameservers</span>
                 <span class="dns-val monospace">ns03.domaincontrol.com., ns04.domaincontrol.com.</span>
               </div>
               <div class="dns-intel-item">
-                <span class="dns-label">Domain Expiry</span>
-                <span class="dns-val">2028-01-24</span>
+                <span class="dns-label">DNS Routing Setup</span>
+                <span class="dns-val" style="color: #fbbf24;">Awaiting CNAME Pointing</span>
               </div>
             </div>
+            
             <div class="dns-intel-action">
               <strong>👉 DNS Delegation Play:</strong> GoDaddy: Ask for Delegate Access (account.godaddy.com/access) or login credentials
             </div>
@@ -1628,14 +1774,27 @@
                 <span class="dns-val">Wix.com Ltd.</span>
               </div>
               <div class="dns-intel-item">
+                <span class="dns-label">Domain Age</span>
+                <span class="dns-val" style="color: #a7f3d0; font-weight: 600;">
+                  6 Months (Registered Apr 2026) <span class="dns-tag-badge veteran">New Domain (< 1 yr)</span>
+                </span>
+              </div>
+              <div class="dns-intel-item">
+                <span class="dns-label">Domain Expiration</span>
+                <span class="dns-val ">
+                  Apr 07, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (Renews Apr 2027 (171d))</span>
+                </span>
+              </div>
+              <div class="dns-intel-item">
                 <span class="dns-label">Active Nameservers</span>
                 <span class="dns-val monospace">ns12.wixdns.net., ns13.wixdns.net.</span>
               </div>
               <div class="dns-intel-item">
-                <span class="dns-label">Domain Expiry</span>
-                <span class="dns-val">2027-04-07</span>
+                <span class="dns-label">DNS Routing Setup</span>
+                <span class="dns-val" style="color: #fbbf24;">Awaiting CNAME Pointing</span>
               </div>
             </div>
+            
             <div class="dns-intel-action">
               <strong>👉 DNS Delegation Play:</strong> Wix: Log into Wix Dashboard -> Settings -> Domains -> Manage DNS -> Add CNAME
             </div>
@@ -1726,14 +1885,27 @@
                 <span class="dns-val">GoDaddy.com</span>
               </div>
               <div class="dns-intel-item">
+                <span class="dns-label">Domain Age</span>
+                <span class="dns-val" style="color: #a7f3d0; font-weight: 600;">
+                  6 Years (Registered Nov 2020) <span class="dns-tag-badge veteran">Established (5+ yrs)</span>
+                </span>
+              </div>
+              <div class="dns-intel-item">
+                <span class="dns-label">Domain Expiration</span>
+                <span class="dns-val ">
+                  Nov 23, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (Renews Nov 2027 (401d))</span>
+                </span>
+              </div>
+              <div class="dns-intel-item">
                 <span class="dns-label">Active Nameservers</span>
                 <span class="dns-val monospace">mia.ns.cloudflare.com., derek.ns.cloudflare.com.</span>
               </div>
               <div class="dns-intel-item">
-                <span class="dns-label">Domain Expiry</span>
-                <span class="dns-val">2027-11-23</span>
+                <span class="dns-label">DNS Routing Setup</span>
+                <span class="dns-val" style="color: #fbbf24;">Awaiting CNAME Pointing</span>
               </div>
             </div>
+            
             <div class="dns-intel-action">
               <strong>👉 DNS Delegation Play:</strong> GoDaddy: Ask for Delegate Access (account.godaddy.com/access) or login credentials
             </div>
@@ -1824,14 +1996,27 @@
                 <span class="dns-val">GoDaddy.com</span>
               </div>
               <div class="dns-intel-item">
+                <span class="dns-label">Domain Age</span>
+                <span class="dns-val" style="color: #a7f3d0; font-weight: 600;">
+                  2 Years (Registered Oct 2024) <span class="dns-tag-badge veteran">Growing Authority (1-4 yrs)</span>
+                </span>
+              </div>
+              <div class="dns-intel-item">
+                <span class="dns-label">Domain Expiration</span>
+                <span class="dns-val ">
+                  Oct 11, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (Renews Oct 2027 (358d))</span>
+                </span>
+              </div>
+              <div class="dns-intel-item">
                 <span class="dns-label">Active Nameservers</span>
                 <span class="dns-val monospace">ns04.domaincontrol.com., ns03.domaincontrol.com.</span>
               </div>
               <div class="dns-intel-item">
-                <span class="dns-label">Domain Expiry</span>
-                <span class="dns-val">2027-10-11</span>
+                <span class="dns-label">DNS Routing Setup</span>
+                <span class="dns-val" style="color: #fbbf24;">Awaiting CNAME Pointing</span>
               </div>
             </div>
+            
             <div class="dns-intel-action">
               <strong>👉 DNS Delegation Play:</strong> GoDaddy: Ask for Delegate Access (account.godaddy.com/access) or login credentials
             </div>
@@ -1922,14 +2107,27 @@
                 <span class="dns-val">Hibu Directory (No Custom Domain)</span>
               </div>
               <div class="dns-intel-item">
+                <span class="dns-label">Domain Age</span>
+                <span class="dns-val" style="color: #a7f3d0; font-weight: 600;">
+                  No Custom Domain 
+                </span>
+              </div>
+              <div class="dns-intel-item">
+                <span class="dns-label">Domain Expiration</span>
+                <span class="dns-val ">
+                  N/A 
+                </span>
+              </div>
+              <div class="dns-intel-item">
                 <span class="dns-label">Active Nameservers</span>
                 <span class="dns-val monospace">hibu proprietary network</span>
               </div>
               <div class="dns-intel-item">
-                <span class="dns-label">Domain Expiry</span>
-                <span class="dns-val">N/A</span>
+                <span class="dns-label">DNS Routing Setup</span>
+                <span class="dns-val" style="color: #fbbf24;">Awaiting CNAME Pointing</span>
               </div>
             </div>
+            
             <div class="dns-intel-action">
               <strong>👉 DNS Delegation Play:</strong> No custom domain owned! Register mossloghomesnc.com on Cloudflare (/yr) for instant setup
             </div>

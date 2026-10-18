@@ -47,6 +47,8 @@ Copy and text these exact payloads from your personal mobile cell phone (`828-77
 * **Direct Cell:** `(828) 808-9770`  
 * **Current Web:** `turningleaftreenc.com` (Scores **60/100** on Google PageSpeed; **9.9s** mobile load time)  
 * **Registrar & DNS:** **Wix.com Ltd.** (Nameservers: `ns3.wixdns.net`, `ns2.wixdns.net`)  
+* **Domain Age:** 12 Years (Registered Nov 9, 2014 — Veteran Authority Domain)  
+* **Domain Expiration:** Nov 9, 2027 (Renews Nov 2027 • 387 days remaining)  
 * **DNS Delegation Play:** Ask for Wix account login or have him go to *Wix Dashboard → Settings → Domains → Manage DNS → Add CNAME*.  
 * **Mockup Link:** `https://preview.ridgelinetrade.com/sites/turning-leaf-tree/`  
 * **Featured Real Work:** Crane-Assisted Oak Take-Down in Black Mountain & Official Logo  
@@ -70,6 +72,8 @@ If you like it, I host and maintain it for $49/mo flat—zero setup fee, no cont
 * **Direct Cell:** `(828) 510-7184`  
 * **Current Web:** `dirttworks.com` (Scores **65/100** on Google PageSpeed; **19.3s** mobile load time)  
 * **Registrar & DNS:** **Squarespace Domains / Google Domains** (Nameservers: `ns-cloud-e3.googledomains.com`)  
+* **Domain Age:** 6 Months (Registered Apr 27, 2026 — New Domain)  
+* **Domain Expiration:** Apr 27, 2027 (Renews Apr 2027 • 191 days remaining)  
 * **DNS Delegation Play:** Ask for Squarespace login or have him navigate to *Domains → Custom DNS Records → Add CNAME*.  
 * **Mockup Link:** `https://preview.ridgelinetrade.com/sites/dirtworks-septic/`  
 * **Featured Real Work:** Luxury Estate Septic Pumping in Cashiers & Slope Drain Fields  
@@ -92,7 +96,10 @@ I host and maintain it for $49/month flat with zero setup fee and no lock-in con
 * **Owner:** Colton Tate  
 * **Direct Cell:** `(828) 674-0705` | Office: `(828) 674-4042`  
 * **Current Web:** `tatesgradingnc.com` (Scores **56/100**; **18.2s** mobile LCP!)  
-* **Registrar & DNS:** **DomainPeople, Inc.** (Nameservers: `ns4.g10.cfdns.co.uk`)  
+* **Registrar & DNS:** **DomainPeople, Inc.** (Nameservers: `ns4.g10.cfdns.co.uk`, `ns1.g10.cfdns.net`)  
+* **Domain Age:** 3 Years (Registered Nov 21, 2023 — Growing Authority)  
+* **Domain Expiration:** ⚠️ **URGENT: Nov 21, 2026 (Expiring in 34 Days!)**  
+* **High-Trust Touchpoint:** Alert Colton to prevent accidental domain expiration or offer to transfer to Cloudflare wholesale ($10/yr)!  
 * **DNS Delegation Play:** Ask Colton for his DomainPeople/Hostinger credentials or email invite.  
 * **Mockup Link:** `https://preview.ridgelinetrade.com/sites/tates-grading/`  
 * **Featured Real Work:** Peterbilt Mountain Dump Fleet, Kobelco Rock Hammer & Official Logo  
@@ -115,7 +122,9 @@ I host and maintain it for $49/mo flat with zero setup fee, no contracts, and di
 * **Owner:** Rivera  
 * **Direct Cell:** `(828) 508-9155`  
 * **Current Web:** `riverasconstructionsllc.com` (Scores **74/100**; **5.5s** mobile LCP)  
-* **Registrar & DNS:** **GoDaddy.com, LLC** (Nameservers: `ns28.domaincontrol.com`)  
+* **Registrar & DNS:** **GoDaddy.com, LLC** (Nameservers: `ns28.domaincontrol.com`, `ns27.domaincontrol.com`)  
+* **Domain Age:** 1 Year (Registered Jul 30, 2025)  
+* **Domain Expiration:** Jul 30, 2027 (Renews Jul 2027 • 285 days remaining)  
 * **DNS Delegation Play:** Ask Rivera for GoDaddy Delegate Access (*account.godaddy.com/access* to your email) or GoDaddy login.  
 * **Mockup Link:** `https://preview.ridgelinetrade.com/sites/riveras-roofing/`  
 * **Featured Real Work:** 24-Gauge Standing Seam Metal Roof in Sylva & Official Logo  
@@ -138,7 +147,9 @@ I can host and update it for $49/mo flat with zero upfront cost. Take a look on 
 * **Owner:** Mateo  
 * **Direct Cell:** `(828) 407-9832`  
 * **Current Web:** `mateoscl.com` (Scores **52/100**; **6.8s** mobile load time)  
-* **Registrar & DNS:** **GoDaddy.com, LLC** (Nameservers: `ns39.domaincontrol.com`)  
+* **Registrar & DNS:** **GoDaddy.com, LLC** (Nameservers: `ns39.domaincontrol.com`, `ns40.domaincontrol.com`)  
+* **Domain Age:** 5 Years (Registered Aug 6, 2021 — Established Authority)  
+* **Domain Expiration:** Aug 6, 2027 (Renews Aug 2027 • 292 days remaining)  
 * **DNS Delegation Play:** GoDaddy Delegate Access (*account.godaddy.com/access*) or text login.  
 * **Mockup Link:** `https://preview.ridgelinetrade.com/sites/mateos-retaining-walls/`  
 * **Featured Real Work:** Steep Hillside Boulder Wall in Saluda & Official Color Logo  
@@ -161,7 +172,9 @@ It's $49/mo flat to host and keep running, no contracts. Check out how clean you
 * **Owner / Manager:** Brian  
 * **Direct Cell:** `(828) 289-0315`  
 * **Current Web:** `tricitypavinginc.com` (Timed out on mobile speed test)  
-* **Registrar & DNS:** **GoDaddy.com, LLC** (Nameservers: `ns03.domaincontrol.com`)  
+* **Registrar & DNS:** **GoDaddy.com, LLC** (Nameservers: `ns03.domaincontrol.com`, `ns04.domaincontrol.com`)  
+* **Domain Age:** 8 Years (Registered Jan 24, 2019 — Established Authority)  
+* **Domain Expiration:** Jan 24, 2028 (Renews Jan 2028 • 463 days remaining)  
 * **DNS Delegation Play:** GoDaddy Delegate Access (*account.godaddy.com/access*) or text login.  
 * **Mockup Link:** `https://preview.ridgelinetrade.com/sites/tri-city-paving/`  
 * **Featured Real Work:** Residential Hot-Mix Asphalt Paving in Rutherfordton & Commercial Milling  
@@ -184,7 +197,9 @@ I host and manage it for $49/month flat—no setup fees, no tech headaches. Take
 * **Owner:** Liam  
 * **Direct Cell:** `(336) 972-5941`  
 * **Current Web:** `capstonecrawlspace.com` (Timed out on Google mobile test)  
-* **Registrar & DNS:** **Wix.com Ltd.** (Nameservers: `ns12.wixdns.net`)  
+* **Registrar & DNS:** **Wix.com Ltd.** (Nameservers: `ns12.wixdns.net`, `ns13.wixdns.net`)  
+* **Domain Age:** 6 Months (Registered Apr 7, 2026 — New Domain)  
+* **Domain Expiration:** Apr 7, 2027 (Renews Apr 2027 • 171 days remaining)  
 * **DNS Delegation Play:** Wix Dashboard login or invite via *Settings → Roles & Permissions*.  
 * **Mockup Link:** `https://preview.ridgelinetrade.com/sites/capstone-crawlspace/`  
 * **Featured Real Work:** 20-Mil CleanSpace Encapsulation in Boone & Official Logo  
@@ -207,7 +222,9 @@ I host and update it for $49/month flat with no contracts. Let me know what you 
 * **Owner:** Coomer  
 * **Direct Cell:** `(828) 337-2170`  
 * **Current Web:** `coomerswellandpump.com` (Scores **64/100**; **6.1s** load time)  
-* **Registrar & DNS:** **GoDaddy Registrar + Cloudflare DNS** (`mia.ns.cloudflare.com`)  
+* **Registrar & DNS:** **GoDaddy Registrar + Cloudflare DNS** (`mia.ns.cloudflare.com`, `derek.ns.cloudflare.com`)  
+* **Domain Age:** 6 Years (Registered Nov 23, 2020 — Established Authority)  
+* **Domain Expiration:** Nov 23, 2027 (Renews Nov 2027 • 401 days remaining)  
 * **DNS Delegation Play:** Point CNAME directly in Cloudflare or GoDaddy DNS.  
 * **Mockup Link:** `https://preview.ridgelinetrade.com/sites/coomers-well-pump/`  
 * **Featured Real Work:** Deep Well Pump Replacement in Waynesville & Official Logo  
@@ -230,7 +247,9 @@ $49/mo flat to host and maintain, zero setup fee. Check it out when you have a f
 * **Owner / Builder:** Dave  
 * **Direct Cell:** `(828) 230-0871`  
 * **Current Web:** `hendersonvilledeckbuilders.com` (Scores **46/100**; **7.9s** load time)  
-* **Registrar & DNS:** **GoDaddy.com, LLC** (Nameservers: `ns04.domaincontrol.com`)  
+* **Registrar & DNS:** **GoDaddy.com, LLC** (Nameservers: `ns04.domaincontrol.com`, `ns03.domaincontrol.com`)  
+* **Domain Age:** 2 Years (Registered Oct 11, 2024)  
+* **Domain Expiration:** Oct 11, 2027 (Renews Oct 2027 • 358 days remaining)  
 * **DNS Delegation Play:** GoDaddy Delegate Access (*account.godaddy.com/access*) or text login.  
 * **Mockup Link:** `https://preview.ridgelinetrade.com/sites/wnc-decks/`  
 * **Featured Real Work:** Two-Story Slope Composite Deck in Hendersonville & Official Logo  
@@ -254,6 +273,8 @@ I host and update it for $49/mo flat with zero upfront fee. Take a look on your 
 * **Direct Cell:** `(828) 243-0506`  
 * **Current Web:** Directory sub-page on `hibuwebsites.com` (Scores **29/100**; **9.2s** load time)  
 * **Registrar & DNS:** **Hibu Directory (No Independent Custom Domain Owned)**  
+* **Domain Age:** N/A (No custom domain owned)  
+* **Domain Expiration:** N/A (Sub-directory on hibuwebsites.com)  
 * **DNS Delegation Play:** Register `mossloghomesnc.com` on Cloudflare ($10/yr) for the client. Link it in his Google Business Profile!  
 * **Mockup Link:** `https://preview.ridgelinetrade.com/sites/moss-log-homes/`  
 * **Featured Real Work:** Corn Cob Media Blasting in Lake Lure & Energy-Seal Chinking  
@@ -296,6 +317,21 @@ When a contractor signs up:
 3. Enter their domain (e.g. `turningleaftreenc.com`).
 4. Cloudflare will display the CNAME target: `preview.ridgelinetrade.com`.
 5. Have the client share their GoDaddy / Namecheap login or add a CNAME record pointing `@` and `www` to `preview.ridgelinetrade.com`.
+
+#### 🔍 Master DNS, Domain Age & Expiration Intelligence Reference
+
+| Contractor | Domain | Registrar | Domain Age | Expiration Date | Status | Delegation Play / Portal Link |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **Tate's Grading** | `tatesgradingnc.com` | DomainPeople | 3 yrs (Nov 2023) | **Nov 21, 2026** | ⚠️ **Expiring in 34d!** | [DomainPeople Portal](https://www.domainpeople.com/login) • Alert Colton to renew! |
+| **Turning Leaf Tree** | `turningleaftreenc.com` | Wix.com Ltd. | 12 yrs (Nov 2014) | Nov 09, 2027 | Veteran Authority (387d) | [Wix Dashboard](https://manage.wix.com/dashboard) • Manage DNS CNAME |
+| **Rivera's Roofing** | `riverasconstructionsllc.com` | GoDaddy | 1 yr (Jul 2025) | Jul 30, 2027 | Renews Jul 2027 (285d) | [GoDaddy DNS](https://dcc.godaddy.com/manage/dns) • Ask Delegate Access |
+| **Dirtworks Septic** | `dirttworks.com` | Squarespace / Google | 6 mo (Apr 2026) | Apr 27, 2027 | Renews Apr 2027 (191d) | [Squarespace Domains](https://account.squarespace.com/domains) • Add CNAME |
+| **Mateo's Retaining Walls** | `mateoscl.com` | GoDaddy | 5 yrs (Aug 2021) | Aug 06, 2027 | Renews Aug 2027 (292d) | [GoDaddy DNS](https://dcc.godaddy.com/manage/dns) • Ask Delegate Access |
+| **Tri-City Paving** | `tricitypavinginc.com` | GoDaddy | 8 yrs (Jan 2019) | Jan 24, 2028 | Renews Jan 2028 (463d) | [GoDaddy DNS](https://dcc.godaddy.com/manage/dns) • Ask Delegate Access |
+| **Capstone Crawlspace** | `capstonecrawlspace.com` | Wix.com Ltd. | 6 mo (Apr 2026) | Apr 07, 2027 | Renews Apr 2027 (171d) | [Wix Dashboard](https://manage.wix.com/dashboard) • Manage DNS CNAME |
+| **Coomer's Well & Pump** | `coomerswellandpump.com` | GoDaddy + Cloudflare | 6 yrs (Nov 2020) | Nov 23, 2027 | Renews Nov 2027 (401d) | [GoDaddy DNS](https://dcc.godaddy.com/manage/dns) • Point CNAME |
+| **WNC Decks** | `hendersonvilledeckbuilders.com` | GoDaddy | 2 yrs (Oct 2024) | Oct 11, 2027 | Renews Oct 2027 (358d) | [GoDaddy DNS](https://dcc.godaddy.com/manage/dns) • Ask Delegate Access |
+| **Moss Log Homes** | `hibuwebsites.com` | Hibu (No Domain) | N/A | N/A | No Custom Domain | [Cloudflare Registrar](https://dash.cloudflare.com/) • Register for client ($10/yr) |
 
 ---
 
