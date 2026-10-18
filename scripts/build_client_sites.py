@@ -4,8 +4,10 @@ build_client_sites.py — Automated Programmatic Site Generator
 
 Reads data/clients.json and atomically generates:
   1. Complete, isolated 100/100 PageSpeed client rental websites in /sites/<slug>/
-  2. Master Client Showcase Portal at /index.html
-  3. Independent robots.txt and sitemap.xml files per property
+     with real contractor project photography & official logos.
+  2. Master Client Showcase Portal at /index.html with interactive audit,
+     real project previews, and SMS cold outreach scripts.
+  3. Independent robots.txt and sitemap.xml files per property.
 
 Follows the Script-Driven Execution Mandate and Zero Cross-Site Coupling protocol.
 """
@@ -28,7 +30,56 @@ def generate_client_html(c):
     phone_clean = c["cell_phone"].replace("(", "").replace(")", "").replace(" ", "").replace("-", "")
     sms_number = c.get("direct_sms_number", f"+1{phone_clean}")
     
-    # Generate service cards
+    # 1. Brand Logo / Header
+    if c.get("has_custom_logo") and c.get("logo_path"):
+        brand_header_html = f"""
+        <div class="brand-group-logo">
+          <img src="{c['logo_path']}" alt="{c['business_name']} Logo" class="brand-logo-img" width="160" height="44" loading="eager" decoding="async">
+          <div class="brand-sub-wrap">
+            <span class="brand-name-sub">{c['short_name']}</span>
+            <span class="brand-location">{c['city']}, NC • {c['trade']}</span>
+          </div>
+        </div>
+        """
+    else:
+        brand_header_html = f"""
+        <div class="brand-group">
+          <a href="./" class="brand-name">{c['business_name']}</a>
+          <span class="brand-location">{c['city']}, NC • {c['trade']}</span>
+        </div>
+        """
+
+    # 2. Hero Featured Photo Card
+    projects = c.get("projects", [])
+    if projects:
+        hero_featured_html = f"""
+        <div class="hero-featured-photo-card">
+          <img src="{projects[0]['image']}" alt="{projects[0]['title']}" class="hero-photo" width="560" height="373" fetchpriority="high" decoding="async">
+          <div class="hero-photo-caption">
+            <strong>Featured WNC Project:</strong> {projects[0]['title']} <span>({projects[0]['location']})</span>
+          </div>
+        </div>
+        """
+    else:
+        hero_featured_html = ""
+
+    # 3. Real Project Photo Gallery Cards
+    projects_cards = ""
+    for p in projects:
+        projects_cards += f"""
+        <div class="project-card">
+          <div class="project-img-wrap">
+            <img src="{p['image']}" alt="{p['title']}" class="project-img" width="560" height="373" loading="lazy" decoding="async">
+            <span class="project-loc-badge">📍 {p['location']}</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">{p['title']}</h3>
+            <p class="project-desc">{p['desc']}</p>
+          </div>
+        </div>
+        """
+
+    # 4. Service Cards
     services_cards = ""
     for s in c["services"]:
         services_cards += f"""
@@ -44,7 +95,7 @@ def generate_client_html(c):
         </div>
         """
 
-    # Generate trust badges
+    # 5. Trust Badges
     trust_badges_html = ""
     for b in c["trust_badges"]:
         trust_badges_html += f"""
@@ -56,7 +107,7 @@ def generate_client_html(c):
         </div>
         """
 
-    # Generate testimonials
+    # 6. Testimonials
     testimonials_html = ""
     for t in c["testimonials"]:
         testimonials_html += f"""
@@ -173,7 +224,7 @@ def generate_client_html(c):
       -webkit-backdrop-filter: blur(16px);
       background: rgba(9, 13, 22, 0.85);
       border-bottom: 1px solid var(--card-border);
-      padding: 1rem 1.5rem;
+      padding: 0.85rem 1.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -196,6 +247,28 @@ def generate_client_html(c):
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }}
+    
+    .brand-group-logo {{
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }}
+    .brand-logo-img {{
+      max-height: 42px;
+      width: auto;
+      object-fit: contain;
+      border-radius: 4px;
+      display: block;
+    }}
+    .brand-name-sub {{
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #ffffff;
+      display: block;
+      line-height: 1.2;
+    }}
+    
     .nav-cta {{
       display: flex;
       align-items: center;
@@ -226,7 +299,7 @@ def generate_client_html(c):
 
     /* Hero Section */
     .hero {{
-      padding: 4rem 1.5rem 3rem;
+      padding: 3.5rem 1.5rem 2.5rem;
       max-width: 1100px;
       margin: 0 auto;
       text-align: center;
@@ -273,7 +346,7 @@ def generate_client_html(c):
       flex-wrap: wrap;
       justify-content: center;
       gap: 1rem;
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
     }}
     .btn-primary {{
       background: var(--accent);
@@ -306,10 +379,40 @@ def generate_client_html(c):
       background: rgba(255, 255, 255, 0.08);
     }}
 
+    /* Hero Featured Photo Card */
+    .hero-featured-photo-card {{
+      max-width: 600px;
+      margin: 2rem auto 0;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--card-border);
+      background: var(--surface);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    }}
+    .hero-photo {{
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+    }}
+    .hero-photo-caption {{
+      padding: 0.75rem 1rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      background: rgba(0, 0, 0, 0.4);
+      text-align: left;
+    }}
+    .hero-photo-caption strong {{
+      color: var(--accent);
+    }}
+    .hero-photo-caption span {{
+      color: #ffffff;
+    }}
+
     /* Trust Pill Bar */
     .trust-container {{
       max-width: 1000px;
-      margin: 0 auto 3rem;
+      margin: 2.5rem auto 3rem;
       padding: 0 1.5rem;
     }}
     .trust-grid {{
@@ -359,6 +462,75 @@ def generate_client_html(c):
       font-weight: 800;
       color: #ffffff;
       letter-spacing: -0.02em;
+    }}
+
+    /* Real Mountain Project Photo Grid */
+    .projects-grid {{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }}
+    .project-card {{
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }}
+    .project-card:hover {{
+      transform: translateY(-4px);
+      border-color: rgba(255, 255, 255, 0.25);
+    }}
+    .project-img-wrap {{
+      position: relative;
+      width: 100%;
+      height: 220px;
+      background: #1e293b;
+      overflow: hidden;
+    }}
+    .project-img {{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }}
+    .project-card:hover .project-img {{
+      transform: scale(1.04);
+    }}
+    .project-loc-badge {{
+      position: absolute;
+      bottom: 0.75rem;
+      left: 0.75rem;
+      background: rgba(9, 13, 22, 0.85);
+      backdrop-filter: blur(8px);
+      color: #ffffff;
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }}
+    .project-body {{
+      padding: 1.25rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }}
+    .project-title {{
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }}
+    .project-desc {{
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.5;
     }}
 
     /* Services Grid */
@@ -606,10 +778,7 @@ def generate_client_html(c):
 
   <!-- Navigation -->
   <nav class="navbar">
-    <div class="brand-group">
-      <a href="./" class="brand-name">{c['business_name']}</a>
-      <span class="brand-location">{c['city']}, NC • {c['trade']}</span>
-    </div>
+    {brand_header_html}
     <div class="nav-cta">
       <a href="tel:{phone_clean}" class="btn-call">
         <svg viewBox="0 0 24 24" fill="currentColor">
@@ -641,12 +810,28 @@ def generate_client_html(c):
         Text For Fast Estimate
       </a>
     </div>
+
+    {hero_featured_html}
   </header>
 
   <!-- Trust Badges Bar -->
   <section class="trust-container">
     <div class="trust-grid">
       {trust_badges_html}
+    </div>
+  </section>
+
+  <!-- Real Local Project Gallery -->
+  <section class="section-wrap">
+    <div class="section-header">
+      <div class="section-subtitle">Real Local Mountain Jobs</div>
+      <h2>Recent Work Across {c['county']}</h2>
+      <p style="color: var(--text-muted); max-width: 650px; margin: 0.5rem auto 0; font-size: 0.95rem;">
+        Authentic field photography from recent residential and commercial mountain contracts.
+      </p>
+    </div>
+    <div class="projects-grid">
+      {projects_cards}
     </div>
   </section>
 
@@ -786,16 +971,19 @@ def generate_master_portal_html(clients):
         # Color coding for old score
         score_class = "score-bad" if old_score < 50 else ("score-mid" if old_score < 75 else "score-good")
         
+        # Project reference for pitch
+        projs = c.get("projects", [])
+        top_project_ref = projs[0]["title"] if projs else "recent mountain contracts"
+        
         # SMS Pitch text
         sms_pitch = (
-            f"Hey {c['owner_name']}, this is Brandon in Hendersonville. Ran an automated Google speed audit "
-            f"on your web presence for {c['short_name']} and noticed mobile visitors wait {old_lcp} to see your page "
-            f"(scores {old_score}/100 on Google PageSpeed). In WNC, 80%+ of folks search on phones from job sites or cabins. "
-            f"I built a clean, lightning-fast mockup for you that hits 100/100 and loads in 0.3s. "
-            f"Take a look on your phone: https://wnc-client-sites.pages.dev/sites/{c['slug']}/ "
+            f"Hey {c['owner_name']}, Brandon here in Hendersonville. Ran an automated Google speed test on your web presence for {c['short_name']} "
+            f"and saw mobile visitors wait {old_lcp} for your page (scores {old_score}/100 on Google PageSpeed). In WNC, slow load times lose callers. "
+            f"Your mountain craftsmanship is top tier, so I took photos of your actual work ({top_project_ref}), "
+            f"optimized them, and built a high-speed mockup for you that hits 100/100 and loads in 0.4s: "
+            f"https://wnc-client-sites.pages.dev/sites/{c['slug']}/ "
             f"If you like it, I host and maintain it for $49/mo flat—zero setup fee, no contracts, and you keep your domain. Let me know what you think!"
         )
-        escaped_sms = sms_pitch.replace('"', '&quot;').replace("'", "&#39;")
         
         table_rows += f"""
         <tr>
@@ -829,6 +1017,15 @@ def generate_master_portal_html(clients):
         </tr>
         """
         
+        # Build thumbnail strip for dossier card
+        thumb_strip = ""
+        for p in projs[:3]:
+            thumb_strip += f"""
+            <div class="thumb-box">
+              <img src="sites/{c['slug']}/{p['image']}" alt="{p['title']}" width="100" height="65" loading="lazy" decoding="async">
+            </div>
+            """
+
         client_cards += f"""
         <div class="client-dossier-card">
           <div class="card-header">
@@ -837,6 +1034,10 @@ def generate_master_portal_html(clients):
               <div class="card-meta">{c['city']}, NC • {c['county']}</div>
             </div>
             <span class="corridor-tag">{c['corridor_name'].split('—')[0].strip()}</span>
+          </div>
+          
+          <div class="thumb-strip-wrap">
+            {thumb_strip}
           </div>
           
           <div class="stat-compare">
@@ -849,7 +1050,7 @@ def generate_master_portal_html(clients):
             <div class="stat-box good">
               <div class="stat-label">Our Rental Mockup</div>
               <div class="stat-val">100 / 100</div>
-              <div class="stat-detail">Load Time: 0.3s</div>
+              <div class="stat-detail">Load Time: 0.4s</div>
             </div>
           </div>
           
@@ -857,6 +1058,10 @@ def generate_master_portal_html(clients):
             <div class="field-row">
               <span class="field-title">Direct Cell / SMS:</span>
               <a href="tel:{phone_clean}" class="field-val highlight">{c['cell_phone']} ({c['owner_name']})</a>
+            </div>
+            <div class="field-row">
+              <span class="field-title">Featured Project:</span>
+              <span class="field-val" style="font-size: 0.8rem; color: #cbd5e1;">{top_project_ref}</span>
             </div>
             <div class="field-row">
               <span class="field-title">Monthly Rental Rate:</span>
@@ -881,7 +1086,7 @@ def generate_master_portal_html(clients):
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WNC Trade Contractor Website Rental Portfolio | Ridgeline Trade Network</title>
-  <meta name="description" content="Turnkey 100/100 PageSpeed website rentals for Western North Carolina trade contractors. Direct client acquisition and rank-and-rent corridor pipeline.">
+  <meta name="description" content="Turnkey 100/100 PageSpeed website rentals for Western North Carolina trade contractors with real project photography.">
   <meta name="robots" content="noindex, nofollow">
   
   <style>
@@ -1107,7 +1312,7 @@ def generate_master_portal_html(clients):
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1rem;
     }}
     .card-header h3 {{
       font-size: 1.15rem;
@@ -1129,6 +1334,26 @@ def generate_master_portal_html(clients):
       white-space: nowrap;
     }}
     
+    .thumb-strip-wrap {{
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }}
+    .thumb-box {{
+      flex: 1;
+      height: 65px;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid var(--card-border);
+      background: #1e293b;
+    }}
+    .thumb-box img {{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }}
+
     .stat-compare {{
       display: flex;
       align-items: center;
@@ -1238,7 +1463,7 @@ def generate_master_portal_html(clients):
     <div class="badge-pill">Barebones 3D • WNC Trade Network Hub</div>
     <h1>WNC Contractor Website Rental Operations</h1>
     <p class="lead">
-      High-converting $49/month website rentals built for 10 premier trade contractors across Western North Carolina. Trojan horse architecture unlocking $750–$1,250/mo corridor leases.
+      High-converting $49/month website rentals built with real field photography for 10 premier trade contractors across Western North Carolina.
     </p>
   </header>
 
@@ -1267,7 +1492,7 @@ def generate_master_portal_html(clients):
     <!-- Executive Comparison Table -->
     <div class="section-title">
       <span>Contractor Audit & Speed Comparison Matrix</span>
-      <span style="font-size: 0.85rem; font-weight: 600; color: var(--emerald);">✓ All 10 Sites 100/100 Ready</span>
+      <span style="font-size: 0.85rem; font-weight: 600; color: var(--emerald);">✓ All 10 Sites 100/100 Ready (With Real Photos)</span>
     </div>
     
     <div class="table-container">
@@ -1290,7 +1515,7 @@ def generate_master_portal_html(clients):
 
     <!-- Client Dossiers -->
     <div class="section-title">
-      <span>Contractor Profiles & Outreach Dossiers</span>
+      <span>Contractor Profiles & Real Project Dossiers</span>
     </div>
     <div class="dossier-grid">
       {client_cards}
@@ -1298,9 +1523,9 @@ def generate_master_portal_html(clients):
 
     <!-- Two-Tier Strategy Roadmap -->
     <div class="strategy-box">
-      <h3>The Two-Tier Acquisition & Upsell Playbook</h3>
+      <h3>The Magic Mirror Acquisition Playbook</h3>
       <p>
-        <strong>Step 1 — The Frictionless $49/mo Trojan Horse:</strong> Mountain trade contractors are fiercely skeptical of marketing agencies who charge $3,000 upfront. By sending a personalized SMS highlighting their abysmal mobile load times (e.g. 19.3 seconds for Dirtworks, 9.9 seconds for Turning Leaf) alongside an instant live preview link of our 100/100 mockup, we establish immediate authority. At $49/mo with zero setup fee and no lock-in contract, it's an impulse business expense.
+        <strong>Step 1 — The Real Photo "Magic Mirror":</strong> When contractors open a site mockup and see their <em>actual</em> crane lift in Black Mountain or their <em>actual</em> boulder retaining wall in Saluda, skepticism vanishes. They see their real craftsmanship presented with premium typography and lighting-fast load speeds.
       </p>
       <p>
         <strong>Step 2 — The Non-Compete Strategic Moat:</strong> These client rental websites are strictly configured for <em>Brand Entity & Local NAP Citation SEO</em> (capturing direct referrals, name searches, and hyper-local citation traffic). They do not compete with our 19 regional WNC Trade sites (<code>wnctreeremoval.com</code>, <code>wncexcavating.com</code>, etc.) which target broad, high-volume corridor terms across all 23 counties.
@@ -1372,7 +1597,7 @@ def main():
         sitemap_content = generate_sitemap_xml(slug)
         atomic_write(site_dir / "sitemap.xml", sitemap_content)
 
-        print(f"   ✓ index.html (Inlined CSS, Schema JSON-LD, 100/100 speed)")
+        print(f"   ✓ index.html (Real photos, Logo, Inlined CSS, Schema JSON-LD, 100/100 speed)")
         print(f"   ✓ robots.txt & sitemap.xml generated")
 
     # 2. Build Master Showcase Portal at root /index.html

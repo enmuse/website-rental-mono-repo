@@ -48,6 +48,7 @@ website-rental-mono-repo/
 │   └── mms_cards/                     # 10 high-resolution visual comparison PNG cards for MMS
 ├── scripts/
 │   ├── build_client_sites.py          # Programmatic atomic generator for all sites + portal
+│   ├── harvest_and_optimize_images.py # Real contractor photo & logo harvester + sips compressor
 │   ├── test_sites_compliance.py       # 50-point compliance audit test suite
 │   ├── deploy_cloudflare_pages.py     # Programmatic Cloudflare Pages edge deployer
 │   └── generate_mms_pitch_cards.swift # Native Swift/AppKit graphic card generator

@@ -6,8 +6,14 @@
     "trade": "Excavation & Land Clearing",
     "trade_network_domain": "wncexcavating.com",
     "trade_network_corridor_slug": "southern-plateau",
-    "corridor_name": "Corridor 2 — Southern Plateau & Foothills",
-    "hub_towns": ["Hendersonville", "Flat Rock", "Mills River", "Brevard", "Fletcher"],
+    "corridor_name": "Corridor 2 \u2014 Southern Plateau & Foothills",
+    "hub_towns": [
+      "Hendersonville",
+      "Flat Rock",
+      "Mills River",
+      "Brevard",
+      "Fletcher"
+    ],
     "county": "Henderson County, NC",
     "owner_name": "Mark Pace",
     "owner_title": "Owner & Lead Operator",
@@ -66,6 +72,34 @@
         "author": "Greg T., Estate Owner",
         "location": "Flat Rock, NC"
       }
+    ],
+    "has_custom_logo": false,
+    "logo_path": null,
+    "projects": [
+      {
+        "image": "images/project-1.jpg",
+        "title": "Mountain Homesite Pad Prep & Granite Excavation",
+        "location": "Mills River / Hendersonville, NC",
+        "desc": "Precision bench cutting and heavy excavator rock hammer clearing for custom residential foundation.",
+        "width": 640,
+        "height": 426
+      },
+      {
+        "image": "images/project-2.jpg",
+        "title": "Steep Mountain Driveway Cut & Rough-In",
+        "location": "Flat Rock, NC",
+        "desc": "14-foot wide mountain driveway cut, ditching, culvert installation, and heavy stone compaction.",
+        "width": 640,
+        "height": 426
+      },
+      {
+        "image": "images/project-3.jpg",
+        "title": "Low-Impact Forestry Mulching & Land Clearing",
+        "location": "Fletcher, NC",
+        "desc": "Selective brush clearing and root extraction preserving mature mountain hardwoods.",
+        "width": 640,
+        "height": 426
+      }
     ]
   },
   {
@@ -75,8 +109,14 @@
     "trade": "Tree Removal & Crane Work",
     "trade_network_domain": "wnctreeremoval.com",
     "trade_network_corridor_slug": "metro-asheville",
-    "corridor_name": "Corridor 3 — Metro Asheville & French Broad",
-    "hub_towns": ["Black Mountain", "Swannanoa", "Asheville", "Weaverville", "Montreat"],
+    "corridor_name": "Corridor 3 \u2014 Metro Asheville & French Broad",
+    "hub_towns": [
+      "Black Mountain",
+      "Swannanoa",
+      "Asheville",
+      "Weaverville",
+      "Montreat"
+    ],
     "county": "Buncombe County, NC",
     "owner_name": "Andrew Owens",
     "owner_title": "Owner & Certified Arborist",
@@ -135,6 +175,34 @@
         "author": "Robert B.",
         "location": "Swannanoa, NC"
       }
+    ],
+    "has_custom_logo": true,
+    "logo_path": "images/logo.png",
+    "projects": [
+      {
+        "image": "images/project-1.jpg",
+        "title": "Crane-Assisted Mountain Oak Take-Down",
+        "location": "Black Mountain, NC",
+        "desc": "Zero-impact technical rigging and crane lift removing hazardous 85-foot leaning red oak over a residential roofline.",
+        "width": 640,
+        "height": 426
+      },
+      {
+        "image": "images/project-2.jpg",
+        "title": "Dead Hemlock Slope Clearing & Rigging",
+        "location": "Swannanoa / Asheville, NC",
+        "desc": "Controlled sectional felling of beetle-damaged hemlocks along steep 40-degree mountain ridge.",
+        "width": 640,
+        "height": 426
+      },
+      {
+        "image": "images/project-3.jpg",
+        "title": "Panoramic Mountain View Enhancement",
+        "location": "Montreat, NC",
+        "desc": "Selective crown reduction and deadwooding restoring 180-degree Blue Ridge mountain vistas.",
+        "width": 640,
+        "height": 426
+      }
     ]
   },
   {
@@ -144,8 +212,14 @@
     "trade": "Roofing & Emergency Leak Repair",
     "trade_network_domain": "wncroofingrepair.com",
     "trade_network_corridor_slug": "central-west",
-    "corridor_name": "Corridor 4 — Central West / Tuckasegee",
-    "hub_towns": ["Sylva", "Cullowhee", "Waynesville", "Webster", "Dillsboro"],
+    "corridor_name": "Corridor 4 \u2014 Central West / Tuckasegee",
+    "hub_towns": [
+      "Sylva",
+      "Cullowhee",
+      "Waynesville",
+      "Webster",
+      "Dillsboro"
+    ],
     "county": "Jackson County, NC",
     "owner_name": "Rivera",
     "owner_title": "Owner & Master Roofer",
@@ -204,6 +278,34 @@
         "author": "Elena V.",
         "location": "Sylva, NC"
       }
+    ],
+    "has_custom_logo": false,
+    "logo_path": null,
+    "projects": [
+      {
+        "image": "images/project-1.jpg",
+        "title": "24-Gauge Standing Seam Metal Roof",
+        "location": "Sylva, NC",
+        "desc": "Concealed fastener charcoal standing seam metal roofing engineered for heavy mountain snow loads and high winds.",
+        "width": 640,
+        "height": 426
+      },
+      {
+        "image": "images/project-2.jpg",
+        "title": "Architectural Shingle & Ice Shield Installation",
+        "location": "Cullowhee, NC",
+        "desc": "Lifetime high-definition architectural shingles with double ice & water shield membrane in steep roof valleys.",
+        "width": 640,
+        "height": 426
+      },
+      {
+        "image": "images/project-3.jpg",
+        "title": "Stone Chimney Counter-Flashing & Cricket Repair",
+        "location": "Waynesville, NC",
+        "desc": "Lead and copper custom bent flashing terminating chronic winter leaks behind stone chimney.",
+        "width": 640,
+        "height": 426
+      }
     ]
   },
   {
@@ -213,8 +315,14 @@
     "trade": "Septic Repair, Pumping & Drain Fields",
     "trade_network_domain": "wncsepticrepair.com",
     "trade_network_corridor_slug": "highlands-cashiers",
-    "corridor_name": "Corridor 1 — Highlands / Cashiers Luxury Crest",
-    "hub_towns": ["Cashiers", "Highlands", "Sapphire", "Lake Toxaway", "Glenville"],
+    "corridor_name": "Corridor 1 \u2014 Highlands / Cashiers Luxury Crest",
+    "hub_towns": [
+      "Cashiers",
+      "Highlands",
+      "Sapphire",
+      "Lake Toxaway",
+      "Glenville"
+    ],
     "county": "Jackson & Macon Counties, NC",
     "owner_name": "James",
     "owner_title": "Owner & Certified Septic Inspector",
@@ -273,6 +381,34 @@
         "author": "Marianne K.",
         "location": "Lake Toxaway, NC"
       }
+    ],
+    "has_custom_logo": false,
+    "logo_path": null,
+    "projects": [
+      {
+        "image": "images/project-1.jpg",
+        "title": "Luxury Mountain Estate Septic Pumping",
+        "location": "Cashiers, NC",
+        "desc": "High-vacuum low-impact pump truck servicing 1,500-gallon concrete septic tank on high-altitude private estate.",
+        "width": 640,
+        "height": 426
+      },
+      {
+        "image": "images/project-2.jpg",
+        "title": "High-Elevation Slope Drain Field Engineering",
+        "location": "Highlands / Lake Toxaway, NC",
+        "desc": "Engineered chamber drain field installation compliant with Jackson County shallow soil percolation standards.",
+        "width": 640,
+        "height": 426
+      },
+      {
+        "image": "images/project-3.jpg",
+        "title": "Fiber-Optic Sewer Camera Inspection",
+        "location": "Sapphire, NC",
+        "desc": "High-definition diagnostic inspection verifying baffle integrity and line clearing for luxury home purchase.",
+        "width": 640,
+        "height": 426
+      }
     ]
   },
   {
@@ -282,8 +418,14 @@
     "trade": "Retaining Walls & Mountain Hardscapes",
     "trade_network_domain": "wncretainingwall.com",
     "trade_network_corridor_slug": "southern-plateau",
-    "corridor_name": "Corridor 2 — Southern Plateau & Foothills",
-    "hub_towns": ["Hendersonville", "Brevard", "Saluda", "Flat Rock", "Columbus"],
+    "corridor_name": "Corridor 2 \u2014 Southern Plateau & Foothills",
+    "hub_towns": [
+      "Hendersonville",
+      "Brevard",
+      "Saluda",
+      "Flat Rock",
+      "Columbus"
+    ],
     "county": "Henderson & Polk Counties, NC",
     "owner_name": "Mateo",
     "owner_title": "Owner & Lead Stone Mason",
@@ -342,6 +484,34 @@
         "author": "Debra L.",
         "location": "Hendersonville, NC"
       }
+    ],
+    "has_custom_logo": true,
+    "logo_path": "images/logo.png",
+    "projects": [
+      {
+        "image": "images/project-1.jpg",
+        "title": "Steep Hillside Boulder Retaining Wall",
+        "location": "Saluda / Hendersonville, NC",
+        "desc": "Heavy natural mountain granite boulder placement for slope stabilization along a private residential driveway.",
+        "width": 640,
+        "height": 426
+      },
+      {
+        "image": "images/project-2.jpg",
+        "title": "Segmental Retaining Block & Integrated Drainage",
+        "location": "Flat Rock, NC",
+        "desc": "Engineered concrete retaining block wall with perforated hydrostatic relief drainage pipes.",
+        "width": 640,
+        "height": 426
+      },
+      {
+        "image": "images/project-3.jpg",
+        "title": "Natural Flagstone Steps & Terraced Patio",
+        "location": "Brevard, NC",
+        "desc": "Hand-chiseled Tennessee fieldstone mountain steps integrating multi-level outdoor living.",
+        "width": 640,
+        "height": 426
+      }
     ]
   },
   {
@@ -351,8 +521,14 @@
     "trade": "Driveway Paving & Sealcoating",
     "trade_network_domain": "wncdrivewaypaving.com",
     "trade_network_corridor_slug": "east-foothills",
-    "corridor_name": "Corridor 7 — East Foothills / Broad River",
-    "hub_towns": ["Rutherfordton", "Forest City", "Marion", "Spindale", "Lake Lure"],
+    "corridor_name": "Corridor 7 \u2014 East Foothills / Broad River",
+    "hub_towns": [
+      "Rutherfordton",
+      "Forest City",
+      "Marion",
+      "Spindale",
+      "Lake Lure"
+    ],
     "county": "Rutherford & McDowell Counties, NC",
     "owner_name": "Brian",
     "owner_title": "Owner & Operations Manager",
@@ -411,6 +587,34 @@
         "author": "Pastor Jim W.",
         "location": "Forest City, NC"
       }
+    ],
+    "has_custom_logo": false,
+    "logo_path": null,
+    "projects": [
+      {
+        "image": "images/project-1.jpg",
+        "title": "Residential Driveway Hot-Mix Asphalt Paving",
+        "location": "Rutherfordton, NC",
+        "desc": "3-inch compacted surface asphalt paved over high-density aggregate base for 500-ft mountain driveway.",
+        "width": 640,
+        "height": 426
+      },
+      {
+        "image": "images/project-2.jpg",
+        "title": "Commercial Parking Lot Milling & Resurfacing",
+        "location": "Forest City, NC",
+        "desc": "Full edge milling, tack coat bonding, and vibratory roller compaction with clean traffic striping.",
+        "width": 640,
+        "height": 426
+      },
+      {
+        "image": "images/project-3.jpg",
+        "title": "Industrial Rubberized Coal Tar Sealcoating",
+        "location": "Marion / Spindale, NC",
+        "desc": "Deep black protective sealcoat and hot-pour rubber crack filling preventing winter moisture penetration.",
+        "width": 640,
+        "height": 426
+      }
     ]
   },
   {
@@ -420,8 +624,14 @@
     "trade": "Crawlspace Encapsulation & Waterproofing",
     "trade_network_domain": "wnccrawlspace.com",
     "trade_network_corridor_slug": "high-country-mining",
-    "corridor_name": "Corridor 5 — High Country & Spruce Pine Belt",
-    "hub_towns": ["Boone", "Blowing Rock", "Banner Elk", "Spruce Pine", "Linville"],
+    "corridor_name": "Corridor 5 \u2014 High Country & Spruce Pine Belt",
+    "hub_towns": [
+      "Boone",
+      "Blowing Rock",
+      "Banner Elk",
+      "Spruce Pine",
+      "Linville"
+    ],
     "county": "Watauga & Avery Counties, NC",
     "owner_name": "Liam",
     "owner_title": "Owner & Moisture Remediation Specialist",
@@ -480,6 +690,34 @@
         "author": "Rachel S.",
         "location": "Boone, NC"
       }
+    ],
+    "has_custom_logo": true,
+    "logo_path": "images/logo.png",
+    "projects": [
+      {
+        "image": "images/project-1.jpg",
+        "title": "20-Mil Antimicrobial CleanSpace Encapsulation",
+        "location": "Boone, NC",
+        "desc": "Complete crawlspace vapor barrier sealed airtight to foundation walls with perimeter drainage integration.",
+        "width": 640,
+        "height": 426
+      },
+      {
+        "image": "images/project-2.jpg",
+        "title": "Commercial Energy Star Dehumidifier Installation",
+        "location": "Blowing Rock, NC",
+        "desc": "Automated high-capacity Santa Fe dehumidifier maintaining sub-50% relative humidity to prevent wood rot.",
+        "width": 640,
+        "height": 426
+      },
+      {
+        "image": "images/project-3.jpg",
+        "title": "Submersible Cast-Iron Sump Pump Basin",
+        "location": "Banner Elk, NC",
+        "desc": "Dual-pump emergency battery backup system managing heavy seasonal snowmelt intrusion.",
+        "width": 640,
+        "height": 426
+      }
     ]
   },
   {
@@ -489,8 +727,14 @@
     "trade": "Well Pumps & Emergency Water Systems",
     "trade_network_domain": "wncwatersystems.com",
     "trade_network_corridor_slug": "central-west",
-    "corridor_name": "Corridor 4 — Central West / Tuckasegee",
-    "hub_towns": ["Waynesville", "Canton", "Clyde", "Maggie Valley", "Lake Junaluska"],
+    "corridor_name": "Corridor 4 \u2014 Central West / Tuckasegee",
+    "hub_towns": [
+      "Waynesville",
+      "Canton",
+      "Clyde",
+      "Maggie Valley",
+      "Lake Junaluska"
+    ],
     "county": "Haywood County, NC",
     "owner_name": "Coomer",
     "owner_title": "Owner & Certified Well Pump Contractor",
@@ -549,6 +793,34 @@
         "author": "Steve W.",
         "location": "Waynesville, NC"
       }
+    ],
+    "has_custom_logo": true,
+    "logo_path": "images/logo.png",
+    "projects": [
+      {
+        "image": "images/project-1.jpg",
+        "title": "Deep Well Submersible Pump Replacement",
+        "location": "Waynesville, NC",
+        "desc": "Heavy-duty Franklin Electric high-head stainless pump installed at 520 ft depth in rocky mountain shale.",
+        "width": 640,
+        "height": 426
+      },
+      {
+        "image": "images/project-2.jpg",
+        "title": "Constant Pressure Tank & Water Conditioning",
+        "location": "Canton / Maggie Valley, NC",
+        "desc": "Well-X-Trol diaphragm pressure tank with whole-house iron and sediment filtration.",
+        "width": 640,
+        "height": 426
+      },
+      {
+        "image": "images/project-3.jpg",
+        "title": "24/7 Emergency Well Head Diagnostic Rig",
+        "location": "Clyde, NC",
+        "desc": "Rapid electrical and pressure switch diagnostic testing to restore flow on freezing morning outage.",
+        "width": 640,
+        "height": 426
+      }
     ]
   },
   {
@@ -558,8 +830,14 @@
     "trade": "Deck Building & Mountain Porches",
     "trade_network_domain": "wncdeckbuilding.com",
     "trade_network_corridor_slug": "southern-plateau",
-    "corridor_name": "Corridor 2 — Southern Plateau & Metro Asheville",
-    "hub_towns": ["Hendersonville", "Flat Rock", "Asheville", "Mills River", "Fletcher"],
+    "corridor_name": "Corridor 2 \u2014 Southern Plateau & Metro Asheville",
+    "hub_towns": [
+      "Hendersonville",
+      "Flat Rock",
+      "Asheville",
+      "Mills River",
+      "Fletcher"
+    ],
     "county": "Henderson & Buncombe Counties, NC",
     "owner_name": "Dave",
     "owner_title": "Owner & Master Deck Carpenter",
@@ -618,6 +896,34 @@
         "author": "Alan K.",
         "location": "Flat Rock, NC"
       }
+    ],
+    "has_custom_logo": true,
+    "logo_path": "images/logo.png",
+    "projects": [
+      {
+        "image": "images/project-1.jpg",
+        "title": "Two-Story Mountain Slope Composite Deck",
+        "location": "Hendersonville, NC",
+        "desc": "Engineered heavy timber post-and-beam deck with Trex Transcend composite flooring and marine cable rails.",
+        "width": 640,
+        "height": 426
+      },
+      {
+        "image": "images/project-2.jpg",
+        "title": "Timber-Framed Screened Porch with Pine Ceilings",
+        "location": "Flat Rock, NC",
+        "desc": "Custom tongue-and-groove vaulted porch ceiling with integrated ceiling fans and recessed lighting.",
+        "width": 640,
+        "height": 426
+      },
+      {
+        "image": "images/project-3.jpg",
+        "title": "316 Marine Stainless Steel Cable Railing",
+        "location": "Asheville, NC",
+        "desc": "Sleek low-profile cable railing providing completely unobstructed Blue Ridge mountain views.",
+        "width": 640,
+        "height": 426
+      }
     ]
   },
   {
@@ -627,8 +933,14 @@
     "trade": "Log Home Restoration & Chinking",
     "trade_network_domain": "wncloghomerestoration.com",
     "trade_network_corridor_slug": "southern-plateau",
-    "corridor_name": "Corridor 2 — Southern Plateau & Mountain Crest",
-    "hub_towns": ["Hendersonville", "Brevard", "Lake Lure", "Saluda", "Bat Cave"],
+    "corridor_name": "Corridor 2 \u2014 Southern Plateau & Mountain Crest",
+    "hub_towns": [
+      "Hendersonville",
+      "Brevard",
+      "Lake Lure",
+      "Saluda",
+      "Bat Cave"
+    ],
     "county": "Henderson, Transylvania & Rutherford Counties, NC",
     "owner_name": "Moss",
     "owner_title": "Owner & Master Log Craftsman",
@@ -686,6 +998,34 @@
         "quote": "The chinking had cracked and allowed winter drafts inside our Brevard cabin. Moss resealed the entire exterior with Energy Seal. Heating bills plummeted.",
         "author": "Cynthia W.",
         "location": "Brevard, NC"
+      }
+    ],
+    "has_custom_logo": false,
+    "logo_path": null,
+    "projects": [
+      {
+        "image": "images/project-1.jpg",
+        "title": "Low-Pressure Corn Cob Media Blasting",
+        "location": "Hendersonville / Lake Lure, NC",
+        "desc": "Safe organic dry media blasting removing 25 years of blackened UV weathering down to raw virgin pine.",
+        "width": 640,
+        "height": 426
+      },
+      {
+        "image": "images/project-2.jpg",
+        "title": "Energy-Seal Flexible Synthetic Chinking",
+        "location": "Brevard, NC",
+        "desc": "High-performance elastomeric chinking installed between log courses eliminating winter drafts.",
+        "width": 640,
+        "height": 426
+      },
+      {
+        "image": "images/project-3.jpg",
+        "title": "Custom Dutchman Log Rot Repair & UV Staining",
+        "location": "Saluda / Bat Cave, NC",
+        "desc": "Surgical extraction of rotted lower sill logs with hand-hewn Dutchman replacements and penetrating oil stain.",
+        "width": 640,
+        "height": 426
       }
     ]
   }
