@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://preview.ridgelinetrade.com/sites/rice-crawlspace-waterproofing/sitemap.xml

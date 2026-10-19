@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://preview.ridgelinetrade.com/sites/mcneely-solar-batteries/sitemap.xml

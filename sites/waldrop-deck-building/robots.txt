@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://preview.ridgelinetrade.com/sites/waldrop-deck-building/sitemap.xml
