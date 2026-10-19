@@ -272,5 +272,545 @@
     "expires_month": "N/A",
     "expiration_status": "No Domain to Expire",
     "is_expiring_soon": false
+  },
+  "joel-rice-excavating": {
+    "domain": "joelriceexcavating.com",
+    "registrar": "GoDaddy.com, LLC",
+    "nameservers": [
+      "ns43.domaincontrol.com.",
+      "ns44.domaincontrol.com."
+    ],
+    "a_records": [
+      "34.102.136.180"
+    ],
+    "created": "2016-04-12",
+    "expires": "2026-11-28",
+    "dns_provider": "GoDaddy",
+    "dns_badge": "godaddy",
+    "login_url": "https://account.godaddy.com",
+    "delegate_url": "https://account.godaddy.com/access",
+    "action_tip": "GoDaddy: Log in -> DNS Management -> Point CNAME @ and www to preview.ridgelinetrade.com",
+    "domain_age_years": 10,
+    "domain_age_short": "10 yrs",
+    "domain_age_display": "10 Years (Registered Apr 2016)",
+    "authority_tier": "High Authority (5+ yrs)",
+    "days_until_expiration": 41,
+    "expires_formatted": "Nov 28, 2026",
+    "expires_month": "Nov 2026",
+    "expiration_status": "Expiring Soon (41 days left!)",
+    "is_expiring_soon": true
+  },
+  "bryson-enterprises-paving": {
+    "domain": "brysongrading.com",
+    "registrar": "Network Solutions, LLC",
+    "nameservers": [
+      "ns1.worldnic.com.",
+      "ns2.worldnic.com."
+    ],
+    "a_records": [
+      "205.178.189.131"
+    ],
+    "created": "2008-09-15",
+    "expires": "2027-09-15",
+    "dns_provider": "Network Solutions",
+    "dns_badge": "networksolutions",
+    "login_url": "https://www.networksolutions.com/manage-it/",
+    "delegate_url": "https://www.networksolutions.com/manage-it/",
+    "action_tip": "Network Solutions: Account Manager -> Edit DNS -> Advanced DNS -> Point CNAME to preview.ridgelinetrade.com",
+    "domain_age_years": 18,
+    "domain_age_short": "18 yrs",
+    "domain_age_display": "18 Years (Registered Sep 2008)",
+    "authority_tier": "Veteran Authority (10+ yrs)",
+    "days_until_expiration": 331,
+    "expires_formatted": "Sep 15, 2027",
+    "expires_month": "Sep 2027",
+    "expiration_status": "Active (Renews Sep 2027)",
+    "is_expiring_soon": false
+  },
+  "all-american-tree": {
+    "domain": "allamericantreeservicenc.com",
+    "registrar": "GoDaddy.com, LLC",
+    "nameservers": [
+      "ns21.domaincontrol.com.",
+      "ns22.domaincontrol.com."
+    ],
+    "a_records": [
+      "198.185.159.144"
+    ],
+    "created": "2015-06-22",
+    "expires": "2026-12-05",
+    "dns_provider": "GoDaddy",
+    "dns_badge": "godaddy",
+    "login_url": "https://account.godaddy.com",
+    "delegate_url": "https://account.godaddy.com/access",
+    "action_tip": "GoDaddy: DNS Management -> Add CNAME record pointing to preview.ridgelinetrade.com",
+    "domain_age_years": 11,
+    "domain_age_short": "11 yrs",
+    "domain_age_display": "11 Years (Registered Jun 2015)",
+    "authority_tier": "Veteran Authority (10+ yrs)",
+    "days_until_expiration": 48,
+    "expires_formatted": "Dec 05, 2026",
+    "expires_month": "Dec 2026",
+    "expiration_status": "Expiring Soon (48 days left!)",
+    "is_expiring_soon": true
+  },
+  "cauble-sons-grading": {
+    "domain": "caubleandsonsgrading.com",
+    "registrar": "Wix.com Ltd.",
+    "nameservers": [
+      "ns1.wixdns.net.",
+      "ns2.wixdns.net."
+    ],
+    "a_records": [
+      "185.230.63.171"
+    ],
+    "created": "2019-03-10",
+    "expires": "2027-03-10",
+    "dns_provider": "Wix DNS",
+    "dns_badge": "wix",
+    "login_url": "https://manage.wix.com",
+    "delegate_url": "https://manage.wix.com",
+    "action_tip": "Wix: Settings -> Domains -> Manage DNS Records -> Point CNAME to preview.ridgelinetrade.com",
+    "domain_age_years": 7,
+    "domain_age_short": "7 yrs",
+    "domain_age_display": "7 Years (Registered Mar 2019)",
+    "authority_tier": "High Authority (5+ yrs)",
+    "days_until_expiration": 142,
+    "expires_formatted": "Mar 10, 2027",
+    "expires_month": "Mar 2027",
+    "expiration_status": "Active (Renews Mar 2027)",
+    "is_expiring_soon": false
+  },
+  "mountain-generator-service": {
+    "domain": "mountaingenerator.com",
+    "registrar": "Register.com",
+    "nameservers": [
+      "dns1.register.com.",
+      "dns2.register.com."
+    ],
+    "a_records": [
+      "209.17.116.160"
+    ],
+    "created": "2005-11-04",
+    "expires": "2026-11-04",
+    "dns_provider": "Register.com",
+    "dns_badge": "registercom",
+    "login_url": "https://www.register.com",
+    "delegate_url": "https://www.register.com",
+    "action_tip": "Register.com: Account Dashboard -> Domain Management -> Advanced DNS -> Point CNAME",
+    "domain_age_years": 21,
+    "domain_age_short": "21 yrs",
+    "domain_age_display": "21 Years (Registered Nov 2005)",
+    "authority_tier": "Veteran Authority (10+ yrs)",
+    "days_until_expiration": 17,
+    "expires_formatted": "Nov 04, 2026",
+    "expires_month": "Nov 2026",
+    "expiration_status": "CRITICAL: Expiring in 17 days!",
+    "is_expiring_soon": true
+  },
+  "blue-ridge-decking": {
+    "domain": "blueridgedeckingnc.com",
+    "registrar": "Namecheap, Inc.",
+    "nameservers": [
+      "dns1.registrar-servers.com.",
+      "dns2.registrar-servers.com."
+    ],
+    "a_records": [
+      "199.188.200.124"
+    ],
+    "created": "2021-08-19",
+    "expires": "2027-08-19",
+    "dns_provider": "Namecheap BasicDNS",
+    "dns_badge": "namecheap",
+    "login_url": "https://ap.www.namecheap.com/",
+    "delegate_url": "https://ap.www.namecheap.com/Profile/Security/Sharing",
+    "action_tip": "Namecheap: Advanced DNS -> Add CNAME Record (@ & www) pointing to preview.ridgelinetrade.com",
+    "domain_age_years": 5,
+    "domain_age_short": "5 yrs",
+    "domain_age_display": "5 Years (Registered Aug 2021)",
+    "authority_tier": "High Authority (5+ yrs)",
+    "days_until_expiration": 305,
+    "expires_formatted": "Aug 19, 2027",
+    "expires_month": "Aug 2027",
+    "expiration_status": "Active (Renews Aug 2027)",
+    "is_expiring_soon": false
+  },
+  "american-tree-asheville": {
+    "domain": "americantreeserviceasheville.com",
+    "registrar": "GoDaddy.com, LLC",
+    "nameservers": [
+      "ns77.domaincontrol.com.",
+      "ns78.domaincontrol.com."
+    ],
+    "a_records": [
+      "192.186.230.120"
+    ],
+    "created": "2012-02-14",
+    "expires": "2027-02-14",
+    "dns_provider": "GoDaddy",
+    "dns_badge": "godaddy",
+    "login_url": "https://account.godaddy.com",
+    "delegate_url": "https://account.godaddy.com/access",
+    "action_tip": "GoDaddy: DNS Management -> Update CNAME record to preview.ridgelinetrade.com",
+    "domain_age_years": 14,
+    "domain_age_short": "14 yrs",
+    "domain_age_display": "14 Years (Registered Feb 2012)",
+    "authority_tier": "Veteran Authority (10+ yrs)",
+    "days_until_expiration": 118,
+    "expires_formatted": "Feb 14, 2027",
+    "expires_month": "Feb 2027",
+    "expiration_status": "Active (Renews Feb 2027)",
+    "is_expiring_soon": false
+  },
+  "greenscapes-retaining-walls": {
+    "domain": "greenscapesasheville.com",
+    "registrar": "Wix.com Ltd.",
+    "nameservers": [
+      "ns4.wixdns.net.",
+      "ns5.wixdns.net."
+    ],
+    "a_records": [
+      "185.230.63.107"
+    ],
+    "created": "2017-07-03",
+    "expires": "2027-07-03",
+    "dns_provider": "Wix DNS",
+    "dns_badge": "wix",
+    "login_url": "https://manage.wix.com",
+    "delegate_url": "https://manage.wix.com",
+    "action_tip": "Wix: Domain Settings -> Manage DNS -> Edit CNAME to preview.ridgelinetrade.com",
+    "domain_age_years": 9,
+    "domain_age_short": "9 yrs",
+    "domain_age_display": "9 Years (Registered Jul 2017)",
+    "authority_tier": "High Authority (5+ yrs)",
+    "days_until_expiration": 257,
+    "expires_formatted": "Jul 03, 2027",
+    "expires_month": "Jul 2027",
+    "expiration_status": "Active (Renews Jul 2027)",
+    "is_expiring_soon": false
+  },
+  "basement-technologies-wnc": {
+    "domain": "basementtechnologiesofwnc.com",
+    "registrar": "Tucows Domains Inc.",
+    "nameservers": [
+      "ns1.hover.com.",
+      "ns2.hover.com."
+    ],
+    "a_records": [
+      "64.98.145.30"
+    ],
+    "created": "2009-08-27",
+    "expires": "2026-11-15",
+    "dns_provider": "Hover / Tucows",
+    "dns_badge": "tucows",
+    "login_url": "https://www.hover.com/signin",
+    "delegate_url": "https://www.hover.com/signin",
+    "action_tip": "Hover: DNS Tab -> Add New Record -> Type CNAME -> Value preview.ridgelinetrade.com",
+    "domain_age_years": 17,
+    "domain_age_short": "17 yrs",
+    "domain_age_display": "17 Years (Registered Aug 2009)",
+    "authority_tier": "Veteran Authority (10+ yrs)",
+    "days_until_expiration": 28,
+    "expires_formatted": "Nov 15, 2026",
+    "expires_month": "Nov 2026",
+    "expiration_status": "Expiring Soon (28 days left!)",
+    "is_expiring_soon": true
+  },
+  "deepwoods-log-homes": {
+    "domain": "deepwoodslhs.com",
+    "registrar": "Squarespace Domains LLC (Google Transfer)",
+    "nameservers": [
+      "dns1.p01.nsone.net.",
+      "dns2.p01.nsone.net."
+    ],
+    "a_records": [
+      "198.185.159.145"
+    ],
+    "created": "2018-10-10",
+    "expires": "2027-10-10",
+    "dns_provider": "Squarespace DNS",
+    "dns_badge": "squarespace",
+    "login_url": "https://account.squarespace.com/domains",
+    "delegate_url": "https://account.squarespace.com/domains",
+    "action_tip": "Squarespace: Domains -> Manage DNS -> Add Custom CNAME Record",
+    "domain_age_years": 8,
+    "domain_age_short": "8 yrs",
+    "domain_age_display": "8 Years (Registered Oct 2018)",
+    "authority_tier": "High Authority (5+ yrs)",
+    "days_until_expiration": 356,
+    "expires_formatted": "Oct 10, 2027",
+    "expires_month": "Oct 2027",
+    "expiration_status": "Active (Renews Oct 2027)",
+    "is_expiring_soon": false
+  },
+  "austins-tree-service": {
+    "domain": "austinstreeservicenc.com",
+    "registrar": "GoDaddy.com, LLC",
+    "nameservers": [
+      "ns35.domaincontrol.com.",
+      "ns36.domaincontrol.com."
+    ],
+    "a_records": [
+      "198.49.23.144"
+    ],
+    "created": "2017-05-18",
+    "expires": "2027-05-18",
+    "dns_provider": "GoDaddy",
+    "dns_badge": "godaddy",
+    "login_url": "https://account.godaddy.com",
+    "delegate_url": "https://account.godaddy.com/access",
+    "action_tip": "GoDaddy: DNS Management -> Point CNAME to preview.ridgelinetrade.com",
+    "domain_age_years": 9,
+    "domain_age_short": "9 yrs",
+    "domain_age_display": "9 Years (Registered May 2017)",
+    "authority_tier": "High Authority (5+ yrs)",
+    "days_until_expiration": 211,
+    "expires_formatted": "May 18, 2027",
+    "expires_month": "May 2027",
+    "expiration_status": "Active (Renews May 2027)",
+    "is_expiring_soon": false
+  },
+  "rathbone-septic": {
+    "domain": "rathbonesepticnc.com",
+    "registrar": "Namecheap, Inc.",
+    "nameservers": [
+      "dns1.registrar-servers.com.",
+      "dns2.registrar-servers.com."
+    ],
+    "a_records": [
+      "199.59.243.220"
+    ],
+    "created": "2022-03-14",
+    "expires": "2027-03-14",
+    "dns_provider": "Namecheap BasicDNS",
+    "dns_badge": "namecheap",
+    "login_url": "https://ap.www.namecheap.com/",
+    "delegate_url": "https://ap.www.namecheap.com/Profile/Security/Sharing",
+    "action_tip": "Namecheap: Advanced DNS -> Add CNAME Record pointing to preview.ridgelinetrade.com",
+    "domain_age_years": 4,
+    "domain_age_short": "4 yrs",
+    "domain_age_display": "4 Years (Registered Mar 2022)",
+    "authority_tier": "Growing Authority (1-4 yrs)",
+    "days_until_expiration": 146,
+    "expires_formatted": "Mar 14, 2027",
+    "expires_month": "Mar 2027",
+    "expiration_status": "Active (Renews Mar 2027)",
+    "is_expiring_soon": false
+  },
+  "highlander-roofing": {
+    "domain": "highlandernc.com",
+    "registrar": "Network Solutions, LLC",
+    "nameservers": [
+      "ns1.worldnic.com.",
+      "ns2.worldnic.com."
+    ],
+    "a_records": [
+      "205.178.189.131"
+    ],
+    "created": "2011-06-28",
+    "expires": "2026-11-20",
+    "dns_provider": "Network Solutions",
+    "dns_badge": "networksolutions",
+    "login_url": "https://www.networksolutions.com/manage-it/",
+    "delegate_url": "https://www.networksolutions.com/manage-it/",
+    "action_tip": "Network Solutions: Edit DNS -> Advanced DNS -> Point CNAME",
+    "domain_age_years": 15,
+    "domain_age_short": "15 yrs",
+    "domain_age_display": "15 Years (Registered Jun 2011)",
+    "authority_tier": "Veteran Authority (10+ yrs)",
+    "days_until_expiration": 33,
+    "expires_formatted": "Nov 20, 2026",
+    "expires_month": "Nov 2026",
+    "expiration_status": "Expiring Soon (33 days left!)",
+    "is_expiring_soon": true
+  },
+  "the-franklin-bros-well": {
+    "domain": "thefranklinbros.com",
+    "registrar": "GoDaddy.com, LLC",
+    "nameservers": [
+      "ns51.domaincontrol.com.",
+      "ns52.domaincontrol.com."
+    ],
+    "a_records": [
+      "198.185.159.144"
+    ],
+    "created": "2013-08-05",
+    "expires": "2027-08-05",
+    "dns_provider": "GoDaddy",
+    "dns_badge": "godaddy",
+    "login_url": "https://account.godaddy.com",
+    "delegate_url": "https://account.godaddy.com/access",
+    "action_tip": "GoDaddy: DNS Management -> Add CNAME record to preview.ridgelinetrade.com",
+    "domain_age_years": 13,
+    "domain_age_short": "13 yrs",
+    "domain_age_display": "13 Years (Registered Aug 2013)",
+    "authority_tier": "Veteran Authority (10+ yrs)",
+    "days_until_expiration": 290,
+    "expires_formatted": "Aug 05, 2027",
+    "expires_month": "Aug 2027",
+    "expiration_status": "Active (Renews Aug 2027)",
+    "is_expiring_soon": false
+  },
+  "estes-grading": {
+    "domain": "estesgradingnc.com",
+    "registrar": "Domain.com, LLC",
+    "nameservers": [
+      "ns1.domain.com.",
+      "ns2.domain.com."
+    ],
+    "a_records": [
+      "66.96.149.32"
+    ],
+    "created": "2014-04-16",
+    "expires": "2026-11-12",
+    "dns_provider": "Domain.com",
+    "dns_badge": "domaincom",
+    "login_url": "https://www.domain.com/controlpanel",
+    "delegate_url": "https://www.domain.com/controlpanel",
+    "action_tip": "Domain.com: Domain Central -> DNS -> Add CNAME pointing to preview.ridgelinetrade.com",
+    "domain_age_years": 12,
+    "domain_age_short": "12 yrs",
+    "domain_age_display": "12 Years (Registered Apr 2014)",
+    "authority_tier": "Veteran Authority (10+ yrs)",
+    "days_until_expiration": 25,
+    "expires_formatted": "Nov 12, 2026",
+    "expires_month": "Nov 2026",
+    "expiration_status": "Expiring Soon (25 days left!)",
+    "is_expiring_soon": true
+  },
+  "boone-well-services": {
+    "domain": "boonewellservice.com",
+    "registrar": "Network Solutions, LLC",
+    "nameservers": [
+      "ns1.worldnic.com.",
+      "ns2.worldnic.com."
+    ],
+    "a_records": [
+      "205.178.189.131"
+    ],
+    "created": "2010-01-20",
+    "expires": "2027-01-20",
+    "dns_provider": "Network Solutions",
+    "dns_badge": "networksolutions",
+    "login_url": "https://www.networksolutions.com/manage-it/",
+    "delegate_url": "https://www.networksolutions.com/manage-it/",
+    "action_tip": "Network Solutions: Edit DNS -> Advanced DNS -> Point CNAME",
+    "domain_age_years": 16,
+    "domain_age_short": "16 yrs",
+    "domain_age_display": "16 Years (Registered Jan 2010)",
+    "authority_tier": "Veteran Authority (10+ yrs)",
+    "days_until_expiration": 93,
+    "expires_formatted": "Jan 20, 2027",
+    "expires_month": "Jan 2027",
+    "expiration_status": "Active (Renews Jan 2027)",
+    "is_expiring_soon": false
+  },
+  "cherokee-well-drilling": {
+    "domain": "cherokeewelldrilling.com",
+    "registrar": "GoDaddy.com, LLC",
+    "nameservers": [
+      "ns15.domaincontrol.com.",
+      "ns16.domaincontrol.com."
+    ],
+    "a_records": [
+      "198.185.159.144"
+    ],
+    "created": "2015-10-02",
+    "expires": "2027-10-02",
+    "dns_provider": "GoDaddy",
+    "dns_badge": "godaddy",
+    "login_url": "https://account.godaddy.com",
+    "delegate_url": "https://account.godaddy.com/access",
+    "action_tip": "GoDaddy: DNS Management -> Add CNAME pointing to preview.ridgelinetrade.com",
+    "domain_age_years": 11,
+    "domain_age_short": "11 yrs",
+    "domain_age_display": "11 Years (Registered Oct 2015)",
+    "authority_tier": "Veteran Authority (10+ yrs)",
+    "days_until_expiration": 348,
+    "expires_formatted": "Oct 02, 2027",
+    "expires_month": "Oct 2027",
+    "expiration_status": "Active (Renews Oct 2027)",
+    "is_expiring_soon": false
+  },
+  "connor-well-pump": {
+    "domain": "connorwellandpump.com",
+    "registrar": "Tucows Domains Inc.",
+    "nameservers": [
+      "ns1.hover.com.",
+      "ns2.hover.com."
+    ],
+    "a_records": [
+      "64.98.145.30"
+    ],
+    "created": "2018-03-21",
+    "expires": "2027-03-21",
+    "dns_provider": "Hover / Tucows",
+    "dns_badge": "tucows",
+    "login_url": "https://www.hover.com/signin",
+    "delegate_url": "https://www.hover.com/signin",
+    "action_tip": "Hover: DNS Tab -> Add CNAME Record pointing to preview.ridgelinetrade.com",
+    "domain_age_years": 8,
+    "domain_age_short": "8 yrs",
+    "domain_age_display": "8 Years (Registered Mar 2018)",
+    "authority_tier": "High Authority (5+ yrs)",
+    "days_until_expiration": 153,
+    "expires_formatted": "Mar 21, 2027",
+    "expires_month": "Mar 2027",
+    "expiration_status": "Active (Renews Mar 2027)",
+    "is_expiring_soon": false
+  },
+  "lake-james-electric": {
+    "domain": "lakejameselectric.com",
+    "registrar": "GoDaddy.com, LLC",
+    "nameservers": [
+      "ns41.domaincontrol.com.",
+      "ns42.domaincontrol.com."
+    ],
+    "a_records": [
+      "198.185.159.145"
+    ],
+    "created": "2019-11-14",
+    "expires": "2026-11-14",
+    "dns_provider": "GoDaddy",
+    "dns_badge": "godaddy",
+    "login_url": "https://account.godaddy.com",
+    "delegate_url": "https://account.godaddy.com/access",
+    "action_tip": "GoDaddy: DNS Management -> Add CNAME record pointing to preview.ridgelinetrade.com",
+    "domain_age_years": 7,
+    "domain_age_short": "7 yrs",
+    "domain_age_display": "7 Years (Registered Nov 2019)",
+    "authority_tier": "High Authority (5+ yrs)",
+    "days_until_expiration": 27,
+    "expires_formatted": "Nov 14, 2026",
+    "expires_month": "Nov 2026",
+    "expiration_status": "Expiring Soon (27 days left!)",
+    "is_expiring_soon": true
+  },
+  "austin-grading-land": {
+    "domain": "aglmnc.com",
+    "registrar": "Namecheap, Inc.",
+    "nameservers": [
+      "dns1.registrar-servers.com.",
+      "dns2.registrar-servers.com."
+    ],
+    "a_records": [
+      "199.188.200.124"
+    ],
+    "created": "2020-04-08",
+    "expires": "2027-04-08",
+    "dns_provider": "Namecheap BasicDNS",
+    "dns_badge": "namecheap",
+    "login_url": "https://ap.www.namecheap.com/",
+    "delegate_url": "https://ap.www.namecheap.com/Profile/Security/Sharing",
+    "action_tip": "Namecheap: Advanced DNS -> Add CNAME Record pointing to preview.ridgelinetrade.com",
+    "domain_age_years": 6,
+    "domain_age_short": "6 yrs",
+    "domain_age_display": "6 Years (Registered Apr 2020)",
+    "authority_tier": "High Authority (5+ yrs)",
+    "days_until_expiration": 171,
+    "expires_formatted": "Apr 08, 2027",
+    "expires_month": "Apr 2027",
+    "expiration_status": "Active (Renews Apr 2027)",
+    "is_expiring_soon": false
   }
 }
