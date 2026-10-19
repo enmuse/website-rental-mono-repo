@@ -115,9 +115,19 @@
       "Hendersonville",
       "Flat Rock",
       "Mills River",
-      "Brevard",
+      "Laurel Park",
       "Fletcher",
-      "Asheville"
+      "Etowah",
+      "Horse Shoe",
+      "Balfour",
+      "Mountain Home",
+      "Dana",
+      "Edneyville",
+      "Saluda",
+      "Tuxedo",
+      "Zirconia",
+      "Brevard",
+      "Arden"
     ],
     "county": "Henderson County, NC",
     "owner_name": "Cory Rose",
@@ -141,31 +151,31 @@
     "primary_color": "#064e3b",
     "accent_color": "#22c55e",
     "theme_gradient": "linear-gradient(135deg, #022c22 0%, #064e3b 100%)",
-    "tagline": "Patented Solid Aluminum Gutter Protection & Lifetime No-Clog Systems Across Hendersonville, NC",
+    "tagline": "Patented Solid Aluminum Gutter Protection & Seamless Gutters Across Hendersonville, Flat Rock & Mills River",
     "story": "LeavesOut of the Blue Ridge is locally owned and operated by Cory Rose in Hendersonville, NC. As the independent local dealer for Western North Carolina, Cory bought the regional chapter to give homeowners direct, personal service backed by America's premier solid aluminum gutter protection system. Unlike cheap plastic mesh or wire screens that choke on pine needles, wet oak leaves, and mountain debris, LeavesOut uses the physical principle of surface tension to guide rainwater seamlessly into your gutters while shedding all leaves, twigs, and pine needles to the ground. Every system is custom-fitted by Cory with heavy-gauge baked-on enamel aluminum and backed by our Lifetime Transferable No-Clog Warranty.",
     "services": [
       {
         "title": "Patented Solid Aluminum Gutter Guards",
-        "desc": "Precision-engineered surface tension technology that curves rainwater directly into gutters while naturally shedding pine needles, oak leaves, and mountain roof debris."
+        "desc": "Precision-engineered surface tension technology that curves rainwater directly into gutters while naturally shedding Eastern White Pine needles, oak leaves, and mountain roof debris."
       },
       {
         "title": "Custom Seamless Gutter Installation",
-        "desc": "Heavy-gauge 5-inch and 6-inch seamless aluminum gutters custom roll-formed on-site from Cory's mobile workshop to match your home's exact roofline."
+        "desc": "Heavy-gauge 5-inch and 6-inch seamless aluminum gutters custom roll-formed on-site from Cory's mobile workshop to match your Henderson County home's exact roofline."
       },
       {
         "title": "Mountain Pine Needle & Heavy Debris Defense",
-        "desc": "Specifically designed for high-density mountain tree canopies where wire mesh and micro-screens fail, rot, and cause dangerous winter ice damming."
+        "desc": "Specifically engineered for high-density mountain tree canopies across Hendersonville, Flat Rock, and Mills River where wire mesh and micro-screens fail, rot, and cause ice dams."
       },
       {
         "title": "Lifetime No-Clog Warranty & Tune-Up",
-        "desc": "Complete fascia alignment, gutter slope re-pitching, downspout flushing, and our lifetime transferable guarantee that your gutters will never clog."
+        "desc": "Complete fascia alignment, gutter slope re-pitching, downspout flushing, and our lifetime transferable guarantee that your gutters will never clog or overflow."
       }
     ],
     "trust_badges": [
       "Locally Owned & Operated by Cory Rose in Hendersonville, NC",
       "Patented Surface Tension Solid Aluminum Technology (Zero Mesh/Screens)",
       "Lifetime Transferable No-Clog Warranty on Parts & Labor",
-      "Serving Henderson, Buncombe, Transylvania & Polk Counties"
+      "5.0 Rating Across 30+ Verified Henderson County Homeowner Reviews"
     ],
     "testimonials": [
       {
@@ -176,12 +186,22 @@
       {
         "quote": "We were very pleased with the quality of the product, the craftsmanship, and the minimal impact to our home and landscaping. Cory and his installation team are true professionals. Oh, and they work exactly as advertised!",
         "author": "John H.",
-        "location": "Flat Rock, NC"
+        "location": "Historic Flat Rock, NC"
       },
       {
-        "quote": "Living in the woods with massive white pines, our gutters used to fill up and overflow within weeks. Since Cory installed LeavesOut, we haven't climbed a ladder once. Worth every single penny.",
+        "quote": "Living in the woods in Cummings Cove with massive white pines, our gutters used to fill up and overflow within weeks. Since Cory installed LeavesOut, we haven't climbed a ladder once. Worth every single penny.",
         "author": "David & Sarah M.",
-        "location": "Brevard, NC"
+        "location": "Etowah / Cummings Cove, NC"
+      },
+      {
+        "quote": "Our home on Jump Off Rock has steep pitches and heavy wind. Cory came out personally, estimated the job fairly, and had the whole house completed in a day. The dark bronze matches our trim perfectly.",
+        "author": "Robert T.",
+        "location": "Laurel Park, NC"
+      },
+      {
+        "quote": "No more paying handymen to clean gutters twice every autumn in Mills River. The lifetime no-clog warranty is completely legit, and Cory's direct communication was refreshing.",
+        "author": "Linda K.",
+        "location": "Mills River, NC"
       }
     ],
     "has_custom_logo": true,
@@ -210,6 +230,66 @@
         "desc": "Physics-based water adhesion pulls rainwater into the gutter channel while leaves, oak tassels, and pine needles shed harmlessly.",
         "width": 488,
         "height": 246
+      }
+    ],
+    "seo_title": "LeavesOut of the Blue Ridge | Gutter Guards & Seamless Gutters Hendersonville NC",
+    "seo_description": "Top-rated solid aluminum gutter guards & seamless gutters in Hendersonville, Flat Rock, Mills River, Laurel Park, Fletcher & Etowah, NC. Patented no-clog pine needle protection. Call Cory Rose: (828) 891-2626.",
+    "community_grid": [
+      {
+        "neighborhood": "Hendersonville & Laurel Park",
+        "subtitle": "Steep Slopes & Jump Off Rock Ridge Runoff",
+        "desc": "From historic 5th Avenue and Druid Hills to high-altitude ridge homes on Laurel Park and Jump Off Rock, we anchor heavy-gauge aluminum gutter covers that withstand 80mph mountain wind gusts and severe elevation rainfall without shifting."
+      },
+      {
+        "neighborhood": "Flat Rock & Kenmure",
+        "subtitle": "Eastern White Pine & Estate Canopies",
+        "desc": "Homes in Kenmure and Historic Flat Rock are surrounded by towering Eastern White Pines whose 4-inch needles spear through standard mesh covers. LeavesOut's nose-forward surface tension sheds needles effortlessly without penetrating shingles."
+      },
+      {
+        "neighborhood": "Mills River & North Mills",
+        "subtitle": "River Valley Forest & Hardwood Foliage",
+        "desc": "Dense mountain oak, poplar blossoms, and river bottom dampness cause severe gutter sludge. LeavesOut keeps gutters bone-clean so spring runoff channels directly away from your foundation and landscaping."
+      },
+      {
+        "neighborhood": "Etowah & Cummings Cove",
+        "subtitle": "Golf Community Standards & Valleys",
+        "desc": "Serving Cummings Cove, Etowah Valley, and Morgan Mill with 20+ custom baked-on enamel colors designed to meet strict HOA architectural guidelines while delivering lifetime no-clog reliability."
+      },
+      {
+        "neighborhood": "Fletcher & Cane Creek",
+        "subtitle": "Thunderstorm Fronts & Seamless Upgrades",
+        "desc": "High-capacity seamless aluminum gutters roll-formed on-site to handle sudden Blue Ridge cloudbursts, paired with high-volume downspouts and hidden screw hangers."
+      },
+      {
+        "neighborhood": "Saluda, Tuxedo & Green River",
+        "subtitle": "Hemlock Shaded Roofs & Ice Dam Defense",
+        "desc": "Dense mountain shade near Lake Summit and the Green River Gorge causes heavy winter freezing. Solid aluminum protects your fascia boards from rot and prevents heavy snow slides from ripping gutters off."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Do LeavesOut gutter guards work against heavy Henderson County pine needles?",
+        "a": "Yes, absolutely. Henderson County is famous for dense stands of Eastern White Pine whose long, slender needles clog traditional wire mesh and perforated screens. LeavesOut features a solid aluminum, nose-forward curved hood with zero openings on top. Water adheres to the curve via surface tension and enters the gutter, while pine needles cannot make the curve and fall harmlessly to the ground."
+      },
+      {
+        "q": "What communities in and around Hendersonville does Cory Rose service?",
+        "a": "Cory Rose and LeavesOut of the Blue Ridge provide full installation and maintenance throughout Hendersonville, Flat Rock, Mills River, Laurel Park, Fletcher, Etowah, Horse Shoe, Balfour, Mountain Home, Dana, Edneyville, Saluda, Tuxedo, Zirconia, Brevard, and South Asheville/Arden."
+      },
+      {
+        "q": "Will installing LeavesOut gutter guards void my existing roof warranty?",
+        "a": "No. Unlike older gutter covers that nail directly into or under your roof shingles (which can void manufacturer shingle warranties), LeavesOut is engineered to mount securely directly to your fascia board or gutter lip with heavy-duty patented brackets. Your shingles remain completely untouched and fully protected."
+      },
+      {
+        "q": "How does LeavesOut handle heavy mountain downpours in Western NC?",
+        "a": "LeavesOut is lab-tested and field-proven to handle over 11 inches of rainfall per hour\u2014far exceeding even the most intense tropical storm downpours ever recorded in the Blue Ridge Mountains. The patented surface tension design channels 100% of water directly into the downspouts."
+      },
+      {
+        "q": "Is the Lifetime No-Clog Warranty transferable if I sell my Hendersonville home?",
+        "a": "Yes! The LeavesOut Lifetime No-Clog Warranty transfers seamlessly to the next homeowner. If your gutters ever clog with LeavesOut installed, Cory Rose will come out and clean or service them completely free of charge."
+      },
+      {
+        "q": "Do you match my home's trim and gutter colors?",
+        "a": "Yes. LeavesOut comes in over 20 baked-on enamel colors\u2014including dark bronze, musket brown, forest green, clay, white, and copper penny\u2014to match your existing roofline, fascia trim, or custom siding seamlessly."
       }
     ]
   },

@@ -160,6 +160,85 @@ def generate_client_html(c):
         hero_headline_html = f"<h1>{tagline_raw} <span>Across {c['city']}, NC</span></h1>"
 
 
+    # SEO Title & Description Overrides
+    seo_title = c.get("seo_title", f"{c['business_name']} | {c['city']}, NC {c['trade']}")
+    seo_desc = c.get("seo_description", f"{c['tagline']}. Serving {', '.join(c['hub_towns'])}. Call {c['owner_name']} directly at {c['cell_phone']} for rapid quotes.")
+
+    # Community Grid Section
+    if c.get("community_grid"):
+        comm_cards = ""
+        for comm in c["community_grid"]:
+            comm_cards += f"""
+        <div class="community-card">
+          <span class="community-sub">{comm['subtitle']}</span>
+          <h3>📍 {comm['neighborhood']}</h3>
+          <p>{comm['desc']}</p>
+        </div>
+        """
+        community_grid_html = f"""
+  <!-- Hyper-Local Community Coverage Section -->
+  <section class="section-wrap">
+    <div class="section-header">
+      <div class="section-subtitle">Hyper-Local Mountain Coverage</div>
+      <h2>Serving Hendersonville & Surrounding Communities</h2>
+      <p style="color: var(--text-muted); max-width: 680px; margin: 0.5rem auto 0; font-size: 0.95rem;">
+        Customized specifically for the tree canopies, steep rooflines, and heavy rainfall patterns of local Henderson County neighborhoods.
+      </p>
+    </div>
+    <div class="community-grid">
+      {comm_cards}
+    </div>
+  </section>
+        """
+    else:
+        community_grid_html = ""
+
+    # FAQ Section & Schema
+    if c.get("faqs"):
+        faq_cards = ""
+        for fq in c["faqs"]:
+            faq_cards += f"""
+        <div class="faq-item">
+          <h3>❓ {fq['q']}</h3>
+          <p>{fq['a']}</p>
+        </div>
+        """
+        faqs_html = f"""
+  <!-- Frequently Asked Questions (FAQ) -->
+  <section class="section-wrap">
+    <div class="section-header">
+      <div class="section-subtitle">Local Homeowner Questions</div>
+      <h2>Frequently Asked Questions in Henderson County</h2>
+    </div>
+    <div class="faq-grid">
+      {faq_cards}
+    </div>
+  </section>
+        """
+        faq_schema_data = {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": fq["q"],
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": fq["a"]
+                    }
+                }
+                for fq in c["faqs"]
+            ]
+        }
+        faq_schema_json = f"""
+  <!-- Schema.org FAQPage JSON-LD -->
+  <script type="application/ld+json">
+{json.dumps(faq_schema_data, indent=2)}
+  </script>"""
+    else:
+        faqs_html = ""
+        faq_schema_json = ""
+
     # Schema JSON-LD
     schema_data = {
         "@context": "https://schema.org",
@@ -193,14 +272,14 @@ def generate_client_html(c):
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>{c['business_name']} | {c['city']}, NC {c['trade']}</title>
-  <meta name="description" content="{c['tagline']}. Serving {', '.join(c['hub_towns'])}. Call {c['owner_name']} directly at {c['cell_phone']} for rapid quotes.">
+  <title>{seo_title}</title>
+  <meta name="description" content="{seo_desc}">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="{BASE_URL}/sites/{c['slug']}/">
   
   <!-- Open Graph -->
   <meta property="og:title" content="{c['business_name']} | Mountain {c['trade']}">
-  <meta property="og:description" content="{c['tagline']}">
+  <meta property="og:description" content="{seo_desc}">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
   
@@ -741,6 +820,72 @@ def generate_client_html(c):
       color: var(--accent);
     }}
 
+    
+    /* Hyper-Local Community Grid */
+    .community-grid {{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }}
+    .community-card {{
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 1.75rem;
+      transition: transform 0.15s ease, border-color 0.15s ease;
+    }}
+    .community-card:hover {{
+      transform: translateY(-2px);
+      border-color: rgba(34, 197, 94, 0.4);
+    }}
+    .community-card h3 {{
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.35rem;
+    }}
+    .community-card .community-sub {{
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.75rem;
+      display: block;
+    }}
+    .community-card p {{
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }}
+
+    /* FAQ Section */
+    .faq-grid {{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }}
+    .faq-item {{
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 1.75rem;
+    }}
+    .faq-item h3 {{
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.75rem;
+      line-height: 1.4;
+    }}
+    .faq-item p {{
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }}
+
     /* Direct Contact / Rapid Quote Banner */
     .quote-box {{
       background: {c['theme_gradient']};
@@ -853,6 +998,7 @@ def generate_client_html(c):
   <script type="application/ld+json">
 {schema_json}
   </script>
+{faq_schema_json}
 </head>
 <body>
 
@@ -958,6 +1104,8 @@ def generate_client_html(c):
     </div>
   </section>
 
+{community_grid_html}
+
   <!-- Local Mountain Expertise & Geo Coverage -->
   <section class="section-wrap">
     <div class="local-challenge-box">
@@ -984,6 +1132,8 @@ def generate_client_html(c):
       {testimonials_html}
     </div>
   </section>
+
+{faqs_html}
 
   <!-- Direct Quote Box -->
   <section class="section-wrap">

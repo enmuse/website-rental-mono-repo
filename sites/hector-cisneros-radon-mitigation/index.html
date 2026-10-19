@@ -10,7 +10,7 @@
   
   <!-- Open Graph -->
   <meta property="og:title" content="Carolina Cisneros Radon Mitigation LLC | Mountain Radon Mitigation & Air Quality">
-  <meta property="og:description" content="Radon Mitigation & Air Quality de Confianza y Calidad en Franklin, NC • Equipo Especializado para Terrenos de Montaña">
+  <meta property="og:description" content="Radon Mitigation & Air Quality de Confianza y Calidad en Franklin, NC • Equipo Especializado para Terrenos de Montaña. Serving Waynesville, Sylva, Franklin, Bryson City, Maggie Valley. Call Hector Cisneros directly at (828) 524-2499 for rapid quotes.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
   
@@ -551,6 +551,72 @@
       color: var(--accent);
     }
 
+    
+    /* Hyper-Local Community Grid */
+    .community-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+    .community-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 1.75rem;
+      transition: transform 0.15s ease, border-color 0.15s ease;
+    }
+    .community-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(34, 197, 94, 0.4);
+    }
+    .community-card h3 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.35rem;
+    }
+    .community-card .community-sub {
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+    .community-card p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    /* FAQ Section */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+    .faq-item {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 1.75rem;
+    }
+    .faq-item h3 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.75rem;
+      line-height: 1.4;
+    }
+    .faq-item p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
     /* Direct Contact / Rapid Quote Banner */
     .quote-box {
       background: linear-gradient(135deg, #111827 0%, #020617 100%);
@@ -695,6 +761,7 @@
   ]
 }
   </script>
+
 </head>
 <body>
 
@@ -877,6 +944,8 @@
     </div>
   </section>
 
+
+
   <!-- Local Mountain Expertise & Geo Coverage -->
   <section class="section-wrap">
     <div class="local-challenge-box">
@@ -921,6 +990,8 @@
         
     </div>
   </section>
+
+
 
   <!-- Direct Quote Box -->
   <section class="section-wrap">
