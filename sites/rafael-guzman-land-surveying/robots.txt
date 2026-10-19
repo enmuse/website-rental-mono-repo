@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://preview.ridgelinetrade.com/sites/rafael-guzman-land-surveying/sitemap.xml

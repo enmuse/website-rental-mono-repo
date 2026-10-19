@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://preview.ridgelinetrade.com/sites/ernesto-silva-hvac-heat-pumps/sitemap.xml

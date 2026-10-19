@@ -170,6 +170,8 @@ def generate_client_html(c):
         "priceRange": "$$",
         "description": c["tagline"]
     }
+    if c.get("is_spanish_speaking"):
+        schema_data["knowsLanguage"] = ["en", "es"]
     schema_json = json.dumps(schema_data, indent=2)
 
     html = f"""<!DOCTYPE html>
@@ -816,9 +818,9 @@ def generate_client_html(c):
 
   <!-- Hero Section -->
   <header class="hero">
-    <div class="hero-badge">
-      <span class="status-dot"></span>
-      <span>{c['owner_name']} ({c['owner_title']}) On Dispatch</span>
+    <div class="hero-badge" { 'style="border-color: rgba(16, 185, 129, 0.4);"' if c.get('is_spanish_speaking') else '' }>
+      <span class="status-dot" { 'style="background: #10b981; box-shadow: 0 0 8px #10b981;"' if c.get('is_spanish_speaking') else '' }></span>
+      <span>{c['owner_name']} ({c['owner_title']}) On Dispatch{ ' • Se Habla Español' if c.get('is_spanish_speaking') else '' }</span>
     </div>
     <h1>{c['tagline'].split('Across')[0]} <span>Across {c['city']}, NC</span></h1>
     <p class="lead">
@@ -835,6 +837,7 @@ def generate_client_html(c):
         Text For Fast Estimate
       </a>
     </div>
+    { f'<div style="font-size: 0.88rem; color: #a7f3d0; margin-top: -1rem; margin-bottom: 1.5rem; font-weight: 600;">🇲🇽 Se Habla Español • Cotizaciones Rápidas y Atención Bilingüe en {c["city"]}</div>' if c.get("is_spanish_speaking") else '' }
 
     {hero_featured_html}
   </header>
@@ -956,7 +959,7 @@ def generate_client_html(c):
       <svg style="width: 20px; height: 20px;" viewBox="0 0 24 24" fill="currentColor">
         <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.27c1.12.45 2.33.69 3.48.69a1 1 0 011 1v3.5a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.15.24 2.36.69 3.48a1 1 0 01-.27 1.11l-2.2 2.2z"/>
       </svg>
-      Call {c['owner_name']} Direct ({c['cell_phone']})
+      Call {c['owner_name']} Direct ({c['cell_phone']}){ ' • Se Habla Español' if c.get('is_spanish_speaking') else '' }
     </a>
   </div>
 
@@ -1008,15 +1011,37 @@ def generate_master_portal_html(clients):
         projs = c.get("projects", [])
         top_project_ref = projs[0]["title"] if projs else "recent mountain contracts"
         
-        # SMS Pitch text
-        sms_pitch = (
-            f"Hey {c['owner_name']}, Brandon here in Hendersonville. Ran an automated Google speed test on your web presence for {c['short_name']} "
-            f"and saw mobile visitors wait {old_lcp} for your page (scores {old_score}/100 on Google PageSpeed). In WNC, slow load times lose callers. "
-            f"Your mountain craftsmanship is top tier, so I took photos of your actual work ({top_project_ref}), "
-            f"optimized them, and built a high-speed mockup for you that hits 100/100 and loads in 0.4s: "
-            f"{BASE_URL}/sites/{c['slug']}/ "
-            f"If you like it, I host and maintain it for $49/mo flat—zero setup fee, no contracts, and you keep your domain. Let me know what you think!"
-        )
+        is_spanish = c.get("is_spanish_speaking", False)
+        lang_type = "es" if is_spanish else "en"
+
+        # SMS Pitch text (English)
+        if is_spanish:
+            sms_pitch = (
+                f"Hey {c['owner_name']}, Brandon here in Hendersonville. Ran an automated Google speed test on your web presence for {c['short_name']} "
+                f"and saw mobile visitors wait {old_lcp} for your page (scores {old_score}/100 on Google PageSpeed). In WNC, slow load times lose callers. "
+                f"Your mountain craftsmanship is top tier, so I built a high-speed mockup for you that hits 100/100, loads in 0.4s, and highlights your bilingual crew: "
+                f"{BASE_URL}/sites/{c['slug']}/ "
+                f"If you like it, I host and maintain it for $49/mo flat—zero setup fee, no contracts, and you keep your domain. Plus, we have Spanish corridor call routing available for {c['city']}. Let me know what you think!"
+            )
+            sms_pitch_es = (
+                f"Hola {c['owner_name']}, soy Brandon aquí en Hendersonville. Hice una prueba técnica de Google en su página de {c['short_name']} "
+                f"y vi que en celular tarda {old_lcp} para que abra (califica {old_score}/100 en Google PageSpeed). En WNC, una página lenta hace perder clientes. "
+                f"El trabajo de su equipo es de primer nivel, así que les preparé un sitio web de alta velocidad para celular que carga en 0.4s (califica 100/100) "
+                f"y destaca que ofrecen servicio bilingüe / Se Habla Español: "
+                f"{BASE_URL}/sites/{c['slug']}/ "
+                f"Se lo rento por $49/mes fijo—sin contratos ni costo de instalación, y usted mantiene su dominio. "
+                f"Además, podemos conectarle llamadas en español directas desde nuestra red WNC en {c['city']}. Avíseme si le gustaría activarlo esta semana!"
+            )
+        else:
+            sms_pitch = (
+                f"Hey {c['owner_name']}, Brandon here in Hendersonville. Ran an automated Google speed test on your web presence for {c['short_name']} "
+                f"and saw mobile visitors wait {old_lcp} for your page (scores {old_score}/100 on Google PageSpeed). In WNC, slow load times lose callers. "
+                f"Your mountain craftsmanship is top tier, so I took photos of your actual work ({top_project_ref}), "
+                f"optimized them, and built a high-speed mockup for you that hits 100/100 and loads in 0.4s: "
+                f"{BASE_URL}/sites/{c['slug']}/ "
+                f"If you like it, I host and maintain it for $49/mo flat—zero setup fee, no contracts, and you keep your domain. Let me know what you think!"
+            )
+            sms_pitch_es = ""
         
         # WHOIS & DNS Info
         whois = whois_catalog.get(c["slug"], {})
@@ -1049,15 +1074,23 @@ def generate_master_portal_html(clients):
         else:
             table_exp_pill = ""
 
+        slug_val = c["slug"]
+        spanish_badge_html = '<br><span style="background: rgba(16, 185, 129, 0.15); color: #34d399; font-size: 0.68rem; font-weight: 700; padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.3); display: inline-block; margin-top: 0.25rem;">🇪🇸 Se Habla Español</span>' if is_spanish else ''
+        spanish_sms_btn = f'<button class="btn-sms" onclick="copySmsPitchEs(\'{slug_val}\')" style="background: #059669;">SMS (ES)</button>' if is_spanish else ''
+        spanish_textarea = f'<textarea id="sms-text-es-{slug_val}" style="display:none;">{sms_pitch_es}</textarea>' if is_spanish else ''
+        spanish_dispatch_note = f'<br><span style="font-size: 0.68rem; color: #34d399; font-weight: 600;">Línea ES: {c.get("spanish_dispatch_phone", "(828) 844-6682")}</span>' if is_spanish else ''
+
         table_rows += f"""
-        <tr>
+        <tr data-lang="{lang_type}" data-corridor="{c.get('trade_network_corridor_slug', '')}">
           <td>
             <strong>{c['short_name']}</strong><br>
             <span class="sub-text">{c['city']}, NC • {c['trade']}</span>
+            {spanish_badge_html}
           </td>
           <td>
             <span class="corridor-badge">{c['trade_network_corridor_slug']}</span><br>
             <span class="sub-text">{c['trade_network_domain']}</span>
+            {spanish_dispatch_note}
           </td>
           <td>
             <strong>{c['owner_name']}</strong><br>
@@ -1086,9 +1119,11 @@ def generate_master_portal_html(clients):
             <div class="action-btn-group">
               <a href="/sites/{c['slug']}/" target="_blank" class="btn-demo">View Site ↗</a>
               <button class="btn-sms" onclick="copySmsPitch('{c['slug']}')">Copy SMS</button>
+              {spanish_sms_btn}
               <button class="btn-sms" onclick="copyStripeLink('{rental_link}', '$49/mo')" style="background: #10b981;">$49 Link</button>
             </div>
             <textarea id="sms-text-{c['slug']}" style="display:none;">{sms_pitch}</textarea>
+            {spanish_textarea}
           </td>
         </tr>
         """
@@ -1138,8 +1173,13 @@ def generate_master_portal_html(clients):
         else:
             logo_html = f'<div class="card-logo-badge" style="background: rgba(255,255,255,0.08); color: #60a5fa; font-weight: 800; font-size: 1.1rem;">{c["business_name"][:2].upper()}</div>'
 
+        card_spanish_tag = '<span class="dns-tag-badge" style="background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3);">🇪🇸 Se Habla Español • Bilingual Dispatch</span>' if is_spanish else ''
+        slug_card = c["slug"]
+        card_spanish_btn = f'<button class="card-action-btn secondary" onclick="copySmsPitchEs(\'{slug_card}\')" style="border-color: #059669; color: #34d399;">Copiar SMS (Español)</button>' if is_spanish else ''
+        card_spanish_intel = f'<div class="dns-intel-item"><span class="dns-label">Spanish Master Dispatch</span><span class="dns-val" style="color: #34d399; font-weight: 700;">{c.get("spanish_dispatch_phone", "(828) 844-6682")}</span></div>' if is_spanish else ''
+
         client_cards += f"""
-        <div class="client-dossier-card">
+        <div class="client-dossier-card" data-lang="{lang_type}" data-corridor="{c.get('trade_network_corridor_slug', '')}">
           <div class="card-header">
             <div class="card-title-group">
               {logo_html}
@@ -1241,6 +1281,7 @@ def generate_master_portal_html(clients):
           <div class="card-footer">
             <a href="/sites/{c['slug']}/" target="_blank" class="card-action-btn primary">Open Live Mockup ↗</a>
             <button class="card-action-btn secondary" onclick="copySmsPitch('{c['slug']}')">Copy SMS Pitch</button>
+            {card_spanish_btn}
             <button class="card-action-btn" onclick="copyStripeLink('{rental_link}', '$49/mo Website Rental')" style="background: #10b981; color: #fff; border: 1px solid #059669;">Copy $49/mo Link</button>
           </div>
         </div>
@@ -1840,23 +1881,23 @@ def generate_master_portal_html(clients):
     <div class="badge-pill">Barebones 3D • WNC Trade Network Hub</div>
     <h1>WNC Contractor Website Rental Operations</h1>
     <p class="lead">
-      High-converting $49/month website rentals built with real field photography for 10 premier trade contractors across Western North Carolina.
+      High-converting $49/month website rentals built with real field photography and bilingual operations across Western North Carolina.
     </p>
   </header>
 
   <!-- Key Financial Metrics -->
   <div class="metric-grid">
     <div class="metric-card">
-      <div class="metric-val blue">10 Properties</div>
-      <div class="metric-label">Client Mockups Deployed</div>
+      <div class="metric-val blue">{len(clients)} Properties</div>
+      <div class="metric-label">{sum(1 for c in clients if not c.get('is_spanish_speaking'))} English • {sum(1 for c in clients if c.get('is_spanish_speaking'))} Se Habla Español</div>
     </div>
     <div class="metric-card">
-      <div class="metric-val green">$490 / mo</div>
-      <div class="metric-label">Phase 1 Rental Cash Flow</div>
+      <div class="metric-val green">${len(clients) * 49:,} / mo</div>
+      <div class="metric-label">Phase 1 Rental Cash Flow (${len(clients) * 49 * 12:,}/yr)</div>
     </div>
     <div class="metric-card">
-      <div class="metric-val gold">$10,450 / mo</div>
-      <div class="metric-label">Corridor Upsell Potential</div>
+      <div class="metric-val gold">(828) 844-6682</div>
+      <div class="metric-label">Master Spanish Dispatch Line</div>
     </div>
     <div class="metric-card">
       <div class="metric-val green">100 / 100</div>
@@ -1883,10 +1924,20 @@ def generate_master_portal_html(clients):
       </div>
     </div>
     
+    <!-- Portfolio Filter & Search Controls -->
+    <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 1.5rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;">
+      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+        <button class="filter-btn-lang" id="btn-lang-all" onclick="filterLanguage('all')" style="padding: 0.45rem 1rem; font-weight: 700; border-radius: 6px; cursor: pointer; background: #2563eb; color: #fff; border: 1px solid #3b82f6;">All Portfolios ({len(clients)})</button>
+        <button class="filter-btn-lang" id="btn-lang-en" onclick="filterLanguage('en')" style="padding: 0.45rem 1rem; font-weight: 700; border-radius: 6px; cursor: pointer; background: rgba(255,255,255,0.06); color: #cbd5e1; border: 1px solid rgba(255,255,255,0.15);">Standard English ({sum(1 for c in clients if not c.get('is_spanish_speaking'))})</button>
+        <button class="filter-btn-lang" id="btn-lang-es" onclick="filterLanguage('es')" style="padding: 0.45rem 1rem; font-weight: 700; border-radius: 6px; cursor: pointer; background: rgba(16,185,129,0.15); color: #34d399; border: 1px solid rgba(16,185,129,0.4);">🇪🇸 Se Habla Español ({sum(1 for c in clients if c.get('is_spanish_speaking'))})</button>
+      </div>
+      <input type="text" id="contractor-search" placeholder="🔍 Search by name, city, trade, or corridor..." oninput="searchContractors(this.value)" style="padding: 0.5rem 1rem; border-radius: 6px; background: #1e293b; border: 1px solid #334155; color: #f8fafc; font-size: 0.88rem; width: 340px; outline: none;">
+    </div>
+
     <!-- Executive Comparison Table -->
     <div class="section-title">
       <span>Contractor Audit & Speed Comparison Matrix</span>
-      <span style="font-size: 0.85rem; font-weight: 600; color: var(--emerald);">✓ All 10 Sites 100/100 Ready (With Real Photos)</span>
+      <span style="font-size: 0.85rem; font-weight: 600; color: var(--emerald);">✓ 100/100 Mobile Speed & Instant Edge Hosting</span>
     </div>
     
     <div class="table-container">
@@ -1960,6 +2011,69 @@ def generate_master_portal_html(clients):
         showDashboard();
       }}
     }});
+
+    let currentLangFilter = 'all';
+    let currentSearchQuery = '';
+
+    function filterLanguage(lang) {{
+      currentLangFilter = lang;
+      document.querySelectorAll('.filter-btn-lang').forEach(b => {{
+        b.style.background = 'rgba(255,255,255,0.06)';
+        b.style.color = '#cbd5e1';
+        b.style.borderColor = 'rgba(255,255,255,0.15)';
+      }});
+      const activeBtn = document.getElementById('btn-lang-' + lang);
+      if (activeBtn) {{
+        if (lang === 'es') {{
+          activeBtn.style.background = 'rgba(16,185,129,0.3)';
+          activeBtn.style.color = '#34d399';
+          activeBtn.style.borderColor = '#10b981';
+        }} else {{
+          activeBtn.style.background = '#2563eb';
+          activeBtn.style.color = '#fff';
+          activeBtn.style.borderColor = '#3b82f6';
+        }}
+      }}
+      applyFilters();
+    }}
+
+    function searchContractors(query) {{
+      currentSearchQuery = query.toLowerCase().trim();
+      applyFilters();
+    }}
+
+    function applyFilters() {{
+      const rows = document.querySelectorAll('tr[data-lang]');
+      rows.forEach(r => {{
+        const lang = r.getAttribute('data-lang');
+        const text = r.innerText.toLowerCase();
+        const matchesLang = (currentLangFilter === 'all' || lang === currentLangFilter);
+        const matchesSearch = (!currentSearchQuery || text.includes(currentSearchQuery));
+        r.style.display = (matchesLang && matchesSearch) ? '' : 'none';
+      }});
+
+      const cards = document.querySelectorAll('.client-dossier-card[data-lang]');
+      cards.forEach(c => {{
+        const lang = c.getAttribute('data-lang');
+        const text = c.innerText.toLowerCase();
+        const matchesLang = (currentLangFilter === 'all' || lang === currentLangFilter);
+        const matchesSearch = (!currentSearchQuery || text.includes(currentSearchQuery));
+        c.style.display = (matchesLang && matchesSearch) ? '' : 'none';
+      }});
+    }}
+
+    function copySmsPitchEs(slug) {{
+      const textarea = document.getElementById('sms-text-es-' + slug);
+      if (!textarea) return;
+      navigator.clipboard.writeText(textarea.value).then(() => {{
+        const toast = document.getElementById('copy-toast');
+        toast.textContent = '✓ ¡Copiado SMS en Español al portapapeles!';
+        toast.style.display = 'block';
+        setTimeout(() => {{ toast.style.display = 'none'; }}, 3000);
+      }}).catch(err => {{
+        alert('Error al copiar: ' + err);
+      }});
+    }}
 
     function copySmsPitch(slug) {{
       const textarea = document.getElementById('sms-text-' + slug);
