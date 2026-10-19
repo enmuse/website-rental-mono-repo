@@ -438,6 +438,50 @@
       padding-top: 0.75rem;
     }
 
+    
+    /* Company Story / Heritage Box */
+    .story-box {
+      background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin: 2rem 0;
+    }
+    .story-box h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 1.25rem;
+    }
+    .story-lead {
+      color: var(--text);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+    .story-highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+      border-top: 1px solid var(--card-border);
+      padding-top: 1.5rem;
+    }
+    .story-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .story-item strong {
+      color: var(--accent);
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+    .story-item span {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+
     /* Local Geology & WNC Mountain Challenges */
     .local-challenge-box {
       background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
@@ -682,7 +726,7 @@
       <span class="status-dot" ></span>
       <span>Colton Tate (Owner & Lead Operator) On Dispatch</span>
     </div>
-    <h1>Heavy Mountain Excavation, Complete Site Prep & Precision Grading  <span>Across Hendersonville, NC</span></h1>
+    <h1>Heavy Mountain Excavation, Complete Site Prep & Precision Grading <span>Across Hendersonville, NC</span></h1>
     <p class="lead">
       Direct owner communication, specialized mountain equipment, and over two decades of localized excavation & land clearing experience in Henderson County, NC.
     </p>
@@ -724,14 +768,14 @@
           <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
           </svg>
-          <span>Over 20 Years Western North Carolina Mountain Excavation Experience</span>
+          <span>Over 20 Years Blue Ridge Mountain Excavation Experience</span>
         </div>
         
         <div class="trust-badge-item">
           <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
           </svg>
-          <span>Fully Licensed & M Commercial Liability Insured</span>
+          <span>Peterbilt Quad-Axle Dump Hauling Fleet & Kobelco Rock Hammer</span>
         </div>
         
         <div class="trust-badge-item">
@@ -744,7 +788,33 @@
     </div>
   </section>
 
-  <!-- Real Local Project Gallery -->
+
+  <!-- Company Heritage & Owner Commitment (About Us) -->
+  <section class="section-wrap">
+    <div class="story-box">
+      <div class="section-subtitle">Local Craftsmanship & Roots</div>
+      <h2>Our Heritage & Mountain Commitment</h2>
+      <p class="story-lead">
+        Locally owned and operated by Colton Tate on Howard Gap Road in Hendersonville, Tate's Grading (Colton Enterprises) has built building pads and mountain driveways across Henderson and Transylvania counties for over two decades. We run our own Peterbilt quad-axle dump fleet, heavy Kobelco excavators, and hydraulic rock hammers to carve buildable sites out of solid Blue Ridge granite.
+      </p>
+      <div class="story-highlights">
+        <div class="story-item">
+          <strong>Direct Owner Dispatch</strong>
+          <span>Speak directly with Colton Tate (Owner & Lead Operator) on every project.</span>
+        </div>
+        <div class="story-item">
+          <strong>Mountain-Engineered Equipment</strong>
+          <span>Specialized machinery tailored to steep Blue Ridge slopes and rocky soil.</span>
+        </div>
+        <div class="story-item">
+          <strong>Local Base & Accountability</strong>
+          <span>Physical headquarters located in Hendersonville, NC with rapid emergency response.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- Real Local Project Gallery -->
   <section class="section-wrap">
     <div class="section-header">
       <div class="section-subtitle">Real Local Mountain Jobs</div>

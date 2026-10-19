@@ -146,6 +146,20 @@ def generate_client_html(c):
     # Hub towns tags
     towns_tags = "".join([f'<span class="hub-pill">{town}</span>' for town in c["hub_towns"]])
 
+    tagline_raw = c.get('tagline', '')
+    if f"Across {c['city']}" in tagline_raw:
+        headline_prefix = tagline_raw.split(f"Across {c['city']}")[0].rstrip(" •-–")
+        hero_headline_html = f"<h1>{headline_prefix} <span>Across {c['city']}, NC</span></h1>"
+    elif f"in {c['city']}" in tagline_raw:
+        headline_prefix = tagline_raw.split(f"in {c['city']}")[0].rstrip(" •-–")
+        hero_headline_html = f"<h1>{headline_prefix} <span>in {c['city']}, NC</span></h1>"
+    elif "Across" in tagline_raw:
+        headline_prefix = tagline_raw.split("Across")[0].rstrip(" •-–")
+        hero_headline_html = f"<h1>{headline_prefix} <span>Across {c['city']}, NC</span></h1>"
+    else:
+        hero_headline_html = f"<h1>{tagline_raw} <span>Across {c['city']}, NC</span></h1>"
+
+
     # Schema JSON-LD
     schema_data = {
         "@context": "https://schema.org",
@@ -614,6 +628,50 @@ def generate_client_html(c):
       padding-top: 0.75rem;
     }}
 
+    
+    /* Company Story / Heritage Box */
+    .story-box {{
+      background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin: 2rem 0;
+    }}
+    .story-box h2 {{
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 1.25rem;
+    }}
+    .story-lead {{
+      color: var(--text);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }}
+    .story-highlights {{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+      border-top: 1px solid var(--card-border);
+      padding-top: 1.5rem;
+    }}
+    .story-item {{
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }}
+    .story-item strong {{
+      color: var(--accent);
+      font-size: 0.95rem;
+      font-weight: 700;
+    }}
+    .story-item span {{
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }}
+
     /* Local Geology & WNC Mountain Challenges */
     .local-challenge-box {{
       background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
@@ -822,7 +880,7 @@ def generate_client_html(c):
       <span class="status-dot" { 'style="background: #10b981; box-shadow: 0 0 8px #10b981;"' if c.get('is_spanish_speaking') else '' }></span>
       <span>{c['owner_name']} ({c['owner_title']}) On Dispatch{ ' • Se Habla Español' if c.get('is_spanish_speaking') else '' }</span>
     </div>
-    <h1>{c['tagline'].split('Across')[0]} <span>Across {c['city']}, NC</span></h1>
+    {hero_headline_html}
     <p class="lead">
       Direct owner communication, specialized mountain equipment, and over two decades of localized {c['trade'].lower()} experience in {c['county']}.
     </p>
@@ -849,7 +907,33 @@ def generate_client_html(c):
     </div>
   </section>
 
-  <!-- Real Local Project Gallery -->
+
+  <!-- Company Heritage & Owner Commitment (About Us) -->
+  <section class="section-wrap">
+    <div class="story-box">
+      <div class="section-subtitle">{ 'Artesanía y Raíces Locales' if c.get('is_spanish_speaking') else 'Local Craftsmanship & Roots' }</div>
+      <h2>{ 'Nuestra Historia y Compromiso con la Montaña' if c.get('is_spanish_speaking') else 'Our Heritage & Mountain Commitment' }</h2>
+      <p class="story-lead">
+        {c.get('story', f"Locally based in {c['city']}, {c['short_name']} delivers unyielding mountain craftsmanship across {c['county']}.")}
+      </p>
+      <div class="story-highlights">
+        <div class="story-item">
+          <strong>{ 'Atención Directa del Dueño' if c.get('is_spanish_speaking') else 'Direct Owner Dispatch' }</strong>
+          <span>{ f"Hable directamente con {c['owner_name']} ({c['owner_title']}) para presupuestos y coordinación en {c['city']}." if c.get('is_spanish_speaking') else f"Speak directly with {c['owner_name']} ({c['owner_title']}) on every project." }</span>
+        </div>
+        <div class="story-item">
+          <strong>{ 'Maquinaria de Montaña' if c.get('is_spanish_speaking') else 'Mountain-Engineered Equipment' }</strong>
+          <span>{ f"Equipo y herramientas de alta capacidad preparados para terrenos rocosos y pendientes en {c['county']}." if c.get('is_spanish_speaking') else f"Specialized machinery tailored to steep Blue Ridge slopes and rocky soil." }</span>
+        </div>
+        <div class="story-item">
+          <strong>{ 'Sede y Compromiso Local' if c.get('is_spanish_speaking') else 'Local Base & Accountability' }</strong>
+          <span>{ f"Base de operaciones en {c['city']}, NC con respuesta rápida para emergencias y trabajos programados." if c.get('is_spanish_speaking') else f"Physical headquarters located in {c['city']}, NC with rapid emergency response." }</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- Real Local Project Gallery -->
   <section class="section-wrap">
     <div class="section-header">
       <div class="section-subtitle">Real Local Mountain Jobs</div>
@@ -907,9 +991,9 @@ def generate_client_html(c):
       <div style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem;">
         Direct Access • Zero Middlemen
       </div>
-      <h2>Speak Directly With {c['owner_name']}</h2>
+      <h2>{ 'Hable Directamente con ' + c['owner_name'] if c.get('is_spanish_speaking') else f"Speak Directly With {c['owner_name']}" }</h2>
       <p>
-        Skip the dispatch answering services. Talk straight with the owner and lead technician about your project scope, scheduling, and on-site estimate.
+        { 'Sin intermediarios ni recepcionistas. Hable directamente con el dueño para cotizaciones de su proyecto en ' + c['city'] + ' y alrededores.' if c.get('is_spanish_speaking') else f"Skip the dispatch answering services. Talk straight with the owner and lead technician about your project scope, scheduling, and on-site estimate." }
       </p>
       <a href="tel:{phone_clean}" class="direct-phone-huge">
         <span>{c['cell_phone']}</span>
@@ -1221,6 +1305,10 @@ def generate_master_portal_html(clients):
             <div class="field-row">
               <span class="field-title">Featured Project:</span>
               <span class="field-val" style="font-size: 0.8rem; color: #cbd5e1;">{top_project_ref}</span>
+            </div>
+            <div class="field-row" style="flex-direction: column; align-items: flex-start; gap: 0.25rem;">
+              <span class="field-title" style="color: #f59e0b;">Personalized Story / Real Copy:</span>
+              <span class="field-val" style="font-size: 0.76rem; color: #94a3b8; line-height: 1.45;">{c.get('story', '')[:160]}...</span>
             </div>
             <div class="field-row">
               <span class="field-title">Monthly Rental Rate:</span>
