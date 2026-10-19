@@ -1116,6 +1116,15 @@ def generate_master_portal_html(clients):
                 f"Se lo rento por $49/mes fijo—sin contratos ni costo de instalación, y usted mantiene su dominio. "
                 f"Además, podemos conectarle llamadas en español directas desde nuestra red WNC en {c['city']}. Avíseme si le gustaría activarlo esta semana!"
             )
+        elif c["slug"] == "leavesout-hendersonville":
+            sms_pitch = (
+                f"Hey Cory, Brandon here in Hendersonville. Saw you bought the local chapter for LeavesOut of the Blue Ridge—congrats on taking over the territory! "
+                f"All your 5-star Google reviews belong to you, but your web presence is currently trapped on corporate's slow subpage (loads in {old_lcp}, scores {old_score}/100 on PageSpeed). "
+                f"You need an independent local site you own and control. I built a bespoke 100/100 speed site for you featuring your service truck, your lifetime no-clog warranty, and your Hendersonville reviews: "
+                f"{BASE_URL}/sites/{c['slug']}/ "
+                f"If you like it, I host and maintain it for $49/mo flat—zero setup fee, no contracts, and you own the domain. Let me know what you think!"
+            )
+            sms_pitch_es = ""
         else:
             sms_pitch = (
                 f"Hey {c['owner_name']}, Brandon here in Hendersonville. Ran an automated Google speed test on your web presence for {c['short_name']} "

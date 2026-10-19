@@ -16418,5 +16418,32 @@
     "expires_month": "Jan 2026",
     "expiration_status": "Expiring Soon (14 days left!)",
     "is_expiring_soon": true
+  },
+  "leavesout-hendersonville": {
+    "domain": "leavesoutinc.com",
+    "registrar": "GoDaddy.com, LLC",
+    "nameservers": [
+      "ns57.domaincontrol.com",
+      "ns58.domaincontrol.com"
+    ],
+    "a_records": [
+      "198.185.159.144"
+    ],
+    "created": "2024-07-10",
+    "expires": "2027-07-10",
+    "dns_provider": "GoDaddy",
+    "dns_badge": "godaddy",
+    "login_url": "https://www.godaddy.com",
+    "delegate_url": "https://dcc.godaddy.com/manage/dns",
+    "action_tip": "GoDaddy: Corporate domain. Recommended: Register local independent domain (leavesoutblueridge.com or leavesoutnc.com) on Cloudflare ($10/yr) so Cory owns his web asset directly!",
+    "domain_age_years": 2,
+    "domain_age_short": "2 yrs",
+    "domain_age_display": "2 Years (Registered Jul 2024)",
+    "authority_tier": "Growing Authority (1-4 yrs)",
+    "days_until_expiration": 628,
+    "expires_formatted": "Jul 10, 2027",
+    "expires_month": "Jul 2027",
+    "expiration_status": "Active (628 days left)",
+    "is_expiring_soon": false
   }
 }

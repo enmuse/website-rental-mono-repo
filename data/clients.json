@@ -104,6 +104,116 @@
     "story": "Locally owned and operated by Colton Tate on Howard Gap Road in Hendersonville, Tate's Grading (Colton Enterprises) has built building pads and mountain driveways across Henderson and Transylvania counties for over two decades. We run our own Peterbilt quad-axle dump fleet, heavy Kobelco excavators, and hydraulic rock hammers to carve buildable sites out of solid Blue Ridge granite."
   },
   {
+    "slug": "leavesout-hendersonville",
+    "business_name": "LeavesOut of the Blue Ridge",
+    "short_name": "LeavesOut Hendersonville",
+    "trade": "Gutter Protection & Seamless Gutters",
+    "trade_network_domain": "wncroofingrepair.com",
+    "trade_network_corridor_slug": "southern-plateau",
+    "corridor_name": "Corridor 2 \u2014 Southern Plateau & Foothills",
+    "hub_towns": [
+      "Hendersonville",
+      "Flat Rock",
+      "Mills River",
+      "Brevard",
+      "Fletcher",
+      "Asheville"
+    ],
+    "county": "Henderson County, NC",
+    "owner_name": "Cory Rose",
+    "owner_title": "Owner & Certified Master Installer",
+    "cell_phone": "(828) 891-2626",
+    "office_phone": "(828) 891-2626",
+    "direct_sms_number": "+18288912626",
+    "street_address": "Everett Pl",
+    "city": "Hendersonville",
+    "state": "NC",
+    "zip": "28791",
+    "geo": {
+      "latitude": 35.3187,
+      "longitude": -82.461
+    },
+    "current_website": "https://leavesoutinc.com/dealers/hendersonville-north-carolina/",
+    "competitor_pagespeed": 34,
+    "competitor_fcp": "4.1s",
+    "competitor_lcp": "9.6s",
+    "upsell_corridor_deal": "wncroofingrepair.com/southern-plateau/ ($950/mo)",
+    "primary_color": "#064e3b",
+    "accent_color": "#22c55e",
+    "theme_gradient": "linear-gradient(135deg, #022c22 0%, #064e3b 100%)",
+    "tagline": "Patented Solid Aluminum Gutter Protection & Lifetime No-Clog Systems Across Hendersonville, NC",
+    "story": "LeavesOut of the Blue Ridge is locally owned and operated by Cory Rose in Hendersonville, NC. As the independent local dealer for Western North Carolina, Cory bought the regional chapter to give homeowners direct, personal service backed by America's premier solid aluminum gutter protection system. Unlike cheap plastic mesh or wire screens that choke on pine needles, wet oak leaves, and mountain debris, LeavesOut uses the physical principle of surface tension to guide rainwater seamlessly into your gutters while shedding all leaves, twigs, and pine needles to the ground. Every system is custom-fitted by Cory with heavy-gauge baked-on enamel aluminum and backed by our Lifetime Transferable No-Clog Warranty.",
+    "services": [
+      {
+        "title": "Patented Solid Aluminum Gutter Guards",
+        "desc": "Precision-engineered surface tension technology that curves rainwater directly into gutters while naturally shedding pine needles, oak leaves, and mountain roof debris."
+      },
+      {
+        "title": "Custom Seamless Gutter Installation",
+        "desc": "Heavy-gauge 5-inch and 6-inch seamless aluminum gutters custom roll-formed on-site from Cory's mobile workshop to match your home's exact roofline."
+      },
+      {
+        "title": "Mountain Pine Needle & Heavy Debris Defense",
+        "desc": "Specifically designed for high-density mountain tree canopies where wire mesh and micro-screens fail, rot, and cause dangerous winter ice damming."
+      },
+      {
+        "title": "Lifetime No-Clog Warranty & Tune-Up",
+        "desc": "Complete fascia alignment, gutter slope re-pitching, downspout flushing, and our lifetime transferable guarantee that your gutters will never clog."
+      }
+    ],
+    "trust_badges": [
+      "Locally Owned & Operated by Cory Rose in Hendersonville, NC",
+      "Patented Surface Tension Solid Aluminum Technology (Zero Mesh/Screens)",
+      "Lifetime Transferable No-Clog Warranty on Parts & Labor",
+      "Serving Henderson, Buncombe, Transylvania & Polk Counties"
+    ],
+    "testimonials": [
+      {
+        "quote": "We\u2019ve had some heavy mountain downpours since LeavesOut was installed by Cory, and all rainwater goes right into the gutters just as he said it would. Cory installed the system at his estimated cost and within the time frame discussed. He left the work site spotless. Highly recommend Cory to anyone in Henderson County!",
+        "author": "Peter & Brenda V.",
+        "location": "Hendersonville, NC"
+      },
+      {
+        "quote": "We were very pleased with the quality of the product, the craftsmanship, and the minimal impact to our home and landscaping. Cory and his installation team are true professionals. Oh, and they work exactly as advertised!",
+        "author": "John H.",
+        "location": "Flat Rock, NC"
+      },
+      {
+        "quote": "Living in the woods with massive white pines, our gutters used to fill up and overflow within weeks. Since Cory installed LeavesOut, we haven't climbed a ladder once. Worth every single penny.",
+        "author": "David & Sarah M.",
+        "location": "Brevard, NC"
+      }
+    ],
+    "has_custom_logo": true,
+    "logo_path": "images/logo.png",
+    "projects": [
+      {
+        "image": "images/project-1.jpg",
+        "title": "LeavesOut Mountain Fleet & On-Site Installation Workshop",
+        "location": "Hendersonville & Flat Rock, NC",
+        "desc": "Full-service mobile workshop equipped with precision roll-forming tools and heavy-gauge solid aluminum gutter protection systems.",
+        "width": 800,
+        "height": 454
+      },
+      {
+        "image": "images/project-2.jpg",
+        "title": "Owner Cory Rose Precision Gutter Alignment & Fitting",
+        "location": "Henderson County, NC",
+        "desc": "Hands-on master installation ensuring exact slope pitch, secure fascia mounting, and zero penetration of your roof shingles.",
+        "width": 800,
+        "height": 598
+      },
+      {
+        "image": "images/project-3.jpg",
+        "title": "Patented Surface Tension Solid Aluminum Technology",
+        "location": "Blue Ridge Mountains, NC",
+        "desc": "Physics-based water adhesion pulls rainwater into the gutter channel while leaves, oak tassels, and pine needles shed harmlessly.",
+        "width": 488,
+        "height": 246
+      }
+    ]
+  },
+  {
     "slug": "turning-leaf-tree",
     "business_name": "Turning Leaf Tree Service",
     "short_name": "Turning Leaf Tree",
