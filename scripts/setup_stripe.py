@@ -104,12 +104,16 @@ def create_or_find_price(key: str, product_id: str, amount_cents: int, interval:
     return price_id
 
 def create_or_find_payment_link(key: str, price_id: str) -> str:
-    # Check if payment link already exists for this price
-    res = stripe_api("payment_links?limit=50", key)
+    # Check if payment link already exists for this price (expanding line_items)
+    res = stripe_api("payment_links?limit=50&expand[]=data.line_items", key)
     for pl in res.get("data", []):
-        if pl.get("active") and any(item.get("price") == price_id for item in pl.get("line_items", {}).get("data", [])):
-            print(f"   ✓ Found existing Payment Link: {pl['url']}")
-            return pl["url"]
+        if pl.get("active"):
+            for item in pl.get("line_items", {}).get("data", []):
+                p = item.get("price")
+                pid = p.get("id") if isinstance(p, dict) else p
+                if pid == price_id:
+                    print(f"   ✓ Found existing Payment Link: {pl['url']}")
+                    return pl["url"]
             
     print(f"   🔨 Creating Payment Link for Price: {price_id}...")
     create_res = stripe_api(

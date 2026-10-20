@@ -5,7 +5,7 @@
     "price_id": "price_1URzc6R7kBc65bwPyyw3Q9mL",
     "amount_usd": 49.0,
     "interval": "month",
-    "payment_link": "https://buy.stripe.com/8x29AV87Q6e6er98xJ1wY00",
+    "payment_link": "https://buy.stripe.com/5kQ6oJ4VEfOGdn59BN1wY04",
     "badge": "$49.00 / month flat"
   },
   "corridor_lease_tier_a_1250": {
@@ -14,7 +14,7 @@
     "price_id": "price_1URzc8R7kBc65bwPdXLwmD2M",
     "amount_usd": 1250.0,
     "interval": "month",
-    "payment_link": "https://buy.stripe.com/fZueVf4VEfOG0Aj4ht1wY01",
+    "payment_link": "https://buy.stripe.com/28E9AVfAi45Ycj1eW71wY05",
     "badge": "$1,250.00 / month"
   },
   "corridor_lease_tier_b_950": {
@@ -23,7 +23,7 @@
     "price_id": "price_1URzcAR7kBc65bwPrLsCTDcy",
     "amount_usd": 950.0,
     "interval": "month",
-    "payment_link": "https://buy.stripe.com/3cI7sNco69qi6YH29l1wY02",
+    "payment_link": "https://buy.stripe.com/3cI28t73M9qicj13dp1wY06",
     "badge": "$950.00 / month"
   },
   "corridor_lease_tier_c_750": {
@@ -32,7 +32,7 @@
     "price_id": "price_1URzcCR7kBc65bwPHVIeYvK6",
     "amount_usd": 750.0,
     "interval": "month",
-    "payment_link": "https://buy.stripe.com/5kQcN7co6eKCaaT01d1wY03",
+    "payment_link": "https://buy.stripe.com/7sY28t0FofOG4Qz29l1wY07",
     "badge": "$750.00 / month"
   }
 }

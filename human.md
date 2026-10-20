@@ -296,13 +296,13 @@ I host and maintain it for $49/mo flat—no contracts, no tech hassles, and dire
 ### ✅ Stripe Subscription Links (Live & Ready)
 
 * **$49/mo Website Rental Payment Link:**  
-  👉 **`https://buy.stripe.com/8x29AV87Q6e6er98xJ1wY00`**  
+  👉 **`https://buy.stripe.com/5kQ6oJ4VEfOGdn59BN1wY04`**  
   *(Configured with Contractor Company Name and Mobile Phone collection)*
 
 When a contractor replies *"Sounds good, how do we start?"*, text back:
 ```text
 Awesome! You can activate your $49/mo hosting right here:
-https://buy.stripe.com/8x29AV87Q6e6er98xJ1wY00
+https://buy.stripe.com/5kQ6oJ4VEfOGdn59BN1wY04
 
 As soon as that's active, I'll point your domain name so your new high-speed site goes live immediately!
 ```
