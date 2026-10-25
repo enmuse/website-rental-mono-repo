@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://preview.ridgelinetrade.com/sites/juan-gutierrez-water-damage-restoration/sitemap.xml

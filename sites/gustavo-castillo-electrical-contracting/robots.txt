@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://preview.ridgelinetrade.com/sites/gustavo-castillo-electrical-contracting/sitemap.xml

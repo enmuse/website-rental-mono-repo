@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://preview.ridgelinetrade.com/sites/rafael-pacheco-hvac-heat-pumps/sitemap.xml

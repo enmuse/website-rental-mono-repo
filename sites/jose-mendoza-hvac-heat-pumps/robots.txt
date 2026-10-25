@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://preview.ridgelinetrade.com/sites/jose-mendoza-hvac-heat-pumps/sitemap.xml

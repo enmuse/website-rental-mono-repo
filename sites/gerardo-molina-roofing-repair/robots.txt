@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://preview.ridgelinetrade.com/sites/gerardo-molina-roofing-repair/sitemap.xml

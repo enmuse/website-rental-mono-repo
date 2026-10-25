@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://preview.ridgelinetrade.com/sites/marco-cruz-crawlspace-waterproofing/sitemap.xml

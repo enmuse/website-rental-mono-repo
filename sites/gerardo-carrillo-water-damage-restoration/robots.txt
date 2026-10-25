@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://preview.ridgelinetrade.com/sites/gerardo-carrillo-water-damage-restoration/sitemap.xml

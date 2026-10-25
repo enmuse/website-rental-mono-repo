@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://preview.ridgelinetrade.com/sites/gerardo-mejia-hvac-heat-pumps/sitemap.xml

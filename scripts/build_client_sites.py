@@ -1229,6 +1229,11 @@ def generate_master_portal_html(clients):
     tier_b_link = stripe_catalog.get("corridor_lease_tier_b_950", {}).get("payment_link", "https://buy.stripe.com/3cI7sNco69qi6YH29l1wY02")
     tier_c_link = stripe_catalog.get("corridor_lease_tier_c_750", {}).get("payment_link", "https://buy.stripe.com/5kQcN7co6eKCaaT01d1wY03")
     
+    unique_corridors = sorted(list({c.get("corridor_name") for c in clients if c.get("corridor_name")}))
+    unique_trades = sorted(list({c.get("trade") for c in clients if c.get("trade")}))
+    corridor_options = "".join(f'<option value="{corr}">{corr}</option>' for corr in unique_corridors)
+    trade_options = "".join(f'<option value="{tr}">{tr}</option>' for tr in unique_trades)
+
     table_rows = ""
     client_cards = ""
     
@@ -1323,11 +1328,28 @@ def generate_master_portal_html(clients):
         spanish_textarea = f'<textarea id="sms-text-es-{slug_val}" style="display:none;">{sms_pitch_es}</textarea>' if is_spanish else ''
         spanish_dispatch_note = f'<br><span style="font-size: 0.68rem; color: #34d399; font-weight: 600;">Línea ES: {c.get("spanish_dispatch_phone", "(828) 844-6682")}</span>' if is_spanish else ''
 
+        safe_name = c["business_name"].lower().replace('"', '').replace("'", "")
+        safe_short = c["short_name"].lower().replace('"', '').replace("'", "")
+        safe_trade = c["trade"].lower().replace('"', '').replace("'", "")
+        safe_corridor = c.get("corridor_name", "").lower().replace('"', '').replace("'", "")
+        safe_corridor_slug = c.get("trade_network_corridor_slug", "").lower()
+        safe_owner = c["owner_name"].lower().replace('"', '').replace("'", "")
+
         table_rows += f"""
-        <tr data-lang="{lang_type}" data-corridor="{c.get('trade_network_corridor_slug', '')}">
+        <tr id="row-{slug_val}"
+            data-slug="{slug_val}"
+            data-lang="{lang_type}"
+            data-name="{safe_name}"
+            data-short="{safe_short}"
+            data-trade="{safe_trade}"
+            data-corridor="{safe_corridor}"
+            data-corridor-slug="{safe_corridor_slug}"
+            data-owner="{safe_owner}"
+            data-days="{days_until_exp if days_until_exp is not None else 9999}"
+            data-score="{old_score}">
           <td>
-            <strong>{c['short_name']}</strong><br>
-            <span class="sub-text">{c['city']}, NC • {c['trade']}</span>
+            <strong class="col-name">{c['short_name']}</strong><br>
+            <span class="sub-text col-city-trade">{c['city']}, NC • {c['trade']}</span>
             {spanish_badge_html}
           </td>
           <td>
@@ -1336,8 +1358,8 @@ def generate_master_portal_html(clients):
             {spanish_dispatch_note}
           </td>
           <td>
-            <strong>{c['owner_name']}</strong><br>
-            <a href="tel:{phone_clean}" class="phone-link">{c['cell_phone']}</a>
+            <strong class="col-owner">{c['owner_name']}</strong><br>
+            <a href="tel:{phone_clean}" class="phone-link col-phone">{c['cell_phone']}</a>
           </td>
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">{dns_provider}</div>
@@ -1361,6 +1383,7 @@ def generate_master_portal_html(clients):
           <td>
             <div class="action-btn-group">
               <a href="/sites/{c['slug']}/" target="_blank" class="btn-demo">View Site ↗</a>
+              <button class="btn-sms" onclick="openEditModal('{c['slug']}')" style="background: #2563eb;" title="Edit Contractor Profile">✏️ Edit</button>
               <button class="btn-sms" onclick="copySmsPitch('{c['slug']}')">Copy SMS</button>
               {spanish_sms_btn}
               <button class="btn-sms" onclick="copyStripeLink('{rental_link}', '$49/mo')" style="background: #10b981;">$49 Link</button>
@@ -1422,7 +1445,18 @@ def generate_master_portal_html(clients):
         card_spanish_intel = f'<div class="dns-intel-item"><span class="dns-label">Spanish Master Dispatch</span><span class="dns-val" style="color: #34d399; font-weight: 700;">{c.get("spanish_dispatch_phone", "(828) 844-6682")}</span></div>' if is_spanish else ''
 
         client_cards += f"""
-        <div class="client-dossier-card" data-lang="{lang_type}" data-corridor="{c.get('trade_network_corridor_slug', '')}">
+        <div class="client-dossier-card"
+             id="card-{slug_card}"
+             data-slug="{slug_card}"
+             data-lang="{lang_type}"
+             data-name="{safe_name}"
+             data-short="{safe_short}"
+             data-trade="{safe_trade}"
+             data-corridor="{safe_corridor}"
+             data-corridor-slug="{safe_corridor_slug}"
+             data-owner="{safe_owner}"
+             data-days="{days_until_exp if days_until_exp is not None else 9999}"
+             data-score="{old_score}">
           <div class="card-header">
             <div class="card-title-group">
               {logo_html}
@@ -1527,6 +1561,7 @@ def generate_master_portal_html(clients):
           
           <div class="card-footer">
             <a href="/sites/{c['slug']}/" target="_blank" class="card-action-btn primary">Open Live Mockup ↗</a>
+            <button class="card-action-btn secondary" onclick="openEditModal('{c['slug']}')" style="border-color: #3b82f6; color: #60a5fa;">✏️ Quick Edit</button>
             <button class="card-action-btn secondary" onclick="copySmsPitch('{c['slug']}')">Copy SMS Pitch</button>
             {card_spanish_btn}
             <button class="card-action-btn" onclick="copyStripeLink('{rental_link}', '$49/mo Website Rental')" style="background: #10b981; color: #fff; border: 1px solid #059669;">Copy $49/mo Link</button>
@@ -2172,13 +2207,29 @@ def generate_master_portal_html(clients):
     </div>
     
     <!-- Portfolio Filter & Search Controls -->
-    <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 1.5rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;">
-      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-        <button class="filter-btn-lang" id="btn-lang-all" onclick="filterLanguage('all')" style="padding: 0.45rem 1rem; font-weight: 700; border-radius: 6px; cursor: pointer; background: #2563eb; color: #fff; border: 1px solid #3b82f6;">All Portfolios ({len(clients)})</button>
-        <button class="filter-btn-lang" id="btn-lang-en" onclick="filterLanguage('en')" style="padding: 0.45rem 1rem; font-weight: 700; border-radius: 6px; cursor: pointer; background: rgba(255,255,255,0.06); color: #cbd5e1; border: 1px solid rgba(255,255,255,0.15);">Standard English ({sum(1 for c in clients if not c.get('is_spanish_speaking'))})</button>
-        <button class="filter-btn-lang" id="btn-lang-es" onclick="filterLanguage('es')" style="padding: 0.45rem 1rem; font-weight: 700; border-radius: 6px; cursor: pointer; background: rgba(16,185,129,0.15); color: #34d399; border: 1px solid rgba(16,185,129,0.4);">🇪🇸 Se Habla Español ({sum(1 for c in clients if c.get('is_spanish_speaking'))})</button>
+    <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 1.25rem; margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+      <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;">
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <button class="filter-btn-lang" id="btn-lang-all" onclick="filterLanguage('all')" style="padding: 0.45rem 1rem; font-weight: 700; border-radius: 6px; cursor: pointer; background: #2563eb; color: #fff; border: 1px solid #3b82f6;">All Portfolios ({len(clients)})</button>
+          <button class="filter-btn-lang" id="btn-lang-en" onclick="filterLanguage('en')" style="padding: 0.45rem 1rem; font-weight: 700; border-radius: 6px; cursor: pointer; background: rgba(255,255,255,0.06); color: #cbd5e1; border: 1px solid rgba(255,255,255,0.15);">Standard English ({sum(1 for c in clients if not c.get('is_spanish_speaking'))})</button>
+          <button class="filter-btn-lang" id="btn-lang-es" onclick="filterLanguage('es')" style="padding: 0.45rem 1rem; font-weight: 700; border-radius: 6px; cursor: pointer; background: rgba(16,185,129,0.15); color: #34d399; border: 1px solid rgba(16,185,129,0.4);">🇪🇸 Se Habla Español ({sum(1 for c in clients if c.get('is_spanish_speaking'))})</button>
+        </div>
+        <button onclick="openAddModal()" style="background: #10b981; color: #fff; font-weight: 700; padding: 0.55rem 1.2rem; border-radius: 8px; border: none; cursor: pointer; display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.35); transition: background 0.2s;">
+          <span>➕ Add Real Contractor</span>
+        </button>
       </div>
-      <input type="text" id="contractor-search" placeholder="🔍 Search by name, city, trade, or corridor..." oninput="searchContractors(this.value)" style="padding: 0.5rem 1rem; border-radius: 6px; background: #1e293b; border: 1px solid #334155; color: #f8fafc; font-size: 0.88rem; width: 340px; outline: none;">
+
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem;">
+        <select id="corridor-filter" onchange="applyFilters()" style="flex: 1; min-width: 220px; padding: 0.55rem 0.85rem; border-radius: 6px; background: #1e293b; border: 1px solid #334155; color: #f8fafc; font-size: 0.85rem; outline: none; cursor: pointer;">
+          <option value="all">📍 All Corridors ({len(unique_corridors)} Corridors)</option>
+          {corridor_options}
+        </select>
+        <select id="trade-filter" onchange="applyFilters()" style="flex: 1; min-width: 200px; padding: 0.55rem 0.85rem; border-radius: 6px; background: #1e293b; border: 1px solid #334155; color: #f8fafc; font-size: 0.85rem; outline: none; cursor: pointer;">
+          <option value="all">🔨 All Trades ({len(unique_trades)} Trades)</option>
+          {trade_options}
+        </select>
+        <input type="text" id="contractor-search" placeholder="🔍 Search name, owner, city, trade, phone, corridor..." oninput="searchContractors(this.value)" style="flex: 1.5; min-width: 260px; padding: 0.55rem 1rem; border-radius: 6px; background: #1e293b; border: 1px solid #334155; color: #f8fafc; font-size: 0.88rem; outline: none;">
+      </div>
     </div>
 
     <!-- Executive Comparison Table -->
@@ -2191,16 +2242,26 @@ def generate_master_portal_html(clients):
       <table>
         <thead>
           <tr>
-            <th>Business & Trade</th>
-            <th>Network Corridor</th>
-            <th>Owner & Direct Phone</th>
-            <th>DNS Host, Age & Expiry</th>
-            <th>Their Current Speed</th>
+            <th onclick="sortTable('name')" style="cursor: pointer; user-select: none;" title="Click to sort A-Z / Z-A">
+              Business & Trade <span class="sort-icon" id="sort-icon-name">↕</span>
+            </th>
+            <th onclick="sortTable('corridor')" style="cursor: pointer; user-select: none;" title="Click to sort by Corridor">
+              Network Corridor <span class="sort-icon" id="sort-icon-corridor">↕</span>
+            </th>
+            <th onclick="sortTable('owner')" style="cursor: pointer; user-select: none;" title="Click to sort by Owner Name">
+              Owner & Direct Phone <span class="sort-icon" id="sort-icon-owner">↕</span>
+            </th>
+            <th onclick="sortTable('days')" style="cursor: pointer; user-select: none;" title="Click to sort by Expiry Urgency">
+              DNS Host, Age & Expiry <span class="sort-icon" id="sort-icon-days">↕</span>
+            </th>
+            <th onclick="sortTable('score')" style="cursor: pointer; user-select: none;" title="Click to sort by Competitor Speed">
+              Their Current Speed <span class="sort-icon" id="sort-icon-score">↕</span>
+            </th>
             <th>Our Rental Speed</th>
             <th>Outreach Actions</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody id="contractors-tbody">
           {table_rows}
         </tbody>
       </table>
@@ -2235,12 +2296,145 @@ def generate_master_portal_html(clients):
 
   </div><!-- /ops-content -->
 
+  <!-- Contractor Edit / Add Modal Drawer -->
+  <div id="contractor-modal" style="position: fixed; inset: 0; background: rgba(7, 10, 19, 0.88); backdrop-filter: blur(8px); z-index: 100000; display: none; align-items: center; justify-content: center; padding: 1.25rem; overflow-y: auto;">
+    <div style="background: #0f172a; border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 16px; max-width: 680px; width: 100%; max-height: 90vh; display: flex; flex-direction: column; box-shadow: 0 25px 60px -15px rgba(0,0,0,0.85); overflow: hidden;">
+      
+      <!-- Modal Header -->
+      <div style="padding: 1.25rem 1.75rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); display: flex; align-items: center; justify-content: space-between; background: rgba(15, 23, 42, 0.6);">
+        <div>
+          <h3 id="modal-heading" style="color: #f8fafc; font-size: 1.25rem; font-weight: 700; margin: 0 0 0.25rem;">Edit Contractor Profile</h3>
+          <p style="color: #94a3b8; font-size: 0.8rem; margin: 0;">Verified Western NC Contractor • Cloudflare Edge & Git Sync</p>
+        </div>
+        <button onclick="closeContractorModal()" style="background: none; border: none; color: #94a3b8; font-size: 1.5rem; cursor: pointer; padding: 0.25rem; line-height: 1;">&times;</button>
+      </div>
+
+      <!-- Modal Body (Scrollable Form) -->
+      <div style="padding: 1.5rem 1.75rem; overflow-y: auto; flex: 1;">
+        <form id="contractor-form" onsubmit="event.preventDefault(); saveContractorForm();">
+          <input type="hidden" id="field-slug">
+          
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+            <div style="grid-column: span 2;">
+              <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #cbd5e1; margin-bottom: 0.35rem;">Company / Legal Business Name *</label>
+              <input type="text" id="field-business-name" required placeholder="e.g. WNC Blast/Wash & Staining" style="width: 100%; box-sizing: border-box; padding: 0.65rem 0.85rem; border-radius: 6px; background: #1e293b; border: 1px solid #334155; color: #f8fafc; font-size: 0.9rem; outline: none;">
+            </div>
+
+            <div>
+              <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #cbd5e1; margin-bottom: 0.35rem;">Short Display Name *</label>
+              <input type="text" id="field-short-name" required placeholder="e.g. WNC Blast/Wash" style="width: 100%; box-sizing: border-box; padding: 0.65rem 0.85rem; border-radius: 6px; background: #1e293b; border: 1px solid #334155; color: #f8fafc; font-size: 0.9rem; outline: none;">
+            </div>
+
+            <div>
+              <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #cbd5e1; margin-bottom: 0.35rem;">Trade Vertical *</label>
+              <input type="text" id="field-trade" list="trade-datalist" required placeholder="e.g. Log Home Restoration & Chinking" style="width: 100%; box-sizing: border-box; padding: 0.65rem 0.85rem; border-radius: 6px; background: #1e293b; border: 1px solid #334155; color: #f8fafc; font-size: 0.9rem; outline: none;">
+              <datalist id="trade-datalist">{trade_options}</datalist>
+            </div>
+
+            <div style="grid-column: span 2;">
+              <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #cbd5e1; margin-bottom: 0.35rem;">WNC Economic Corridor *</label>
+              <select id="field-corridor" required style="width: 100%; box-sizing: border-box; padding: 0.65rem 0.85rem; border-radius: 6px; background: #1e293b; border: 1px solid #334155; color: #f8fafc; font-size: 0.88rem; outline: none;">
+                {corridor_options}
+              </select>
+            </div>
+
+            <div>
+              <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #34d399; margin-bottom: 0.35rem;">Named Human Owner / Principal *</label>
+              <input type="text" id="field-owner-name" required placeholder="e.g. Adam Hambleton" style="width: 100%; box-sizing: border-box; padding: 0.65rem 0.85rem; border-radius: 6px; background: #1e293b; border: 1px solid rgba(16,185,129,0.35); color: #f8fafc; font-size: 0.9rem; outline: none;">
+            </div>
+
+            <div>
+              <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #cbd5e1; margin-bottom: 0.35rem;">Owner Title</label>
+              <input type="text" id="field-owner-title" placeholder="e.g. Owner & Lead Craftsman" style="width: 100%; box-sizing: border-box; padding: 0.65rem 0.85rem; border-radius: 6px; background: #1e293b; border: 1px solid #334155; color: #f8fafc; font-size: 0.9rem; outline: none;">
+            </div>
+
+            <div>
+              <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #34d399; margin-bottom: 0.35rem;">Direct Cell Phone (10-Digit) *</label>
+              <input type="tel" id="field-cell-phone" required placeholder="e.g. (828) 944-0005" style="width: 100%; box-sizing: border-box; padding: 0.65rem 0.85rem; border-radius: 6px; background: #1e293b; border: 1px solid rgba(16,185,129,0.35); color: #f8fafc; font-size: 0.9rem; outline: none;">
+            </div>
+
+            <div>
+              <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #cbd5e1; margin-bottom: 0.35rem;">Office / Alternate Phone</label>
+              <input type="tel" id="field-office-phone" placeholder="e.g. (828) 555-0100" style="width: 100%; box-sizing: border-box; padding: 0.65rem 0.85rem; border-radius: 6px; background: #1e293b; border: 1px solid #334155; color: #f8fafc; font-size: 0.9rem; outline: none;">
+            </div>
+
+            <div>
+              <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #cbd5e1; margin-bottom: 0.35rem;">Street Address</label>
+              <input type="text" id="field-street-address" placeholder="e.g. 100 Mountain View Rd" style="width: 100%; box-sizing: border-box; padding: 0.65rem 0.85rem; border-radius: 6px; background: #1e293b; border: 1px solid #334155; color: #f8fafc; font-size: 0.9rem; outline: none;">
+            </div>
+
+            <div>
+              <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #cbd5e1; margin-bottom: 0.35rem;">City (NC) *</label>
+              <input type="text" id="field-city" required placeholder="e.g. Waynesville" style="width: 100%; box-sizing: border-box; padding: 0.65rem 0.85rem; border-radius: 6px; background: #1e293b; border: 1px solid #334155; color: #f8fafc; font-size: 0.9rem; outline: none;">
+            </div>
+
+            <div>
+              <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #cbd5e1; margin-bottom: 0.35rem;">County</label>
+              <input type="text" id="field-county" placeholder="e.g. Haywood County, NC" style="width: 100%; box-sizing: border-box; padding: 0.65rem 0.85rem; border-radius: 6px; background: #1e293b; border: 1px solid #334155; color: #f8fafc; font-size: 0.9rem; outline: none;">
+            </div>
+
+            <div>
+              <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #cbd5e1; margin-bottom: 0.35rem;">ZIP Code</label>
+              <input type="text" id="field-zip" placeholder="e.g. 28786" style="width: 100%; box-sizing: border-box; padding: 0.65rem 0.85rem; border-radius: 6px; background: #1e293b; border: 1px solid #334155; color: #f8fafc; font-size: 0.9rem; outline: none;">
+            </div>
+
+            <div style="grid-column: span 2;">
+              <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #cbd5e1; margin-bottom: 0.35rem;">Current Live Website / Google Business Profile URL</label>
+              <input type="url" id="field-website" placeholder="https://..." style="width: 100%; box-sizing: border-box; padding: 0.65rem 0.85rem; border-radius: 6px; background: #1e293b; border: 1px solid #334155; color: #f8fafc; font-size: 0.9rem; outline: none;">
+            </div>
+
+            <div>
+              <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #cbd5e1; margin-bottom: 0.35rem;">Current Mobile PageSpeed Score (0-100)</label>
+              <input type="number" id="field-pagespeed" min="1" max="100" placeholder="e.g. 28" style="width: 100%; box-sizing: border-box; padding: 0.65rem 0.85rem; border-radius: 6px; background: #1e293b; border: 1px solid #334155; color: #f8fafc; font-size: 0.9rem; outline: none;">
+            </div>
+
+            <div>
+              <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #cbd5e1; margin-bottom: 0.35rem;">Bilingual / Spanish Service?</label>
+              <select id="field-spanish" style="width: 100%; box-sizing: border-box; padding: 0.65rem 0.85rem; border-radius: 6px; background: #1e293b; border: 1px solid #334155; color: #f8fafc; font-size: 0.88rem; outline: none;">
+                <option value="false">Standard English</option>
+                <option value="true">🇪🇸 Se Habla Español / Bilingual Dispatch</option>
+              </select>
+            </div>
+
+            <div style="grid-column: span 2;">
+              <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #cbd5e1; margin-bottom: 0.35rem;">Company Tagline / Specialties</label>
+              <input type="text" id="field-tagline" placeholder="e.g. Heavy Mountain Excavation & Boulder Retaining Walls" style="width: 100%; box-sizing: border-box; padding: 0.65rem 0.85rem; border-radius: 6px; background: #1e293b; border: 1px solid #334155; color: #f8fafc; font-size: 0.9rem; outline: none;">
+            </div>
+          </div>
+
+          <div id="modal-alert" style="display: none; padding: 0.75rem 1rem; border-radius: 8px; font-size: 0.85rem; margin-bottom: 1rem; line-height: 1.4;"></div>
+
+          <!-- Modal Footer Actions -->
+          <div style="display: flex; justify-content: flex-end; gap: 0.75rem; border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 1.25rem;">
+            <button type="button" onclick="closeContractorModal()" style="padding: 0.65rem 1.25rem; border-radius: 6px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); color: #cbd5e1; font-weight: 600; cursor: pointer;">Cancel</button>
+            <button type="submit" id="btn-save-contractor" style="padding: 0.65rem 1.5rem; border-radius: 6px; background: #10b981; border: none; color: #fff; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 0.5rem; box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);">
+              <span>💾 Save & Sync to GitHub</span>
+            </button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <script id="initial-clients-data" type="application/json">{json.dumps(clients)}</script>
+
   <script>
     const CORRECT_PIN = "8280";
+    let clientsData = JSON.parse(document.getElementById("initial-clients-data").textContent);
+
+    let currentSortColumn = null;
+    let currentSortDirection = "asc";
+    let currentCorridorFilter = "all";
+    let currentTradeFilter = "all";
+    let currentLangFilter = "all";
+    let currentSearchQuery = "";
+
     function unlockWithPin() {{
       const val = document.getElementById("pin-input").value.trim();
       if (val === CORRECT_PIN) {{
         sessionStorage.setItem("ridgeline_ops_unlocked", "true");
+        sessionStorage.setItem("ridgeline_ops_pin", val);
         showDashboard();
       }} else {{
         document.getElementById("pin-error").style.display = "block";
@@ -2259,26 +2453,94 @@ def generate_master_portal_html(clients):
       }}
     }});
 
-    let currentLangFilter = 'all';
-    let currentSearchQuery = '';
+    function sortTable(column) {{
+      if (currentSortColumn === column) {{
+        currentSortDirection = currentSortDirection === "asc" ? "desc" : "asc";
+      }} else {{
+        currentSortColumn = column;
+        currentSortDirection = "asc";
+      }}
+
+      // Update sort icons
+      document.querySelectorAll(".sort-icon").forEach(icon => icon.textContent = "↕");
+      const activeIcon = document.getElementById("sort-icon-" + column);
+      if (activeIcon) {{
+        activeIcon.textContent = currentSortDirection === "asc" ? "▲" : "▼";
+      }}
+
+      const tbody = document.getElementById("contractors-tbody");
+      if (!tbody) return;
+      const rows = Array.from(tbody.querySelectorAll("tr[data-slug]"));
+
+      rows.sort((a, b) => {{
+        let valA, valB;
+        if (column === "name") {{
+          valA = a.getAttribute("data-name") || "";
+          valB = b.getAttribute("data-name") || "";
+        }} else if (column === "corridor") {{
+          valA = a.getAttribute("data-corridor") || "";
+          valB = b.getAttribute("data-corridor") || "";
+        }} else if (column === "owner") {{
+          valA = a.getAttribute("data-owner") || "";
+          valB = b.getAttribute("data-owner") || "";
+        }} else if (column === "days") {{
+          valA = parseInt(a.getAttribute("data-days") || "9999", 10);
+          valB = parseInt(b.getAttribute("data-days") || "9999", 10);
+        }} else if (column === "score") {{
+          valA = parseInt(a.getAttribute("data-score") || "0", 10);
+          valB = parseInt(b.getAttribute("data-score") || "0", 10);
+        }} else {{
+          valA = a.getAttribute("data-name") || "";
+          valB = b.getAttribute("data-name") || "";
+        }}
+
+        if (typeof valA === "number" && typeof valB === "number") {{
+          return currentSortDirection === "asc" ? valA - valB : valB - valA;
+        }}
+        return currentSortDirection === "asc"
+          ? String(valA).localeCompare(String(valB))
+          : String(valB).localeCompare(String(valA));
+      }});
+
+      rows.forEach(r => tbody.appendChild(r));
+
+      // Also sort dossier cards
+      const cardGrid = document.querySelector(".dossier-grid");
+      if (cardGrid) {{
+        const cards = Array.from(cardGrid.querySelectorAll(".client-dossier-card[data-slug]"));
+        cards.sort((a, b) => {{
+          let valA = a.getAttribute("data-" + (column === "score" ? "score" : column === "days" ? "days" : column)) || "";
+          let valB = b.getAttribute("data-" + (column === "score" ? "score" : column === "days" ? "days" : column)) || "";
+          if (column === "score" || column === "days") {{
+            valA = parseInt(valA || "0", 10);
+            valB = parseInt(valB || "0", 10);
+            return currentSortDirection === "asc" ? valA - valB : valB - valA;
+          }}
+          return currentSortDirection === "asc"
+            ? String(valA).localeCompare(String(valB))
+            : String(valB).localeCompare(String(valA));
+        }});
+        cards.forEach(c => cardGrid.appendChild(c));
+      }}
+    }}
 
     function filterLanguage(lang) {{
       currentLangFilter = lang;
-      document.querySelectorAll('.filter-btn-lang').forEach(b => {{
-        b.style.background = 'rgba(255,255,255,0.06)';
-        b.style.color = '#cbd5e1';
-        b.style.borderColor = 'rgba(255,255,255,0.15)';
+      document.querySelectorAll(".filter-btn-lang").forEach(b => {{
+        b.style.background = "rgba(255,255,255,0.06)";
+        b.style.color = "#cbd5e1";
+        b.style.borderColor = "rgba(255,255,255,0.15)";
       }});
-      const activeBtn = document.getElementById('btn-lang-' + lang);
+      const activeBtn = document.getElementById("btn-lang-" + lang);
       if (activeBtn) {{
-        if (lang === 'es') {{
-          activeBtn.style.background = 'rgba(16,185,129,0.3)';
-          activeBtn.style.color = '#34d399';
-          activeBtn.style.borderColor = '#10b981';
+        if (lang === "es") {{
+          activeBtn.style.background = "rgba(16,185,129,0.3)";
+          activeBtn.style.color = "#34d399";
+          activeBtn.style.borderColor = "#10b981";
         }} else {{
-          activeBtn.style.background = '#2563eb';
-          activeBtn.style.color = '#fff';
-          activeBtn.style.borderColor = '#3b82f6';
+          activeBtn.style.background = "#2563eb";
+          activeBtn.style.color = "#fff";
+          activeBtn.style.borderColor = "#3b82f6";
         }}
       }}
       applyFilters();
@@ -2290,78 +2552,295 @@ def generate_master_portal_html(clients):
     }}
 
     function applyFilters() {{
-      const rows = document.querySelectorAll('tr[data-lang]');
+      const corridorSelect = document.getElementById("corridor-filter");
+      const tradeSelect = document.getElementById("trade-filter");
+      currentCorridorFilter = corridorSelect ? corridorSelect.value : "all";
+      currentTradeFilter = tradeSelect ? tradeSelect.value : "all";
+
+      const rows = document.querySelectorAll("tr[data-slug]");
       rows.forEach(r => {{
-        const lang = r.getAttribute('data-lang');
+        const lang = r.getAttribute("data-lang");
+        const corridor = r.getAttribute("data-corridor") || "";
+        const trade = r.getAttribute("data-trade") || "";
         const text = r.innerText.toLowerCase();
-        const matchesLang = (currentLangFilter === 'all' || lang === currentLangFilter);
+
+        const matchesLang = (currentLangFilter === "all" || lang === currentLangFilter);
+        const matchesCorridor = (currentCorridorFilter === "all" || corridor.includes(currentCorridorFilter.toLowerCase()));
+        const matchesTrade = (currentTradeFilter === "all" || trade.includes(currentTradeFilter.toLowerCase()));
         const matchesSearch = (!currentSearchQuery || text.includes(currentSearchQuery));
-        r.style.display = (matchesLang && matchesSearch) ? '' : 'none';
+
+        r.style.display = (matchesLang && matchesCorridor && matchesTrade && matchesSearch) ? "" : "none";
       }});
 
-      const cards = document.querySelectorAll('.client-dossier-card[data-lang]');
+      const cards = document.querySelectorAll(".client-dossier-card[data-slug]");
       cards.forEach(c => {{
-        const lang = c.getAttribute('data-lang');
+        const lang = c.getAttribute("data-lang");
+        const corridor = c.getAttribute("data-corridor") || "";
+        const trade = c.getAttribute("data-trade") || "";
         const text = c.innerText.toLowerCase();
-        const matchesLang = (currentLangFilter === 'all' || lang === currentLangFilter);
+
+        const matchesLang = (currentLangFilter === "all" || lang === currentLangFilter);
+        const matchesCorridor = (currentCorridorFilter === "all" || corridor.includes(currentCorridorFilter.toLowerCase()));
+        const matchesTrade = (currentTradeFilter === "all" || trade.includes(currentTradeFilter.toLowerCase()));
         const matchesSearch = (!currentSearchQuery || text.includes(currentSearchQuery));
-        c.style.display = (matchesLang && matchesSearch) ? '' : 'none';
+
+        c.style.display = (matchesLang && matchesCorridor && matchesTrade && matchesSearch) ? "" : "none";
       }});
     }}
 
+    function openEditModal(slug) {{
+      const c = clientsData.find(item => item.slug === slug);
+      if (!c) {{
+        alert("Contractor record not found");
+        return;
+      }}
+      document.getElementById("modal-heading").textContent = `Edit Contractor: ${{c.business_name}}`;
+      document.getElementById("field-slug").value = c.slug;
+      document.getElementById("field-business-name").value = c.business_name || "";
+      document.getElementById("field-short-name").value = c.short_name || "";
+      document.getElementById("field-trade").value = c.trade || "";
+      document.getElementById("field-corridor").value = c.corridor_name || "";
+      document.getElementById("field-owner-name").value = c.owner_name || "";
+      document.getElementById("field-owner-title").value = c.owner_title || "";
+      document.getElementById("field-cell-phone").value = c.cell_phone || "";
+      document.getElementById("field-office-phone").value = c.office_phone || "";
+      document.getElementById("field-street-address").value = c.street_address || "";
+      document.getElementById("field-city").value = c.city || "";
+      document.getElementById("field-county").value = c.county || "";
+      document.getElementById("field-zip").value = c.zip || "";
+      document.getElementById("field-website").value = c.current_website || "";
+      document.getElementById("field-pagespeed").value = c.competitor_pagespeed || 35;
+      document.getElementById("field-spanish").value = c.is_spanish_speaking ? "true" : "false";
+      document.getElementById("field-tagline").value = c.tagline || "";
+
+      const alertBox = document.getElementById("modal-alert");
+      alertBox.style.display = "none";
+
+      document.getElementById("contractor-modal").style.display = "flex";
+    }}
+
+    function openAddModal() {{
+      document.getElementById("modal-heading").textContent = "➕ Add Real WNC Contractor (Proof-of-Life Required)";
+      document.getElementById("field-slug").value = "";
+      document.getElementById("field-business-name").value = "";
+      document.getElementById("field-short-name").value = "";
+      document.getElementById("field-trade").value = "";
+      document.getElementById("field-owner-name").value = "";
+      document.getElementById("field-owner-title").value = "Owner & Lead Operator";
+      document.getElementById("field-cell-phone").value = "";
+      document.getElementById("field-office-phone").value = "";
+      document.getElementById("field-street-address").value = "";
+      document.getElementById("field-city").value = "Hendersonville";
+      document.getElementById("field-county").value = "Henderson County, NC";
+      document.getElementById("field-zip").value = "28792";
+      document.getElementById("field-website").value = "";
+      document.getElementById("field-pagespeed").value = "32";
+      document.getElementById("field-spanish").value = "false";
+      document.getElementById("field-tagline").value = "";
+
+      const alertBox = document.getElementById("modal-alert");
+      alertBox.style.display = "none";
+
+      document.getElementById("contractor-modal").style.display = "flex";
+    }}
+
+    function closeContractorModal() {{
+      document.getElementById("contractor-modal").style.display = "none";
+    }}
+
+    async function saveContractorForm() {{
+      const alertBox = document.getElementById("modal-alert");
+      const saveBtn = document.getElementById("btn-save-contractor");
+
+      const slug = document.getElementById("field-slug").value.trim();
+      const business_name = document.getElementById("field-business-name").value.trim();
+      const short_name = document.getElementById("field-short-name").value.trim() || business_name.split("(")[0].trim();
+      const trade = document.getElementById("field-trade").value.trim();
+      const corridor_name = document.getElementById("field-corridor").value.trim();
+      const owner_name = document.getElementById("field-owner-name").value.trim();
+      const owner_title = document.getElementById("field-owner-title").value.trim();
+      const cell_phone = document.getElementById("field-cell-phone").value.trim();
+      const office_phone = document.getElementById("field-office-phone").value.trim();
+      const street_address = document.getElementById("field-street-address").value.trim();
+      const city = document.getElementById("field-city").value.trim();
+      const county = document.getElementById("field-county").value.trim();
+      const zip = document.getElementById("field-zip").value.trim();
+      const current_website = document.getElementById("field-website").value.trim();
+      const competitor_pagespeed = parseInt(document.getElementById("field-pagespeed").value || "32", 10);
+      const is_spanish_speaking = document.getElementById("field-spanish").value === "true";
+      const tagline = document.getElementById("field-tagline").value.trim();
+
+      // Client-side Proof-of-Life verification
+      const rawDigits = cell_phone.replace(/\D/g, "");
+      if (rawDigits.length !== 10 && rawDigits.length !== 11) {{
+        alertBox.style.display = "block";
+        alertBox.style.background = "rgba(239, 68, 68, 0.15)";
+        alertBox.style.border = "1px solid #ef4444";
+        alertBox.style.color = "#fca5a5";
+        alertBox.textContent = "⚠️ Proof-of-Life Check Failed: Must enter a valid 10-digit direct phone number.";
+        return;
+      }}
+      if (!owner_name) {{
+        alertBox.style.display = "block";
+        alertBox.style.background = "rgba(239, 68, 68, 0.15)";
+        alertBox.style.border = "1px solid #ef4444";
+        alertBox.style.color = "#fca5a5";
+        alertBox.textContent = "⚠️ Proof-of-Life Check Failed: Named human owner/principal is required.";
+        return;
+      }}
+
+      const clientPayload = {{
+        slug: slug || undefined,
+        business_name,
+        short_name,
+        trade,
+        corridor_name,
+        owner_name,
+        owner_title,
+        cell_phone,
+        office_phone,
+        street_address,
+        city,
+        county,
+        zip,
+        current_website,
+        competitor_pagespeed,
+        is_spanish_speaking,
+        tagline
+      }};
+
+      saveBtn.disabled = true;
+      saveBtn.innerHTML = "<span>⏳ Committing to GitHub...</span>";
+      alertBox.style.display = "block";
+      alertBox.style.background = "rgba(59, 130, 246, 0.15)";
+      alertBox.style.border = "1px solid #3b82f6";
+      alertBox.style.color = "#93c5fd";
+      alertBox.textContent = "Connecting to Cloudflare edge function and committing data/clients.json to GitHub repository...";
+
+      try {{
+        const pinVal = sessionStorage.getItem("ridgeline_ops_pin") || CORRECT_PIN;
+        const res = await fetch("/api/clients", {{
+          method: "POST",
+          headers: {{
+            "Content-Type": "application/json",
+            "X-Ops-Pin": pinVal
+          }},
+          body: JSON.stringify({{
+            pin: pinVal,
+            action: slug ? "update" : "create",
+            client: clientPayload
+          }})
+        }});
+
+        const data = await res.json();
+        if (!res.ok || data.error) {{
+          throw new Error(data.error || "Server returned " + res.status);
+        }}
+
+        // Success!
+        alertBox.style.background = "rgba(16, 185, 129, 0.15)";
+        alertBox.style.border = "1px solid #10b981";
+        alertBox.style.color = "#a7f3d0";
+        alertBox.textContent = `✓ ${{data.message || "Saved successfully!"}} Edge deployment triggered.`;
+
+        // Update in-memory data
+        const updatedSlug = data.slug || slug;
+        const existingIdx = clientsData.findIndex(item => item.slug === updatedSlug);
+        if (existingIdx >= 0) {{
+          clientsData[existingIdx] = {{ ...clientsData[existingIdx], ...data.client }};
+        }} else {{
+          clientsData.push(data.client);
+        }}
+
+        // Update DOM row if present
+        const row = document.getElementById("row-" + updatedSlug);
+        if (row) {{
+          const nameEl = row.querySelector(".col-name");
+          if (nameEl) nameEl.textContent = short_name;
+          const ownerEl = row.querySelector(".col-owner");
+          if (ownerEl) ownerEl.textContent = owner_name;
+          const phoneEl = row.querySelector(".col-phone");
+          if (phoneEl) {{
+            phoneEl.textContent = clientPayload.cell_phone;
+            phoneEl.href = "tel:" + rawDigits.slice(-10);
+          }}
+          const cityTradeEl = row.querySelector(".col-city-trade");
+          if (cityTradeEl) cityTradeEl.textContent = `${{city}}, NC • ${{trade}}`;
+        }}
+
+        setTimeout(() => {{
+          closeContractorModal();
+          saveBtn.disabled = false;
+          saveBtn.innerHTML = "<span>💾 Save & Sync to GitHub</span>";
+          const toast = document.getElementById("copy-toast");
+          toast.textContent = `✓ Saved ${{business_name}}! Deploying to Cloudflare edge.`;
+          toast.style.display = "block";
+          setTimeout(() => {{ toast.style.display = "none"; }}, 4000);
+        }}, 1200);
+
+      }} catch (err) {{
+        alertBox.style.background = "rgba(239, 68, 68, 0.15)";
+        alertBox.style.border = "1px solid #ef4444";
+        alertBox.style.color = "#fca5a5";
+        alertBox.textContent = `❌ Save Failed: ${{err.message}}`;
+        saveBtn.disabled = false;
+        saveBtn.innerHTML = "<span>💾 Save & Sync to GitHub</span>";
+      }}
+    }}
+
     function copySmsPitchEs(slug) {{
-      const textarea = document.getElementById('sms-text-es-' + slug);
+      const textarea = document.getElementById("sms-text-es-" + slug);
       if (!textarea) return;
       navigator.clipboard.writeText(textarea.value).then(() => {{
-        const toast = document.getElementById('copy-toast');
-        toast.textContent = '✓ ¡Copiado SMS en Español al portapapeles!';
-        toast.style.display = 'block';
-        setTimeout(() => {{ toast.style.display = 'none'; }}, 3000);
+        const toast = document.getElementById("copy-toast");
+        toast.textContent = "✓ ¡Copiado SMS en Español al portapapeles!";
+        toast.style.display = "block";
+        setTimeout(() => {{ toast.style.display = "none"; }}, 3000);
       }}).catch(err => {{
-        alert('Error al copiar: ' + err);
+        alert("Error al copiar: " + err);
       }});
     }}
 
     function copySmsPitch(slug) {{
-      const textarea = document.getElementById('sms-text-' + slug);
+      const textarea = document.getElementById("sms-text-" + slug);
       if (!textarea) return;
       
       navigator.clipboard.writeText(textarea.value).then(() => {{
-        const toast = document.getElementById('copy-toast');
-        toast.textContent = '✓ Copied Cold SMS Pitch to clipboard!';
-        toast.style.display = 'block';
+        const toast = document.getElementById("copy-toast");
+        toast.textContent = "✓ Copied Cold SMS Pitch to clipboard!";
+        toast.style.display = "block";
         setTimeout(() => {{
-          toast.style.display = 'none';
+          toast.style.display = "none";
         }}, 3000);
       }}).catch(err => {{
-        alert('Could not copy automatically: ' + err);
+        alert("Could not copy automatically: " + err);
       }});
     }}
 
     function copyStripeLink(url, label) {{
       navigator.clipboard.writeText(url).then(() => {{
-        const toast = document.getElementById('copy-toast');
-        toast.textContent = '✓ Copied ' + label + ' Checkout Link to clipboard!';
-        toast.style.display = 'block';
+        const toast = document.getElementById("copy-toast");
+        toast.textContent = "✓ Copied " + label + " Checkout Link to clipboard!";
+        toast.style.display = "block";
         setTimeout(() => {{
-          toast.style.display = 'none';
+          toast.style.display = "none";
         }}, 3000);
       }}).catch(err => {{
-        alert('Could not copy link: ' + err);
+        alert("Could not copy link: " + err);
       }});
     }}
 
     function copyDnsInstructions(domain) {{
       const text = "Record Type: CNAME\\nHost / Name: @ (and www)\\nPoints To / Target: preview.ridgelinetrade.com\\nTTL: Auto (or 3600)";
       navigator.clipboard.writeText(text).then(() => {{
-        const toast = document.getElementById('copy-toast');
-        toast.textContent = '✓ Copied CNAME Setup Records for ' + domain + ' to clipboard!';
-        toast.style.display = 'block';
+        const toast = document.getElementById("copy-toast");
+        toast.textContent = "✓ Copied CNAME Setup Records for " + domain + " to clipboard!";
+        toast.style.display = "block";
         setTimeout(() => {{
-          toast.style.display = 'none';
+          toast.style.display = "none";
         }}, 3000);
       }}).catch(err => {{
-        alert('Could not copy link: ' + err);
+        alert("Could not copy link: " + err);
       }});
     }}
   </script>

@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://preview.ridgelinetrade.com/sites/sergio-gonzalez-water-damage-restoration/sitemap.xml
