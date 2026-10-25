@@ -1335,6 +1335,27 @@ def generate_master_portal_html(clients):
         safe_corridor_slug = c.get("trade_network_corridor_slug", "").lower()
         safe_owner = c["owner_name"].lower().replace('"', '').replace("'", "")
 
+        current_web = str(c.get("current_website", "")).strip()
+        if not current_web or current_web.lower() in ("none", "n/a", "no website"):
+            website_link_url = ""
+        elif current_web.startswith(("http://", "https://")):
+            website_link_url = current_web
+        elif "hibu" in current_web.lower():
+            website_link_url = "https://hibu.com"
+        elif " " in current_web:
+            website_link_url = ""
+        elif "." in current_web:
+            website_link_url = f"https://{current_web}"
+        else:
+            website_link_url = ""
+
+        if website_link_url:
+            table_score_html = f'<a href="{website_link_url}" target="_blank" rel="noopener noreferrer" style="text-decoration: none;" title="Visit existing live website: {website_link_url}"><span class="speed-pill {score_class}" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">{old_score}/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span></a>'
+            card_score_html = f'<a href="{website_link_url}" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" title="Visit existing live website: {website_link_url}"><div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">{old_score} / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div></a>'
+        else:
+            table_score_html = f'<span class="speed-pill {score_class}">{old_score}/100</span>'
+            card_score_html = f'<div class="stat-val">{old_score} / 100</div>'
+
         table_rows += f"""
         <tr id="row-{slug_val}"
             data-slug="{slug_val}"
@@ -1373,11 +1394,13 @@ def generate_master_portal_html(clients):
             </div>
           </td>
           <td>
-            <span class="speed-pill {score_class}">{old_score}/100</span><br>
+            {table_score_html}<br>
             <span class="sub-text">FCP {old_fcp} | LCP {old_lcp}</span>
           </td>
           <td>
-            <span class="speed-pill score-perfect">100/100</span><br>
+            <a href="/sites/{c['slug']}/" target="_blank" style="text-decoration: none;" title="Open 100/100 Mobile Rental Mockup">
+              <span class="speed-pill score-perfect" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">100/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span>
+            </a><br>
             <span class="sub-text">FCP 0.3s | LCP 0.5s</span>
           </td>
           <td>
@@ -1426,14 +1449,6 @@ def generate_master_portal_html(clients):
             exp_val_class = ''
             urgent_banner_html = ''
 
-        current_web = c.get("current_website", "")
-        if str(current_web).startswith("http"):
-            website_link_url = current_web
-        elif "hibu" in str(current_web).lower():
-            website_link_url = "https://hibu.com"
-        else:
-            website_link_url = f"https://{current_web}"
-
         if c.get("has_custom_logo") and c.get("logo_path"):
             logo_html = f'<div class="card-logo-badge"><img src="/sites/{c["slug"]}/{c["logo_path"]}" alt="{c["business_name"]} Logo" class="card-logo-img" width="48" height="48" loading="lazy"></div>'
         else:
@@ -1479,13 +1494,15 @@ def generate_master_portal_html(clients):
           <div class="stat-compare">
             <div class="stat-box bad">
               <div class="stat-label">Current Mobile Score</div>
-              <div class="stat-val">{old_score} / 100</div>
+              {card_score_html}
               <div class="stat-detail">Load Time: {old_lcp}</div>
             </div>
             <div class="stat-arrow">➔</div>
             <div class="stat-box good">
               <div class="stat-label">Our Rental Mockup</div>
-              <div class="stat-val">100 / 100</div>
+              <a href="/sites/{c['slug']}/" target="_blank" style="text-decoration: none; color: inherit;" title="Open 100/100 Mobile Rental Mockup">
+                <div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">100 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div>
+              </a>
               <div class="stat-detail">Load Time: 0.4s</div>
             </div>
           </div>
@@ -1745,6 +1762,12 @@ def generate_master_portal_html(clients):
       border-radius: 9999px;
       font-weight: 800;
       font-size: 0.85rem;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+    }}
+    .speed-pill:hover {{
+      transform: translateY(-1px);
+      filter: brightness(1.2);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.35);
     }}
     .score-bad {{ background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }}
     .score-mid {{ background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }}
@@ -1911,9 +1934,11 @@ def generate_master_portal_html(clients):
     }}
     .stat-box {{ text-align: center; }}
     .stat-label {{ font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; }}
-    .stat-val {{ font-size: 1.25rem; font-weight: 800; }}
+    .stat-val {{ font-size: 1.25rem; font-weight: 800; transition: transform 0.15s ease, filter 0.15s ease; }}
     .stat-box.bad .stat-val {{ color: #f87171; }}
+    .stat-box.bad a:hover .stat-val {{ filter: brightness(1.2); transform: translateY(-1px); }}
     .stat-box.good .stat-val {{ color: #34d399; }}
+    .stat-box.good a:hover .stat-val {{ filter: brightness(1.2); transform: translateY(-1px); }}
     .stat-detail {{ font-size: 0.7rem; color: var(--text-muted); }}
     .stat-arrow {{ color: var(--text-muted); font-size: 1.2rem; }}
 

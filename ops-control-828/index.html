@@ -174,6 +174,12 @@
       border-radius: 9999px;
       font-weight: 800;
       font-size: 0.85rem;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+    }
+    .speed-pill:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.2);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.35);
     }
     .score-bad { background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
     .score-mid { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
@@ -340,9 +346,11 @@
     }
     .stat-box { text-align: center; }
     .stat-label { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; }
-    .stat-val { font-size: 1.25rem; font-weight: 800; }
+    .stat-val { font-size: 1.25rem; font-weight: 800; transition: transform 0.15s ease, filter 0.15s ease; }
     .stat-box.bad .stat-val { color: #f87171; }
+    .stat-box.bad a:hover .stat-val { filter: brightness(1.2); transform: translateY(-1px); }
     .stat-box.good .stat-val { color: #34d399; }
+    .stat-box.good a:hover .stat-val { filter: brightness(1.2); transform: translateY(-1px); }
     .stat-detail { font-size: 0.7rem; color: var(--text-muted); }
     .stat-arrow { color: var(--text-muted); font-size: 1.2rem; }
 
@@ -729,11 +737,13 @@
             </div>
           </td>
           <td>
-            <span class="speed-pill score-mid">56/100</span><br>
+            <a href="https://tatesgradingnc.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;" title="Visit existing live website: https://tatesgradingnc.com"><span class="speed-pill score-mid" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">56/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span></a><br>
             <span class="sub-text">FCP 4.2s | LCP 18.2s</span>
           </td>
           <td>
-            <span class="speed-pill score-perfect">100/100</span><br>
+            <a href="/sites/tates-grading/" target="_blank" style="text-decoration: none;" title="Open 100/100 Mobile Rental Mockup">
+              <span class="speed-pill score-perfect" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">100/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span>
+            </a><br>
             <span class="sub-text">FCP 0.3s | LCP 0.5s</span>
           </td>
           <td>
@@ -786,11 +796,13 @@
             </div>
           </td>
           <td>
-            <span class="speed-pill score-bad">34/100</span><br>
+            <a href="https://leavesoutinc.com/dealers/hendersonville-north-carolina/" target="_blank" rel="noopener noreferrer" style="text-decoration: none;" title="Visit existing live website: https://leavesoutinc.com/dealers/hendersonville-north-carolina/"><span class="speed-pill score-bad" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">34/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span></a><br>
             <span class="sub-text">FCP 4.1s | LCP 9.6s</span>
           </td>
           <td>
-            <span class="speed-pill score-perfect">100/100</span><br>
+            <a href="/sites/leavesout-hendersonville/" target="_blank" style="text-decoration: none;" title="Open 100/100 Mobile Rental Mockup">
+              <span class="speed-pill score-perfect" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">100/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span>
+            </a><br>
             <span class="sub-text">FCP 0.3s | LCP 0.5s</span>
           </td>
           <td>
@@ -843,11 +855,13 @@
             </div>
           </td>
           <td>
-            <span class="speed-pill score-mid">60/100</span><br>
+            <a href="https://turningleaftreenc.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;" title="Visit existing live website: https://turningleaftreenc.com"><span class="speed-pill score-mid" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">60/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span></a><br>
             <span class="sub-text">FCP 3.0s | LCP 9.9s</span>
           </td>
           <td>
-            <span class="speed-pill score-perfect">100/100</span><br>
+            <a href="/sites/turning-leaf-tree/" target="_blank" style="text-decoration: none;" title="Open 100/100 Mobile Rental Mockup">
+              <span class="speed-pill score-perfect" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">100/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span>
+            </a><br>
             <span class="sub-text">FCP 0.3s | LCP 0.5s</span>
           </td>
           <td>
@@ -900,11 +914,13 @@
             </div>
           </td>
           <td>
-            <span class="speed-pill score-mid">74/100</span><br>
+            <a href="https://riverasconstructionsllc.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;" title="Visit existing live website: https://riverasconstructionsllc.com"><span class="speed-pill score-mid" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">74/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span></a><br>
             <span class="sub-text">FCP 2.0s | LCP 5.5s</span>
           </td>
           <td>
-            <span class="speed-pill score-perfect">100/100</span><br>
+            <a href="/sites/riveras-roofing/" target="_blank" style="text-decoration: none;" title="Open 100/100 Mobile Rental Mockup">
+              <span class="speed-pill score-perfect" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">100/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span>
+            </a><br>
             <span class="sub-text">FCP 0.3s | LCP 0.5s</span>
           </td>
           <td>
@@ -957,11 +973,13 @@
             </div>
           </td>
           <td>
-            <span class="speed-pill score-bad">42/100</span><br>
+            <a href="https://dirttworks.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;" title="Visit existing live website: https://dirttworks.com"><span class="speed-pill score-bad" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">42/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span></a><br>
             <span class="sub-text">FCP 3.8s | LCP 7.6s</span>
           </td>
           <td>
-            <span class="speed-pill score-perfect">100/100</span><br>
+            <a href="/sites/dirtworks-septic/" target="_blank" style="text-decoration: none;" title="Open 100/100 Mobile Rental Mockup">
+              <span class="speed-pill score-perfect" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">100/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span>
+            </a><br>
             <span class="sub-text">FCP 0.3s | LCP 0.5s</span>
           </td>
           <td>
@@ -1014,11 +1032,13 @@
             </div>
           </td>
           <td>
-            <span class="speed-pill score-mid">52/100</span><br>
+            <a href="https://mateoscl.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;" title="Visit existing live website: https://mateoscl.com"><span class="speed-pill score-mid" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">52/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span></a><br>
             <span class="sub-text">FCP 3.1s | LCP 6.8s</span>
           </td>
           <td>
-            <span class="speed-pill score-perfect">100/100</span><br>
+            <a href="/sites/mateos-retaining-walls/" target="_blank" style="text-decoration: none;" title="Open 100/100 Mobile Rental Mockup">
+              <span class="speed-pill score-perfect" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">100/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span>
+            </a><br>
             <span class="sub-text">FCP 0.3s | LCP 0.5s</span>
           </td>
           <td>
@@ -1071,11 +1091,13 @@
             </div>
           </td>
           <td>
-            <span class="speed-pill score-bad">38/100</span><br>
+            <a href="https://tricitypavinginc.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;" title="Visit existing live website: https://tricitypavinginc.com"><span class="speed-pill score-bad" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">38/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span></a><br>
             <span class="sub-text">FCP 4.2s | LCP 8.1s</span>
           </td>
           <td>
-            <span class="speed-pill score-perfect">100/100</span><br>
+            <a href="/sites/tri-city-paving/" target="_blank" style="text-decoration: none;" title="Open 100/100 Mobile Rental Mockup">
+              <span class="speed-pill score-perfect" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">100/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span>
+            </a><br>
             <span class="sub-text">FCP 0.3s | LCP 0.5s</span>
           </td>
           <td>
@@ -1128,11 +1150,13 @@
             </div>
           </td>
           <td>
-            <span class="speed-pill score-mid">58/100</span><br>
+            <a href="https://capstonecrawlspace.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;" title="Visit existing live website: https://capstonecrawlspace.com"><span class="speed-pill score-mid" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">58/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span></a><br>
             <span class="sub-text">FCP 3.3s | LCP 7.2s</span>
           </td>
           <td>
-            <span class="speed-pill score-perfect">100/100</span><br>
+            <a href="/sites/capstone-crawlspace/" target="_blank" style="text-decoration: none;" title="Open 100/100 Mobile Rental Mockup">
+              <span class="speed-pill score-perfect" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">100/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span>
+            </a><br>
             <span class="sub-text">FCP 0.3s | LCP 0.5s</span>
           </td>
           <td>
@@ -1185,11 +1209,13 @@
             </div>
           </td>
           <td>
-            <span class="speed-pill score-mid">64/100</span><br>
+            <a href="https://coomerswellandpump.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;" title="Visit existing live website: https://coomerswellandpump.com"><span class="speed-pill score-mid" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">64/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span></a><br>
             <span class="sub-text">FCP 2.8s | LCP 6.1s</span>
           </td>
           <td>
-            <span class="speed-pill score-perfect">100/100</span><br>
+            <a href="/sites/coomers-well-pump/" target="_blank" style="text-decoration: none;" title="Open 100/100 Mobile Rental Mockup">
+              <span class="speed-pill score-perfect" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">100/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span>
+            </a><br>
             <span class="sub-text">FCP 0.3s | LCP 0.5s</span>
           </td>
           <td>
@@ -1242,11 +1268,13 @@
             </div>
           </td>
           <td>
-            <span class="speed-pill score-bad">46/100</span><br>
+            <a href="https://hendersonvilledeckbuilders.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;" title="Visit existing live website: https://hendersonvilledeckbuilders.com"><span class="speed-pill score-bad" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">46/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span></a><br>
             <span class="sub-text">FCP 3.5s | LCP 7.9s</span>
           </td>
           <td>
-            <span class="speed-pill score-perfect">100/100</span><br>
+            <a href="/sites/wnc-decks/" target="_blank" style="text-decoration: none;" title="Open 100/100 Mobile Rental Mockup">
+              <span class="speed-pill score-perfect" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">100/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span>
+            </a><br>
             <span class="sub-text">FCP 0.3s | LCP 0.5s</span>
           </td>
           <td>
@@ -1299,11 +1327,13 @@
             </div>
           </td>
           <td>
-            <span class="speed-pill score-bad">29/100</span><br>
+            <a href="https://hibu.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;" title="Visit existing live website: https://hibu.com"><span class="speed-pill score-bad" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">29/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span></a><br>
             <span class="sub-text">FCP 4.6s | LCP 9.2s</span>
           </td>
           <td>
-            <span class="speed-pill score-perfect">100/100</span><br>
+            <a href="/sites/moss-log-homes/" target="_blank" style="text-decoration: none;" title="Open 100/100 Mobile Rental Mockup">
+              <span class="speed-pill score-perfect" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">100/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span>
+            </a><br>
             <span class="sub-text">FCP 0.3s | LCP 0.5s</span>
           </td>
           <td>
@@ -1356,11 +1386,13 @@
             </div>
           </td>
           <td>
-            <span class="speed-pill score-bad">28/100</span><br>
+            <a href="http://joelriceexcavating.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;" title="Visit existing live website: http://joelriceexcavating.com"><span class="speed-pill score-bad" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">28/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span></a><br>
             <span class="sub-text">FCP 4.6s | LCP 16.8s</span>
           </td>
           <td>
-            <span class="speed-pill score-perfect">100/100</span><br>
+            <a href="/sites/joel-rice-excavating/" target="_blank" style="text-decoration: none;" title="Open 100/100 Mobile Rental Mockup">
+              <span class="speed-pill score-perfect" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">100/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span>
+            </a><br>
             <span class="sub-text">FCP 0.3s | LCP 0.5s</span>
           </td>
           <td>
@@ -1413,11 +1445,13 @@
             </div>
           </td>
           <td>
-            <span class="speed-pill score-bad">31/100</span><br>
+            <a href="http://brysongrading.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;" title="Visit existing live website: http://brysongrading.com"><span class="speed-pill score-bad" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">31/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span></a><br>
             <span class="sub-text">FCP 4.4s | LCP 15.1s</span>
           </td>
           <td>
-            <span class="speed-pill score-perfect">100/100</span><br>
+            <a href="/sites/bryson-enterprises-paving/" target="_blank" style="text-decoration: none;" title="Open 100/100 Mobile Rental Mockup">
+              <span class="speed-pill score-perfect" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">100/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span>
+            </a><br>
             <span class="sub-text">FCP 0.3s | LCP 0.5s</span>
           </td>
           <td>
@@ -1470,11 +1504,13 @@
             </div>
           </td>
           <td>
-            <span class="speed-pill score-bad">34/100</span><br>
+            <a href="http://allamericantreeservicenc.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;" title="Visit existing live website: http://allamericantreeservicenc.com"><span class="speed-pill score-bad" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">34/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span></a><br>
             <span class="sub-text">FCP 4.1s | LCP 14.7s</span>
           </td>
           <td>
-            <span class="speed-pill score-perfect">100/100</span><br>
+            <a href="/sites/all-american-tree/" target="_blank" style="text-decoration: none;" title="Open 100/100 Mobile Rental Mockup">
+              <span class="speed-pill score-perfect" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">100/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span>
+            </a><br>
             <span class="sub-text">FCP 0.3s | LCP 0.5s</span>
           </td>
           <td>
@@ -1527,11 +1563,13 @@
             </div>
           </td>
           <td>
-            <span class="speed-pill score-bad">38/100</span><br>
+            <a href="http://caubleandsonsgrading.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;" title="Visit existing live website: http://caubleandsonsgrading.com"><span class="speed-pill score-bad" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">38/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span></a><br>
             <span class="sub-text">FCP 3.9s | LCP 13.5s</span>
           </td>
           <td>
-            <span class="speed-pill score-perfect">100/100</span><br>
+            <a href="/sites/cauble-sons-grading/" target="_blank" style="text-decoration: none;" title="Open 100/100 Mobile Rental Mockup">
+              <span class="speed-pill score-perfect" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">100/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span>
+            </a><br>
             <span class="sub-text">FCP 0.3s | LCP 0.5s</span>
           </td>
           <td>
@@ -1584,11 +1622,13 @@
             </div>
           </td>
           <td>
-            <span class="speed-pill score-bad">32/100</span><br>
+            <a href="http://mountaingenerator.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;" title="Visit existing live website: http://mountaingenerator.com"><span class="speed-pill score-bad" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">32/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span></a><br>
             <span class="sub-text">FCP 4.5s | LCP 15.8s</span>
           </td>
           <td>
-            <span class="speed-pill score-perfect">100/100</span><br>
+            <a href="/sites/mountain-generator-service/" target="_blank" style="text-decoration: none;" title="Open 100/100 Mobile Rental Mockup">
+              <span class="speed-pill score-perfect" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">100/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span>
+            </a><br>
             <span class="sub-text">FCP 0.3s | LCP 0.5s</span>
           </td>
           <td>
@@ -1641,11 +1681,13 @@
             </div>
           </td>
           <td>
-            <span class="speed-pill score-bad">39/100</span><br>
+            <a href="https://blueridgedecking.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;" title="Visit existing live website: https://blueridgedecking.com"><span class="speed-pill score-bad" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">39/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span></a><br>
             <span class="sub-text">FCP 3.8s | LCP 12.9s</span>
           </td>
           <td>
-            <span class="speed-pill score-perfect">100/100</span><br>
+            <a href="/sites/blue-ridge-decking/" target="_blank" style="text-decoration: none;" title="Open 100/100 Mobile Rental Mockup">
+              <span class="speed-pill score-perfect" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">100/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span>
+            </a><br>
             <span class="sub-text">FCP 0.3s | LCP 0.5s</span>
           </td>
           <td>
@@ -1698,11 +1740,13 @@
             </div>
           </td>
           <td>
-            <span class="speed-pill score-bad">29/100</span><br>
+            <a href="http://americantreeserviceasheville.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;" title="Visit existing live website: http://americantreeserviceasheville.com"><span class="speed-pill score-bad" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">29/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span></a><br>
             <span class="sub-text">FCP 4.9s | LCP 17.5s</span>
           </td>
           <td>
-            <span class="speed-pill score-perfect">100/100</span><br>
+            <a href="/sites/american-tree-asheville/" target="_blank" style="text-decoration: none;" title="Open 100/100 Mobile Rental Mockup">
+              <span class="speed-pill score-perfect" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">100/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span>
+            </a><br>
             <span class="sub-text">FCP 0.3s | LCP 0.5s</span>
           </td>
           <td>
@@ -1755,11 +1799,13 @@
             </div>
           </td>
           <td>
-            <span class="speed-pill score-bad">35/100</span><br>
+            <a href="https://ncgreenscapes.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;" title="Visit existing live website: https://ncgreenscapes.com"><span class="speed-pill score-bad" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">35/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span></a><br>
             <span class="sub-text">FCP 4.2s | LCP 14.8s</span>
           </td>
           <td>
-            <span class="speed-pill score-perfect">100/100</span><br>
+            <a href="/sites/greenscapes-retaining-walls/" target="_blank" style="text-decoration: none;" title="Open 100/100 Mobile Rental Mockup">
+              <span class="speed-pill score-perfect" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">100/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span>
+            </a><br>
             <span class="sub-text">FCP 0.3s | LCP 0.5s</span>
           </td>
           <td>
@@ -1812,11 +1858,13 @@
             </div>
           </td>
           <td>
-            <span class="speed-pill score-bad">31/100</span><br>
+            <a href="http://basementtechnologiesofwnc.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;" title="Visit existing live website: http://basementtechnologiesofwnc.com"><span class="speed-pill score-bad" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">31/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span></a><br>
             <span class="sub-text">FCP 4.7s | LCP 16.2s</span>
           </td>
           <td>
-            <span class="speed-pill score-perfect">100/100</span><br>
+            <a href="/sites/basement-technologies-wnc/" target="_blank" style="text-decoration: none;" title="Open 100/100 Mobile Rental Mockup">
+              <span class="speed-pill score-perfect" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">100/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span>
+            </a><br>
             <span class="sub-text">FCP 0.3s | LCP 0.5s</span>
           </td>
           <td>
@@ -1869,11 +1917,13 @@
             </div>
           </td>
           <td>
-            <span class="speed-pill score-bad">39/100</span><br>
+            <a href="https://deepwoodslhs.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;" title="Visit existing live website: https://deepwoodslhs.com"><span class="speed-pill score-bad" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">39/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span></a><br>
             <span class="sub-text">FCP 3.7s | LCP 12.8s</span>
           </td>
           <td>
-            <span class="speed-pill score-perfect">100/100</span><br>
+            <a href="/sites/deepwoods-log-homes/" target="_blank" style="text-decoration: none;" title="Open 100/100 Mobile Rental Mockup">
+              <span class="speed-pill score-perfect" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">100/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span>
+            </a><br>
             <span class="sub-text">FCP 0.3s | LCP 0.5s</span>
           </td>
           <td>
@@ -1926,11 +1976,13 @@
             </div>
           </td>
           <td>
-            <span class="speed-pill score-bad">37/100</span><br>
+            <a href="https://austinstreeservicenc.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;" title="Visit existing live website: https://austinstreeservicenc.com"><span class="speed-pill score-bad" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">37/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span></a><br>
             <span class="sub-text">FCP 4.1s | LCP 14.3s</span>
           </td>
           <td>
-            <span class="speed-pill score-perfect">100/100</span><br>
+            <a href="/sites/austins-tree-service/" target="_blank" style="text-decoration: none;" title="Open 100/100 Mobile Rental Mockup">
+              <span class="speed-pill score-perfect" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">100/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span>
+            </a><br>
             <span class="sub-text">FCP 0.3s | LCP 0.5s</span>
           </td>
           <td>
@@ -1983,11 +2035,13 @@
             </div>
           </td>
           <td>
-            <span class="speed-pill score-bad">24/100</span><br>
+            <a href="https://www.facebook.com/rathboneseptic" target="_blank" rel="noopener noreferrer" style="text-decoration: none;" title="Visit existing live website: https://www.facebook.com/rathboneseptic"><span class="speed-pill score-bad" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">24/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span></a><br>
             <span class="sub-text">FCP 5.5s | LCP 19.2s</span>
           </td>
           <td>
-            <span class="speed-pill score-perfect">100/100</span><br>
+            <a href="/sites/rathbone-septic/" target="_blank" style="text-decoration: none;" title="Open 100/100 Mobile Rental Mockup">
+              <span class="speed-pill score-perfect" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">100/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span>
+            </a><br>
             <span class="sub-text">FCP 0.3s | LCP 0.5s</span>
           </td>
           <td>
@@ -2040,11 +2094,13 @@
             </div>
           </td>
           <td>
-            <span class="speed-pill score-bad">33/100</span><br>
+            <a href="http://highlandernc.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;" title="Visit existing live website: http://highlandernc.com"><span class="speed-pill score-bad" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">33/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span></a><br>
             <span class="sub-text">FCP 4.4s | LCP 15.6s</span>
           </td>
           <td>
-            <span class="speed-pill score-perfect">100/100</span><br>
+            <a href="/sites/highlander-roofing/" target="_blank" style="text-decoration: none;" title="Open 100/100 Mobile Rental Mockup">
+              <span class="speed-pill score-perfect" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">100/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span>
+            </a><br>
             <span class="sub-text">FCP 0.3s | LCP 0.5s</span>
           </td>
           <td>
@@ -2097,11 +2153,13 @@
             </div>
           </td>
           <td>
-            <span class="speed-pill score-bad">38/100</span><br>
+            <a href="http://thefranklinbros.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;" title="Visit existing live website: http://thefranklinbros.com"><span class="speed-pill score-bad" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">38/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span></a><br>
             <span class="sub-text">FCP 3.9s | LCP 13.4s</span>
           </td>
           <td>
-            <span class="speed-pill score-perfect">100/100</span><br>
+            <a href="/sites/the-franklin-bros-well/" target="_blank" style="text-decoration: none;" title="Open 100/100 Mobile Rental Mockup">
+              <span class="speed-pill score-perfect" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">100/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span>
+            </a><br>
             <span class="sub-text">FCP 0.3s | LCP 0.5s</span>
           </td>
           <td>
@@ -2154,11 +2212,13 @@
             </div>
           </td>
           <td>
-            <span class="speed-pill score-bad">30/100</span><br>
+            <a href="https://estesgrading.net" target="_blank" rel="noopener noreferrer" style="text-decoration: none;" title="Visit existing live website: https://estesgrading.net"><span class="speed-pill score-bad" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">30/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span></a><br>
             <span class="sub-text">FCP 4.8s | LCP 16.5s</span>
           </td>
           <td>
-            <span class="speed-pill score-perfect">100/100</span><br>
+            <a href="/sites/estes-grading/" target="_blank" style="text-decoration: none;" title="Open 100/100 Mobile Rental Mockup">
+              <span class="speed-pill score-perfect" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">100/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span>
+            </a><br>
             <span class="sub-text">FCP 0.3s | LCP 0.5s</span>
           </td>
           <td>
@@ -2211,11 +2271,13 @@
             </div>
           </td>
           <td>
-            <span class="speed-pill score-bad">31/100</span><br>
+            <a href="http://boonewellservice.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;" title="Visit existing live website: http://boonewellservice.com"><span class="speed-pill score-bad" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">31/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span></a><br>
             <span class="sub-text">FCP 4.6s | LCP 15.9s</span>
           </td>
           <td>
-            <span class="speed-pill score-perfect">100/100</span><br>
+            <a href="/sites/boone-well-services/" target="_blank" style="text-decoration: none;" title="Open 100/100 Mobile Rental Mockup">
+              <span class="speed-pill score-perfect" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">100/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span>
+            </a><br>
             <span class="sub-text">FCP 0.3s | LCP 0.5s</span>
           </td>
           <td>
@@ -2268,11 +2330,13 @@
             </div>
           </td>
           <td>
-            <span class="speed-pill score-bad">26/100</span><br>
+            <a href="https://www.yellowpages.com/murphy-nc/mip/cherokee-well-drilling-pump-co-11394142" target="_blank" rel="noopener noreferrer" style="text-decoration: none;" title="Visit existing live website: https://www.yellowpages.com/murphy-nc/mip/cherokee-well-drilling-pump-co-11394142"><span class="speed-pill score-bad" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">26/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span></a><br>
             <span class="sub-text">FCP 5.2s | LCP 18.4s</span>
           </td>
           <td>
-            <span class="speed-pill score-perfect">100/100</span><br>
+            <a href="/sites/cherokee-well-drilling/" target="_blank" style="text-decoration: none;" title="Open 100/100 Mobile Rental Mockup">
+              <span class="speed-pill score-perfect" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">100/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span>
+            </a><br>
             <span class="sub-text">FCP 0.3s | LCP 0.5s</span>
           </td>
           <td>
@@ -2325,11 +2389,13 @@
             </div>
           </td>
           <td>
-            <span class="speed-pill score-bad">34/100</span><br>
+            <a href="http://connorwellandpump.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;" title="Visit existing live website: http://connorwellandpump.com"><span class="speed-pill score-bad" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">34/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span></a><br>
             <span class="sub-text">FCP 4.3s | LCP 14.9s</span>
           </td>
           <td>
-            <span class="speed-pill score-perfect">100/100</span><br>
+            <a href="/sites/connor-well-pump/" target="_blank" style="text-decoration: none;" title="Open 100/100 Mobile Rental Mockup">
+              <span class="speed-pill score-perfect" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">100/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span>
+            </a><br>
             <span class="sub-text">FCP 0.3s | LCP 0.5s</span>
           </td>
           <td>
@@ -2382,11 +2448,13 @@
             </div>
           </td>
           <td>
-            <span class="speed-pill score-bad">36/100</span><br>
+            <a href="https://lakejameselectric.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;" title="Visit existing live website: https://lakejameselectric.com"><span class="speed-pill score-bad" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">36/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span></a><br>
             <span class="sub-text">FCP 4.0s | LCP 13.9s</span>
           </td>
           <td>
-            <span class="speed-pill score-perfect">100/100</span><br>
+            <a href="/sites/lake-james-electric/" target="_blank" style="text-decoration: none;" title="Open 100/100 Mobile Rental Mockup">
+              <span class="speed-pill score-perfect" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">100/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span>
+            </a><br>
             <span class="sub-text">FCP 0.3s | LCP 0.5s</span>
           </td>
           <td>
@@ -2439,11 +2507,13 @@
             </div>
           </td>
           <td>
-            <span class="speed-pill score-bad">35/100</span><br>
+            <a href="http://aglmnc.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;" title="Visit existing live website: http://aglmnc.com"><span class="speed-pill score-bad" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">35/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span></a><br>
             <span class="sub-text">FCP 4.2s | LCP 14.7s</span>
           </td>
           <td>
-            <span class="speed-pill score-perfect">100/100</span><br>
+            <a href="/sites/austin-grading-land/" target="_blank" style="text-decoration: none;" title="Open 100/100 Mobile Rental Mockup">
+              <span class="speed-pill score-perfect" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">100/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span>
+            </a><br>
             <span class="sub-text">FCP 0.3s | LCP 0.5s</span>
           </td>
           <td>
@@ -2496,11 +2566,13 @@
             </div>
           </td>
           <td>
-            <span class="speed-pill score-bad">42/100</span><br>
+            <a href="https://wncwashingandstaining.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;" title="Visit existing live website: https://wncwashingandstaining.com"><span class="speed-pill score-bad" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">42/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span></a><br>
             <span class="sub-text">FCP 3.4s | LCP 11.2s</span>
           </td>
           <td>
-            <span class="speed-pill score-perfect">100/100</span><br>
+            <a href="/sites/wnc-blast-wash-staining/" target="_blank" style="text-decoration: none;" title="Open 100/100 Mobile Rental Mockup">
+              <span class="speed-pill score-perfect" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">100/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span>
+            </a><br>
             <span class="sub-text">FCP 0.3s | LCP 0.5s</span>
           </td>
           <td>
@@ -2553,11 +2625,13 @@
             </div>
           </td>
           <td>
-            <span class="speed-pill score-bad">38/100</span><br>
+            <a href="https://carolinalogandtimberhomes.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;" title="Visit existing live website: https://carolinalogandtimberhomes.com"><span class="speed-pill score-bad" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">38/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span></a><br>
             <span class="sub-text">FCP 3.9s | LCP 13.5s</span>
           </td>
           <td>
-            <span class="speed-pill score-perfect">100/100</span><br>
+            <a href="/sites/carolina-log-timber-homes/" target="_blank" style="text-decoration: none;" title="Open 100/100 Mobile Rental Mockup">
+              <span class="speed-pill score-perfect" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">100/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span>
+            </a><br>
             <span class="sub-text">FCP 0.3s | LCP 0.5s</span>
           </td>
           <td>
@@ -2614,7 +2688,9 @@
             <span class="sub-text">FCP 4.1s | LCP 14.2s</span>
           </td>
           <td>
-            <span class="speed-pill score-perfect">100/100</span><br>
+            <a href="/sites/gray-wolf-log-homes/" target="_blank" style="text-decoration: none;" title="Open 100/100 Mobile Rental Mockup">
+              <span class="speed-pill score-perfect" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">100/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span>
+            </a><br>
             <span class="sub-text">FCP 0.3s | LCP 0.5s</span>
           </td>
           <td>
@@ -2667,11 +2743,13 @@
             </div>
           </td>
           <td>
-            <span class="speed-pill score-bad">45/100</span><br>
+            <a href="https://cabincreektimberframes.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;" title="Visit existing live website: https://cabincreektimberframes.com"><span class="speed-pill score-bad" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">45/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span></a><br>
             <span class="sub-text">FCP 3.1s | LCP 9.8s</span>
           </td>
           <td>
-            <span class="speed-pill score-perfect">100/100</span><br>
+            <a href="/sites/cabin-creek-timber-frames/" target="_blank" style="text-decoration: none;" title="Open 100/100 Mobile Rental Mockup">
+              <span class="speed-pill score-perfect" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">100/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span>
+            </a><br>
             <span class="sub-text">FCP 0.3s | LCP 0.5s</span>
           </td>
           <td>
@@ -2724,11 +2802,13 @@
             </div>
           </td>
           <td>
-            <span class="speed-pill score-bad">40/100</span><br>
+            <a href="https://wefixloghomes.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;" title="Visit existing live website: https://wefixloghomes.com"><span class="speed-pill score-bad" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">40/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span></a><br>
             <span class="sub-text">FCP 3.6s | LCP 10.8s</span>
           </td>
           <td>
-            <span class="speed-pill score-perfect">100/100</span><br>
+            <a href="/sites/performance-log-finishers/" target="_blank" style="text-decoration: none;" title="Open 100/100 Mobile Rental Mockup">
+              <span class="speed-pill score-perfect" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">100/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span>
+            </a><br>
             <span class="sub-text">FCP 0.3s | LCP 0.5s</span>
           </td>
           <td>
@@ -2781,11 +2861,13 @@
             </div>
           </td>
           <td>
-            <span class="speed-pill score-bad">48/100</span><br>
+            <a href="https://royalkinconstruction.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;" title="Visit existing live website: https://royalkinconstruction.com"><span class="speed-pill score-bad" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">48/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span></a><br>
             <span class="sub-text">FCP 3.2s | LCP 8.9s</span>
           </td>
           <td>
-            <span class="speed-pill score-perfect">100/100</span><br>
+            <a href="/sites/royal-kin-construction/" target="_blank" style="text-decoration: none;" title="Open 100/100 Mobile Rental Mockup">
+              <span class="speed-pill score-perfect" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">100/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span>
+            </a><br>
             <span class="sub-text">FCP 0.3s | LCP 0.5s</span>
           </td>
           <td>
@@ -2842,7 +2924,9 @@
             <span class="sub-text">FCP 4.5s | LCP 12.8s</span>
           </td>
           <td>
-            <span class="speed-pill score-perfect">100/100</span><br>
+            <a href="/sites/tim-coker-construction/" target="_blank" style="text-decoration: none;" title="Open 100/100 Mobile Rental Mockup">
+              <span class="speed-pill score-perfect" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">100/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span>
+            </a><br>
             <span class="sub-text">FCP 0.3s | LCP 0.5s</span>
           </td>
           <td>
@@ -2895,11 +2979,13 @@
             </div>
           </td>
           <td>
-            <span class="speed-pill score-bad">44/100</span><br>
+            <a href="https://penlandbuilders.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;" title="Visit existing live website: https://penlandbuilders.com"><span class="speed-pill score-bad" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">44/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span></a><br>
             <span class="sub-text">FCP 3.4s | LCP 9.4s</span>
           </td>
           <td>
-            <span class="speed-pill score-perfect">100/100</span><br>
+            <a href="/sites/penland-builders/" target="_blank" style="text-decoration: none;" title="Open 100/100 Mobile Rental Mockup">
+              <span class="speed-pill score-perfect" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">100/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span>
+            </a><br>
             <span class="sub-text">FCP 0.3s | LCP 0.5s</span>
           </td>
           <td>
@@ -2952,11 +3038,13 @@
             </div>
           </td>
           <td>
-            <span class="speed-pill score-mid">51/100</span><br>
+            <a href="https://logandtimbersolutions.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;" title="Visit existing live website: https://logandtimbersolutions.com"><span class="speed-pill score-mid" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">51/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span></a><br>
             <span class="sub-text">FCP 2.8s | LCP 8.1s</span>
           </td>
           <td>
-            <span class="speed-pill score-perfect">100/100</span><br>
+            <a href="/sites/log-and-timber-solutions/" target="_blank" style="text-decoration: none;" title="Open 100/100 Mobile Rental Mockup">
+              <span class="speed-pill score-perfect" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">100/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span>
+            </a><br>
             <span class="sub-text">FCP 0.3s | LCP 0.5s</span>
           </td>
           <td>
@@ -3009,11 +3097,13 @@
             </div>
           </td>
           <td>
-            <span class="speed-pill score-bad">49/100</span><br>
+            <a href="https://logrepair.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;" title="Visit existing live website: https://logrepair.com"><span class="speed-pill score-bad" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">49/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span></a><br>
             <span class="sub-text">FCP 3.0s | LCP 8.6s</span>
           </td>
           <td>
-            <span class="speed-pill score-perfect">100/100</span><br>
+            <a href="/sites/american-log-restoration/" target="_blank" style="text-decoration: none;" title="Open 100/100 Mobile Rental Mockup">
+              <span class="speed-pill score-perfect" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">100/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span>
+            </a><br>
             <span class="sub-text">FCP 0.3s | LCP 0.5s</span>
           </td>
           <td>
@@ -3066,11 +3156,13 @@
             </div>
           </td>
           <td>
-            <span class="speed-pill score-bad">39/100</span><br>
+            <a href="http://cherokeesepticinc.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;" title="Visit existing live website: http://cherokeesepticinc.com"><span class="speed-pill score-bad" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">39/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span></a><br>
             <span class="sub-text">FCP 3.7s | LCP 11.4s</span>
           </td>
           <td>
-            <span class="speed-pill score-perfect">100/100</span><br>
+            <a href="/sites/cherokee-septic/" target="_blank" style="text-decoration: none;" title="Open 100/100 Mobile Rental Mockup">
+              <span class="speed-pill score-perfect" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">100/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span>
+            </a><br>
             <span class="sub-text">FCP 0.3s | LCP 0.5s</span>
           </td>
           <td>
@@ -3123,11 +3215,13 @@
             </div>
           </td>
           <td>
-            <span class="speed-pill score-bad">46/100</span><br>
+            <a href="https://rosetreeservicesnc.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;" title="Visit existing live website: https://rosetreeservicesnc.com"><span class="speed-pill score-bad" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">46/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span></a><br>
             <span class="sub-text">FCP 3.1s | LCP 8.7s</span>
           </td>
           <td>
-            <span class="speed-pill score-perfect">100/100</span><br>
+            <a href="/sites/rose-tree-service/" target="_blank" style="text-decoration: none;" title="Open 100/100 Mobile Rental Mockup">
+              <span class="speed-pill score-perfect" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">100/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span>
+            </a><br>
             <span class="sub-text">FCP 0.3s | LCP 0.5s</span>
           </td>
           <td>
@@ -3180,11 +3274,13 @@
             </div>
           </td>
           <td>
-            <span class="speed-pill score-bad">41/100</span><br>
+            <a href="http://coxandsonroofing.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;" title="Visit existing live website: http://coxandsonroofing.com"><span class="speed-pill score-bad" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">41/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span></a><br>
             <span class="sub-text">FCP 3.5s | LCP 10.6s</span>
           </td>
           <td>
-            <span class="speed-pill score-perfect">100/100</span><br>
+            <a href="/sites/cox-and-son-roofing/" target="_blank" style="text-decoration: none;" title="Open 100/100 Mobile Rental Mockup">
+              <span class="speed-pill score-perfect" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem;">100/100 <span style="font-size: 0.65rem; opacity: 0.85;">↗</span></span>
+            </a><br>
             <span class="sub-text">FCP 0.3s | LCP 0.5s</span>
           </td>
           <td>
@@ -3256,13 +3352,15 @@
           <div class="stat-compare">
             <div class="stat-box bad">
               <div class="stat-label">Current Mobile Score</div>
-              <div class="stat-val">56 / 100</div>
+              <a href="https://tatesgradingnc.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" title="Visit existing live website: https://tatesgradingnc.com"><div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">56 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div></a>
               <div class="stat-detail">Load Time: 18.2s</div>
             </div>
             <div class="stat-arrow">➔</div>
             <div class="stat-box good">
               <div class="stat-label">Our Rental Mockup</div>
-              <div class="stat-val">100 / 100</div>
+              <a href="/sites/tates-grading/" target="_blank" style="text-decoration: none; color: inherit;" title="Open 100/100 Mobile Rental Mockup">
+                <div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">100 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div>
+              </a>
               <div class="stat-detail">Load Time: 0.4s</div>
             </div>
           </div>
@@ -3395,13 +3493,15 @@
           <div class="stat-compare">
             <div class="stat-box bad">
               <div class="stat-label">Current Mobile Score</div>
-              <div class="stat-val">34 / 100</div>
+              <a href="https://leavesoutinc.com/dealers/hendersonville-north-carolina/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" title="Visit existing live website: https://leavesoutinc.com/dealers/hendersonville-north-carolina/"><div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">34 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div></a>
               <div class="stat-detail">Load Time: 9.6s</div>
             </div>
             <div class="stat-arrow">➔</div>
             <div class="stat-box good">
               <div class="stat-label">Our Rental Mockup</div>
-              <div class="stat-val">100 / 100</div>
+              <a href="/sites/leavesout-hendersonville/" target="_blank" style="text-decoration: none; color: inherit;" title="Open 100/100 Mobile Rental Mockup">
+                <div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">100 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div>
+              </a>
               <div class="stat-detail">Load Time: 0.4s</div>
             </div>
           </div>
@@ -3530,13 +3630,15 @@
           <div class="stat-compare">
             <div class="stat-box bad">
               <div class="stat-label">Current Mobile Score</div>
-              <div class="stat-val">60 / 100</div>
+              <a href="https://turningleaftreenc.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" title="Visit existing live website: https://turningleaftreenc.com"><div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">60 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div></a>
               <div class="stat-detail">Load Time: 9.9s</div>
             </div>
             <div class="stat-arrow">➔</div>
             <div class="stat-box good">
               <div class="stat-label">Our Rental Mockup</div>
-              <div class="stat-val">100 / 100</div>
+              <a href="/sites/turning-leaf-tree/" target="_blank" style="text-decoration: none; color: inherit;" title="Open 100/100 Mobile Rental Mockup">
+                <div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">100 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div>
+              </a>
               <div class="stat-detail">Load Time: 0.4s</div>
             </div>
           </div>
@@ -3665,13 +3767,15 @@
           <div class="stat-compare">
             <div class="stat-box bad">
               <div class="stat-label">Current Mobile Score</div>
-              <div class="stat-val">74 / 100</div>
+              <a href="https://riverasconstructionsllc.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" title="Visit existing live website: https://riverasconstructionsllc.com"><div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">74 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div></a>
               <div class="stat-detail">Load Time: 5.5s</div>
             </div>
             <div class="stat-arrow">➔</div>
             <div class="stat-box good">
               <div class="stat-label">Our Rental Mockup</div>
-              <div class="stat-val">100 / 100</div>
+              <a href="/sites/riveras-roofing/" target="_blank" style="text-decoration: none; color: inherit;" title="Open 100/100 Mobile Rental Mockup">
+                <div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">100 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div>
+              </a>
               <div class="stat-detail">Load Time: 0.4s</div>
             </div>
           </div>
@@ -3800,13 +3904,15 @@
           <div class="stat-compare">
             <div class="stat-box bad">
               <div class="stat-label">Current Mobile Score</div>
-              <div class="stat-val">42 / 100</div>
+              <a href="https://dirttworks.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" title="Visit existing live website: https://dirttworks.com"><div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">42 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div></a>
               <div class="stat-detail">Load Time: 7.6s</div>
             </div>
             <div class="stat-arrow">➔</div>
             <div class="stat-box good">
               <div class="stat-label">Our Rental Mockup</div>
-              <div class="stat-val">100 / 100</div>
+              <a href="/sites/dirtworks-septic/" target="_blank" style="text-decoration: none; color: inherit;" title="Open 100/100 Mobile Rental Mockup">
+                <div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">100 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div>
+              </a>
               <div class="stat-detail">Load Time: 0.4s</div>
             </div>
           </div>
@@ -3935,13 +4041,15 @@
           <div class="stat-compare">
             <div class="stat-box bad">
               <div class="stat-label">Current Mobile Score</div>
-              <div class="stat-val">52 / 100</div>
+              <a href="https://mateoscl.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" title="Visit existing live website: https://mateoscl.com"><div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">52 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div></a>
               <div class="stat-detail">Load Time: 6.8s</div>
             </div>
             <div class="stat-arrow">➔</div>
             <div class="stat-box good">
               <div class="stat-label">Our Rental Mockup</div>
-              <div class="stat-val">100 / 100</div>
+              <a href="/sites/mateos-retaining-walls/" target="_blank" style="text-decoration: none; color: inherit;" title="Open 100/100 Mobile Rental Mockup">
+                <div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">100 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div>
+              </a>
               <div class="stat-detail">Load Time: 0.4s</div>
             </div>
           </div>
@@ -4070,13 +4178,15 @@
           <div class="stat-compare">
             <div class="stat-box bad">
               <div class="stat-label">Current Mobile Score</div>
-              <div class="stat-val">38 / 100</div>
+              <a href="https://tricitypavinginc.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" title="Visit existing live website: https://tricitypavinginc.com"><div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">38 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div></a>
               <div class="stat-detail">Load Time: 8.1s</div>
             </div>
             <div class="stat-arrow">➔</div>
             <div class="stat-box good">
               <div class="stat-label">Our Rental Mockup</div>
-              <div class="stat-val">100 / 100</div>
+              <a href="/sites/tri-city-paving/" target="_blank" style="text-decoration: none; color: inherit;" title="Open 100/100 Mobile Rental Mockup">
+                <div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">100 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div>
+              </a>
               <div class="stat-detail">Load Time: 0.4s</div>
             </div>
           </div>
@@ -4205,13 +4315,15 @@
           <div class="stat-compare">
             <div class="stat-box bad">
               <div class="stat-label">Current Mobile Score</div>
-              <div class="stat-val">58 / 100</div>
+              <a href="https://capstonecrawlspace.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" title="Visit existing live website: https://capstonecrawlspace.com"><div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">58 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div></a>
               <div class="stat-detail">Load Time: 7.2s</div>
             </div>
             <div class="stat-arrow">➔</div>
             <div class="stat-box good">
               <div class="stat-label">Our Rental Mockup</div>
-              <div class="stat-val">100 / 100</div>
+              <a href="/sites/capstone-crawlspace/" target="_blank" style="text-decoration: none; color: inherit;" title="Open 100/100 Mobile Rental Mockup">
+                <div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">100 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div>
+              </a>
               <div class="stat-detail">Load Time: 0.4s</div>
             </div>
           </div>
@@ -4340,13 +4452,15 @@
           <div class="stat-compare">
             <div class="stat-box bad">
               <div class="stat-label">Current Mobile Score</div>
-              <div class="stat-val">64 / 100</div>
+              <a href="https://coomerswellandpump.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" title="Visit existing live website: https://coomerswellandpump.com"><div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">64 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div></a>
               <div class="stat-detail">Load Time: 6.1s</div>
             </div>
             <div class="stat-arrow">➔</div>
             <div class="stat-box good">
               <div class="stat-label">Our Rental Mockup</div>
-              <div class="stat-val">100 / 100</div>
+              <a href="/sites/coomers-well-pump/" target="_blank" style="text-decoration: none; color: inherit;" title="Open 100/100 Mobile Rental Mockup">
+                <div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">100 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div>
+              </a>
               <div class="stat-detail">Load Time: 0.4s</div>
             </div>
           </div>
@@ -4475,13 +4589,15 @@
           <div class="stat-compare">
             <div class="stat-box bad">
               <div class="stat-label">Current Mobile Score</div>
-              <div class="stat-val">46 / 100</div>
+              <a href="https://hendersonvilledeckbuilders.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" title="Visit existing live website: https://hendersonvilledeckbuilders.com"><div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">46 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div></a>
               <div class="stat-detail">Load Time: 7.9s</div>
             </div>
             <div class="stat-arrow">➔</div>
             <div class="stat-box good">
               <div class="stat-label">Our Rental Mockup</div>
-              <div class="stat-val">100 / 100</div>
+              <a href="/sites/wnc-decks/" target="_blank" style="text-decoration: none; color: inherit;" title="Open 100/100 Mobile Rental Mockup">
+                <div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">100 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div>
+              </a>
               <div class="stat-detail">Load Time: 0.4s</div>
             </div>
           </div>
@@ -4610,13 +4726,15 @@
           <div class="stat-compare">
             <div class="stat-box bad">
               <div class="stat-label">Current Mobile Score</div>
-              <div class="stat-val">29 / 100</div>
+              <a href="https://hibu.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" title="Visit existing live website: https://hibu.com"><div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">29 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div></a>
               <div class="stat-detail">Load Time: 9.2s</div>
             </div>
             <div class="stat-arrow">➔</div>
             <div class="stat-box good">
               <div class="stat-label">Our Rental Mockup</div>
-              <div class="stat-val">100 / 100</div>
+              <a href="/sites/moss-log-homes/" target="_blank" style="text-decoration: none; color: inherit;" title="Open 100/100 Mobile Rental Mockup">
+                <div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">100 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div>
+              </a>
               <div class="stat-detail">Load Time: 0.4s</div>
             </div>
           </div>
@@ -4733,13 +4851,15 @@
           <div class="stat-compare">
             <div class="stat-box bad">
               <div class="stat-label">Current Mobile Score</div>
-              <div class="stat-val">28 / 100</div>
+              <a href="http://joelriceexcavating.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" title="Visit existing live website: http://joelriceexcavating.com"><div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">28 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div></a>
               <div class="stat-detail">Load Time: 16.8s</div>
             </div>
             <div class="stat-arrow">➔</div>
             <div class="stat-box good">
               <div class="stat-label">Our Rental Mockup</div>
-              <div class="stat-val">100 / 100</div>
+              <a href="/sites/joel-rice-excavating/" target="_blank" style="text-decoration: none; color: inherit;" title="Open 100/100 Mobile Rental Mockup">
+                <div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">100 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div>
+              </a>
               <div class="stat-detail">Load Time: 0.4s</div>
             </div>
           </div>
@@ -4860,13 +4980,15 @@
           <div class="stat-compare">
             <div class="stat-box bad">
               <div class="stat-label">Current Mobile Score</div>
-              <div class="stat-val">31 / 100</div>
+              <a href="http://brysongrading.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" title="Visit existing live website: http://brysongrading.com"><div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">31 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div></a>
               <div class="stat-detail">Load Time: 15.1s</div>
             </div>
             <div class="stat-arrow">➔</div>
             <div class="stat-box good">
               <div class="stat-label">Our Rental Mockup</div>
-              <div class="stat-val">100 / 100</div>
+              <a href="/sites/bryson-enterprises-paving/" target="_blank" style="text-decoration: none; color: inherit;" title="Open 100/100 Mobile Rental Mockup">
+                <div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">100 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div>
+              </a>
               <div class="stat-detail">Load Time: 0.4s</div>
             </div>
           </div>
@@ -4983,13 +5105,15 @@
           <div class="stat-compare">
             <div class="stat-box bad">
               <div class="stat-label">Current Mobile Score</div>
-              <div class="stat-val">34 / 100</div>
+              <a href="http://allamericantreeservicenc.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" title="Visit existing live website: http://allamericantreeservicenc.com"><div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">34 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div></a>
               <div class="stat-detail">Load Time: 14.7s</div>
             </div>
             <div class="stat-arrow">➔</div>
             <div class="stat-box good">
               <div class="stat-label">Our Rental Mockup</div>
-              <div class="stat-val">100 / 100</div>
+              <a href="/sites/all-american-tree/" target="_blank" style="text-decoration: none; color: inherit;" title="Open 100/100 Mobile Rental Mockup">
+                <div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">100 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div>
+              </a>
               <div class="stat-detail">Load Time: 0.4s</div>
             </div>
           </div>
@@ -5110,13 +5234,15 @@
           <div class="stat-compare">
             <div class="stat-box bad">
               <div class="stat-label">Current Mobile Score</div>
-              <div class="stat-val">38 / 100</div>
+              <a href="http://caubleandsonsgrading.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" title="Visit existing live website: http://caubleandsonsgrading.com"><div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">38 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div></a>
               <div class="stat-detail">Load Time: 13.5s</div>
             </div>
             <div class="stat-arrow">➔</div>
             <div class="stat-box good">
               <div class="stat-label">Our Rental Mockup</div>
-              <div class="stat-val">100 / 100</div>
+              <a href="/sites/cauble-sons-grading/" target="_blank" style="text-decoration: none; color: inherit;" title="Open 100/100 Mobile Rental Mockup">
+                <div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">100 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div>
+              </a>
               <div class="stat-detail">Load Time: 0.4s</div>
             </div>
           </div>
@@ -5233,13 +5359,15 @@
           <div class="stat-compare">
             <div class="stat-box bad">
               <div class="stat-label">Current Mobile Score</div>
-              <div class="stat-val">32 / 100</div>
+              <a href="http://mountaingenerator.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" title="Visit existing live website: http://mountaingenerator.com"><div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">32 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div></a>
               <div class="stat-detail">Load Time: 15.8s</div>
             </div>
             <div class="stat-arrow">➔</div>
             <div class="stat-box good">
               <div class="stat-label">Our Rental Mockup</div>
-              <div class="stat-val">100 / 100</div>
+              <a href="/sites/mountain-generator-service/" target="_blank" style="text-decoration: none; color: inherit;" title="Open 100/100 Mobile Rental Mockup">
+                <div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">100 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div>
+              </a>
               <div class="stat-detail">Load Time: 0.4s</div>
             </div>
           </div>
@@ -5360,13 +5488,15 @@
           <div class="stat-compare">
             <div class="stat-box bad">
               <div class="stat-label">Current Mobile Score</div>
-              <div class="stat-val">39 / 100</div>
+              <a href="https://blueridgedecking.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" title="Visit existing live website: https://blueridgedecking.com"><div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">39 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div></a>
               <div class="stat-detail">Load Time: 12.9s</div>
             </div>
             <div class="stat-arrow">➔</div>
             <div class="stat-box good">
               <div class="stat-label">Our Rental Mockup</div>
-              <div class="stat-val">100 / 100</div>
+              <a href="/sites/blue-ridge-decking/" target="_blank" style="text-decoration: none; color: inherit;" title="Open 100/100 Mobile Rental Mockup">
+                <div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">100 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div>
+              </a>
               <div class="stat-detail">Load Time: 0.4s</div>
             </div>
           </div>
@@ -5483,13 +5613,15 @@
           <div class="stat-compare">
             <div class="stat-box bad">
               <div class="stat-label">Current Mobile Score</div>
-              <div class="stat-val">29 / 100</div>
+              <a href="http://americantreeserviceasheville.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" title="Visit existing live website: http://americantreeserviceasheville.com"><div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">29 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div></a>
               <div class="stat-detail">Load Time: 17.5s</div>
             </div>
             <div class="stat-arrow">➔</div>
             <div class="stat-box good">
               <div class="stat-label">Our Rental Mockup</div>
-              <div class="stat-val">100 / 100</div>
+              <a href="/sites/american-tree-asheville/" target="_blank" style="text-decoration: none; color: inherit;" title="Open 100/100 Mobile Rental Mockup">
+                <div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">100 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div>
+              </a>
               <div class="stat-detail">Load Time: 0.4s</div>
             </div>
           </div>
@@ -5606,13 +5738,15 @@
           <div class="stat-compare">
             <div class="stat-box bad">
               <div class="stat-label">Current Mobile Score</div>
-              <div class="stat-val">35 / 100</div>
+              <a href="https://ncgreenscapes.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" title="Visit existing live website: https://ncgreenscapes.com"><div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">35 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div></a>
               <div class="stat-detail">Load Time: 14.8s</div>
             </div>
             <div class="stat-arrow">➔</div>
             <div class="stat-box good">
               <div class="stat-label">Our Rental Mockup</div>
-              <div class="stat-val">100 / 100</div>
+              <a href="/sites/greenscapes-retaining-walls/" target="_blank" style="text-decoration: none; color: inherit;" title="Open 100/100 Mobile Rental Mockup">
+                <div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">100 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div>
+              </a>
               <div class="stat-detail">Load Time: 0.4s</div>
             </div>
           </div>
@@ -5729,13 +5863,15 @@
           <div class="stat-compare">
             <div class="stat-box bad">
               <div class="stat-label">Current Mobile Score</div>
-              <div class="stat-val">31 / 100</div>
+              <a href="http://basementtechnologiesofwnc.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" title="Visit existing live website: http://basementtechnologiesofwnc.com"><div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">31 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div></a>
               <div class="stat-detail">Load Time: 16.2s</div>
             </div>
             <div class="stat-arrow">➔</div>
             <div class="stat-box good">
               <div class="stat-label">Our Rental Mockup</div>
-              <div class="stat-val">100 / 100</div>
+              <a href="/sites/basement-technologies-wnc/" target="_blank" style="text-decoration: none; color: inherit;" title="Open 100/100 Mobile Rental Mockup">
+                <div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">100 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div>
+              </a>
               <div class="stat-detail">Load Time: 0.4s</div>
             </div>
           </div>
@@ -5856,13 +5992,15 @@
           <div class="stat-compare">
             <div class="stat-box bad">
               <div class="stat-label">Current Mobile Score</div>
-              <div class="stat-val">39 / 100</div>
+              <a href="https://deepwoodslhs.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" title="Visit existing live website: https://deepwoodslhs.com"><div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">39 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div></a>
               <div class="stat-detail">Load Time: 12.8s</div>
             </div>
             <div class="stat-arrow">➔</div>
             <div class="stat-box good">
               <div class="stat-label">Our Rental Mockup</div>
-              <div class="stat-val">100 / 100</div>
+              <a href="/sites/deepwoods-log-homes/" target="_blank" style="text-decoration: none; color: inherit;" title="Open 100/100 Mobile Rental Mockup">
+                <div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">100 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div>
+              </a>
               <div class="stat-detail">Load Time: 0.4s</div>
             </div>
           </div>
@@ -5979,13 +6117,15 @@
           <div class="stat-compare">
             <div class="stat-box bad">
               <div class="stat-label">Current Mobile Score</div>
-              <div class="stat-val">37 / 100</div>
+              <a href="https://austinstreeservicenc.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" title="Visit existing live website: https://austinstreeservicenc.com"><div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">37 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div></a>
               <div class="stat-detail">Load Time: 14.3s</div>
             </div>
             <div class="stat-arrow">➔</div>
             <div class="stat-box good">
               <div class="stat-label">Our Rental Mockup</div>
-              <div class="stat-val">100 / 100</div>
+              <a href="/sites/austins-tree-service/" target="_blank" style="text-decoration: none; color: inherit;" title="Open 100/100 Mobile Rental Mockup">
+                <div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">100 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div>
+              </a>
               <div class="stat-detail">Load Time: 0.4s</div>
             </div>
           </div>
@@ -6102,13 +6242,15 @@
           <div class="stat-compare">
             <div class="stat-box bad">
               <div class="stat-label">Current Mobile Score</div>
-              <div class="stat-val">24 / 100</div>
+              <a href="https://www.facebook.com/rathboneseptic" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" title="Visit existing live website: https://www.facebook.com/rathboneseptic"><div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">24 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div></a>
               <div class="stat-detail">Load Time: 19.2s</div>
             </div>
             <div class="stat-arrow">➔</div>
             <div class="stat-box good">
               <div class="stat-label">Our Rental Mockup</div>
-              <div class="stat-val">100 / 100</div>
+              <a href="/sites/rathbone-septic/" target="_blank" style="text-decoration: none; color: inherit;" title="Open 100/100 Mobile Rental Mockup">
+                <div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">100 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div>
+              </a>
               <div class="stat-detail">Load Time: 0.4s</div>
             </div>
           </div>
@@ -6225,13 +6367,15 @@
           <div class="stat-compare">
             <div class="stat-box bad">
               <div class="stat-label">Current Mobile Score</div>
-              <div class="stat-val">33 / 100</div>
+              <a href="http://highlandernc.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" title="Visit existing live website: http://highlandernc.com"><div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">33 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div></a>
               <div class="stat-detail">Load Time: 15.6s</div>
             </div>
             <div class="stat-arrow">➔</div>
             <div class="stat-box good">
               <div class="stat-label">Our Rental Mockup</div>
-              <div class="stat-val">100 / 100</div>
+              <a href="/sites/highlander-roofing/" target="_blank" style="text-decoration: none; color: inherit;" title="Open 100/100 Mobile Rental Mockup">
+                <div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">100 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div>
+              </a>
               <div class="stat-detail">Load Time: 0.4s</div>
             </div>
           </div>
@@ -6352,13 +6496,15 @@
           <div class="stat-compare">
             <div class="stat-box bad">
               <div class="stat-label">Current Mobile Score</div>
-              <div class="stat-val">38 / 100</div>
+              <a href="http://thefranklinbros.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" title="Visit existing live website: http://thefranklinbros.com"><div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">38 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div></a>
               <div class="stat-detail">Load Time: 13.4s</div>
             </div>
             <div class="stat-arrow">➔</div>
             <div class="stat-box good">
               <div class="stat-label">Our Rental Mockup</div>
-              <div class="stat-val">100 / 100</div>
+              <a href="/sites/the-franklin-bros-well/" target="_blank" style="text-decoration: none; color: inherit;" title="Open 100/100 Mobile Rental Mockup">
+                <div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">100 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div>
+              </a>
               <div class="stat-detail">Load Time: 0.4s</div>
             </div>
           </div>
@@ -6475,13 +6621,15 @@
           <div class="stat-compare">
             <div class="stat-box bad">
               <div class="stat-label">Current Mobile Score</div>
-              <div class="stat-val">30 / 100</div>
+              <a href="https://estesgrading.net" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" title="Visit existing live website: https://estesgrading.net"><div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">30 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div></a>
               <div class="stat-detail">Load Time: 16.5s</div>
             </div>
             <div class="stat-arrow">➔</div>
             <div class="stat-box good">
               <div class="stat-label">Our Rental Mockup</div>
-              <div class="stat-val">100 / 100</div>
+              <a href="/sites/estes-grading/" target="_blank" style="text-decoration: none; color: inherit;" title="Open 100/100 Mobile Rental Mockup">
+                <div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">100 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div>
+              </a>
               <div class="stat-detail">Load Time: 0.4s</div>
             </div>
           </div>
@@ -6602,13 +6750,15 @@
           <div class="stat-compare">
             <div class="stat-box bad">
               <div class="stat-label">Current Mobile Score</div>
-              <div class="stat-val">31 / 100</div>
+              <a href="http://boonewellservice.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" title="Visit existing live website: http://boonewellservice.com"><div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">31 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div></a>
               <div class="stat-detail">Load Time: 15.9s</div>
             </div>
             <div class="stat-arrow">➔</div>
             <div class="stat-box good">
               <div class="stat-label">Our Rental Mockup</div>
-              <div class="stat-val">100 / 100</div>
+              <a href="/sites/boone-well-services/" target="_blank" style="text-decoration: none; color: inherit;" title="Open 100/100 Mobile Rental Mockup">
+                <div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">100 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div>
+              </a>
               <div class="stat-detail">Load Time: 0.4s</div>
             </div>
           </div>
@@ -6725,13 +6875,15 @@
           <div class="stat-compare">
             <div class="stat-box bad">
               <div class="stat-label">Current Mobile Score</div>
-              <div class="stat-val">26 / 100</div>
+              <a href="https://www.yellowpages.com/murphy-nc/mip/cherokee-well-drilling-pump-co-11394142" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" title="Visit existing live website: https://www.yellowpages.com/murphy-nc/mip/cherokee-well-drilling-pump-co-11394142"><div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">26 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div></a>
               <div class="stat-detail">Load Time: 18.4s</div>
             </div>
             <div class="stat-arrow">➔</div>
             <div class="stat-box good">
               <div class="stat-label">Our Rental Mockup</div>
-              <div class="stat-val">100 / 100</div>
+              <a href="/sites/cherokee-well-drilling/" target="_blank" style="text-decoration: none; color: inherit;" title="Open 100/100 Mobile Rental Mockup">
+                <div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">100 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div>
+              </a>
               <div class="stat-detail">Load Time: 0.4s</div>
             </div>
           </div>
@@ -6848,13 +7000,15 @@
           <div class="stat-compare">
             <div class="stat-box bad">
               <div class="stat-label">Current Mobile Score</div>
-              <div class="stat-val">34 / 100</div>
+              <a href="http://connorwellandpump.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" title="Visit existing live website: http://connorwellandpump.com"><div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">34 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div></a>
               <div class="stat-detail">Load Time: 14.9s</div>
             </div>
             <div class="stat-arrow">➔</div>
             <div class="stat-box good">
               <div class="stat-label">Our Rental Mockup</div>
-              <div class="stat-val">100 / 100</div>
+              <a href="/sites/connor-well-pump/" target="_blank" style="text-decoration: none; color: inherit;" title="Open 100/100 Mobile Rental Mockup">
+                <div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">100 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div>
+              </a>
               <div class="stat-detail">Load Time: 0.4s</div>
             </div>
           </div>
@@ -6971,13 +7125,15 @@
           <div class="stat-compare">
             <div class="stat-box bad">
               <div class="stat-label">Current Mobile Score</div>
-              <div class="stat-val">36 / 100</div>
+              <a href="https://lakejameselectric.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" title="Visit existing live website: https://lakejameselectric.com"><div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">36 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div></a>
               <div class="stat-detail">Load Time: 13.9s</div>
             </div>
             <div class="stat-arrow">➔</div>
             <div class="stat-box good">
               <div class="stat-label">Our Rental Mockup</div>
-              <div class="stat-val">100 / 100</div>
+              <a href="/sites/lake-james-electric/" target="_blank" style="text-decoration: none; color: inherit;" title="Open 100/100 Mobile Rental Mockup">
+                <div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">100 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div>
+              </a>
               <div class="stat-detail">Load Time: 0.4s</div>
             </div>
           </div>
@@ -7098,13 +7254,15 @@
           <div class="stat-compare">
             <div class="stat-box bad">
               <div class="stat-label">Current Mobile Score</div>
-              <div class="stat-val">35 / 100</div>
+              <a href="http://aglmnc.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" title="Visit existing live website: http://aglmnc.com"><div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">35 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div></a>
               <div class="stat-detail">Load Time: 14.7s</div>
             </div>
             <div class="stat-arrow">➔</div>
             <div class="stat-box good">
               <div class="stat-label">Our Rental Mockup</div>
-              <div class="stat-val">100 / 100</div>
+              <a href="/sites/austin-grading-land/" target="_blank" style="text-decoration: none; color: inherit;" title="Open 100/100 Mobile Rental Mockup">
+                <div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">100 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div>
+              </a>
               <div class="stat-detail">Load Time: 0.4s</div>
             </div>
           </div>
@@ -7221,13 +7379,15 @@
           <div class="stat-compare">
             <div class="stat-box bad">
               <div class="stat-label">Current Mobile Score</div>
-              <div class="stat-val">42 / 100</div>
+              <a href="https://wncwashingandstaining.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" title="Visit existing live website: https://wncwashingandstaining.com"><div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">42 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div></a>
               <div class="stat-detail">Load Time: 11.2s</div>
             </div>
             <div class="stat-arrow">➔</div>
             <div class="stat-box good">
               <div class="stat-label">Our Rental Mockup</div>
-              <div class="stat-val">100 / 100</div>
+              <a href="/sites/wnc-blast-wash-staining/" target="_blank" style="text-decoration: none; color: inherit;" title="Open 100/100 Mobile Rental Mockup">
+                <div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">100 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div>
+              </a>
               <div class="stat-detail">Load Time: 0.4s</div>
             </div>
           </div>
@@ -7344,13 +7504,15 @@
           <div class="stat-compare">
             <div class="stat-box bad">
               <div class="stat-label">Current Mobile Score</div>
-              <div class="stat-val">38 / 100</div>
+              <a href="https://carolinalogandtimberhomes.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" title="Visit existing live website: https://carolinalogandtimberhomes.com"><div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">38 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div></a>
               <div class="stat-detail">Load Time: 13.5s</div>
             </div>
             <div class="stat-arrow">➔</div>
             <div class="stat-box good">
               <div class="stat-label">Our Rental Mockup</div>
-              <div class="stat-val">100 / 100</div>
+              <a href="/sites/carolina-log-timber-homes/" target="_blank" style="text-decoration: none; color: inherit;" title="Open 100/100 Mobile Rental Mockup">
+                <div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">100 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div>
+              </a>
               <div class="stat-detail">Load Time: 0.4s</div>
             </div>
           </div>
@@ -7450,7 +7612,7 @@
               <div class="card-logo-badge" style="background: rgba(255,255,255,0.08); color: #60a5fa; font-weight: 800; font-size: 1.1rem;">GR</div>
               <div class="card-title-text">
                 <h3>
-                  <a href="https://Directory Listing on Smoky Mountain HBA" target="_blank" rel="noopener noreferrer" class="client-title-link" title="Visit current live website: Directory Listing on Smoky Mountain HBA">
+                  <a href="" target="_blank" rel="noopener noreferrer" class="client-title-link" title="Visit current live website: Directory Listing on Smoky Mountain HBA">
                     Gray Wolf Crossing Log Homes, Inc. <span class="ext-icon">↗</span>
                   </a>
                 </h3>
@@ -7473,7 +7635,9 @@
             <div class="stat-arrow">➔</div>
             <div class="stat-box good">
               <div class="stat-label">Our Rental Mockup</div>
-              <div class="stat-val">100 / 100</div>
+              <a href="/sites/gray-wolf-log-homes/" target="_blank" style="text-decoration: none; color: inherit;" title="Open 100/100 Mobile Rental Mockup">
+                <div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">100 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div>
+              </a>
               <div class="stat-detail">Load Time: 0.4s</div>
             </div>
           </div>
@@ -7590,13 +7754,15 @@
           <div class="stat-compare">
             <div class="stat-box bad">
               <div class="stat-label">Current Mobile Score</div>
-              <div class="stat-val">45 / 100</div>
+              <a href="https://cabincreektimberframes.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" title="Visit existing live website: https://cabincreektimberframes.com"><div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">45 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div></a>
               <div class="stat-detail">Load Time: 9.8s</div>
             </div>
             <div class="stat-arrow">➔</div>
             <div class="stat-box good">
               <div class="stat-label">Our Rental Mockup</div>
-              <div class="stat-val">100 / 100</div>
+              <a href="/sites/cabin-creek-timber-frames/" target="_blank" style="text-decoration: none; color: inherit;" title="Open 100/100 Mobile Rental Mockup">
+                <div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">100 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div>
+              </a>
               <div class="stat-detail">Load Time: 0.4s</div>
             </div>
           </div>
@@ -7713,13 +7879,15 @@
           <div class="stat-compare">
             <div class="stat-box bad">
               <div class="stat-label">Current Mobile Score</div>
-              <div class="stat-val">40 / 100</div>
+              <a href="https://wefixloghomes.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" title="Visit existing live website: https://wefixloghomes.com"><div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">40 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div></a>
               <div class="stat-detail">Load Time: 10.8s</div>
             </div>
             <div class="stat-arrow">➔</div>
             <div class="stat-box good">
               <div class="stat-label">Our Rental Mockup</div>
-              <div class="stat-val">100 / 100</div>
+              <a href="/sites/performance-log-finishers/" target="_blank" style="text-decoration: none; color: inherit;" title="Open 100/100 Mobile Rental Mockup">
+                <div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">100 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div>
+              </a>
               <div class="stat-detail">Load Time: 0.4s</div>
             </div>
           </div>
@@ -7836,13 +8004,15 @@
           <div class="stat-compare">
             <div class="stat-box bad">
               <div class="stat-label">Current Mobile Score</div>
-              <div class="stat-val">48 / 100</div>
+              <a href="https://royalkinconstruction.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" title="Visit existing live website: https://royalkinconstruction.com"><div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">48 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div></a>
               <div class="stat-detail">Load Time: 8.9s</div>
             </div>
             <div class="stat-arrow">➔</div>
             <div class="stat-box good">
               <div class="stat-label">Our Rental Mockup</div>
-              <div class="stat-val">100 / 100</div>
+              <a href="/sites/royal-kin-construction/" target="_blank" style="text-decoration: none; color: inherit;" title="Open 100/100 Mobile Rental Mockup">
+                <div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">100 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div>
+              </a>
               <div class="stat-detail">Load Time: 0.4s</div>
             </div>
           </div>
@@ -7942,7 +8112,7 @@
               <div class="card-logo-badge" style="background: rgba(255,255,255,0.08); color: #60a5fa; font-weight: 800; font-size: 1.1rem;">TI</div>
               <div class="card-title-text">
                 <h3>
-                  <a href="https://Directory Listing on Houzz & Clay Chamber" target="_blank" rel="noopener noreferrer" class="client-title-link" title="Visit current live website: Directory Listing on Houzz & Clay Chamber">
+                  <a href="" target="_blank" rel="noopener noreferrer" class="client-title-link" title="Visit current live website: Directory Listing on Houzz & Clay Chamber">
                     Tim Coker Construction <span class="ext-icon">↗</span>
                   </a>
                 </h3>
@@ -7965,7 +8135,9 @@
             <div class="stat-arrow">➔</div>
             <div class="stat-box good">
               <div class="stat-label">Our Rental Mockup</div>
-              <div class="stat-val">100 / 100</div>
+              <a href="/sites/tim-coker-construction/" target="_blank" style="text-decoration: none; color: inherit;" title="Open 100/100 Mobile Rental Mockup">
+                <div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">100 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div>
+              </a>
               <div class="stat-detail">Load Time: 0.4s</div>
             </div>
           </div>
@@ -8082,13 +8254,15 @@
           <div class="stat-compare">
             <div class="stat-box bad">
               <div class="stat-label">Current Mobile Score</div>
-              <div class="stat-val">44 / 100</div>
+              <a href="https://penlandbuilders.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" title="Visit existing live website: https://penlandbuilders.com"><div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">44 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div></a>
               <div class="stat-detail">Load Time: 9.4s</div>
             </div>
             <div class="stat-arrow">➔</div>
             <div class="stat-box good">
               <div class="stat-label">Our Rental Mockup</div>
-              <div class="stat-val">100 / 100</div>
+              <a href="/sites/penland-builders/" target="_blank" style="text-decoration: none; color: inherit;" title="Open 100/100 Mobile Rental Mockup">
+                <div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">100 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div>
+              </a>
               <div class="stat-detail">Load Time: 0.4s</div>
             </div>
           </div>
@@ -8205,13 +8379,15 @@
           <div class="stat-compare">
             <div class="stat-box bad">
               <div class="stat-label">Current Mobile Score</div>
-              <div class="stat-val">51 / 100</div>
+              <a href="https://logandtimbersolutions.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" title="Visit existing live website: https://logandtimbersolutions.com"><div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">51 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div></a>
               <div class="stat-detail">Load Time: 8.1s</div>
             </div>
             <div class="stat-arrow">➔</div>
             <div class="stat-box good">
               <div class="stat-label">Our Rental Mockup</div>
-              <div class="stat-val">100 / 100</div>
+              <a href="/sites/log-and-timber-solutions/" target="_blank" style="text-decoration: none; color: inherit;" title="Open 100/100 Mobile Rental Mockup">
+                <div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">100 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div>
+              </a>
               <div class="stat-detail">Load Time: 0.4s</div>
             </div>
           </div>
@@ -8328,13 +8504,15 @@
           <div class="stat-compare">
             <div class="stat-box bad">
               <div class="stat-label">Current Mobile Score</div>
-              <div class="stat-val">49 / 100</div>
+              <a href="https://logrepair.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" title="Visit existing live website: https://logrepair.com"><div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">49 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div></a>
               <div class="stat-detail">Load Time: 8.6s</div>
             </div>
             <div class="stat-arrow">➔</div>
             <div class="stat-box good">
               <div class="stat-label">Our Rental Mockup</div>
-              <div class="stat-val">100 / 100</div>
+              <a href="/sites/american-log-restoration/" target="_blank" style="text-decoration: none; color: inherit;" title="Open 100/100 Mobile Rental Mockup">
+                <div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">100 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div>
+              </a>
               <div class="stat-detail">Load Time: 0.4s</div>
             </div>
           </div>
@@ -8451,13 +8629,15 @@
           <div class="stat-compare">
             <div class="stat-box bad">
               <div class="stat-label">Current Mobile Score</div>
-              <div class="stat-val">39 / 100</div>
+              <a href="http://cherokeesepticinc.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" title="Visit existing live website: http://cherokeesepticinc.com"><div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">39 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div></a>
               <div class="stat-detail">Load Time: 11.4s</div>
             </div>
             <div class="stat-arrow">➔</div>
             <div class="stat-box good">
               <div class="stat-label">Our Rental Mockup</div>
-              <div class="stat-val">100 / 100</div>
+              <a href="/sites/cherokee-septic/" target="_blank" style="text-decoration: none; color: inherit;" title="Open 100/100 Mobile Rental Mockup">
+                <div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">100 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div>
+              </a>
               <div class="stat-detail">Load Time: 0.4s</div>
             </div>
           </div>
@@ -8574,13 +8754,15 @@
           <div class="stat-compare">
             <div class="stat-box bad">
               <div class="stat-label">Current Mobile Score</div>
-              <div class="stat-val">46 / 100</div>
+              <a href="https://rosetreeservicesnc.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" title="Visit existing live website: https://rosetreeservicesnc.com"><div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">46 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div></a>
               <div class="stat-detail">Load Time: 8.7s</div>
             </div>
             <div class="stat-arrow">➔</div>
             <div class="stat-box good">
               <div class="stat-label">Our Rental Mockup</div>
-              <div class="stat-val">100 / 100</div>
+              <a href="/sites/rose-tree-service/" target="_blank" style="text-decoration: none; color: inherit;" title="Open 100/100 Mobile Rental Mockup">
+                <div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">100 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div>
+              </a>
               <div class="stat-detail">Load Time: 0.4s</div>
             </div>
           </div>
@@ -8697,13 +8879,15 @@
           <div class="stat-compare">
             <div class="stat-box bad">
               <div class="stat-label">Current Mobile Score</div>
-              <div class="stat-val">41 / 100</div>
+              <a href="http://coxandsonroofing.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" title="Visit existing live website: http://coxandsonroofing.com"><div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">41 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div></a>
               <div class="stat-detail">Load Time: 10.6s</div>
             </div>
             <div class="stat-arrow">➔</div>
             <div class="stat-box good">
               <div class="stat-label">Our Rental Mockup</div>
-              <div class="stat-val">100 / 100</div>
+              <a href="/sites/cox-and-son-roofing/" target="_blank" style="text-decoration: none; color: inherit;" title="Open 100/100 Mobile Rental Mockup">
+                <div class="stat-val" style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">100 / 100 <span style="font-size: 0.75rem; opacity: 0.85;">↗</span></div>
+              </a>
               <div class="stat-detail">Load Time: 0.4s</div>
             </div>
           </div>
