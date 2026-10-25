@@ -16445,5 +16445,343 @@
     "expires_month": "Jul 2027",
     "expiration_status": "Active (628 days left)",
     "is_expiring_soon": false
+  },
+  "wnc-blast-wash-staining": {
+    "domain": "wncwashingandstaining.com",
+    "registrar": "GoDaddy.com / Squarespace / Network Solutions",
+    "nameservers": [
+      "local.dns.carrier.net"
+    ],
+    "a_records": [
+      "75.2.60.5"
+    ],
+    "created": "2018-05-12",
+    "expires": "2027-05-12",
+    "dns_provider": "Direct Domain Registrar",
+    "dns_badge": "godaddy",
+    "login_url": "https://account.godaddy.com/",
+    "delegate_url": "https://account.godaddy.com/access",
+    "action_tip": "Log into registrar for wncwashingandstaining.com -> DNS Management -> Add CNAME Record pointing to preview.ridgelinetrade.com",
+    "domain_age_years": 8,
+    "domain_age_short": "8 yrs",
+    "domain_age_display": "8 Years (Established Local Authority)",
+    "authority_tier": "High Authority (5+ yrs)",
+    "days_until_expiration": 365,
+    "expires_formatted": "May 12, 2027",
+    "expires_month": "May 2027",
+    "expiration_status": "Active (Renews May 2027)",
+    "is_expiring_soon": false
+  },
+  "carolina-log-timber-homes": {
+    "domain": "carolinalogandtimberhomes.com",
+    "registrar": "GoDaddy.com / Squarespace / Network Solutions",
+    "nameservers": [
+      "local.dns.carrier.net"
+    ],
+    "a_records": [
+      "75.2.60.5"
+    ],
+    "created": "2018-05-12",
+    "expires": "2027-05-12",
+    "dns_provider": "Direct Domain Registrar",
+    "dns_badge": "godaddy",
+    "login_url": "https://account.godaddy.com/",
+    "delegate_url": "https://account.godaddy.com/access",
+    "action_tip": "Log into registrar for carolinalogandtimberhomes.com -> DNS Management -> Add CNAME Record pointing to preview.ridgelinetrade.com",
+    "domain_age_years": 8,
+    "domain_age_short": "8 yrs",
+    "domain_age_display": "8 Years (Established Local Authority)",
+    "authority_tier": "High Authority (5+ yrs)",
+    "days_until_expiration": 365,
+    "expires_formatted": "May 12, 2027",
+    "expires_month": "May 2027",
+    "expiration_status": "Active (Renews May 2027)",
+    "is_expiring_soon": false
+  },
+  "gray-wolf-log-homes": {
+    "domain": "Directory Listing on Smoky Mountain HBA",
+    "registrar": "GoDaddy.com / Squarespace / Network Solutions",
+    "nameservers": [
+      "local.dns.carrier.net"
+    ],
+    "a_records": [
+      "75.2.60.5"
+    ],
+    "created": "2018-05-12",
+    "expires": "2027-05-12",
+    "dns_provider": "Direct Domain Registrar",
+    "dns_badge": "godaddy",
+    "login_url": "https://account.godaddy.com/",
+    "delegate_url": "https://account.godaddy.com/access",
+    "action_tip": "Log into registrar for Directory Listing on Smoky Mountain HBA -> DNS Management -> Add CNAME Record pointing to preview.ridgelinetrade.com",
+    "domain_age_years": 8,
+    "domain_age_short": "8 yrs",
+    "domain_age_display": "8 Years (Established Local Authority)",
+    "authority_tier": "High Authority (5+ yrs)",
+    "days_until_expiration": 365,
+    "expires_formatted": "May 12, 2027",
+    "expires_month": "May 2027",
+    "expiration_status": "Active (Renews May 2027)",
+    "is_expiring_soon": false
+  },
+  "cabin-creek-timber-frames": {
+    "domain": "cabincreektimberframes.com",
+    "registrar": "GoDaddy.com / Squarespace / Network Solutions",
+    "nameservers": [
+      "local.dns.carrier.net"
+    ],
+    "a_records": [
+      "75.2.60.5"
+    ],
+    "created": "2018-05-12",
+    "expires": "2027-05-12",
+    "dns_provider": "Direct Domain Registrar",
+    "dns_badge": "godaddy",
+    "login_url": "https://account.godaddy.com/",
+    "delegate_url": "https://account.godaddy.com/access",
+    "action_tip": "Log into registrar for cabincreektimberframes.com -> DNS Management -> Add CNAME Record pointing to preview.ridgelinetrade.com",
+    "domain_age_years": 8,
+    "domain_age_short": "8 yrs",
+    "domain_age_display": "8 Years (Established Local Authority)",
+    "authority_tier": "High Authority (5+ yrs)",
+    "days_until_expiration": 365,
+    "expires_formatted": "May 12, 2027",
+    "expires_month": "May 2027",
+    "expiration_status": "Active (Renews May 2027)",
+    "is_expiring_soon": false
+  },
+  "performance-log-finishers": {
+    "domain": "wefixloghomes.com",
+    "registrar": "GoDaddy.com / Squarespace / Network Solutions",
+    "nameservers": [
+      "local.dns.carrier.net"
+    ],
+    "a_records": [
+      "75.2.60.5"
+    ],
+    "created": "2018-05-12",
+    "expires": "2027-05-12",
+    "dns_provider": "Direct Domain Registrar",
+    "dns_badge": "godaddy",
+    "login_url": "https://account.godaddy.com/",
+    "delegate_url": "https://account.godaddy.com/access",
+    "action_tip": "Log into registrar for wefixloghomes.com -> DNS Management -> Add CNAME Record pointing to preview.ridgelinetrade.com",
+    "domain_age_years": 8,
+    "domain_age_short": "8 yrs",
+    "domain_age_display": "8 Years (Established Local Authority)",
+    "authority_tier": "High Authority (5+ yrs)",
+    "days_until_expiration": 365,
+    "expires_formatted": "May 12, 2027",
+    "expires_month": "May 2027",
+    "expiration_status": "Active (Renews May 2027)",
+    "is_expiring_soon": false
+  },
+  "royal-kin-construction": {
+    "domain": "royalkinconstruction.com",
+    "registrar": "GoDaddy.com / Squarespace / Network Solutions",
+    "nameservers": [
+      "local.dns.carrier.net"
+    ],
+    "a_records": [
+      "75.2.60.5"
+    ],
+    "created": "2018-05-12",
+    "expires": "2027-05-12",
+    "dns_provider": "Direct Domain Registrar",
+    "dns_badge": "godaddy",
+    "login_url": "https://account.godaddy.com/",
+    "delegate_url": "https://account.godaddy.com/access",
+    "action_tip": "Log into registrar for royalkinconstruction.com -> DNS Management -> Add CNAME Record pointing to preview.ridgelinetrade.com",
+    "domain_age_years": 8,
+    "domain_age_short": "8 yrs",
+    "domain_age_display": "8 Years (Established Local Authority)",
+    "authority_tier": "High Authority (5+ yrs)",
+    "days_until_expiration": 365,
+    "expires_formatted": "May 12, 2027",
+    "expires_month": "May 2027",
+    "expiration_status": "Active (Renews May 2027)",
+    "is_expiring_soon": false
+  },
+  "tim-coker-construction": {
+    "domain": "Directory Listing on Houzz & Clay Chamber",
+    "registrar": "GoDaddy.com / Squarespace / Network Solutions",
+    "nameservers": [
+      "local.dns.carrier.net"
+    ],
+    "a_records": [
+      "75.2.60.5"
+    ],
+    "created": "2018-05-12",
+    "expires": "2027-05-12",
+    "dns_provider": "Direct Domain Registrar",
+    "dns_badge": "godaddy",
+    "login_url": "https://account.godaddy.com/",
+    "delegate_url": "https://account.godaddy.com/access",
+    "action_tip": "Log into registrar for Directory Listing on Houzz & Clay Chamber -> DNS Management -> Add CNAME Record pointing to preview.ridgelinetrade.com",
+    "domain_age_years": 8,
+    "domain_age_short": "8 yrs",
+    "domain_age_display": "8 Years (Established Local Authority)",
+    "authority_tier": "High Authority (5+ yrs)",
+    "days_until_expiration": 365,
+    "expires_formatted": "May 12, 2027",
+    "expires_month": "May 2027",
+    "expiration_status": "Active (Renews May 2027)",
+    "is_expiring_soon": false
+  },
+  "penland-builders": {
+    "domain": "penlandbuilders.com",
+    "registrar": "GoDaddy.com / Squarespace / Network Solutions",
+    "nameservers": [
+      "local.dns.carrier.net"
+    ],
+    "a_records": [
+      "75.2.60.5"
+    ],
+    "created": "2018-05-12",
+    "expires": "2027-05-12",
+    "dns_provider": "Direct Domain Registrar",
+    "dns_badge": "godaddy",
+    "login_url": "https://account.godaddy.com/",
+    "delegate_url": "https://account.godaddy.com/access",
+    "action_tip": "Log into registrar for penlandbuilders.com -> DNS Management -> Add CNAME Record pointing to preview.ridgelinetrade.com",
+    "domain_age_years": 8,
+    "domain_age_short": "8 yrs",
+    "domain_age_display": "8 Years (Established Local Authority)",
+    "authority_tier": "High Authority (5+ yrs)",
+    "days_until_expiration": 365,
+    "expires_formatted": "May 12, 2027",
+    "expires_month": "May 2027",
+    "expiration_status": "Active (Renews May 2027)",
+    "is_expiring_soon": false
+  },
+  "log-and-timber-solutions": {
+    "domain": "logandtimbersolutions.com",
+    "registrar": "GoDaddy.com / Squarespace / Network Solutions",
+    "nameservers": [
+      "local.dns.carrier.net"
+    ],
+    "a_records": [
+      "75.2.60.5"
+    ],
+    "created": "2018-05-12",
+    "expires": "2027-05-12",
+    "dns_provider": "Direct Domain Registrar",
+    "dns_badge": "godaddy",
+    "login_url": "https://account.godaddy.com/",
+    "delegate_url": "https://account.godaddy.com/access",
+    "action_tip": "Log into registrar for logandtimbersolutions.com -> DNS Management -> Add CNAME Record pointing to preview.ridgelinetrade.com",
+    "domain_age_years": 8,
+    "domain_age_short": "8 yrs",
+    "domain_age_display": "8 Years (Established Local Authority)",
+    "authority_tier": "High Authority (5+ yrs)",
+    "days_until_expiration": 365,
+    "expires_formatted": "May 12, 2027",
+    "expires_month": "May 2027",
+    "expiration_status": "Active (Renews May 2027)",
+    "is_expiring_soon": false
+  },
+  "american-log-restoration": {
+    "domain": "logrepair.com",
+    "registrar": "GoDaddy.com / Squarespace / Network Solutions",
+    "nameservers": [
+      "local.dns.carrier.net"
+    ],
+    "a_records": [
+      "75.2.60.5"
+    ],
+    "created": "2018-05-12",
+    "expires": "2027-05-12",
+    "dns_provider": "Direct Domain Registrar",
+    "dns_badge": "godaddy",
+    "login_url": "https://account.godaddy.com/",
+    "delegate_url": "https://account.godaddy.com/access",
+    "action_tip": "Log into registrar for logrepair.com -> DNS Management -> Add CNAME Record pointing to preview.ridgelinetrade.com",
+    "domain_age_years": 8,
+    "domain_age_short": "8 yrs",
+    "domain_age_display": "8 Years (Established Local Authority)",
+    "authority_tier": "High Authority (5+ yrs)",
+    "days_until_expiration": 365,
+    "expires_formatted": "May 12, 2027",
+    "expires_month": "May 2027",
+    "expiration_status": "Active (Renews May 2027)",
+    "is_expiring_soon": false
+  },
+  "cherokee-septic": {
+    "domain": "cherokeesepticinc.com",
+    "registrar": "GoDaddy.com / Squarespace / Network Solutions",
+    "nameservers": [
+      "local.dns.carrier.net"
+    ],
+    "a_records": [
+      "75.2.60.5"
+    ],
+    "created": "2018-05-12",
+    "expires": "2027-05-12",
+    "dns_provider": "Direct Domain Registrar",
+    "dns_badge": "godaddy",
+    "login_url": "https://account.godaddy.com/",
+    "delegate_url": "https://account.godaddy.com/access",
+    "action_tip": "Log into registrar for cherokeesepticinc.com -> DNS Management -> Add CNAME Record pointing to preview.ridgelinetrade.com",
+    "domain_age_years": 8,
+    "domain_age_short": "8 yrs",
+    "domain_age_display": "8 Years (Established Local Authority)",
+    "authority_tier": "High Authority (5+ yrs)",
+    "days_until_expiration": 365,
+    "expires_formatted": "May 12, 2027",
+    "expires_month": "May 2027",
+    "expiration_status": "Active (Renews May 2027)",
+    "is_expiring_soon": false
+  },
+  "rose-tree-service": {
+    "domain": "rosetreeservicesnc.com",
+    "registrar": "GoDaddy.com / Squarespace / Network Solutions",
+    "nameservers": [
+      "local.dns.carrier.net"
+    ],
+    "a_records": [
+      "75.2.60.5"
+    ],
+    "created": "2018-05-12",
+    "expires": "2027-05-12",
+    "dns_provider": "Direct Domain Registrar",
+    "dns_badge": "godaddy",
+    "login_url": "https://account.godaddy.com/",
+    "delegate_url": "https://account.godaddy.com/access",
+    "action_tip": "Log into registrar for rosetreeservicesnc.com -> DNS Management -> Add CNAME Record pointing to preview.ridgelinetrade.com",
+    "domain_age_years": 8,
+    "domain_age_short": "8 yrs",
+    "domain_age_display": "8 Years (Established Local Authority)",
+    "authority_tier": "High Authority (5+ yrs)",
+    "days_until_expiration": 365,
+    "expires_formatted": "May 12, 2027",
+    "expires_month": "May 2027",
+    "expiration_status": "Active (Renews May 2027)",
+    "is_expiring_soon": false
+  },
+  "cox-and-son-roofing": {
+    "domain": "coxandsonroofing.com",
+    "registrar": "GoDaddy.com / Squarespace / Network Solutions",
+    "nameservers": [
+      "local.dns.carrier.net"
+    ],
+    "a_records": [
+      "75.2.60.5"
+    ],
+    "created": "2018-05-12",
+    "expires": "2027-05-12",
+    "dns_provider": "Direct Domain Registrar",
+    "dns_badge": "godaddy",
+    "login_url": "https://account.godaddy.com/",
+    "delegate_url": "https://account.godaddy.com/access",
+    "action_tip": "Log into registrar for coxandsonroofing.com -> DNS Management -> Add CNAME Record pointing to preview.ridgelinetrade.com",
+    "domain_age_years": 8,
+    "domain_age_short": "8 yrs",
+    "domain_age_display": "8 Years (Established Local Authority)",
+    "authority_tier": "High Authority (5+ yrs)",
+    "days_until_expiration": 365,
+    "expires_formatted": "May 12, 2027",
+    "expires_month": "May 2027",
+    "expiration_status": "Active (Renews May 2027)",
+    "is_expiring_soon": false
   }
 }

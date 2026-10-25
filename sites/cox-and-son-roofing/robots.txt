@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://preview.ridgelinetrade.com/sites/cox-and-son-roofing/sitemap.xml
