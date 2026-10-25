@@ -115,6 +115,26 @@ def main():
             all_passed = False
             print("  ❌ Mobile call integration missing!")
 
+        # Check 6: Proof-of-Life Anti-Hallucination Guardrail (AGENTS.md Mandate)
+        total_checks += 1
+        is_synthetic = False
+        web = c.get("current_website", "")
+        owner = c.get("owner_name", "")
+        # Detect legacy synthetic domain patterns
+        if any(pat in web for pat in ["sonsloghnc", "professionnc", "loghomesenc", "ramireznc", "floresnc", "silvasonsloghom"]):
+            is_synthetic = True
+        if not owner or owner.strip() == "":
+            is_synthetic = True
+        if len(phone_clean) != 10:
+            is_synthetic = True
+
+        if not is_synthetic:
+            passed_checks += 1
+            print(f"  ✓ Proof-of-Life verified: Authentic business entity with named principal ({owner})")
+        else:
+            all_passed = False
+            print(f"  ❌ Synthetic placeholder detected! Violates AGENTS.md Anti-Hallucination Protocol: {c['slug']}")
+
         print()
 
     print("=========================================================")

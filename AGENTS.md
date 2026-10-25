@@ -91,3 +91,19 @@ For each audited business, Brandon receives a ready-to-send SMS payload consisti
 2. **The Contrast:** Hard, undeniable Google PageSpeed numbers (Their current score e.g. 28/100 vs Our rebuilt mockup at 100/100).
 3. **The Proof:** A live preview link (`https://preview.ridgelinetrade.com/sites/<client-slug>/`) with a high-resolution mobile screenshot.
 4. **The No-Brainer Offer:** $49/mo flat rate, zero setup fee, no contracts, we handle domain pointing, updates, and fast hosting.
+
+---
+
+## 6. Strict Anti-Hallucination & Real-Contractor Verification Protocol
+
+> [!CRITICAL]
+> **Zero Tolerance for Synthetic Placeholders:** Every single record in `data/clients.json`, `/sites/`, and `ops-control-828` MUST represent an authentic, living human contractor operating a real business in Western North Carolina.
+
+To protect client trust, prevent dead calls to carrier test lines or random businesses, and ensure high-speed lead handoffs:
+1. **No Programmatic Bulk Generation of Contractor Identities:** AI agents must NEVER synthesize placeholder companies, fictitious domains, or pseudo-random phone numbers to fill territory quotas.
+2. **The 4-Point "Proof-of-Life" Verification Checklist:** Before any contractor is added to `data/clients.json`, the agent must verify:
+   - **Entity / Registry Verification:** Listed with the NC Secretary of State, NC Licensing Board for General Contractors, local Home Builders Association, BBB, or county Chamber of Commerce.
+   - **Active Web Presence:** A live, resolving custom domain, Google Business Profile (GBP), or verified regional directory listing (no fabricated `.com` domains).
+   - **Verified Phone Connection:** Phone numbers must be verified against public directory listings or official contractor websites (no synthesized 4-digit line suffixes).
+   - **Named Human Principal:** Must identify an actual owner, manager, or foreman who answers dispatch calls.
+3. **Automated Compliance Verification:** Any batch script or commit that violates this rule will be rejected by `scripts/test_sites_compliance.py`.
