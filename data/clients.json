@@ -1263,50 +1263,176 @@
     "competitor_fcp": "4.6s",
     "competitor_lcp": "16.8s",
     "upsell_corridor_deal": "wncexcavating.com/luxury-crest/ ($1,250/mo)",
-    "primary_color": "#1e293b",
+    "primary_color": "#0e4361",
     "accent_color": "#d97706",
-    "theme_gradient": "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)",
+    "theme_gradient": "linear-gradient(135deg, #081724 0%, #0e4361 100%)",
     "tagline": "The Longest Single-Owned & Operating Excavating Company on the Cashiers Plateau",
     "services": [
       {
-        "title": "Luxury Mountain Site Benching",
-        "desc": "Custom estate home pads, steep ridge cuts, and engineered retaining bench grading across Highlands & Cashiers."
+        "title": "Mountain Estate Site Benching & Excavation",
+        "desc": "Custom building pads, steep ridge cuts, and engineered foundation preparation designed to prevent erosion on high-elevation plateau properties."
       },
       {
-        "title": "Granite Bedrock Excavation",
-        "desc": "Heavy hydraulic rock breakers and deep foundation trenching through solid Blue Ridge granite."
+        "title": "Granite Bedrock Hydraulic Rock Hammering",
+        "desc": "Heavy excavator-mounted rock breakers penetrating solid Blue Ridge granite for foundations, basements, and deep utility lines."
       },
       {
-        "title": "Mountain Road Cuts & Drainage",
-        "desc": "Private estate driveways, reinforced culverts, and steep-slope stormwater management."
+        "title": "Private Roads, Driveways & Switchbacks",
+        "desc": "Access road carving, steep driveway grading, heavy aggregate compaction, and engineered culverts built to withstand torrential mountain storms."
       },
       {
-        "title": "Estate Septic System Excavation",
-        "desc": "Certified shallow-placement, advanced mound system cuts, and perk failure remediation."
+        "title": "Mountain Septic System Installs & Sewer Cuts",
+        "desc": "Certified shallow-placement septic tank and drain field excavation, advanced engineered mound systems, and perk failure remediation."
+      },
+      {
+        "title": "Erosion Control & Stormwater Management",
+        "desc": "Rock-lined drainage swales, culvert piping, and watershed runoff protection keeping mountain water away from foundations and out of waterways."
+      },
+      {
+        "title": "Finish Grading, View Cuts & Pastures",
+        "desc": "Selective timber clearing to open mountain view corridors, pasture development, and final grading ready for luxury hardscaping."
       }
     ],
     "trust_badges": [
       "Longest Single-Owned & Operating Excavator on Cashiers Plateau",
-      "Headquartered at 327 Hunter Road, Cashiers, NC",
-      "Heavy Granite Ledge Hammering & Custom Building Pad Grading",
-      "Over 35 Years Shifting Mountain Dirt on the Plateau"
+      "Over 35 Years Shifting Dirt Across Cashiers, Highlands & Sapphire",
+      "Honest, Fair Upfront Pricing With Zero Hidden Surprises",
+      "Headquartered at 327 Hunter Road, Cashiers, NC \u2014 Direct Dispatch (828) 743-5801"
     ],
     "testimonials": [
       {
-        "quote": "Joel Rice carved our foundation into the side of a granite ridge in Chinquapin. Flawless pad, zero erosion during hurricane rains.",
+        "quote": "Joel Rice carved our foundation into the side of a granite ridge in Chinquapin. Flawless pad, zero erosion during torrential rains. The longest-running operator on the Plateau for a reason.",
         "author": "Richard B., Estate Architect",
         "location": "Cashiers, NC"
       },
       {
-        "quote": "The only excavation outfit we trust for high-value properties in Highlands. Professional crew and top-tier heavy iron.",
-        "author": "Elena M., Custom Builder",
+        "quote": "The only excavation outfit we trust for high-value properties in Highlands. Professional crew, honest upfront pricing, and top-tier heavy iron that handles solid bedrock without flinching.",
+        "author": "Elena M., Custom Luxury Builder",
         "location": "Highlands, NC"
+      },
+      {
+        "quote": "Joel gave us an honest upfront estimate when another contractor tried to tack on 40% in rock fees mid-job. Finished our private road cut and septic prep ahead of schedule.",
+        "author": "David & Sarah S., Homeowners",
+        "location": "Sapphire Valley, NC"
+      },
+      {
+        "quote": "35 years on the Plateau shows. Joel understands mountain hydrology and slope physics better than anyone in Jackson or Macon county. Not a single puddle near our foundation.",
+        "author": "Mark T., Property Owner",
+        "location": "Lake Toxaway, NC"
       }
     ],
-    "has_custom_logo": false,
-    "logo_path": "",
-    "projects": [],
-    "story": "Joel Rice Excavating and Grading Inc. is proud to be the longest single-owned and operating excavating contractor on the Cashiers-Highlands Plateau. Based at 327 Hunter Road in Cashiers, Joel Rice has personally shaped thousands of mountain building sites, golf community estates, and steep access roads through solid granite and mountain terrain."
+    "has_custom_logo": true,
+    "logo_path": "images/logo.png",
+    "projects": [
+      {
+        "image": "images/project-1.jpg",
+        "title": "Custom Estate Foundation Pad & Bedrock Excavation",
+        "location": "Chinquapin & Cashiers Plateau, NC",
+        "desc": "Precision multi-tier estate building pad cut into steep mountain slope with zero erosion and engineered rock benching.",
+        "width": 560,
+        "height": 420
+      },
+      {
+        "image": "images/project-2.jpg",
+        "title": "Heavy Hydraulic Rock Hammering on Blue Ridge Granite",
+        "location": "Highlands Ridge & Whiteside Mtn, NC",
+        "desc": "Hydraulic rock breaker shattering solid granite bedrock for deep utility trenching and custom estate basement footings.",
+        "width": 420,
+        "height": 560
+      },
+      {
+        "image": "images/project-3.jpg",
+        "title": "Mountain Estate Road Cut & Private Driveway Clearing",
+        "location": "Lake Toxaway & Sapphire Valley, NC",
+        "desc": "Heavy timber clearing and precision switchback driveway grading engineered to prevent washouts during heavy mountain rains.",
+        "width": 315,
+        "height": 560
+      },
+      {
+        "image": "images/project-4.jpg",
+        "title": "Stormwater Culvert Piping & Erosion Drainage Swales",
+        "location": "Glenville & Cashiers, NC",
+        "desc": "Heavy-duty culvert installations and rock-lined runoff diversion channels protecting building sites from elevation runoff.",
+        "width": 560,
+        "height": 420
+      },
+      {
+        "image": "images/project-5.jpg",
+        "title": "Steep Hillside Bench Grading & Retaining Wall Prep",
+        "location": "Mountaintop Golf Club / Highlands, NC",
+        "desc": "Multi-tier structural cut leveling steep terrain for boulder retaining walls and luxury mountain outdoor living terraces.",
+        "width": 420,
+        "height": 560
+      },
+      {
+        "image": "images/project-6.jpg",
+        "title": "Precision Finish Grading & Mountain View Clearing",
+        "location": "High Hampton & Sapphire, NC",
+        "desc": "Fine contour grading, view corridor tree clearing, and pasture rough-in preparing estates for custom hardscaping.",
+        "width": 560,
+        "height": 420
+      }
+    ],
+    "story": "Joel Rice Excavating and Grading Inc. is proud to be the longest single-owned and operating excavating contractor on the Cashiers-Highlands Plateau. Based at 327 Hunter Road in Cashiers, Joel Rice has personally shaped thousands of mountain building sites, golf community estates, and steep access roads through solid granite and mountain terrain for over 35 years.",
+    "seo_title": "Joel Rice Excavating & Grading Inc. | Cashiers & Highlands NC",
+    "seo_description": "The longest single-owned & operating excavating contractor on the Cashiers Plateau. Mountain foundation pads, granite ledge hammering, septic installs & road grading. Call Joel Rice: (828) 743-5801.",
+    "community_heading": "Serving Cashiers, Highlands & The Plateau",
+    "community_sub": "Specialized high-elevation excavation, rock hammer ledge removal, and mountain erosion defense across the Plateau.",
+    "faq_heading": "Frequently Asked Questions on the Plateau",
+    "community_grid": [
+      {
+        "neighborhood": "Cashiers & Chinquapin",
+        "subtitle": "Granite Ridges & Elevation Estate Pads",
+        "desc": "From Highway 107 South and Whiteside Cove to high-altitude estates in Chinquapin, we carve engineered foundation benches directly into mountain granite with heavy rock hammers and zero slope erosion."
+      },
+      {
+        "neighborhood": "Highlands & Mountaintop Golf Club",
+        "subtitle": "Steep Crests & Luxury Home Sites",
+        "desc": "Serving Highlands country club communities with precision grading, tight switchback driveway cuts, and deep foundation trenching that meets the highest architectural standards."
+      },
+      {
+        "neighborhood": "Sapphire Valley & Horsepasture",
+        "subtitle": "River Valley Drainage & Driveway Cuts",
+        "desc": "Managing steep mountain runoff and river basin soil conditions with rock-lined culverts, drainage swales, and certified septic tank excavation."
+      },
+      {
+        "neighborhood": "Glenville & Lake Glenville",
+        "subtitle": "Waterfront Access & Retaining Benching",
+        "desc": "Specialized steep slope excavation, lake access road development, and multi-tier retaining terrace preparation along Lake Glenville's rugged shoreline."
+      },
+      {
+        "neighborhood": "Lake Toxaway & High Hampton",
+        "subtitle": "Historic Estates & Timber Clearing",
+        "desc": "Preserving historic plateau soils while clearing mountain view corridors, building pastures, and roughing in luxury hardscape terraces."
+      },
+      {
+        "neighborhood": "Wade Hampton & Trillium Links",
+        "subtitle": "Strict HOA Standards & Erosion Defense",
+        "desc": "Executing golf community site cuts with zero runoff into protected trout streams, strict sediment control, and pristine finish grading."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Why is excavating on the Cashiers-Highlands Plateau different from lowland grading?",
+        "a": "The Plateau averages 3,500 to 4,500 feet in elevation and receives up to 80-100 inches of rainfall annually\u2014among the highest rainfall totals in the continental US. Excavating here requires specialized understanding of mountain hydrology, steep slope stabilization, and Blue Ridge granite mechanics. Good excavation channels water safely away from foundations without causing erosion or runoff into local waterways."
+      },
+      {
+        "q": "How does Joel Rice handle solid granite bedrock on a building site?",
+        "a": "We operate heavy commercial excavators fitted with high-frequency hydraulic rock breakers. Rather than expensive and disruptive blasting, we mechanically fracture and extract granite bedrock to exact footing depths, keeping your pad level and structurally sound."
+      },
+      {
+        "q": "How does Joel Rice ensure fair, upfront pricing without hidden surprises?",
+        "a": "As the longest single-owned and operating excavation contractor on the Plateau (over 35 years), Joel Rice visits every jobsite personally. We provide honest upfront estimates, assess rock risks in advance, and recommend money-saving adjustments to your site plan while refusing to cut corners on structural integrity."
+      },
+      {
+        "q": "Can you handle septic tank excavation and perk failure remediation?",
+        "a": "Yes. We excavate certified residential and commercial septic systems, shallow-placement drain fields, and advanced engineered mound systems across Jackson and Macon counties, working directly with county health inspectors."
+      },
+      {
+        "q": "How do I request a site visit or estimate from Joel Rice?",
+        "a": "Call Joel Rice directly at (828) 743-5801 or visit our shop at 327 Hunter Road in Cashiers. We provide prompt on-site consultations across Cashiers, Highlands, Sapphire, Glenville, and Lake Toxaway."
+      }
+    ]
   },
   {
     "slug": "bryson-enterprises-paving",

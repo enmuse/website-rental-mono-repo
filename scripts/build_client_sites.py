@@ -176,14 +176,16 @@ def generate_client_html(c):
           <p>{comm['desc']}</p>
         </div>
         """
+        community_heading = c.get("community_heading", f"Serving {c['city']} & Surrounding Communities")
+        community_sub = c.get("community_sub", f"Customized specifically for the elevation, terrain, and soil conditions of local {c['county'].split(',')[0]} properties.")
         community_grid_html = f"""
   <!-- Hyper-Local Community Coverage Section -->
   <section class="section-wrap">
     <div class="section-header">
       <div class="section-subtitle">Hyper-Local Mountain Coverage</div>
-      <h2>Serving Hendersonville & Surrounding Communities</h2>
+      <h2>{community_heading}</h2>
       <p style="color: var(--text-muted); max-width: 680px; margin: 0.5rem auto 0; font-size: 0.95rem;">
-        Customized specifically for the tree canopies, steep rooflines, and heavy rainfall patterns of local Henderson County neighborhoods.
+        {community_sub}
       </p>
     </div>
     <div class="community-grid">
@@ -204,12 +206,13 @@ def generate_client_html(c):
           <p>{fq['a']}</p>
         </div>
         """
+        faq_heading = c.get("faq_heading", f"Frequently Asked Questions in {c['city']} & {c['county'].split(',')[0]}")
         faqs_html = f"""
   <!-- Frequently Asked Questions (FAQ) -->
   <section class="section-wrap">
     <div class="section-header">
-      <div class="section-subtitle">Local Homeowner Questions</div>
-      <h2>Frequently Asked Questions in Henderson County</h2>
+      <div class="section-subtitle">Local Property Owner Questions</div>
+      <h2>{faq_heading}</h2>
     </div>
     <div class="faq-grid">
       {faq_cards}

@@ -256,6 +256,47 @@ CLIENT_MEDIA_SOURCES = {
                 "desc": "Surgical extraction of rotted lower sill logs with hand-hewn Dutchman replacements and penetrating oil stain."
             }
         ]
+    },
+    "joel-rice-excavating": {
+        "logo": "sites/joel-rice-excavating/images/logo.png",
+        "projects": [
+            {
+                "url": "http://joelriceexcavating.com/uploads/1/0/7/8/107815111/img-0112.jpeg",
+                "title": "Custom Estate Foundation Pad & Bedrock Excavation",
+                "location": "Chinquapin & Cashiers Plateau, NC",
+                "desc": "Precision multi-tier estate building pad cut into steep mountain slope with zero erosion and engineered rock benching."
+            },
+            {
+                "url": "http://joelriceexcavating.com/uploads/1/0/7/8/107815111/img-2263.jpeg",
+                "title": "Heavy Hydraulic Rock Hammering on Blue Ridge Granite",
+                "location": "Highlands Ridge & Whiteside Mtn, NC",
+                "desc": "Hydraulic rock breaker shattering solid granite bedrock for deep utility trenching and custom estate basement footings."
+            },
+            {
+                "url": "http://joelriceexcavating.com/uploads/1/0/7/8/107815111/img-0136.jpeg",
+                "title": "Mountain Estate Road Cut & Private Driveway Clearing",
+                "location": "Lake Toxaway & Sapphire Valley, NC",
+                "desc": "Heavy timber clearing and precision switchback driveway grading engineered to prevent washouts during heavy mountain rains."
+            },
+            {
+                "url": "http://joelriceexcavating.com/uploads/1/0/7/8/107815111/img-0001.jpeg",
+                "title": "Stormwater Culvert Piping & Erosion Drainage Swales",
+                "location": "Glenville & Cashiers, NC",
+                "desc": "Heavy-duty culvert installations and rock-lined runoff diversion channels protecting building sites from elevation runoff."
+            },
+            {
+                "url": "http://joelriceexcavating.com/uploads/1/0/7/8/107815111/img-2302.jpeg",
+                "title": "Steep Hillside Bench Grading & Retaining Wall Prep",
+                "location": "Mountaintop Golf Club / Highlands, NC",
+                "desc": "Multi-tier structural cut leveling steep terrain for boulder retaining walls and luxury mountain outdoor living terraces."
+            },
+            {
+                "url": "http://joelriceexcavating.com/uploads/1/0/7/8/107815111/img-4140.jpg",
+                "title": "Precision Finish Grading & Mountain View Clearing",
+                "location": "High Hampton & Sapphire, NC",
+                "desc": "Fine contour grading, view corridor tree clearing, and pasture rough-in preparing estates for custom hardscaping."
+            }
+        ]
     }
 }
 
