@@ -42,8 +42,1445 @@ def load_whois_info():
             return json.load(f)
     return {}
 
+def generate_joel_rice_html(c):
+    """Generates the bespoke authentic light mountain luxury design for Joel Rice Excavating & Grading Inc."""
+    phone_clean = c["cell_phone"].replace("(", "").replace(")", "").replace(" ", "").replace("-", "")
+    sms_number = c.get("direct_sms_number", f"+1{phone_clean}")
+    seo_title = c.get("seo_title", "Joel Rice Excavating & Grading Inc. | Cashiers & Highlands NC")
+    seo_desc = c.get("seo_description", "The longest single-owned & operating excavating contractor on the Cashiers Plateau. Mountain foundation pads, granite ledge hammering, septic installs & road grading. Call Joel Rice: (828) 743-5801.")
+
+    # 1. Projects HTML
+    projects = c.get("projects", [])
+    projects_cards = ""
+    for p in projects:
+        projects_cards += f"""
+        <div class="project-card">
+          <div class="project-img-wrap">
+            <img src="{p['image']}" alt="{p['title']}" class="project-img" width="{p.get('width', 560)}" height="{p.get('height', 420)}" loading="lazy" decoding="async">
+            <span class="project-loc-badge">📍 {p['location']}</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">{p['title']}</h3>
+            <p class="project-desc">{p['desc']}</p>
+          </div>
+        </div>
+        """
+
+    # 2. Services HTML
+    services_cards = ""
+    for s in c["services"]:
+        services_cards += f"""
+        <div class="service-card">
+          <div class="service-icon-box">
+            <svg class="service-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="service-title">{s['title']}</h3>
+          <p class="service-desc">{s['desc']}</p>
+          <div class="service-badge">Mountain Grade Certified</div>
+        </div>
+        """
+
+    # 3. Community Grid HTML
+    comm_cards = ""
+    for comm in c.get("community_grid", []):
+        comm_cards += f"""
+        <div class="community-card">
+          <span class="community-sub">{comm['subtitle']}</span>
+          <h3>📍 {comm['neighborhood']}</h3>
+          <p>{comm['desc']}</p>
+        </div>
+        """
+
+    # 4. Testimonials HTML
+    testimonials_html = ""
+    for t in c["testimonials"]:
+        testimonials_html += f"""
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-quote">"{t['quote']}"</p>
+          <div class="testimonial-author">
+            <span class="author-name">{t['author']}</span>
+            <span class="author-loc"> • {t['location']}</span>
+          </div>
+        </div>
+        """
+
+    # 5. FAQs HTML
+    faq_cards = ""
+    for idx, fq in enumerate(c.get("faqs", [])):
+        open_attr = "open" if idx == 0 else ""
+        faq_cards += f"""
+        <details class="faq-item" {open_attr}>
+          <summary class="faq-question">
+            <span>{fq['q']}</span>
+            <span class="faq-icon">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>{fq['a']}</p>
+          </div>
+        </details>
+        """
+
+    # FAQ Schema Data
+    faq_schema_data = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": fq["q"],
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": fq["a"]
+                }
+            }
+            for fq in c.get("faqs", [])
+        ]
+    }
+    faq_schema_json = json.dumps(faq_schema_data, indent=2)
+
+    # Business Schema Data
+    schema_data = {
+        "@context": "https://schema.org",
+        "@type": "HomeAndConstructionBusiness",
+        "name": c["business_name"],
+        "telephone": c["cell_phone"],
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": c["street_address"],
+            "addressLocality": c["city"],
+            "addressRegion": c["state"],
+            "postalCode": c["zip"],
+            "addressCountry": "US"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": c["geo"]["latitude"],
+            "longitude": c["geo"]["longitude"]
+        },
+        "areaServed": c["hub_towns"],
+        "openingHours": "Mo-Sa 07:00-18:00",
+        "priceRange": "$$",
+        "description": c["tagline"]
+    }
+    schema_json = json.dumps(schema_data, indent=2)
+
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>{seo_title}</title>
+  <meta name="description" content="{seo_desc}">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="{BASE_URL}/sites/joel-rice-excavating/">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="{c['business_name']} | Mountain Excavation &amp; Grading">
+  <meta property="og:description" content="{seo_desc}">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="{BASE_URL}/sites/joel-rice-excavating/images/hero-mountain.jpg">
+  
+  <!-- Inlined Critical CSS for 100/100 PageSpeed Performance -->
+  <style id="inlined-styles">
+    :root {{
+      --primary: #0e4361;
+      --primary-dark: #081724;
+      --primary-light: #1b597c;
+      --accent: #d97706;
+      --accent-hover: #b45309;
+      --accent-light: #fef3c7;
+      --bg: #ffffff;
+      --bg-alt: #f8fafc;
+      --bg-subtle: #f1f5f9;
+      --card-bg: #ffffff;
+      --card-border: #e2e8f0;
+      --text-main: #0f172a;
+      --text-navy: #0e4361;
+      --text-muted: #475569;
+      --text-light: #64748b;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --font-serif: Georgia, "Playfair Display", "Times New Roman", Times, serif;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 16px -2px rgba(14, 67, 97, 0.08), 0 2px 6px -1px rgba(0,0,0,0.04);
+      --shadow-lg: 0 10px 30px -4px rgba(14, 67, 97, 0.12), 0 4px 10px -2px rgba(0,0,0,0.05);
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-full: 9999px;
+    }}
+    
+    * {{
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }}
+    
+    html {{
+      scroll-behavior: smooth;
+      font-family: var(--font-sans);
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }}
+    
+    body {{
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }}
+
+    /* Top Plateau Notice Bar */
+    .top-bar {{
+      background: var(--primary-dark);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0.55rem 1rem;
+      font-size: 0.85rem;
+      color: #e2e8f0;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }}
+    .top-bar strong {{
+      color: #fbbf24;
+      font-weight: 700;
+    }}
+    .top-bar-link {{
+      color: #f8fafc;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }}
+    .top-bar-link:hover {{
+      text-decoration: underline;
+    }}
+    
+    /* Navigation */
+    .navbar {{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--card-border);
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    }}
+    .brand-group-logo {{
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+    }}
+    .brand-logo-img {{
+      height: 44px;
+      width: auto;
+      object-fit: contain;
+      border-radius: var(--radius-sm);
+      display: block;
+    }}
+    .brand-sub-wrap {{
+      display: flex;
+      flex-direction: column;
+    }}
+    .brand-name-sub {{
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--primary);
+      display: block;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+    }}
+    .brand-location {{
+      font-size: 0.75rem;
+      color: var(--accent);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-top: 2px;
+    }}
+
+    .nav-links {{
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }}
+    .nav-links a {{
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.15s ease;
+    }}
+    .nav-links a:hover {{
+      color: var(--accent);
+    }}
+
+    .nav-actions {{
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }}
+    .nav-phone-btn {{
+      background: var(--accent);
+      color: #ffffff !important;
+      padding: 0.55rem 1.15rem;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      box-shadow: 0 2px 8px rgba(217, 119, 6, 0.25);
+      transition: transform 0.15s ease, background-color 0.15s ease;
+    }}
+    .nav-phone-btn:hover {{
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+    }}
+
+    /* Hero Banner Section */
+    .hero-section {{
+      position: relative;
+      background: linear-gradient(180deg, rgba(14, 67, 97, 0.84) 0%, rgba(8, 23, 36, 0.92) 100%), url('images/hero-mountain.jpg') center/cover no-repeat;
+      color: #ffffff;
+      padding: clamp(3.5rem, 8vw, 6rem) 1.5rem clamp(3rem, 7vw, 5rem);
+      text-align: center;
+    }}
+    .hero-inner {{
+      max-width: 960px;
+      margin: 0 auto;
+    }}
+    .hero-badge {{
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 0.4rem 1.1rem;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      color: #fef3c7;
+      backdrop-filter: blur(8px);
+    }}
+    .hero-section h1 {{
+      font-size: clamp(2rem, 5.5vw, 3.5rem);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+      color: #ffffff;
+      text-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
+    }}
+    .hero-section h1 span {{
+      color: #fbbf24;
+      display: block;
+    }}
+    .hero-motto {{
+      font-family: var(--font-serif);
+      font-size: clamp(1.15rem, 2.3vw, 1.45rem);
+      font-style: italic;
+      color: #f8fafc;
+      line-height: 1.6;
+      max-width: 820px;
+      margin: 0 auto 2.25rem;
+      text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+    }}
+    .hero-actions {{
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }}
+    .btn {{
+      padding: 0.85rem 1.75rem;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      font-size: 1.05rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }}
+    .btn-amber {{
+      background: var(--accent);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(217, 119, 6, 0.35);
+    }}
+    .btn-amber:hover {{
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(217, 119, 6, 0.45);
+    }}
+    .btn-outline {{
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(8px);
+    }}
+    .btn-outline:hover {{
+      background: rgba(255, 255, 255, 0.22);
+      transform: translateY(-2px);
+    }}
+
+    .hero-chips {{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }}
+    .hero-chip {{
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius-md);
+      backdrop-filter: blur(8px);
+      font-size: 0.9rem;
+      color: #f1f5f9;
+    }}
+    .hero-chip strong {{
+      color: #fbbf24;
+      display: block;
+      font-size: 1.35rem;
+      font-weight: 800;
+      margin-bottom: 2px;
+    }}
+
+    /* Section Layouts */
+    .section-wrap {{
+      padding: clamp(3.5rem, 6vw, 5.5rem) 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }}
+    .section-wrap-full {{
+      width: 100%;
+    }}
+    .section-header {{
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 3rem;
+    }}
+    .section-tag {{
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+      display: block;
+    }}
+    .section-header h2 {{
+      font-size: clamp(1.85rem, 3.8vw, 2.65rem);
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }}
+    .section-lead {{
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }}
+
+    /* Editorial Section: How to Choose an Excavator */
+    .editorial-grid {{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+    }}
+    .editorial-card {{
+      background: #ffffff;
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }}
+    .editorial-card::before {{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 2rem;
+      right: 2rem;
+      height: 4px;
+      background: var(--primary);
+      border-radius: 4px 4px 0 0;
+    }}
+    .editorial-icon {{
+      font-size: 2.25rem;
+      margin-bottom: 1rem;
+    }}
+    .editorial-card h3 {{
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }}
+    .editorial-quote {{
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--primary-light);
+      line-height: 1.65;
+      margin-bottom: 1rem;
+      border-left: 3px solid var(--accent);
+      padding-left: 1rem;
+    }}
+    .editorial-body {{
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }}
+
+    .editorial-cta-bar {{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      background: var(--bg-alt);
+      border: 1px solid var(--card-border);
+      padding: 1.5rem 2rem;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+    }}
+    .btn-navy {{
+      background: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(14, 67, 97, 0.25);
+    }}
+    .btn-navy:hover {{
+      background: var(--primary-light);
+      transform: translateY(-2px);
+    }}
+    .btn-light {{
+      background: #ffffff;
+      color: var(--primary);
+      border: 1px solid var(--card-border);
+      box-shadow: var(--shadow-sm);
+    }}
+    .btn-light:hover {{
+      background: var(--bg-subtle);
+      transform: translateY(-2px);
+    }}
+
+    /* Owner & Equipment Spotlight */
+    .owner-section-grid {{
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 3rem;
+      align-items: center;
+    }}
+    .owner-img-frame {{
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      border: 4px solid #ffffff;
+      background: #ffffff;
+    }}
+    .owner-img {{
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }}
+    .owner-badge {{
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+      right: 1rem;
+      background: rgba(8, 23, 36, 0.92);
+      backdrop-filter: blur(8px);
+      color: #ffffff;
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius-md);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }}
+    .owner-badge strong {{
+      color: #fbbf24;
+      display: block;
+      font-size: 0.95rem;
+    }}
+
+    .owner-content h2 {{
+      font-size: clamp(1.85rem, 3.2vw, 2.45rem);
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }}
+    .owner-content p {{
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }}
+    .owner-features {{
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }}
+    .owner-feat-item {{
+      background: #ffffff;
+      border: 1px solid var(--card-border);
+      padding: 0.9rem 1.25rem;
+      border-radius: var(--radius-md);
+      font-size: 0.95rem;
+      color: var(--text-main);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }}
+    .owner-feat-item span.check {{
+      color: var(--accent);
+      font-size: 1.25rem;
+      line-height: 1;
+    }}
+
+    /* Services Grid */
+    .services-grid {{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.75rem;
+    }}
+    .service-card {{
+      background: #ffffff;
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }}
+    .service-card:hover {{
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(14, 67, 97, 0.3);
+    }}
+    .service-icon-box {{
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-md);
+      background: rgba(14, 67, 97, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+      color: var(--primary);
+    }}
+    .service-svg {{
+      width: 28px;
+      height: 28px;
+    }}
+    .service-title {{
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+      line-height: 1.3;
+    }}
+    .service-desc {{
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }}
+    .service-badge {{
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 0.35rem 0.75rem;
+      border-radius: var(--radius-full);
+      width: fit-content;
+    }}
+
+    /* Project Portfolio */
+    .projects-grid {{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }}
+    .project-card {{
+      background: #ffffff;
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }}
+    .project-card:hover {{
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }}
+    .project-img-wrap {{
+      position: relative;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background: var(--bg-subtle);
+    }}
+    .project-img {{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }}
+    .project-card:hover .project-img {{
+      transform: scale(1.04);
+    }}
+    .project-loc-badge {{
+      position: absolute;
+      top: 0.85rem;
+      left: 0.85rem;
+      background: rgba(8, 23, 36, 0.85);
+      color: #ffffff;
+      padding: 0.35rem 0.75rem;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 700;
+      backdrop-filter: blur(6px);
+      letter-spacing: 0.03em;
+    }}
+    .project-body {{
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }}
+    .project-title {{
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.65rem;
+      line-height: 1.35;
+    }}
+    .project-desc {{
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }}
+
+    /* Community Coverage Grid */
+    .community-grid {{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }}
+    .community-card {{
+      background: #ffffff;
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.15s ease, border-color 0.15s ease;
+    }}
+    .community-card:hover {{
+      transform: translateY(-2px);
+      border-color: var(--primary-light);
+    }}
+    .community-sub {{
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--accent);
+      letter-spacing: 0.06em;
+      display: block;
+      margin-bottom: 0.35rem;
+    }}
+    .community-card h3 {{
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.65rem;
+    }}
+    .community-card p {{
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }}
+
+    /* Testimonials */
+    .testimonials-grid {{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 1.75rem;
+    }}
+    .testimonial-card {{
+      background: #ffffff;
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 1.85rem;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+    }}
+    .stars {{
+      color: #f59e0b;
+      font-size: 1.15rem;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+    }}
+    .testimonial-quote {{
+      font-family: var(--font-serif);
+      font-size: 0.95rem;
+      font-style: italic;
+      color: var(--text-main);
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+      flex-grow: 1;
+    }}
+    .testimonial-author {{
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--primary);
+    }}
+    .author-loc {{
+      color: var(--text-light);
+      font-weight: 400;
+    }}
+
+    /* FAQ Section Accordion */
+    .faq-container {{
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }}
+    .faq-item {{
+      background: #ffffff;
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }}
+    .faq-question {{
+      padding: 1.25rem 1.5rem;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--primary);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      list-style: none;
+      user-select: none;
+    }}
+    .faq-question::-webkit-details-marker {{
+      display: none;
+    }}
+    .faq-icon {{
+      font-size: 1.25rem;
+      color: var(--accent);
+      font-weight: 700;
+      transition: transform 0.2s ease;
+    }}
+    details[open] .faq-icon {{
+      transform: rotate(45deg);
+    }}
+    .faq-answer {{
+      padding: 0 1.5rem 1.25rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }}
+
+    /* Shop & Contact Card */
+    .contact-card {{
+      background: linear-gradient(135deg, #0e4361 0%, #081724 100%);
+      color: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: clamp(2.5rem, 5vw, 4rem);
+      box-shadow: var(--shadow-lg);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }}
+    .contact-info h2 {{
+      font-size: clamp(1.85rem, 3.2vw, 2.5rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }}
+    .contact-info p {{
+      color: #cbd5e1;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      margin-bottom: 1.75rem;
+    }}
+    .contact-details {{
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      font-size: 1rem;
+    }}
+    .contact-detail-row {{
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }}
+    .contact-detail-row a {{
+      color: #fbbf24;
+      text-decoration: none;
+      font-weight: 700;
+    }}
+    .contact-detail-row a:hover {{
+      text-decoration: underline;
+    }}
+
+    .contact-actions-box {{
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      backdrop-filter: blur(10px);
+      text-align: center;
+    }}
+    .contact-actions-box h3 {{
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: #ffffff;
+    }}
+    .contact-actions-box p {{
+      font-size: 0.95rem;
+      color: #e2e8f0;
+      margin-bottom: 1.75rem;
+      line-height: 1.5;
+    }}
+    .contact-call-btn {{
+      background: var(--accent);
+      color: #ffffff;
+      padding: 1rem 2rem;
+      border-radius: var(--radius-full);
+      font-weight: 800;
+      font-size: 1.15rem;
+      text-decoration: none;
+      display: block;
+      box-shadow: 0 4px 16px rgba(217, 119, 6, 0.4);
+      transition: all 0.2s ease;
+      margin-bottom: 1rem;
+    }}
+    .contact-call-btn:hover {{
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+    }}
+    .contact-maps-link {{
+      color: #cbd5e1;
+      font-size: 0.9rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }}
+    .contact-maps-link:hover {{
+      color: #ffffff;
+      text-decoration: underline;
+    }}
+
+    /* Footer */
+    .site-footer {{
+      background: #081724;
+      color: #cbd5e1;
+      padding: 4rem 1.5rem 2.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin-top: auto;
+    }}
+    .footer-container {{
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }}
+    .footer-brand h4 {{
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.85rem;
+      letter-spacing: -0.01em;
+    }}
+    .footer-brand p {{
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #94a3b8;
+      max-width: 480px;
+      margin-bottom: 1.25rem;
+    }}
+    .footer-nap {{
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: #cbd5e1;
+    }}
+    .footer-nap a {{
+      color: #fbbf24;
+      text-decoration: none;
+      font-weight: 600;
+    }}
+    .footer-col h5 {{
+      font-size: 1rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 1.15rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }}
+    .footer-links {{
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }}
+    .footer-links a {{
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.15s ease;
+    }}
+    .footer-links a:hover {{
+      color: #ffffff;
+    }}
+    .footer-bottom {{
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: #64748b;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }}
+
+    /* Mobile Sticky Bar */
+    .mobile-sticky-bar {{
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(8, 23, 36, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 0.75rem 1rem;
+      box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.25);
+    }}
+    .mobile-sticky-btn {{
+      background: var(--accent);
+      color: #ffffff;
+      padding: 0.85rem;
+      border-radius: var(--radius-full);
+      font-weight: 800;
+      font-size: 1.05rem;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      width: 100%;
+      box-shadow: 0 2px 8px rgba(217, 119, 6, 0.35);
+    }}
+
+    /* Responsive Media Queries */
+    @media (max-width: 900px) {{
+      .owner-section-grid {{
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }}
+      .contact-card {{
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }}
+      .footer-container {{
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }}
+      .nav-links {{
+        display: none;
+      }}
+    }}
+
+    @media (max-width: 640px) {{
+      .mobile-sticky-bar {{
+        display: block;
+      }}
+      body {{
+        padding-bottom: 72px;
+      }}
+      .top-bar {{
+        display: none;
+      }}
+      .hero-actions {{
+        flex-direction: column;
+      }}
+      .hero-actions .btn {{
+        width: 100%;
+        justify-content: center;
+      }}
+      .editorial-cta-bar {{
+        flex-direction: column;
+      }}
+      .editorial-cta-bar .btn {{
+        width: 100%;
+        justify-content: center;
+      }}
+    }}
+  </style>
+
+  <!-- Schema.org HomeAndConstructionBusiness JSON-LD -->
+  <script type="application/ld+json">
+{schema_json}
+  </script>
+
+  <!-- Schema.org FAQPage JSON-LD -->
+  <script type="application/ld+json">
+{faq_schema_json}
+  </script>
+</head>
+<body>
+
+  <!-- Top Plateau Announcement Bar -->
+  <div class="top-bar">
+    <span>🏔️ <strong>Longest Single-Owned Excavator on Cashiers Plateau</strong> — Over 35 Years of Proven Dirt Work</span>
+    <a href="tel:{phone_clean}" class="top-bar-link">📞 Dispatch: {c['cell_phone']}</a>
+    <span>📍 327 Hunter Road, Cashiers, NC 28717</span>
+  </div>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <a href="./" class="brand-group-logo">
+      <img src="images/logo.png" alt="Joel Rice Excavating and Grading Inc. Logo" class="brand-logo-img" width="160" height="40" loading="eager" decoding="async">
+      <div class="brand-sub-wrap">
+        <span class="brand-name-sub">JOEL RICE EXCAVATING</span>
+        <span class="brand-location">CASHIERS, NC • (828) 743-5801</span>
+      </div>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#how-to-choose">How to Choose</a>
+      <a href="#about-joel">About Joel</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#communities">Plateau Coverage</a>
+      <a href="#faqs">FAQs</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="tel:{phone_clean}" class="nav-phone-btn">📞 Call Joel Rice</a>
+    </div>
+  </header>
+
+  <!-- Hero Section with Full Mountain Landscape Backdrop -->
+  <section class="hero-section">
+    <div class="hero-inner">
+      <div class="hero-badge">⛰️ Cashiers • Highlands • Sapphire • Lake Toxaway</div>
+      <h1>JOEL RICE EXCAVATING <span>&amp; GRADING INC.</span></h1>
+      <p class="hero-motto">"The best in excavating and grading services on the plateau. The longest single owned and operating excavating company in the area. Offering fair and realistic pricing and job done right the first time."</p>
+      
+      <div class="hero-actions">
+        <a href="tel:{phone_clean}" class="btn btn-amber">📞 Call Joel: {c['cell_phone']}</a>
+        <a href="#how-to-choose" class="btn btn-outline">How to Choose an Excavator</a>
+      </div>
+
+      <div class="hero-chips">
+        <div class="hero-chip">
+          <strong>35+ Years</strong>
+          Plateau Mountain Experience
+        </div>
+        <div class="hero-chip">
+          <strong>Single Owner</strong>
+          Joel Personally Evaluates Every Site
+        </div>
+        <div class="hero-chip">
+          <strong>Solid Bedrock</strong>
+          Hydraulic Rock Hammer Equipment
+        </div>
+        <div class="hero-chip">
+          <strong>Zero Erosion</strong>
+          Erosion &amp; Watershed Protection
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Authentic Editorial Section: How to Choose an Excavator For Your Project -->
+  <section id="how-to-choose" class="section-wrap" style="background: var(--bg);">
+    <div class="section-header">
+      <span class="section-tag">A PERSONAL MESSAGE FROM JOEL RICE</span>
+      <h2>How to Choose an Excavator For Your Project</h2>
+      <p class="section-lead">Straight talk from over 35 years of shifting dirt, clearing steep ridges, and hammering granite bedrock across the Cashiers Plateau.</p>
+    </div>
+
+    <div class="editorial-grid">
+      <div class="editorial-card">
+        <div class="editorial-icon">⚖️</div>
+        <h3>Fair Upfront Pricing &amp; Zero Cutting Corners</h3>
+        <p class="editorial-quote">"We hope that you will consider using our company for your excavating and grading needs. We have a long history of jobs well done. We will give you a fair and honest price upfront, in an effort to avoid any surprises."</p>
+        <p class="editorial-body">"We keep your best interests and budget in mind and may make recommendations to keep costs down, but we will not cut corners. We protect you, your future structure or home, and the environment."</p>
+      </div>
+
+      <div class="editorial-card">
+        <div class="editorial-icon">🏔️</div>
+        <h3>Preventing Slope Erosion &amp; Protecting Mountain Waterways</h3>
+        <p class="editorial-quote">"Good excavating will not show signs of erosion, will keep water away from your home or structure, and will not allow for run-off into nearby waterways."</p>
+        <p class="editorial-body">"We can help you responsibly create a lasting and secure homesite, install sewage systems, driveways, roads, cut in views and pastures, and rough in hard-scapes and landscaping. We look forward to working with you and answering any questions."</p>
+      </div>
+    </div>
+
+    <div class="editorial-cta-bar">
+      <a href="tel:{phone_clean}" class="btn btn-navy">📞 Call Joel Directly: {c['cell_phone']}</a>
+      <a href="https://maps.google.com/?q=327+Hunter+Road+Cashiers+NC+28717" target="_blank" rel="noopener" class="btn btn-light">📍 Visit Our Shop: 327 Hunter Road, Cashiers, NC</a>
+    </div>
+  </section>
+
+  <!-- Section 2: Owner & Equipment Spotlight ("About Joel Rice") -->
+  <div style="background: var(--bg-alt); border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border);">
+    <section id="about-joel" class="section-wrap">
+      <div class="owner-section-grid">
+        <div class="owner-img-frame">
+          <img src="images/joel-owner.jpg" alt="Joel Rice with Excavator in Cashiers NC" class="owner-img" width="450" height="191" loading="lazy" decoding="async">
+          <div class="owner-badge">
+            <strong>Joel Rice — Master Excavator</strong>
+            Headquartered at 327 Hunter Road, Cashiers, NC
+          </div>
+        </div>
+
+        <div class="owner-content">
+          <span class="section-tag">OVER 35 YEARS OF LOCAL LEADERSHIP</span>
+          <h2>The Longest Single-Owned Excavating Company on the Plateau</h2>
+          <p>Joel Rice Excavating and Grading Inc. is proud to be the longest single-owned and operating excavating contractor on the Cashiers-Highlands Plateau. Based at 327 Hunter Road in Cashiers, Joel Rice has personally shaped thousands of mountain building sites, golf community estates, and steep access roads through solid granite and mountain terrain for over 35 years.</p>
+
+          <div class="owner-features">
+            <div class="owner-feat-item">
+              <span class="check">✓</span>
+              <div><strong>Direct Owner Dispatch:</strong> When you call {c['cell_phone']}, you speak directly with Joel Rice, not an answering service or broker.</div>
+            </div>
+            <div class="owner-feat-item">
+              <span class="check">✓</span>
+              <div><strong>Hydraulic Bedrock Breakers:</strong> Excavator-mounted hydraulic rock hammers fracture solid Blue Ridge granite cleanly without risky blasting.</div>
+            </div>
+            <div class="owner-feat-item">
+              <span class="check">✓</span>
+              <div><strong>High-Rainfall Erosion Engineering:</strong> With 80–100 inches of annual plateau rain, our engineered swales and drainage keep water far from foundations.</div>
+            </div>
+            <div class="owner-feat-item">
+              <span class="check">✓</span>
+              <div><strong>Certified Mountain Septic Preparation:</strong> Licensed shallow-placement septic systems, deep tank excavation, and engineered drain field remediation.</div>
+            </div>
+          </div>
+
+          <a href="tel:{phone_clean}" class="btn btn-amber">📞 Call Joel: {c['cell_phone']}</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Section 3: Specialized Mountain Services (6 Cards) -->
+  <section id="services" class="section-wrap">
+    <div class="section-header">
+      <span class="section-tag">PRECISION PLATEAU DIRT WORK</span>
+      <h2>Excavating &amp; Grading Engineered for Mountain Elevation</h2>
+      <p class="section-lead">Every site cut, driveway grade, and foundation pad is engineered specifically for steep plateau topography and torrential mountain storms.</p>
+    </div>
+
+    <div class="services-grid">
+      {services_cards}
+    </div>
+  </section>
+
+  <!-- Section 4: Real Project Portfolio Gallery (6 Real Projects) -->
+  <div style="background: var(--bg-alt); border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border);">
+    <section id="portfolio" class="section-wrap">
+      <div class="section-header">
+        <span class="section-tag">AUTHENTIC PLATEAU CRAFTSMANSHIP</span>
+        <h2>Featured Project Portfolio</h2>
+        <p class="section-lead">Authentic project photography of estate pads, granite rock hammering, switchback driveways, and erosion defense across Cashiers and Highlands.</p>
+      </div>
+
+      <div class="projects-grid">
+        {projects_cards}
+      </div>
+    </section>
+  </div>
+
+  <!-- Section 5: Hyper-Local Community Coverage (6 Communities) -->
+  <section id="communities" class="section-wrap">
+    <div class="section-header">
+      <span class="section-tag">HYPER-LOCAL MOUNTAIN COVERAGE</span>
+      <h2>Serving Cashiers, Highlands &amp; Surrounding Communities</h2>
+      <p class="section-lead">Customized specifically for the elevation, terrain, and soil conditions of local Jackson and Macon county mountain properties.</p>
+    </div>
+
+    <div class="community-grid">
+      {comm_cards}
+    </div>
+  </section>
+
+  <!-- Section 6: Client & Architect Testimonials -->
+  <div style="background: var(--bg-alt); border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border);">
+    <section id="reviews" class="section-wrap">
+      <div class="section-header">
+        <span class="section-tag">VERIFIED LOCAL TRUST</span>
+        <h2>What Plateau Builders &amp; Homeowners Say</h2>
+        <p class="section-lead">Read reviews from local architects, luxury custom home builders, and plateau property owners.</p>
+      </div>
+
+      <div class="testimonials-grid">
+        {testimonials_html}
+      </div>
+    </section>
+  </div>
+
+  <!-- Section 7: Frequently Asked Questions Accordion -->
+  <section id="faqs" class="section-wrap">
+    <div class="section-header">
+      <span class="section-tag">COMMON QUESTIONS</span>
+      <h2>Frequently Asked Questions on the Plateau</h2>
+      <p class="section-lead">Clear answers from Joel Rice about high-elevation grading, granite rock hammering, and fair pricing.</p>
+    </div>
+
+    <div class="faq-container">
+      {faq_cards}
+    </div>
+  </section>
+
+  <!-- Section 8: Shop Location & Direct Dispatch Contact Card -->
+  <section id="contact" class="section-wrap">
+    <div class="contact-card">
+      <div class="contact-info">
+        <h2>Ready to Plan Your Plateau Project?</h2>
+        <p>Whether you're breaking ground on an estate home site in Chinquapin, cutting a steep switchback driveway, or need solid granite rock hammered, Joel Rice is ready to inspect your site personally.</p>
+        
+        <div class="contact-details">
+          <div class="contact-detail-row">
+            <span>📞</span>
+            <div><strong>Direct Dispatch Phone:</strong> <a href="tel:{phone_clean}">{c['cell_phone']}</a></div>
+          </div>
+          <div class="contact-detail-row">
+            <span>📍</span>
+            <div><strong>Physical Shop &amp; Yard:</strong> 327 Hunter Road, Cashiers, NC 28717</div>
+          </div>
+          <div class="contact-detail-row">
+            <span>⏱️</span>
+            <div><strong>Operating Hours:</strong> Monday – Saturday: 7:00 AM – 6:00 PM</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-actions-box">
+        <h3>Speak Directly with Joel</h3>
+        <p>No sales reps or automated queues. Speak with the owner who has shifted dirt on the Plateau for over 35 years.</p>
+        <a href="tel:{phone_clean}" class="contact-call-btn">📞 Call {c['cell_phone']}</a>
+        <a href="https://maps.google.com/?q=327+Hunter+Road+Cashiers+NC+28717" target="_blank" rel="noopener" class="contact-maps-link">📍 View 327 Hunter Road on Google Maps →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h4>JOEL RICE EXCAVATING AND GRADING INC.</h4>
+        <p>The longest single-owned and operating excavating contractor on the Cashiers Plateau. Specializing in high-elevation estate pads, granite bedrock rock hammering, private switchback roads, septic preparation, and erosion defense.</p>
+        <div class="footer-nap">
+          <strong>Shop &amp; Dispatch:</strong> 327 Hunter Road, Cashiers, NC 28717<br>
+          <strong>Telephone:</strong> <a href="tel:{phone_clean}">{c['cell_phone']}</a><br>
+          <strong>Primary Coverage:</strong> Cashiers, Highlands, Sapphire, Glenville, Lake Toxaway
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul class="footer-links">
+          <li><a href="#how-to-choose">How to Choose an Excavator</a></li>
+          <li><a href="#about-joel">About Joel Rice</a></li>
+          <li><a href="#services">Plateau Services</a></li>
+          <li><a href="#portfolio">Project Portfolio</a></li>
+          <li><a href="#communities">Plateau Communities</a></li>
+          <li><a href="#faqs">Frequently Asked Questions</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Plateau Communities</h5>
+        <ul class="footer-links">
+          <li><a href="#communities">Cashiers &amp; Chinquapin</a></li>
+          <li><a href="#communities">Highlands &amp; Mountaintop</a></li>
+          <li><a href="#communities">Sapphire Valley &amp; Horsepasture</a></li>
+          <li><a href="#communities">Lake Glenville Shoreline</a></li>
+          <li><a href="#communities">Lake Toxaway &amp; High Hampton</a></li>
+          <li><a href="#communities">Wade Hampton &amp; Trillium</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>&copy; 2026 Joel Rice Excavating and Grading Inc. All rights reserved. 327 Hunter Road, Cashiers, NC 28717.</div>
+      <div>100/100 PageSpeed Performance • Hosted on Cloudflare Edge</div>
+    </div>
+  </footer>
+
+  <!-- Mobile-First Direct Call Sticky Bar -->
+  <div class="mobile-sticky-bar">
+    <a href="tel:{phone_clean}" class="mobile-sticky-btn">📞 Call Joel Rice: {c['cell_phone']}</a>
+  </div>
+
+</body>
+</html>"""
+
 def generate_client_html(c):
     """Generates the single-file, 100/100 PageSpeed, conversion-optimized HTML for a client."""
+    if c.get("slug") == "joel-rice-excavating":
+        return generate_joel_rice_html(c)
     phone_clean = c["cell_phone"].replace("(", "").replace(")", "").replace(" ", "").replace("-", "")
     sms_number = c.get("direct_sms_number", f"+1{phone_clean}")
     
