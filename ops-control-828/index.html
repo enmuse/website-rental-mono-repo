@@ -483,6 +483,41 @@
       color: #6ee7b7;
       border: 1px solid rgba(16, 185, 129, 0.3);
     }
+    .exp-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 0.12rem 0.45rem;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+    .exp-badge.exp-expired {
+      background: rgba(239, 68, 68, 0.25);
+      color: #fca5a5;
+      border: 1px solid #ef4444;
+    }
+    .exp-badge.exp-critical {
+      background: rgba(239, 68, 68, 0.18);
+      color: #f87171;
+      border: 1px solid rgba(239, 68, 68, 0.45);
+    }
+    .exp-badge.exp-warning {
+      background: rgba(245, 158, 11, 0.15);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.35);
+    }
+    .exp-badge.exp-normal {
+      background: rgba(148, 163, 184, 0.12);
+      color: #cbd5e1;
+      border: 1px solid rgba(148, 163, 184, 0.25);
+    }
+    .exp-badge.exp-none {
+      background: rgba(148, 163, 184, 0.08);
+      color: #94a3b8;
+      border: 1px solid rgba(148, 163, 184, 0.15);
+    }
     .dns-intel-action {
       background: rgba(245, 158, 11, 0.08);
       border-left: 3px solid #f59e0b;
@@ -688,8 +723,8 @@
             <th onclick="sortTable('owner')" style="cursor: pointer; user-select: none;" title="Click to sort by Owner Name">
               Owner & Direct Phone <span class="sort-icon" id="sort-icon-owner">↕</span>
             </th>
-            <th onclick="sortTable('days')" style="cursor: pointer; user-select: none;" title="Click to sort by Expiry Urgency">
-              DNS Host, Age & Expiry <span class="sort-icon" id="sort-icon-days">↕</span>
+            <th onclick="sortTable('days')" style="cursor: pointer; user-select: none;" title="Click to sort by Days Until Expiration (Urgent First)">
+              DNS Host & Domain Expiry <span class="sort-icon" id="sort-icon-days">↕</span>
             </th>
             <th onclick="sortTable('score')" style="cursor: pointer; user-select: none;" title="Click to sort by Competitor Speed">
               Their Current Speed <span class="sort-icon" id="sort-icon-score">↕</span>
@@ -709,7 +744,8 @@
             data-corridor="corridor 2 — southern plateau & foothills"
             data-corridor-slug="southern-plateau"
             data-owner="colton tate"
-            data-days="34"
+            data-expires="2026-11-21"
+            data-days="27"
             data-score="56">
           <td>
             <strong class="col-name">Tate's Grading</strong><br>
@@ -728,12 +764,14 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">DomainPeople</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">DomainPeople</div>
-            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
-              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="3 Years (Registered Nov 2023)">🎂 Age: 3 yrs</span>
-              <span style="font-size: 0.68rem; font-weight: 700; color: #f87171; background: rgba(239, 68, 68, 0.18); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(239, 68, 68, 0.4);" title="Expiring Soon (34 days left!)">⚠️ Exp: Nov 21, 2026 (34d)</span>
+            <div style="margin: 0.35rem 0 0.25rem 0;">
+              <span class="exp-badge exp-critical" title="Urgent: Expires in 27 days on Nov 21, 2026">⚠️ Exp: Nov 21, 2026 (27d left!)</span>
             </div>
-            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
-              NS: ns4.g10.cfdns.co.uk.
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="3 Years (Registered Nov 2023)">🎂 Age: 3 yrs</span>
+              <span style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px;">
+                NS: ns4.g10.cfdns.co.uk.
+              </span>
             </div>
           </td>
           <td>
@@ -768,7 +806,8 @@
             data-corridor="corridor 2 — southern plateau & foothills"
             data-corridor-slug="southern-plateau"
             data-owner="cory rose"
-            data-days="628"
+            data-expires="2027-07-10"
+            data-days="258"
             data-score="34">
           <td>
             <strong class="col-name">LeavesOut Hendersonville</strong><br>
@@ -787,12 +826,14 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">GoDaddy</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">GoDaddy.com</div>
-            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
-              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="2 Years (Registered Jul 2024)">🎂 Age: 2 yrs</span>
-              <span style="font-size: 0.68rem; color: #cbd5e1; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;" title="Active (628 days left)">📅 Exp: Jul 10, 2027</span>
+            <div style="margin: 0.35rem 0 0.25rem 0;">
+              <span class="exp-badge exp-normal" title="Expires in 258 days on Jul 10, 2027">📅 Exp: Jul 10, 2027 (258d)</span>
             </div>
-            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
-              NS: ns57.domaincontrol.com
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="2 Years (Registered Jul 2024)">🎂 Age: 2 yrs</span>
+              <span style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px;">
+                NS: ns57.domaincontrol.com
+              </span>
             </div>
           </td>
           <td>
@@ -827,7 +868,8 @@
             data-corridor="corridor 3 — metro asheville & french broad"
             data-corridor-slug="metro-asheville"
             data-owner="andrew owens"
-            data-days="387"
+            data-expires="2027-11-09"
+            data-days="380"
             data-score="60">
           <td>
             <strong class="col-name">Turning Leaf Tree</strong><br>
@@ -846,12 +888,14 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">Wix DNS</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">Wix.com Ltd.</div>
-            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
-              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="12 Years (Registered Nov 2014)">🎂 Age: 12 yrs</span>
-              <span style="font-size: 0.68rem; color: #cbd5e1; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;" title="Renews Nov 2027 (387d)">📅 Exp: Nov 09, 2027</span>
+            <div style="margin: 0.35rem 0 0.25rem 0;">
+              <span class="exp-badge exp-normal" title="Expires in 380 days on Nov 09, 2027">📅 Exp: Nov 09, 2027 (380d)</span>
             </div>
-            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
-              NS: ns3.wixdns.net.
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="12 Years (Registered Nov 2014)">🎂 Age: 12 yrs</span>
+              <span style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px;">
+                NS: ns3.wixdns.net.
+              </span>
             </div>
           </td>
           <td>
@@ -886,7 +930,8 @@
             data-corridor="corridor 4 — central west / tuckasegee"
             data-corridor-slug="central-west"
             data-owner="rivera"
-            data-days="285"
+            data-expires="2027-07-30"
+            data-days="278"
             data-score="74">
           <td>
             <strong class="col-name">Rivera's Roofing</strong><br>
@@ -905,12 +950,14 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">GoDaddy</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">GoDaddy.com</div>
-            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
-              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="1 Year (Registered Jul 2025)">🎂 Age: 1 yr</span>
-              <span style="font-size: 0.68rem; color: #cbd5e1; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;" title="Renews Jul 2027 (285d)">📅 Exp: Jul 30, 2027</span>
+            <div style="margin: 0.35rem 0 0.25rem 0;">
+              <span class="exp-badge exp-normal" title="Expires in 278 days on Jul 30, 2027">📅 Exp: Jul 30, 2027 (278d)</span>
             </div>
-            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
-              NS: ns28.domaincontrol.com.
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="1 Year (Registered Jul 2025)">🎂 Age: 1 yr</span>
+              <span style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px;">
+                NS: ns28.domaincontrol.com.
+              </span>
             </div>
           </td>
           <td>
@@ -945,7 +992,8 @@
             data-corridor="corridor 1 — highlands / cashiers luxury crest"
             data-corridor-slug="highlands-cashiers"
             data-owner="james"
-            data-days="191"
+            data-expires="2027-04-27"
+            data-days="184"
             data-score="42">
           <td>
             <strong class="col-name">Dirtworks Septic</strong><br>
@@ -964,12 +1012,14 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">Squarespace (Google Domains)</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">Squarespace Domains II LLC</div>
-            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
-              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="6 Months (Registered Apr 2026)">🎂 Age: 6 mo</span>
-              <span style="font-size: 0.68rem; color: #cbd5e1; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;" title="Renews Apr 2027 (191d)">📅 Exp: Apr 27, 2027</span>
+            <div style="margin: 0.35rem 0 0.25rem 0;">
+              <span class="exp-badge exp-normal" title="Expires in 184 days on Apr 27, 2027">📅 Exp: Apr 27, 2027 (184d)</span>
             </div>
-            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
-              NS: ns-cloud-e3.googledomains.com.
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="6 Months (Registered Apr 2026)">🎂 Age: 6 mo</span>
+              <span style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px;">
+                NS: ns-cloud-e3.googledomains.com.
+              </span>
             </div>
           </td>
           <td>
@@ -1004,7 +1054,8 @@
             data-corridor="corridor 2 — southern plateau & foothills"
             data-corridor-slug="southern-plateau"
             data-owner="mateo"
-            data-days="292"
+            data-expires="2027-08-06"
+            data-days="285"
             data-score="52">
           <td>
             <strong class="col-name">Mateo's Retaining Walls</strong><br>
@@ -1023,12 +1074,14 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">GoDaddy</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">GoDaddy.com</div>
-            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
-              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="5 Years (Registered Aug 2021)">🎂 Age: 5 yrs</span>
-              <span style="font-size: 0.68rem; color: #cbd5e1; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;" title="Renews Aug 2027 (292d)">📅 Exp: Aug 06, 2027</span>
+            <div style="margin: 0.35rem 0 0.25rem 0;">
+              <span class="exp-badge exp-normal" title="Expires in 285 days on Aug 06, 2027">📅 Exp: Aug 06, 2027 (285d)</span>
             </div>
-            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
-              NS: ns39.domaincontrol.com.
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="5 Years (Registered Aug 2021)">🎂 Age: 5 yrs</span>
+              <span style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px;">
+                NS: ns39.domaincontrol.com.
+              </span>
             </div>
           </td>
           <td>
@@ -1063,7 +1116,8 @@
             data-corridor="corridor 7 — east foothills / broad river"
             data-corridor-slug="east-foothills"
             data-owner="brian"
-            data-days="463"
+            data-expires="2028-01-24"
+            data-days="456"
             data-score="38">
           <td>
             <strong class="col-name">Tri-City Paving</strong><br>
@@ -1082,12 +1136,14 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">GoDaddy</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">GoDaddy.com</div>
-            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
-              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="8 Years (Registered Jan 2019)">🎂 Age: 8 yrs</span>
-              <span style="font-size: 0.68rem; color: #cbd5e1; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;" title="Renews Jan 2028 (463d)">📅 Exp: Jan 24, 2028</span>
+            <div style="margin: 0.35rem 0 0.25rem 0;">
+              <span class="exp-badge exp-normal" title="Expires in 456 days on Jan 24, 2028">📅 Exp: Jan 24, 2028 (456d)</span>
             </div>
-            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
-              NS: ns03.domaincontrol.com.
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="8 Years (Registered Jan 2019)">🎂 Age: 8 yrs</span>
+              <span style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px;">
+                NS: ns03.domaincontrol.com.
+              </span>
             </div>
           </td>
           <td>
@@ -1122,7 +1178,8 @@
             data-corridor="corridor 5 — high country & spruce pine belt"
             data-corridor-slug="high-country-mining"
             data-owner="liam"
-            data-days="171"
+            data-expires="2027-04-07"
+            data-days="164"
             data-score="58">
           <td>
             <strong class="col-name">Capstone Crawlspace</strong><br>
@@ -1141,12 +1198,14 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">Wix DNS</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">Wix.com Ltd.</div>
-            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
-              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="6 Months (Registered Apr 2026)">🎂 Age: 6 mo</span>
-              <span style="font-size: 0.68rem; color: #cbd5e1; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;" title="Renews Apr 2027 (171d)">📅 Exp: Apr 07, 2027</span>
+            <div style="margin: 0.35rem 0 0.25rem 0;">
+              <span class="exp-badge exp-normal" title="Expires in 164 days on Apr 07, 2027">📅 Exp: Apr 07, 2027 (164d)</span>
             </div>
-            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
-              NS: ns12.wixdns.net.
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="6 Months (Registered Apr 2026)">🎂 Age: 6 mo</span>
+              <span style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px;">
+                NS: ns12.wixdns.net.
+              </span>
             </div>
           </td>
           <td>
@@ -1181,7 +1240,8 @@
             data-corridor="corridor 4 — central west / tuckasegee"
             data-corridor-slug="central-west"
             data-owner="coomer"
-            data-days="401"
+            data-expires="2027-11-23"
+            data-days="394"
             data-score="64">
           <td>
             <strong class="col-name">Coomer's Well & Pump</strong><br>
@@ -1200,12 +1260,14 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">GoDaddy</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">GoDaddy.com</div>
-            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
-              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="6 Years (Registered Nov 2020)">🎂 Age: 6 yrs</span>
-              <span style="font-size: 0.68rem; color: #cbd5e1; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;" title="Renews Nov 2027 (401d)">📅 Exp: Nov 23, 2027</span>
+            <div style="margin: 0.35rem 0 0.25rem 0;">
+              <span class="exp-badge exp-normal" title="Expires in 394 days on Nov 23, 2027">📅 Exp: Nov 23, 2027 (394d)</span>
             </div>
-            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
-              NS: mia.ns.cloudflare.com.
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="6 Years (Registered Nov 2020)">🎂 Age: 6 yrs</span>
+              <span style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px;">
+                NS: mia.ns.cloudflare.com.
+              </span>
             </div>
           </td>
           <td>
@@ -1240,7 +1302,8 @@
             data-corridor="corridor 2 — southern plateau & metro asheville"
             data-corridor-slug="southern-plateau"
             data-owner="dave"
-            data-days="358"
+            data-expires="2027-10-11"
+            data-days="351"
             data-score="46">
           <td>
             <strong class="col-name">WNC Decks</strong><br>
@@ -1259,12 +1322,14 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">GoDaddy</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">GoDaddy.com</div>
-            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
-              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="2 Years (Registered Oct 2024)">🎂 Age: 2 yrs</span>
-              <span style="font-size: 0.68rem; color: #cbd5e1; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;" title="Renews Oct 2027 (358d)">📅 Exp: Oct 11, 2027</span>
+            <div style="margin: 0.35rem 0 0.25rem 0;">
+              <span class="exp-badge exp-normal" title="Expires in 351 days on Oct 11, 2027">📅 Exp: Oct 11, 2027 (351d)</span>
             </div>
-            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
-              NS: ns04.domaincontrol.com.
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="2 Years (Registered Oct 2024)">🎂 Age: 2 yrs</span>
+              <span style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px;">
+                NS: ns04.domaincontrol.com.
+              </span>
             </div>
           </td>
           <td>
@@ -1299,6 +1364,7 @@
             data-corridor="corridor 2 — southern plateau & mountain crest"
             data-corridor-slug="southern-plateau"
             data-owner="moss"
+            data-expires=""
             data-days="9999"
             data-score="29">
           <td>
@@ -1318,12 +1384,14 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">None / Hibu Hosted</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">Hibu Directory (No Custom Domain)</div>
-            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
-              <span style="font-size: 0.68rem; color: #94a3b8; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;">No Custom Domain</span>
-              
+            <div style="margin: 0.35rem 0 0.25rem 0;">
+              <span class="exp-badge exp-none" title="No custom domain expiration registered">📅 No Domain Expiry</span>
             </div>
-            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
-              NS: hibu proprietary network
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap;">
+              <span style="font-size: 0.68rem; color: #94a3b8; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;">No Custom Domain</span>
+              <span style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px;">
+                NS: hibu proprietary network
+              </span>
             </div>
           </td>
           <td>
@@ -1358,7 +1426,8 @@
             data-corridor="corridor 1 — highlands / cashiers luxury crest"
             data-corridor-slug="luxury-crest"
             data-owner="joel rice"
-            data-days="41"
+            data-expires="2026-11-28"
+            data-days="34"
             data-score="28">
           <td>
             <strong class="col-name">Joel Rice Excavating</strong><br>
@@ -1377,12 +1446,14 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">GoDaddy</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">GoDaddy.com</div>
-            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
-              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="10 Years (Registered Apr 2016)">🎂 Age: 10 yrs</span>
-              <span style="font-size: 0.68rem; font-weight: 700; color: #f87171; background: rgba(239, 68, 68, 0.18); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(239, 68, 68, 0.4);" title="Expiring Soon (41 days left!)">⚠️ Exp: Nov 28, 2026 (41d)</span>
+            <div style="margin: 0.35rem 0 0.25rem 0;">
+              <span class="exp-badge exp-warning" title="Expires in 34 days on Nov 28, 2026">⏳ Exp: Nov 28, 2026 (34d left)</span>
             </div>
-            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
-              NS: ns43.domaincontrol.com.
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="10 Years (Registered Apr 2016)">🎂 Age: 10 yrs</span>
+              <span style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px;">
+                NS: ns43.domaincontrol.com.
+              </span>
             </div>
           </td>
           <td>
@@ -1417,7 +1488,8 @@
             data-corridor="corridor 1 — highlands / cashiers luxury crest"
             data-corridor-slug="luxury-crest"
             data-owner="greg bryson"
-            data-days="331"
+            data-expires="2027-09-15"
+            data-days="325"
             data-score="31">
           <td>
             <strong class="col-name">Bryson Enterprises</strong><br>
@@ -1436,12 +1508,14 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">Network Solutions</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">Network Solutions</div>
-            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
-              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="18 Years (Registered Sep 2008)">🎂 Age: 18 yrs</span>
-              <span style="font-size: 0.68rem; color: #cbd5e1; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;" title="Active (Renews Sep 2027)">📅 Exp: Sep 15, 2027</span>
+            <div style="margin: 0.35rem 0 0.25rem 0;">
+              <span class="exp-badge exp-normal" title="Expires in 325 days on Sep 15, 2027">📅 Exp: Sep 15, 2027 (325d)</span>
             </div>
-            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
-              NS: ns1.worldnic.com.
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="18 Years (Registered Sep 2008)">🎂 Age: 18 yrs</span>
+              <span style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px;">
+                NS: ns1.worldnic.com.
+              </span>
             </div>
           </td>
           <td>
@@ -1476,7 +1550,8 @@
             data-corridor="corridor 2 — southern plateau & foothills"
             data-corridor-slug="southern-plateau"
             data-owner="wayne morgan"
-            data-days="48"
+            data-expires="2026-12-05"
+            data-days="41"
             data-score="34">
           <td>
             <strong class="col-name">All American Tree</strong><br>
@@ -1495,12 +1570,14 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">GoDaddy</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">GoDaddy.com</div>
-            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
-              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="11 Years (Registered Jun 2015)">🎂 Age: 11 yrs</span>
-              <span style="font-size: 0.68rem; font-weight: 700; color: #f87171; background: rgba(239, 68, 68, 0.18); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(239, 68, 68, 0.4);" title="Expiring Soon (48 days left!)">⚠️ Exp: Dec 05, 2026 (48d)</span>
+            <div style="margin: 0.35rem 0 0.25rem 0;">
+              <span class="exp-badge exp-warning" title="Expires in 41 days on Dec 05, 2026">⏳ Exp: Dec 05, 2026 (41d left)</span>
             </div>
-            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
-              NS: ns21.domaincontrol.com.
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="11 Years (Registered Jun 2015)">🎂 Age: 11 yrs</span>
+              <span style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px;">
+                NS: ns21.domaincontrol.com.
+              </span>
             </div>
           </td>
           <td>
@@ -1535,7 +1612,8 @@
             data-corridor="corridor 2 — southern plateau & foothills"
             data-corridor-slug="southern-plateau"
             data-owner="jamie & janie cauble"
-            data-days="142"
+            data-expires="2027-03-10"
+            data-days="136"
             data-score="38">
           <td>
             <strong class="col-name">Cauble & Sons</strong><br>
@@ -1554,12 +1632,14 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">Wix DNS</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">Wix.com Ltd.</div>
-            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
-              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="7 Years (Registered Mar 2019)">🎂 Age: 7 yrs</span>
-              <span style="font-size: 0.68rem; color: #cbd5e1; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;" title="Active (Renews Mar 2027)">📅 Exp: Mar 10, 2027</span>
+            <div style="margin: 0.35rem 0 0.25rem 0;">
+              <span class="exp-badge exp-normal" title="Expires in 136 days on Mar 10, 2027">📅 Exp: Mar 10, 2027 (136d)</span>
             </div>
-            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
-              NS: ns1.wixdns.net.
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="7 Years (Registered Mar 2019)">🎂 Age: 7 yrs</span>
+              <span style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px;">
+                NS: ns1.wixdns.net.
+              </span>
             </div>
           </td>
           <td>
@@ -1594,7 +1674,8 @@
             data-corridor="corridor 2 — southern plateau & foothills"
             data-corridor-slug="southern-plateau"
             data-owner="keith stuller"
-            data-days="17"
+            data-expires="2026-11-04"
+            data-days="10"
             data-score="32">
           <td>
             <strong class="col-name">Mountain Generator</strong><br>
@@ -1613,12 +1694,14 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">Register.com</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">Register.com</div>
-            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
-              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="21 Years (Registered Nov 2005)">🎂 Age: 21 yrs</span>
-              <span style="font-size: 0.68rem; font-weight: 700; color: #f87171; background: rgba(239, 68, 68, 0.18); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(239, 68, 68, 0.4);" title="CRITICAL: Expiring in 17 days!">⚠️ Exp: Nov 04, 2026 (17d)</span>
+            <div style="margin: 0.35rem 0 0.25rem 0;">
+              <span class="exp-badge exp-critical" title="Urgent: Expires in 10 days on Nov 04, 2026">⚠️ Exp: Nov 04, 2026 (10d left!)</span>
             </div>
-            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
-              NS: dns1.register.com.
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="21 Years (Registered Nov 2005)">🎂 Age: 21 yrs</span>
+              <span style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px;">
+                NS: dns1.register.com.
+              </span>
             </div>
           </td>
           <td>
@@ -1653,7 +1736,8 @@
             data-corridor="corridor 2 — southern plateau & foothills"
             data-corridor-slug="southern-plateau"
             data-owner="mark sullins"
-            data-days="305"
+            data-expires="2027-08-19"
+            data-days="298"
             data-score="39">
           <td>
             <strong class="col-name">Blue Ridge Decking</strong><br>
@@ -1672,12 +1756,14 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">Namecheap BasicDNS</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">Namecheap</div>
-            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
-              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="5 Years (Registered Aug 2021)">🎂 Age: 5 yrs</span>
-              <span style="font-size: 0.68rem; color: #cbd5e1; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;" title="Active (Renews Aug 2027)">📅 Exp: Aug 19, 2027</span>
+            <div style="margin: 0.35rem 0 0.25rem 0;">
+              <span class="exp-badge exp-normal" title="Expires in 298 days on Aug 19, 2027">📅 Exp: Aug 19, 2027 (298d)</span>
             </div>
-            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
-              NS: dns1.registrar-servers.com.
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="5 Years (Registered Aug 2021)">🎂 Age: 5 yrs</span>
+              <span style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px;">
+                NS: dns1.registrar-servers.com.
+              </span>
             </div>
           </td>
           <td>
@@ -1712,7 +1798,8 @@
             data-corridor="corridor 3 — metro asheville & french broad"
             data-corridor-slug="metro-asheville"
             data-owner="robert vance"
-            data-days="118"
+            data-expires="2027-02-14"
+            data-days="112"
             data-score="29">
           <td>
             <strong class="col-name">American Tree</strong><br>
@@ -1731,12 +1818,14 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">GoDaddy</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">GoDaddy.com</div>
-            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
-              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="14 Years (Registered Feb 2012)">🎂 Age: 14 yrs</span>
-              <span style="font-size: 0.68rem; color: #cbd5e1; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;" title="Active (Renews Feb 2027)">📅 Exp: Feb 14, 2027</span>
+            <div style="margin: 0.35rem 0 0.25rem 0;">
+              <span class="exp-badge exp-normal" title="Expires in 112 days on Feb 14, 2027">📅 Exp: Feb 14, 2027 (112d)</span>
             </div>
-            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
-              NS: ns77.domaincontrol.com.
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="14 Years (Registered Feb 2012)">🎂 Age: 14 yrs</span>
+              <span style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px;">
+                NS: ns77.domaincontrol.com.
+              </span>
             </div>
           </td>
           <td>
@@ -1771,7 +1860,8 @@
             data-corridor="corridor 3 — metro asheville & french broad"
             data-corridor-slug="metro-asheville"
             data-owner="scott hensley"
-            data-days="257"
+            data-expires="2027-07-03"
+            data-days="251"
             data-score="35">
           <td>
             <strong class="col-name">Greenscapes Retaining Walls</strong><br>
@@ -1790,12 +1880,14 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">Wix DNS</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">Wix.com Ltd.</div>
-            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
-              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="9 Years (Registered Jul 2017)">🎂 Age: 9 yrs</span>
-              <span style="font-size: 0.68rem; color: #cbd5e1; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;" title="Active (Renews Jul 2027)">📅 Exp: Jul 03, 2027</span>
+            <div style="margin: 0.35rem 0 0.25rem 0;">
+              <span class="exp-badge exp-normal" title="Expires in 251 days on Jul 03, 2027">📅 Exp: Jul 03, 2027 (251d)</span>
             </div>
-            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
-              NS: ns4.wixdns.net.
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="9 Years (Registered Jul 2017)">🎂 Age: 9 yrs</span>
+              <span style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px;">
+                NS: ns4.wixdns.net.
+              </span>
             </div>
           </td>
           <td>
@@ -1830,7 +1922,8 @@
             data-corridor="corridor 3 — metro asheville & french broad"
             data-corridor-slug="metro-asheville"
             data-owner="terry hall"
-            data-days="28"
+            data-expires="2026-11-15"
+            data-days="21"
             data-score="31">
           <td>
             <strong class="col-name">Basement Technologies</strong><br>
@@ -1849,12 +1942,14 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">Hover / Tucows</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">Tucows Domains Inc.</div>
-            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
-              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="17 Years (Registered Aug 2009)">🎂 Age: 17 yrs</span>
-              <span style="font-size: 0.68rem; font-weight: 700; color: #f87171; background: rgba(239, 68, 68, 0.18); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(239, 68, 68, 0.4);" title="Expiring Soon (28 days left!)">⚠️ Exp: Nov 15, 2026 (28d)</span>
+            <div style="margin: 0.35rem 0 0.25rem 0;">
+              <span class="exp-badge exp-critical" title="Urgent: Expires in 21 days on Nov 15, 2026">⚠️ Exp: Nov 15, 2026 (21d left!)</span>
             </div>
-            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
-              NS: ns1.hover.com.
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="17 Years (Registered Aug 2009)">🎂 Age: 17 yrs</span>
+              <span style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px;">
+                NS: ns1.hover.com.
+              </span>
             </div>
           </td>
           <td>
@@ -1889,7 +1984,8 @@
             data-corridor="corridor 4 — central west & regional wnc"
             data-corridor-slug="central-west"
             data-owner="travis wood"
-            data-days="356"
+            data-expires="2027-10-10"
+            data-days="350"
             data-score="39">
           <td>
             <strong class="col-name">DeepWoods Log Homes</strong><br>
@@ -1908,12 +2004,14 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">Squarespace DNS</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">Squarespace Domains LLC (Google Transfer)</div>
-            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
-              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="8 Years (Registered Oct 2018)">🎂 Age: 8 yrs</span>
-              <span style="font-size: 0.68rem; color: #cbd5e1; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;" title="Active (Renews Oct 2027)">📅 Exp: Oct 10, 2027</span>
+            <div style="margin: 0.35rem 0 0.25rem 0;">
+              <span class="exp-badge exp-normal" title="Expires in 350 days on Oct 10, 2027">📅 Exp: Oct 10, 2027 (350d)</span>
             </div>
-            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
-              NS: dns1.p01.nsone.net.
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="8 Years (Registered Oct 2018)">🎂 Age: 8 yrs</span>
+              <span style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px;">
+                NS: dns1.p01.nsone.net.
+              </span>
             </div>
           </td>
           <td>
@@ -1948,7 +2046,8 @@
             data-corridor="corridor 4 — central west / tuckasegee"
             data-corridor-slug="central-west"
             data-owner="austin rathbone"
-            data-days="211"
+            data-expires="2027-05-18"
+            data-days="205"
             data-score="37">
           <td>
             <strong class="col-name">Austin's Tree Service</strong><br>
@@ -1967,12 +2066,14 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">GoDaddy</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">GoDaddy.com</div>
-            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
-              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="9 Years (Registered May 2017)">🎂 Age: 9 yrs</span>
-              <span style="font-size: 0.68rem; color: #cbd5e1; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;" title="Active (Renews May 2027)">📅 Exp: May 18, 2027</span>
+            <div style="margin: 0.35rem 0 0.25rem 0;">
+              <span class="exp-badge exp-normal" title="Expires in 205 days on May 18, 2027">📅 Exp: May 18, 2027 (205d)</span>
             </div>
-            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
-              NS: ns35.domaincontrol.com.
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="9 Years (Registered May 2017)">🎂 Age: 9 yrs</span>
+              <span style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px;">
+                NS: ns35.domaincontrol.com.
+              </span>
             </div>
           </td>
           <td>
@@ -2007,7 +2108,8 @@
             data-corridor="corridor 4 — central west / tuckasegee"
             data-corridor-slug="central-west"
             data-owner="charles rathbone"
-            data-days="146"
+            data-expires="2027-03-14"
+            data-days="140"
             data-score="24">
           <td>
             <strong class="col-name">Rathbone Septic</strong><br>
@@ -2026,12 +2128,14 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">Namecheap BasicDNS</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">Namecheap</div>
-            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
-              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="4 Years (Registered Mar 2022)">🎂 Age: 4 yrs</span>
-              <span style="font-size: 0.68rem; color: #cbd5e1; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;" title="Active (Renews Mar 2027)">📅 Exp: Mar 14, 2027</span>
+            <div style="margin: 0.35rem 0 0.25rem 0;">
+              <span class="exp-badge exp-normal" title="Expires in 140 days on Mar 14, 2027">📅 Exp: Mar 14, 2027 (140d)</span>
             </div>
-            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
-              NS: dns1.registrar-servers.com.
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="4 Years (Registered Mar 2022)">🎂 Age: 4 yrs</span>
+              <span style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px;">
+                NS: dns1.registrar-servers.com.
+              </span>
             </div>
           </td>
           <td>
@@ -2066,7 +2170,8 @@
             data-corridor="corridor 4 — central west / tuckasegee"
             data-corridor-slug="central-west"
             data-owner="jason higdon"
-            data-days="33"
+            data-expires="2026-11-20"
+            data-days="26"
             data-score="33">
           <td>
             <strong class="col-name">Highlander Roofing</strong><br>
@@ -2085,12 +2190,14 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">Network Solutions</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">Network Solutions</div>
-            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
-              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="15 Years (Registered Jun 2011)">🎂 Age: 15 yrs</span>
-              <span style="font-size: 0.68rem; font-weight: 700; color: #f87171; background: rgba(239, 68, 68, 0.18); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(239, 68, 68, 0.4);" title="Expiring Soon (33 days left!)">⚠️ Exp: Nov 20, 2026 (33d)</span>
+            <div style="margin: 0.35rem 0 0.25rem 0;">
+              <span class="exp-badge exp-critical" title="Urgent: Expires in 26 days on Nov 20, 2026">⚠️ Exp: Nov 20, 2026 (26d left!)</span>
             </div>
-            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
-              NS: ns1.worldnic.com.
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="15 Years (Registered Jun 2011)">🎂 Age: 15 yrs</span>
+              <span style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px;">
+                NS: ns1.worldnic.com.
+              </span>
             </div>
           </td>
           <td>
@@ -2125,7 +2232,8 @@
             data-corridor="corridor 4 — central west / tuckasegee"
             data-corridor-slug="central-west"
             data-owner="scott franklin"
-            data-days="290"
+            data-expires="2027-08-05"
+            data-days="284"
             data-score="38">
           <td>
             <strong class="col-name">Franklin Bro's Well</strong><br>
@@ -2144,12 +2252,14 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">GoDaddy</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">GoDaddy.com</div>
-            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
-              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="13 Years (Registered Aug 2013)">🎂 Age: 13 yrs</span>
-              <span style="font-size: 0.68rem; color: #cbd5e1; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;" title="Active (Renews Aug 2027)">📅 Exp: Aug 05, 2027</span>
+            <div style="margin: 0.35rem 0 0.25rem 0;">
+              <span class="exp-badge exp-normal" title="Expires in 284 days on Aug 05, 2027">📅 Exp: Aug 05, 2027 (284d)</span>
             </div>
-            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
-              NS: ns51.domaincontrol.com.
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="13 Years (Registered Aug 2013)">🎂 Age: 13 yrs</span>
+              <span style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px;">
+                NS: ns51.domaincontrol.com.
+              </span>
             </div>
           </td>
           <td>
@@ -2184,7 +2294,8 @@
             data-corridor="corridor 5 — high country & spruce pine belt"
             data-corridor-slug="high-country"
             data-owner="brad estes"
-            data-days="25"
+            data-expires="2026-11-12"
+            data-days="18"
             data-score="30">
           <td>
             <strong class="col-name">Estes Grading</strong><br>
@@ -2203,12 +2314,14 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">Domain.com</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">Domain.com</div>
-            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
-              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="12 Years (Registered Apr 2014)">🎂 Age: 12 yrs</span>
-              <span style="font-size: 0.68rem; font-weight: 700; color: #f87171; background: rgba(239, 68, 68, 0.18); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(239, 68, 68, 0.4);" title="Expiring Soon (25 days left!)">⚠️ Exp: Nov 12, 2026 (25d)</span>
+            <div style="margin: 0.35rem 0 0.25rem 0;">
+              <span class="exp-badge exp-critical" title="Urgent: Expires in 18 days on Nov 12, 2026">⚠️ Exp: Nov 12, 2026 (18d left!)</span>
             </div>
-            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
-              NS: ns1.domain.com.
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="12 Years (Registered Apr 2014)">🎂 Age: 12 yrs</span>
+              <span style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px;">
+                NS: ns1.domain.com.
+              </span>
             </div>
           </td>
           <td>
@@ -2243,7 +2356,8 @@
             data-corridor="corridor 5 — high country & spruce pine belt"
             data-corridor-slug="high-country"
             data-owner="kenneth greene"
-            data-days="93"
+            data-expires="2027-01-20"
+            data-days="87"
             data-score="31">
           <td>
             <strong class="col-name">Boone Well Services</strong><br>
@@ -2262,12 +2376,14 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">Network Solutions</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">Network Solutions</div>
-            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
-              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="16 Years (Registered Jan 2010)">🎂 Age: 16 yrs</span>
-              <span style="font-size: 0.68rem; color: #cbd5e1; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;" title="Active (Renews Jan 2027)">📅 Exp: Jan 20, 2027</span>
+            <div style="margin: 0.35rem 0 0.25rem 0;">
+              <span class="exp-badge exp-warning" title="Expires in 87 days on Jan 20, 2027">⏳ Exp: Jan 20, 2027 (87d left)</span>
             </div>
-            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
-              NS: ns1.worldnic.com.
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="16 Years (Registered Jan 2010)">🎂 Age: 16 yrs</span>
+              <span style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px;">
+                NS: ns1.worldnic.com.
+              </span>
             </div>
           </td>
           <td>
@@ -2302,7 +2418,8 @@
             data-corridor="corridor 6 — far west smokies"
             data-corridor-slug="far-west"
             data-owner="larry ledford"
-            data-days="348"
+            data-expires="2027-10-02"
+            data-days="342"
             data-score="26">
           <td>
             <strong class="col-name">Cherokee Well Drilling</strong><br>
@@ -2321,12 +2438,14 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">GoDaddy</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">GoDaddy.com</div>
-            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
-              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="11 Years (Registered Oct 2015)">🎂 Age: 11 yrs</span>
-              <span style="font-size: 0.68rem; color: #cbd5e1; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;" title="Active (Renews Oct 2027)">📅 Exp: Oct 02, 2027</span>
+            <div style="margin: 0.35rem 0 0.25rem 0;">
+              <span class="exp-badge exp-normal" title="Expires in 342 days on Oct 02, 2027">📅 Exp: Oct 02, 2027 (342d)</span>
             </div>
-            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
-              NS: ns15.domaincontrol.com.
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="11 Years (Registered Oct 2015)">🎂 Age: 11 yrs</span>
+              <span style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px;">
+                NS: ns15.domaincontrol.com.
+              </span>
             </div>
           </td>
           <td>
@@ -2361,7 +2480,8 @@
             data-corridor="corridor 6 — far west smokies"
             data-corridor-slug="far-west"
             data-owner="mark connor"
-            data-days="153"
+            data-expires="2027-03-21"
+            data-days="147"
             data-score="34">
           <td>
             <strong class="col-name">Connor Well & Pump</strong><br>
@@ -2380,12 +2500,14 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">Hover / Tucows</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">Tucows Domains Inc.</div>
-            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
-              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="8 Years (Registered Mar 2018)">🎂 Age: 8 yrs</span>
-              <span style="font-size: 0.68rem; color: #cbd5e1; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;" title="Active (Renews Mar 2027)">📅 Exp: Mar 21, 2027</span>
+            <div style="margin: 0.35rem 0 0.25rem 0;">
+              <span class="exp-badge exp-normal" title="Expires in 147 days on Mar 21, 2027">📅 Exp: Mar 21, 2027 (147d)</span>
             </div>
-            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
-              NS: ns1.hover.com.
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="8 Years (Registered Mar 2018)">🎂 Age: 8 yrs</span>
+              <span style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px;">
+                NS: ns1.hover.com.
+              </span>
             </div>
           </td>
           <td>
@@ -2420,7 +2542,8 @@
             data-corridor="corridor 7 — east foothills / broad river"
             data-corridor-slug="east-foothills"
             data-owner="brian whisnant"
-            data-days="27"
+            data-expires="2026-11-14"
+            data-days="20"
             data-score="36">
           <td>
             <strong class="col-name">Lake James Electric</strong><br>
@@ -2439,12 +2562,14 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">GoDaddy</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">GoDaddy.com</div>
-            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
-              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="7 Years (Registered Nov 2019)">🎂 Age: 7 yrs</span>
-              <span style="font-size: 0.68rem; font-weight: 700; color: #f87171; background: rgba(239, 68, 68, 0.18); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(239, 68, 68, 0.4);" title="Expiring Soon (27 days left!)">⚠️ Exp: Nov 14, 2026 (27d)</span>
+            <div style="margin: 0.35rem 0 0.25rem 0;">
+              <span class="exp-badge exp-critical" title="Urgent: Expires in 20 days on Nov 14, 2026">⚠️ Exp: Nov 14, 2026 (20d left!)</span>
             </div>
-            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
-              NS: ns41.domaincontrol.com.
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="7 Years (Registered Nov 2019)">🎂 Age: 7 yrs</span>
+              <span style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px;">
+                NS: ns41.domaincontrol.com.
+              </span>
             </div>
           </td>
           <td>
@@ -2479,7 +2604,8 @@
             data-corridor="corridor 8 — toe river / yadkin valley"
             data-corridor-slug="toe-river-valley"
             data-owner="tyler austin"
-            data-days="171"
+            data-expires="2027-04-08"
+            data-days="165"
             data-score="35">
           <td>
             <strong class="col-name">Austin Grading</strong><br>
@@ -2498,12 +2624,14 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">Namecheap BasicDNS</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">Namecheap</div>
-            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
-              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="6 Years (Registered Apr 2020)">🎂 Age: 6 yrs</span>
-              <span style="font-size: 0.68rem; color: #cbd5e1; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;" title="Active (Renews Apr 2027)">📅 Exp: Apr 08, 2027</span>
+            <div style="margin: 0.35rem 0 0.25rem 0;">
+              <span class="exp-badge exp-normal" title="Expires in 165 days on Apr 08, 2027">📅 Exp: Apr 08, 2027 (165d)</span>
             </div>
-            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
-              NS: dns1.registrar-servers.com.
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="6 Years (Registered Apr 2020)">🎂 Age: 6 yrs</span>
+              <span style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px;">
+                NS: dns1.registrar-servers.com.
+              </span>
             </div>
           </td>
           <td>
@@ -2538,7 +2666,8 @@
             data-corridor="corridor 4 — central west / tuckasegee"
             data-corridor-slug="central-west"
             data-owner="adam hambleton"
-            data-days="365"
+            data-expires="2027-05-12"
+            data-days="199"
             data-score="42">
           <td>
             <strong class="col-name">WNC Washing & Staining</strong><br>
@@ -2557,12 +2686,14 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">Direct Domain Registrar</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">GoDaddy.com / Squarespace / Network Solutions</div>
-            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
-              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="8 Years (Established Local Authority)">🎂 Age: 8 yrs</span>
-              <span style="font-size: 0.68rem; color: #cbd5e1; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;" title="Active (Renews May 2027)">📅 Exp: May 12, 2027</span>
+            <div style="margin: 0.35rem 0 0.25rem 0;">
+              <span class="exp-badge exp-normal" title="Expires in 199 days on May 12, 2027">📅 Exp: May 12, 2027 (199d)</span>
             </div>
-            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
-              NS: local.dns.carrier.net
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="8 Years (Established Local Authority)">🎂 Age: 8 yrs</span>
+              <span style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px;">
+                NS: local.dns.carrier.net
+              </span>
             </div>
           </td>
           <td>
@@ -2597,7 +2728,8 @@
             data-corridor="corridor 4 — central west / tuckasegee"
             data-corridor-slug="central-west"
             data-owner="christopher miller"
-            data-days="365"
+            data-expires="2027-05-12"
+            data-days="199"
             data-score="38">
           <td>
             <strong class="col-name">Carolina Log & Timber</strong><br>
@@ -2616,12 +2748,14 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">Direct Domain Registrar</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">GoDaddy.com / Squarespace / Network Solutions</div>
-            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
-              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="8 Years (Established Local Authority)">🎂 Age: 8 yrs</span>
-              <span style="font-size: 0.68rem; color: #cbd5e1; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;" title="Active (Renews May 2027)">📅 Exp: May 12, 2027</span>
+            <div style="margin: 0.35rem 0 0.25rem 0;">
+              <span class="exp-badge exp-normal" title="Expires in 199 days on May 12, 2027">📅 Exp: May 12, 2027 (199d)</span>
             </div>
-            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
-              NS: local.dns.carrier.net
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="8 Years (Established Local Authority)">🎂 Age: 8 yrs</span>
+              <span style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px;">
+                NS: local.dns.carrier.net
+              </span>
             </div>
           </td>
           <td>
@@ -2656,7 +2790,8 @@
             data-corridor="corridor 4 — central west / tuckasegee"
             data-corridor-slug="central-west"
             data-owner="lawrence phillips"
-            data-days="365"
+            data-expires=""
+            data-days="9999"
             data-score="35">
           <td>
             <strong class="col-name">Gray Wolf Log Homes</strong><br>
@@ -2675,12 +2810,14 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">Direct Domain Registrar</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">GoDaddy.com / Squarespace / Network Solutions</div>
-            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
-              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="8 Years (Established Local Authority)">🎂 Age: 8 yrs</span>
-              <span style="font-size: 0.68rem; color: #cbd5e1; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;" title="Active (Renews May 2027)">📅 Exp: May 12, 2027</span>
+            <div style="margin: 0.35rem 0 0.25rem 0;">
+              <span class="exp-badge exp-none" title="No custom domain expiration registered">📅 No Domain Expiry</span>
             </div>
-            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
-              NS: local.dns.carrier.net
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap;">
+              <span style="font-size: 0.68rem; color: #94a3b8; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;">No Custom Domain</span>
+              <span style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px;">
+                NS: local.dns.carrier.net
+              </span>
             </div>
           </td>
           <td>
@@ -2715,7 +2852,8 @@
             data-corridor="corridor 4 — central west / tuckasegee"
             data-corridor-slug="central-west"
             data-owner="joseph o. bell iii"
-            data-days="365"
+            data-expires="2027-05-12"
+            data-days="199"
             data-score="45">
           <td>
             <strong class="col-name">Cabin Creek Timber Frames</strong><br>
@@ -2734,12 +2872,14 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">Direct Domain Registrar</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">GoDaddy.com / Squarespace / Network Solutions</div>
-            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
-              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="8 Years (Established Local Authority)">🎂 Age: 8 yrs</span>
-              <span style="font-size: 0.68rem; color: #cbd5e1; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;" title="Active (Renews May 2027)">📅 Exp: May 12, 2027</span>
+            <div style="margin: 0.35rem 0 0.25rem 0;">
+              <span class="exp-badge exp-normal" title="Expires in 199 days on May 12, 2027">📅 Exp: May 12, 2027 (199d)</span>
             </div>
-            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
-              NS: local.dns.carrier.net
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="8 Years (Established Local Authority)">🎂 Age: 8 yrs</span>
+              <span style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px;">
+                NS: local.dns.carrier.net
+              </span>
             </div>
           </td>
           <td>
@@ -2774,7 +2914,8 @@
             data-corridor="corridor 6 — far west smokies"
             data-corridor-slug="far-west"
             data-owner="ian wenzel"
-            data-days="365"
+            data-expires="2027-05-12"
+            data-days="199"
             data-score="40">
           <td>
             <strong class="col-name">Performance Log Finishers</strong><br>
@@ -2793,12 +2934,14 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">Direct Domain Registrar</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">GoDaddy.com / Squarespace / Network Solutions</div>
-            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
-              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="8 Years (Established Local Authority)">🎂 Age: 8 yrs</span>
-              <span style="font-size: 0.68rem; color: #cbd5e1; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;" title="Active (Renews May 2027)">📅 Exp: May 12, 2027</span>
+            <div style="margin: 0.35rem 0 0.25rem 0;">
+              <span class="exp-badge exp-normal" title="Expires in 199 days on May 12, 2027">📅 Exp: May 12, 2027 (199d)</span>
             </div>
-            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
-              NS: local.dns.carrier.net
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="8 Years (Established Local Authority)">🎂 Age: 8 yrs</span>
+              <span style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px;">
+                NS: local.dns.carrier.net
+              </span>
             </div>
           </td>
           <td>
@@ -2833,7 +2976,8 @@
             data-corridor="corridor 6 — far west smokies"
             data-corridor-slug="far-west"
             data-owner="perry b. moore"
-            data-days="365"
+            data-expires="2027-05-12"
+            data-days="199"
             data-score="48">
           <td>
             <strong class="col-name">Royal Kin Construction</strong><br>
@@ -2852,12 +2996,14 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">Direct Domain Registrar</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">GoDaddy.com / Squarespace / Network Solutions</div>
-            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
-              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="8 Years (Established Local Authority)">🎂 Age: 8 yrs</span>
-              <span style="font-size: 0.68rem; color: #cbd5e1; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;" title="Active (Renews May 2027)">📅 Exp: May 12, 2027</span>
+            <div style="margin: 0.35rem 0 0.25rem 0;">
+              <span class="exp-badge exp-normal" title="Expires in 199 days on May 12, 2027">📅 Exp: May 12, 2027 (199d)</span>
             </div>
-            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
-              NS: local.dns.carrier.net
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="8 Years (Established Local Authority)">🎂 Age: 8 yrs</span>
+              <span style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px;">
+                NS: local.dns.carrier.net
+              </span>
             </div>
           </td>
           <td>
@@ -2892,7 +3038,8 @@
             data-corridor="corridor 6 — far west smokies"
             data-corridor-slug="far-west"
             data-owner="tim coker"
-            data-days="365"
+            data-expires=""
+            data-days="9999"
             data-score="31">
           <td>
             <strong class="col-name">Tim Coker Construction</strong><br>
@@ -2911,12 +3058,14 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">Direct Domain Registrar</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">GoDaddy.com / Squarespace / Network Solutions</div>
-            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
-              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="8 Years (Established Local Authority)">🎂 Age: 8 yrs</span>
-              <span style="font-size: 0.68rem; color: #cbd5e1; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;" title="Active (Renews May 2027)">📅 Exp: May 12, 2027</span>
+            <div style="margin: 0.35rem 0 0.25rem 0;">
+              <span class="exp-badge exp-none" title="No custom domain expiration registered">📅 No Domain Expiry</span>
             </div>
-            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
-              NS: local.dns.carrier.net
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap;">
+              <span style="font-size: 0.68rem; color: #94a3b8; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;">No Custom Domain</span>
+              <span style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px;">
+                NS: local.dns.carrier.net
+              </span>
             </div>
           </td>
           <td>
@@ -2951,7 +3100,8 @@
             data-corridor="corridor 6 — far west smokies"
             data-corridor-slug="far-west"
             data-owner="penland"
-            data-days="365"
+            data-expires="2027-05-12"
+            data-days="199"
             data-score="44">
           <td>
             <strong class="col-name">Penland Builders</strong><br>
@@ -2970,12 +3120,14 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">Direct Domain Registrar</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">GoDaddy.com / Squarespace / Network Solutions</div>
-            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
-              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="8 Years (Established Local Authority)">🎂 Age: 8 yrs</span>
-              <span style="font-size: 0.68rem; color: #cbd5e1; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;" title="Active (Renews May 2027)">📅 Exp: May 12, 2027</span>
+            <div style="margin: 0.35rem 0 0.25rem 0;">
+              <span class="exp-badge exp-normal" title="Expires in 199 days on May 12, 2027">📅 Exp: May 12, 2027 (199d)</span>
             </div>
-            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
-              NS: local.dns.carrier.net
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="8 Years (Established Local Authority)">🎂 Age: 8 yrs</span>
+              <span style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px;">
+                NS: local.dns.carrier.net
+              </span>
             </div>
           </td>
           <td>
@@ -3010,7 +3162,8 @@
             data-corridor="corridor 2 — southern plateau & regional mountain crest"
             data-corridor-slug="southern-plateau"
             data-owner="dustin & dave hoffman"
-            data-days="365"
+            data-expires="2027-05-12"
+            data-days="199"
             data-score="51">
           <td>
             <strong class="col-name">Log & Timber Solutions</strong><br>
@@ -3029,12 +3182,14 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">Direct Domain Registrar</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">GoDaddy.com / Squarespace / Network Solutions</div>
-            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
-              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="8 Years (Established Local Authority)">🎂 Age: 8 yrs</span>
-              <span style="font-size: 0.68rem; color: #cbd5e1; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;" title="Active (Renews May 2027)">📅 Exp: May 12, 2027</span>
+            <div style="margin: 0.35rem 0 0.25rem 0;">
+              <span class="exp-badge exp-normal" title="Expires in 199 days on May 12, 2027">📅 Exp: May 12, 2027 (199d)</span>
             </div>
-            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
-              NS: local.dns.carrier.net
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="8 Years (Established Local Authority)">🎂 Age: 8 yrs</span>
+              <span style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px;">
+                NS: local.dns.carrier.net
+              </span>
             </div>
           </td>
           <td>
@@ -3069,7 +3224,8 @@
             data-corridor="corridor 2 — southern plateau & regional mountain crest"
             data-corridor-slug="southern-plateau"
             data-owner="maciek"
-            data-days="365"
+            data-expires="2027-05-12"
+            data-days="199"
             data-score="49">
           <td>
             <strong class="col-name">American Log Restoration</strong><br>
@@ -3088,12 +3244,14 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">Direct Domain Registrar</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">GoDaddy.com / Squarespace / Network Solutions</div>
-            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
-              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="8 Years (Established Local Authority)">🎂 Age: 8 yrs</span>
-              <span style="font-size: 0.68rem; color: #cbd5e1; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;" title="Active (Renews May 2027)">📅 Exp: May 12, 2027</span>
+            <div style="margin: 0.35rem 0 0.25rem 0;">
+              <span class="exp-badge exp-normal" title="Expires in 199 days on May 12, 2027">📅 Exp: May 12, 2027 (199d)</span>
             </div>
-            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
-              NS: local.dns.carrier.net
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="8 Years (Established Local Authority)">🎂 Age: 8 yrs</span>
+              <span style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px;">
+                NS: local.dns.carrier.net
+              </span>
             </div>
           </td>
           <td>
@@ -3128,7 +3286,8 @@
             data-corridor="corridor 6 — far west smokies"
             data-corridor-slug="far-west"
             data-owner="david"
-            data-days="365"
+            data-expires="2027-05-12"
+            data-days="199"
             data-score="39">
           <td>
             <strong class="col-name">Cherokee Septic</strong><br>
@@ -3147,12 +3306,14 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">Direct Domain Registrar</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">GoDaddy.com / Squarespace / Network Solutions</div>
-            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
-              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="8 Years (Established Local Authority)">🎂 Age: 8 yrs</span>
-              <span style="font-size: 0.68rem; color: #cbd5e1; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;" title="Active (Renews May 2027)">📅 Exp: May 12, 2027</span>
+            <div style="margin: 0.35rem 0 0.25rem 0;">
+              <span class="exp-badge exp-normal" title="Expires in 199 days on May 12, 2027">📅 Exp: May 12, 2027 (199d)</span>
             </div>
-            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
-              NS: local.dns.carrier.net
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="8 Years (Established Local Authority)">🎂 Age: 8 yrs</span>
+              <span style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px;">
+                NS: local.dns.carrier.net
+              </span>
             </div>
           </td>
           <td>
@@ -3187,7 +3348,8 @@
             data-corridor="corridor 6 — far west smokies"
             data-corridor-slug="far-west"
             data-owner="jason rose"
-            data-days="365"
+            data-expires="2027-05-12"
+            data-days="199"
             data-score="46">
           <td>
             <strong class="col-name">Rose Tree & Excavating</strong><br>
@@ -3206,12 +3368,14 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">Direct Domain Registrar</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">GoDaddy.com / Squarespace / Network Solutions</div>
-            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
-              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="8 Years (Established Local Authority)">🎂 Age: 8 yrs</span>
-              <span style="font-size: 0.68rem; color: #cbd5e1; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;" title="Active (Renews May 2027)">📅 Exp: May 12, 2027</span>
+            <div style="margin: 0.35rem 0 0.25rem 0;">
+              <span class="exp-badge exp-normal" title="Expires in 199 days on May 12, 2027">📅 Exp: May 12, 2027 (199d)</span>
             </div>
-            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
-              NS: local.dns.carrier.net
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="8 Years (Established Local Authority)">🎂 Age: 8 yrs</span>
+              <span style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px;">
+                NS: local.dns.carrier.net
+              </span>
             </div>
           </td>
           <td>
@@ -3246,7 +3410,8 @@
             data-corridor="corridor 6 — far west smokies"
             data-corridor-slug="far-west"
             data-owner="cox"
-            data-days="365"
+            data-expires="2027-05-12"
+            data-days="199"
             data-score="41">
           <td>
             <strong class="col-name">Cox & Son Roofing</strong><br>
@@ -3265,12 +3430,14 @@
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">Direct Domain Registrar</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">GoDaddy.com / Squarespace / Network Solutions</div>
-            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
-              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="8 Years (Established Local Authority)">🎂 Age: 8 yrs</span>
-              <span style="font-size: 0.68rem; color: #cbd5e1; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;" title="Active (Renews May 2027)">📅 Exp: May 12, 2027</span>
+            <div style="margin: 0.35rem 0 0.25rem 0;">
+              <span class="exp-badge exp-normal" title="Expires in 199 days on May 12, 2027">📅 Exp: May 12, 2027 (199d)</span>
             </div>
-            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
-              NS: local.dns.carrier.net
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap;">
+              <span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="8 Years (Established Local Authority)">🎂 Age: 8 yrs</span>
+              <span style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px;">
+                NS: local.dns.carrier.net
+              </span>
             </div>
           </td>
           <td>
@@ -3316,7 +3483,8 @@
              data-corridor="corridor 2 — southern plateau & foothills"
              data-corridor-slug="southern-plateau"
              data-owner="colton tate"
-             data-days="34"
+             data-expires="2026-11-21"
+             data-days="27"
              data-score="56">
           <div class="card-header">
             <div class="card-title-group">
@@ -3412,7 +3580,7 @@
               <div class="dns-intel-item">
                 <span class="dns-label">Domain Expiration</span>
                 <span class="dns-val exp-alert">
-                  Nov 21, 2026 <span class="dns-tag-badge alert">⚠️ 34d left!</span>
+                  Nov 21, 2026 <span class="dns-tag-badge alert">⚠️ 27d left!</span>
                 </span>
               </div>
               <div class="dns-intel-item">
@@ -3426,7 +3594,7 @@
             </div>
             
             <div style="background: rgba(239, 68, 68, 0.12); border-left: 3px solid #ef4444; padding: 0.65rem 0.85rem; border-radius: 0 6px 6px 0; font-size: 0.78rem; color: #fca5a5; line-height: 1.45; margin-bottom: 0.75rem;">
-              <strong>⚠️ URGENT DOMAIN EXPIRATION:</strong> Domain expires on <strong>Nov 21, 2026</strong> (34 days remaining). High-trust outreach angle: Alert Colton Tate so his website/email doesn't drop, or offer to transfer domain registration to Cloudflare wholesale ($10/yr)!
+              <strong>⚠️ URGENT DOMAIN EXPIRATION:</strong> Domain expires on <strong>Nov 21, 2026</strong> (27 days remaining). High-trust outreach angle: Alert Colton Tate so his website/email doesn't drop, or offer to transfer domain registration to Cloudflare wholesale ($10/yr)!
             </div>
             
             <div class="dns-intel-action">
@@ -3457,7 +3625,8 @@
              data-corridor="corridor 2 — southern plateau & foothills"
              data-corridor-slug="southern-plateau"
              data-owner="cory rose"
-             data-days="628"
+             data-expires="2027-07-10"
+             data-days="258"
              data-score="34">
           <div class="card-header">
             <div class="card-title-group">
@@ -3553,7 +3722,7 @@
               <div class="dns-intel-item">
                 <span class="dns-label">Domain Expiration</span>
                 <span class="dns-val ">
-                  Jul 10, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (Active (628 days left))</span>
+                  Jul 10, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (258 days)</span>
                 </span>
               </div>
               <div class="dns-intel-item">
@@ -3594,7 +3763,8 @@
              data-corridor="corridor 3 — metro asheville & french broad"
              data-corridor-slug="metro-asheville"
              data-owner="andrew owens"
-             data-days="387"
+             data-expires="2027-11-09"
+             data-days="380"
              data-score="60">
           <div class="card-header">
             <div class="card-title-group">
@@ -3690,7 +3860,7 @@
               <div class="dns-intel-item">
                 <span class="dns-label">Domain Expiration</span>
                 <span class="dns-val ">
-                  Nov 09, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (Renews Nov 2027 (387d))</span>
+                  Nov 09, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (380 days)</span>
                 </span>
               </div>
               <div class="dns-intel-item">
@@ -3731,7 +3901,8 @@
              data-corridor="corridor 4 — central west / tuckasegee"
              data-corridor-slug="central-west"
              data-owner="rivera"
-             data-days="285"
+             data-expires="2027-07-30"
+             data-days="278"
              data-score="74">
           <div class="card-header">
             <div class="card-title-group">
@@ -3827,7 +3998,7 @@
               <div class="dns-intel-item">
                 <span class="dns-label">Domain Expiration</span>
                 <span class="dns-val ">
-                  Jul 30, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (Renews Jul 2027 (285d))</span>
+                  Jul 30, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (278 days)</span>
                 </span>
               </div>
               <div class="dns-intel-item">
@@ -3868,7 +4039,8 @@
              data-corridor="corridor 1 — highlands / cashiers luxury crest"
              data-corridor-slug="highlands-cashiers"
              data-owner="james"
-             data-days="191"
+             data-expires="2027-04-27"
+             data-days="184"
              data-score="42">
           <div class="card-header">
             <div class="card-title-group">
@@ -3964,7 +4136,7 @@
               <div class="dns-intel-item">
                 <span class="dns-label">Domain Expiration</span>
                 <span class="dns-val ">
-                  Apr 27, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (Renews Apr 2027 (191d))</span>
+                  Apr 27, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (184 days)</span>
                 </span>
               </div>
               <div class="dns-intel-item">
@@ -4005,7 +4177,8 @@
              data-corridor="corridor 2 — southern plateau & foothills"
              data-corridor-slug="southern-plateau"
              data-owner="mateo"
-             data-days="292"
+             data-expires="2027-08-06"
+             data-days="285"
              data-score="52">
           <div class="card-header">
             <div class="card-title-group">
@@ -4101,7 +4274,7 @@
               <div class="dns-intel-item">
                 <span class="dns-label">Domain Expiration</span>
                 <span class="dns-val ">
-                  Aug 06, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (Renews Aug 2027 (292d))</span>
+                  Aug 06, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (285 days)</span>
                 </span>
               </div>
               <div class="dns-intel-item">
@@ -4142,7 +4315,8 @@
              data-corridor="corridor 7 — east foothills / broad river"
              data-corridor-slug="east-foothills"
              data-owner="brian"
-             data-days="463"
+             data-expires="2028-01-24"
+             data-days="456"
              data-score="38">
           <div class="card-header">
             <div class="card-title-group">
@@ -4238,7 +4412,7 @@
               <div class="dns-intel-item">
                 <span class="dns-label">Domain Expiration</span>
                 <span class="dns-val ">
-                  Jan 24, 2028 <span style="font-size: 0.72rem; color: #94a3b8;"> (Renews Jan 2028 (463d))</span>
+                  Jan 24, 2028 <span style="font-size: 0.72rem; color: #94a3b8;"> (456 days)</span>
                 </span>
               </div>
               <div class="dns-intel-item">
@@ -4279,7 +4453,8 @@
              data-corridor="corridor 5 — high country & spruce pine belt"
              data-corridor-slug="high-country-mining"
              data-owner="liam"
-             data-days="171"
+             data-expires="2027-04-07"
+             data-days="164"
              data-score="58">
           <div class="card-header">
             <div class="card-title-group">
@@ -4375,7 +4550,7 @@
               <div class="dns-intel-item">
                 <span class="dns-label">Domain Expiration</span>
                 <span class="dns-val ">
-                  Apr 07, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (Renews Apr 2027 (171d))</span>
+                  Apr 07, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (164 days)</span>
                 </span>
               </div>
               <div class="dns-intel-item">
@@ -4416,7 +4591,8 @@
              data-corridor="corridor 4 — central west / tuckasegee"
              data-corridor-slug="central-west"
              data-owner="coomer"
-             data-days="401"
+             data-expires="2027-11-23"
+             data-days="394"
              data-score="64">
           <div class="card-header">
             <div class="card-title-group">
@@ -4512,7 +4688,7 @@
               <div class="dns-intel-item">
                 <span class="dns-label">Domain Expiration</span>
                 <span class="dns-val ">
-                  Nov 23, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (Renews Nov 2027 (401d))</span>
+                  Nov 23, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (394 days)</span>
                 </span>
               </div>
               <div class="dns-intel-item">
@@ -4553,7 +4729,8 @@
              data-corridor="corridor 2 — southern plateau & metro asheville"
              data-corridor-slug="southern-plateau"
              data-owner="dave"
-             data-days="358"
+             data-expires="2027-10-11"
+             data-days="351"
              data-score="46">
           <div class="card-header">
             <div class="card-title-group">
@@ -4649,7 +4826,7 @@
               <div class="dns-intel-item">
                 <span class="dns-label">Domain Expiration</span>
                 <span class="dns-val ">
-                  Oct 11, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (Renews Oct 2027 (358d))</span>
+                  Oct 11, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (351 days)</span>
                 </span>
               </div>
               <div class="dns-intel-item">
@@ -4690,6 +4867,7 @@
              data-corridor="corridor 2 — southern plateau & mountain crest"
              data-corridor-slug="southern-plateau"
              data-owner="moss"
+             data-expires=""
              data-days="9999"
              data-score="29">
           <div class="card-header">
@@ -4786,7 +4964,7 @@
               <div class="dns-intel-item">
                 <span class="dns-label">Domain Expiration</span>
                 <span class="dns-val ">
-                  N/A 
+                  N/A <span style="font-size: 0.72rem; color: #64748b;"> (No custom domain)</span>
                 </span>
               </div>
               <div class="dns-intel-item">
@@ -4827,7 +5005,8 @@
              data-corridor="corridor 1 — highlands / cashiers luxury crest"
              data-corridor-slug="luxury-crest"
              data-owner="joel rice"
-             data-days="41"
+             data-expires="2026-11-28"
+             data-days="34"
              data-score="28">
           <div class="card-header">
             <div class="card-title-group">
@@ -4910,8 +5089,8 @@
               </div>
               <div class="dns-intel-item">
                 <span class="dns-label">Domain Expiration</span>
-                <span class="dns-val exp-alert">
-                  Nov 28, 2026 <span class="dns-tag-badge alert">⚠️ 41d left!</span>
+                <span class="dns-val ">
+                  Nov 28, 2026 <span class="dns-tag-badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3);">⏳ 34d left</span>
                 </span>
               </div>
               <div class="dns-intel-item">
@@ -4922,10 +5101,6 @@
                 <span class="dns-label">DNS Routing Setup</span>
                 <span class="dns-val" style="color: #fbbf24;">Awaiting CNAME Pointing</span>
               </div>
-            </div>
-            
-            <div style="background: rgba(239, 68, 68, 0.12); border-left: 3px solid #ef4444; padding: 0.65rem 0.85rem; border-radius: 0 6px 6px 0; font-size: 0.78rem; color: #fca5a5; line-height: 1.45; margin-bottom: 0.75rem;">
-              <strong>⚠️ URGENT DOMAIN EXPIRATION:</strong> Domain expires on <strong>Nov 28, 2026</strong> (41 days remaining). High-trust outreach angle: Alert Joel Rice so his website/email doesn't drop, or offer to transfer domain registration to Cloudflare wholesale ($10/yr)!
             </div>
             
             <div class="dns-intel-action">
@@ -4956,7 +5131,8 @@
              data-corridor="corridor 1 — highlands / cashiers luxury crest"
              data-corridor-slug="luxury-crest"
              data-owner="greg bryson"
-             data-days="331"
+             data-expires="2027-09-15"
+             data-days="325"
              data-score="31">
           <div class="card-header">
             <div class="card-title-group">
@@ -5040,7 +5216,7 @@
               <div class="dns-intel-item">
                 <span class="dns-label">Domain Expiration</span>
                 <span class="dns-val ">
-                  Sep 15, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (Active (Renews Sep 2027))</span>
+                  Sep 15, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (325 days)</span>
                 </span>
               </div>
               <div class="dns-intel-item">
@@ -5081,7 +5257,8 @@
              data-corridor="corridor 2 — southern plateau & foothills"
              data-corridor-slug="southern-plateau"
              data-owner="wayne morgan"
-             data-days="48"
+             data-expires="2026-12-05"
+             data-days="41"
              data-score="34">
           <div class="card-header">
             <div class="card-title-group">
@@ -5164,8 +5341,8 @@
               </div>
               <div class="dns-intel-item">
                 <span class="dns-label">Domain Expiration</span>
-                <span class="dns-val exp-alert">
-                  Dec 05, 2026 <span class="dns-tag-badge alert">⚠️ 48d left!</span>
+                <span class="dns-val ">
+                  Dec 05, 2026 <span class="dns-tag-badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3);">⏳ 41d left</span>
                 </span>
               </div>
               <div class="dns-intel-item">
@@ -5176,10 +5353,6 @@
                 <span class="dns-label">DNS Routing Setup</span>
                 <span class="dns-val" style="color: #fbbf24;">Awaiting CNAME Pointing</span>
               </div>
-            </div>
-            
-            <div style="background: rgba(239, 68, 68, 0.12); border-left: 3px solid #ef4444; padding: 0.65rem 0.85rem; border-radius: 0 6px 6px 0; font-size: 0.78rem; color: #fca5a5; line-height: 1.45; margin-bottom: 0.75rem;">
-              <strong>⚠️ URGENT DOMAIN EXPIRATION:</strong> Domain expires on <strong>Dec 05, 2026</strong> (48 days remaining). High-trust outreach angle: Alert Wayne Morgan so his website/email doesn't drop, or offer to transfer domain registration to Cloudflare wholesale ($10/yr)!
             </div>
             
             <div class="dns-intel-action">
@@ -5210,7 +5383,8 @@
              data-corridor="corridor 2 — southern plateau & foothills"
              data-corridor-slug="southern-plateau"
              data-owner="jamie & janie cauble"
-             data-days="142"
+             data-expires="2027-03-10"
+             data-days="136"
              data-score="38">
           <div class="card-header">
             <div class="card-title-group">
@@ -5294,7 +5468,7 @@
               <div class="dns-intel-item">
                 <span class="dns-label">Domain Expiration</span>
                 <span class="dns-val ">
-                  Mar 10, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (Active (Renews Mar 2027))</span>
+                  Mar 10, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (136 days)</span>
                 </span>
               </div>
               <div class="dns-intel-item">
@@ -5335,7 +5509,8 @@
              data-corridor="corridor 2 — southern plateau & foothills"
              data-corridor-slug="southern-plateau"
              data-owner="keith stuller"
-             data-days="17"
+             data-expires="2026-11-04"
+             data-days="10"
              data-score="32">
           <div class="card-header">
             <div class="card-title-group">
@@ -5419,7 +5594,7 @@
               <div class="dns-intel-item">
                 <span class="dns-label">Domain Expiration</span>
                 <span class="dns-val exp-alert">
-                  Nov 04, 2026 <span class="dns-tag-badge alert">⚠️ 17d left!</span>
+                  Nov 04, 2026 <span class="dns-tag-badge alert">⚠️ 10d left!</span>
                 </span>
               </div>
               <div class="dns-intel-item">
@@ -5433,7 +5608,7 @@
             </div>
             
             <div style="background: rgba(239, 68, 68, 0.12); border-left: 3px solid #ef4444; padding: 0.65rem 0.85rem; border-radius: 0 6px 6px 0; font-size: 0.78rem; color: #fca5a5; line-height: 1.45; margin-bottom: 0.75rem;">
-              <strong>⚠️ URGENT DOMAIN EXPIRATION:</strong> Domain expires on <strong>Nov 04, 2026</strong> (17 days remaining). High-trust outreach angle: Alert Keith Stuller so his website/email doesn't drop, or offer to transfer domain registration to Cloudflare wholesale ($10/yr)!
+              <strong>⚠️ URGENT DOMAIN EXPIRATION:</strong> Domain expires on <strong>Nov 04, 2026</strong> (10 days remaining). High-trust outreach angle: Alert Keith Stuller so his website/email doesn't drop, or offer to transfer domain registration to Cloudflare wholesale ($10/yr)!
             </div>
             
             <div class="dns-intel-action">
@@ -5464,7 +5639,8 @@
              data-corridor="corridor 2 — southern plateau & foothills"
              data-corridor-slug="southern-plateau"
              data-owner="mark sullins"
-             data-days="305"
+             data-expires="2027-08-19"
+             data-days="298"
              data-score="39">
           <div class="card-header">
             <div class="card-title-group">
@@ -5548,7 +5724,7 @@
               <div class="dns-intel-item">
                 <span class="dns-label">Domain Expiration</span>
                 <span class="dns-val ">
-                  Aug 19, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (Active (Renews Aug 2027))</span>
+                  Aug 19, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (298 days)</span>
                 </span>
               </div>
               <div class="dns-intel-item">
@@ -5589,7 +5765,8 @@
              data-corridor="corridor 3 — metro asheville & french broad"
              data-corridor-slug="metro-asheville"
              data-owner="robert vance"
-             data-days="118"
+             data-expires="2027-02-14"
+             data-days="112"
              data-score="29">
           <div class="card-header">
             <div class="card-title-group">
@@ -5673,7 +5850,7 @@
               <div class="dns-intel-item">
                 <span class="dns-label">Domain Expiration</span>
                 <span class="dns-val ">
-                  Feb 14, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (Active (Renews Feb 2027))</span>
+                  Feb 14, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (112 days)</span>
                 </span>
               </div>
               <div class="dns-intel-item">
@@ -5714,7 +5891,8 @@
              data-corridor="corridor 3 — metro asheville & french broad"
              data-corridor-slug="metro-asheville"
              data-owner="scott hensley"
-             data-days="257"
+             data-expires="2027-07-03"
+             data-days="251"
              data-score="35">
           <div class="card-header">
             <div class="card-title-group">
@@ -5798,7 +5976,7 @@
               <div class="dns-intel-item">
                 <span class="dns-label">Domain Expiration</span>
                 <span class="dns-val ">
-                  Jul 03, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (Active (Renews Jul 2027))</span>
+                  Jul 03, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (251 days)</span>
                 </span>
               </div>
               <div class="dns-intel-item">
@@ -5839,7 +6017,8 @@
              data-corridor="corridor 3 — metro asheville & french broad"
              data-corridor-slug="metro-asheville"
              data-owner="terry hall"
-             data-days="28"
+             data-expires="2026-11-15"
+             data-days="21"
              data-score="31">
           <div class="card-header">
             <div class="card-title-group">
@@ -5923,7 +6102,7 @@
               <div class="dns-intel-item">
                 <span class="dns-label">Domain Expiration</span>
                 <span class="dns-val exp-alert">
-                  Nov 15, 2026 <span class="dns-tag-badge alert">⚠️ 28d left!</span>
+                  Nov 15, 2026 <span class="dns-tag-badge alert">⚠️ 21d left!</span>
                 </span>
               </div>
               <div class="dns-intel-item">
@@ -5937,7 +6116,7 @@
             </div>
             
             <div style="background: rgba(239, 68, 68, 0.12); border-left: 3px solid #ef4444; padding: 0.65rem 0.85rem; border-radius: 0 6px 6px 0; font-size: 0.78rem; color: #fca5a5; line-height: 1.45; margin-bottom: 0.75rem;">
-              <strong>⚠️ URGENT DOMAIN EXPIRATION:</strong> Domain expires on <strong>Nov 15, 2026</strong> (28 days remaining). High-trust outreach angle: Alert Terry Hall so his website/email doesn't drop, or offer to transfer domain registration to Cloudflare wholesale ($10/yr)!
+              <strong>⚠️ URGENT DOMAIN EXPIRATION:</strong> Domain expires on <strong>Nov 15, 2026</strong> (21 days remaining). High-trust outreach angle: Alert Terry Hall so his website/email doesn't drop, or offer to transfer domain registration to Cloudflare wholesale ($10/yr)!
             </div>
             
             <div class="dns-intel-action">
@@ -5968,7 +6147,8 @@
              data-corridor="corridor 4 — central west & regional wnc"
              data-corridor-slug="central-west"
              data-owner="travis wood"
-             data-days="356"
+             data-expires="2027-10-10"
+             data-days="350"
              data-score="39">
           <div class="card-header">
             <div class="card-title-group">
@@ -6052,7 +6232,7 @@
               <div class="dns-intel-item">
                 <span class="dns-label">Domain Expiration</span>
                 <span class="dns-val ">
-                  Oct 10, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (Active (Renews Oct 2027))</span>
+                  Oct 10, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (350 days)</span>
                 </span>
               </div>
               <div class="dns-intel-item">
@@ -6093,7 +6273,8 @@
              data-corridor="corridor 4 — central west / tuckasegee"
              data-corridor-slug="central-west"
              data-owner="austin rathbone"
-             data-days="211"
+             data-expires="2027-05-18"
+             data-days="205"
              data-score="37">
           <div class="card-header">
             <div class="card-title-group">
@@ -6177,7 +6358,7 @@
               <div class="dns-intel-item">
                 <span class="dns-label">Domain Expiration</span>
                 <span class="dns-val ">
-                  May 18, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (Active (Renews May 2027))</span>
+                  May 18, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (205 days)</span>
                 </span>
               </div>
               <div class="dns-intel-item">
@@ -6218,7 +6399,8 @@
              data-corridor="corridor 4 — central west / tuckasegee"
              data-corridor-slug="central-west"
              data-owner="charles rathbone"
-             data-days="146"
+             data-expires="2027-03-14"
+             data-days="140"
              data-score="24">
           <div class="card-header">
             <div class="card-title-group">
@@ -6302,7 +6484,7 @@
               <div class="dns-intel-item">
                 <span class="dns-label">Domain Expiration</span>
                 <span class="dns-val ">
-                  Mar 14, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (Active (Renews Mar 2027))</span>
+                  Mar 14, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (140 days)</span>
                 </span>
               </div>
               <div class="dns-intel-item">
@@ -6343,7 +6525,8 @@
              data-corridor="corridor 4 — central west / tuckasegee"
              data-corridor-slug="central-west"
              data-owner="jason higdon"
-             data-days="33"
+             data-expires="2026-11-20"
+             data-days="26"
              data-score="33">
           <div class="card-header">
             <div class="card-title-group">
@@ -6427,7 +6610,7 @@
               <div class="dns-intel-item">
                 <span class="dns-label">Domain Expiration</span>
                 <span class="dns-val exp-alert">
-                  Nov 20, 2026 <span class="dns-tag-badge alert">⚠️ 33d left!</span>
+                  Nov 20, 2026 <span class="dns-tag-badge alert">⚠️ 26d left!</span>
                 </span>
               </div>
               <div class="dns-intel-item">
@@ -6441,7 +6624,7 @@
             </div>
             
             <div style="background: rgba(239, 68, 68, 0.12); border-left: 3px solid #ef4444; padding: 0.65rem 0.85rem; border-radius: 0 6px 6px 0; font-size: 0.78rem; color: #fca5a5; line-height: 1.45; margin-bottom: 0.75rem;">
-              <strong>⚠️ URGENT DOMAIN EXPIRATION:</strong> Domain expires on <strong>Nov 20, 2026</strong> (33 days remaining). High-trust outreach angle: Alert Jason Higdon so his website/email doesn't drop, or offer to transfer domain registration to Cloudflare wholesale ($10/yr)!
+              <strong>⚠️ URGENT DOMAIN EXPIRATION:</strong> Domain expires on <strong>Nov 20, 2026</strong> (26 days remaining). High-trust outreach angle: Alert Jason Higdon so his website/email doesn't drop, or offer to transfer domain registration to Cloudflare wholesale ($10/yr)!
             </div>
             
             <div class="dns-intel-action">
@@ -6472,7 +6655,8 @@
              data-corridor="corridor 4 — central west / tuckasegee"
              data-corridor-slug="central-west"
              data-owner="scott franklin"
-             data-days="290"
+             data-expires="2027-08-05"
+             data-days="284"
              data-score="38">
           <div class="card-header">
             <div class="card-title-group">
@@ -6556,7 +6740,7 @@
               <div class="dns-intel-item">
                 <span class="dns-label">Domain Expiration</span>
                 <span class="dns-val ">
-                  Aug 05, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (Active (Renews Aug 2027))</span>
+                  Aug 05, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (284 days)</span>
                 </span>
               </div>
               <div class="dns-intel-item">
@@ -6597,7 +6781,8 @@
              data-corridor="corridor 5 — high country & spruce pine belt"
              data-corridor-slug="high-country"
              data-owner="brad estes"
-             data-days="25"
+             data-expires="2026-11-12"
+             data-days="18"
              data-score="30">
           <div class="card-header">
             <div class="card-title-group">
@@ -6681,7 +6866,7 @@
               <div class="dns-intel-item">
                 <span class="dns-label">Domain Expiration</span>
                 <span class="dns-val exp-alert">
-                  Nov 12, 2026 <span class="dns-tag-badge alert">⚠️ 25d left!</span>
+                  Nov 12, 2026 <span class="dns-tag-badge alert">⚠️ 18d left!</span>
                 </span>
               </div>
               <div class="dns-intel-item">
@@ -6695,7 +6880,7 @@
             </div>
             
             <div style="background: rgba(239, 68, 68, 0.12); border-left: 3px solid #ef4444; padding: 0.65rem 0.85rem; border-radius: 0 6px 6px 0; font-size: 0.78rem; color: #fca5a5; line-height: 1.45; margin-bottom: 0.75rem;">
-              <strong>⚠️ URGENT DOMAIN EXPIRATION:</strong> Domain expires on <strong>Nov 12, 2026</strong> (25 days remaining). High-trust outreach angle: Alert Brad Estes so his website/email doesn't drop, or offer to transfer domain registration to Cloudflare wholesale ($10/yr)!
+              <strong>⚠️ URGENT DOMAIN EXPIRATION:</strong> Domain expires on <strong>Nov 12, 2026</strong> (18 days remaining). High-trust outreach angle: Alert Brad Estes so his website/email doesn't drop, or offer to transfer domain registration to Cloudflare wholesale ($10/yr)!
             </div>
             
             <div class="dns-intel-action">
@@ -6726,7 +6911,8 @@
              data-corridor="corridor 5 — high country & spruce pine belt"
              data-corridor-slug="high-country"
              data-owner="kenneth greene"
-             data-days="93"
+             data-expires="2027-01-20"
+             data-days="87"
              data-score="31">
           <div class="card-header">
             <div class="card-title-group">
@@ -6810,7 +6996,7 @@
               <div class="dns-intel-item">
                 <span class="dns-label">Domain Expiration</span>
                 <span class="dns-val ">
-                  Jan 20, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (Active (Renews Jan 2027))</span>
+                  Jan 20, 2027 <span class="dns-tag-badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3);">⏳ 87d left</span>
                 </span>
               </div>
               <div class="dns-intel-item">
@@ -6851,7 +7037,8 @@
              data-corridor="corridor 6 — far west smokies"
              data-corridor-slug="far-west"
              data-owner="larry ledford"
-             data-days="348"
+             data-expires="2027-10-02"
+             data-days="342"
              data-score="26">
           <div class="card-header">
             <div class="card-title-group">
@@ -6935,7 +7122,7 @@
               <div class="dns-intel-item">
                 <span class="dns-label">Domain Expiration</span>
                 <span class="dns-val ">
-                  Oct 02, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (Active (Renews Oct 2027))</span>
+                  Oct 02, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (342 days)</span>
                 </span>
               </div>
               <div class="dns-intel-item">
@@ -6976,7 +7163,8 @@
              data-corridor="corridor 6 — far west smokies"
              data-corridor-slug="far-west"
              data-owner="mark connor"
-             data-days="153"
+             data-expires="2027-03-21"
+             data-days="147"
              data-score="34">
           <div class="card-header">
             <div class="card-title-group">
@@ -7060,7 +7248,7 @@
               <div class="dns-intel-item">
                 <span class="dns-label">Domain Expiration</span>
                 <span class="dns-val ">
-                  Mar 21, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (Active (Renews Mar 2027))</span>
+                  Mar 21, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (147 days)</span>
                 </span>
               </div>
               <div class="dns-intel-item">
@@ -7101,7 +7289,8 @@
              data-corridor="corridor 7 — east foothills / broad river"
              data-corridor-slug="east-foothills"
              data-owner="brian whisnant"
-             data-days="27"
+             data-expires="2026-11-14"
+             data-days="20"
              data-score="36">
           <div class="card-header">
             <div class="card-title-group">
@@ -7185,7 +7374,7 @@
               <div class="dns-intel-item">
                 <span class="dns-label">Domain Expiration</span>
                 <span class="dns-val exp-alert">
-                  Nov 14, 2026 <span class="dns-tag-badge alert">⚠️ 27d left!</span>
+                  Nov 14, 2026 <span class="dns-tag-badge alert">⚠️ 20d left!</span>
                 </span>
               </div>
               <div class="dns-intel-item">
@@ -7199,7 +7388,7 @@
             </div>
             
             <div style="background: rgba(239, 68, 68, 0.12); border-left: 3px solid #ef4444; padding: 0.65rem 0.85rem; border-radius: 0 6px 6px 0; font-size: 0.78rem; color: #fca5a5; line-height: 1.45; margin-bottom: 0.75rem;">
-              <strong>⚠️ URGENT DOMAIN EXPIRATION:</strong> Domain expires on <strong>Nov 14, 2026</strong> (27 days remaining). High-trust outreach angle: Alert Brian Whisnant so his website/email doesn't drop, or offer to transfer domain registration to Cloudflare wholesale ($10/yr)!
+              <strong>⚠️ URGENT DOMAIN EXPIRATION:</strong> Domain expires on <strong>Nov 14, 2026</strong> (20 days remaining). High-trust outreach angle: Alert Brian Whisnant so his website/email doesn't drop, or offer to transfer domain registration to Cloudflare wholesale ($10/yr)!
             </div>
             
             <div class="dns-intel-action">
@@ -7230,7 +7419,8 @@
              data-corridor="corridor 8 — toe river / yadkin valley"
              data-corridor-slug="toe-river-valley"
              data-owner="tyler austin"
-             data-days="171"
+             data-expires="2027-04-08"
+             data-days="165"
              data-score="35">
           <div class="card-header">
             <div class="card-title-group">
@@ -7314,7 +7504,7 @@
               <div class="dns-intel-item">
                 <span class="dns-label">Domain Expiration</span>
                 <span class="dns-val ">
-                  Apr 08, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (Active (Renews Apr 2027))</span>
+                  Apr 08, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (165 days)</span>
                 </span>
               </div>
               <div class="dns-intel-item">
@@ -7355,7 +7545,8 @@
              data-corridor="corridor 4 — central west / tuckasegee"
              data-corridor-slug="central-west"
              data-owner="adam hambleton"
-             data-days="365"
+             data-expires="2027-05-12"
+             data-days="199"
              data-score="42">
           <div class="card-header">
             <div class="card-title-group">
@@ -7439,7 +7630,7 @@
               <div class="dns-intel-item">
                 <span class="dns-label">Domain Expiration</span>
                 <span class="dns-val ">
-                  May 12, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (Active (Renews May 2027))</span>
+                  May 12, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (199 days)</span>
                 </span>
               </div>
               <div class="dns-intel-item">
@@ -7480,7 +7671,8 @@
              data-corridor="corridor 4 — central west / tuckasegee"
              data-corridor-slug="central-west"
              data-owner="christopher miller"
-             data-days="365"
+             data-expires="2027-05-12"
+             data-days="199"
              data-score="38">
           <div class="card-header">
             <div class="card-title-group">
@@ -7564,7 +7756,7 @@
               <div class="dns-intel-item">
                 <span class="dns-label">Domain Expiration</span>
                 <span class="dns-val ">
-                  May 12, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (Active (Renews May 2027))</span>
+                  May 12, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (199 days)</span>
                 </span>
               </div>
               <div class="dns-intel-item">
@@ -7605,7 +7797,8 @@
              data-corridor="corridor 4 — central west / tuckasegee"
              data-corridor-slug="central-west"
              data-owner="lawrence phillips"
-             data-days="365"
+             data-expires=""
+             data-days="9999"
              data-score="35">
           <div class="card-header">
             <div class="card-title-group">
@@ -7683,13 +7876,13 @@
               <div class="dns-intel-item">
                 <span class="dns-label">Domain Age</span>
                 <span class="dns-val" style="color: #a7f3d0; font-weight: 600;">
-                  8 Years (Established Local Authority) <span class="dns-tag-badge veteran">High Authority (5+ yrs)</span>
+                  No Custom Domain 
                 </span>
               </div>
               <div class="dns-intel-item">
                 <span class="dns-label">Domain Expiration</span>
                 <span class="dns-val ">
-                  May 12, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (Active (Renews May 2027))</span>
+                  N/A <span style="font-size: 0.72rem; color: #64748b;"> (No custom domain)</span>
                 </span>
               </div>
               <div class="dns-intel-item">
@@ -7730,7 +7923,8 @@
              data-corridor="corridor 4 — central west / tuckasegee"
              data-corridor-slug="central-west"
              data-owner="joseph o. bell iii"
-             data-days="365"
+             data-expires="2027-05-12"
+             data-days="199"
              data-score="45">
           <div class="card-header">
             <div class="card-title-group">
@@ -7814,7 +8008,7 @@
               <div class="dns-intel-item">
                 <span class="dns-label">Domain Expiration</span>
                 <span class="dns-val ">
-                  May 12, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (Active (Renews May 2027))</span>
+                  May 12, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (199 days)</span>
                 </span>
               </div>
               <div class="dns-intel-item">
@@ -7855,7 +8049,8 @@
              data-corridor="corridor 6 — far west smokies"
              data-corridor-slug="far-west"
              data-owner="ian wenzel"
-             data-days="365"
+             data-expires="2027-05-12"
+             data-days="199"
              data-score="40">
           <div class="card-header">
             <div class="card-title-group">
@@ -7939,7 +8134,7 @@
               <div class="dns-intel-item">
                 <span class="dns-label">Domain Expiration</span>
                 <span class="dns-val ">
-                  May 12, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (Active (Renews May 2027))</span>
+                  May 12, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (199 days)</span>
                 </span>
               </div>
               <div class="dns-intel-item">
@@ -7980,7 +8175,8 @@
              data-corridor="corridor 6 — far west smokies"
              data-corridor-slug="far-west"
              data-owner="perry b. moore"
-             data-days="365"
+             data-expires="2027-05-12"
+             data-days="199"
              data-score="48">
           <div class="card-header">
             <div class="card-title-group">
@@ -8064,7 +8260,7 @@
               <div class="dns-intel-item">
                 <span class="dns-label">Domain Expiration</span>
                 <span class="dns-val ">
-                  May 12, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (Active (Renews May 2027))</span>
+                  May 12, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (199 days)</span>
                 </span>
               </div>
               <div class="dns-intel-item">
@@ -8105,7 +8301,8 @@
              data-corridor="corridor 6 — far west smokies"
              data-corridor-slug="far-west"
              data-owner="tim coker"
-             data-days="365"
+             data-expires=""
+             data-days="9999"
              data-score="31">
           <div class="card-header">
             <div class="card-title-group">
@@ -8183,13 +8380,13 @@
               <div class="dns-intel-item">
                 <span class="dns-label">Domain Age</span>
                 <span class="dns-val" style="color: #a7f3d0; font-weight: 600;">
-                  8 Years (Established Local Authority) <span class="dns-tag-badge veteran">High Authority (5+ yrs)</span>
+                  No Custom Domain 
                 </span>
               </div>
               <div class="dns-intel-item">
                 <span class="dns-label">Domain Expiration</span>
                 <span class="dns-val ">
-                  May 12, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (Active (Renews May 2027))</span>
+                  N/A <span style="font-size: 0.72rem; color: #64748b;"> (No custom domain)</span>
                 </span>
               </div>
               <div class="dns-intel-item">
@@ -8230,7 +8427,8 @@
              data-corridor="corridor 6 — far west smokies"
              data-corridor-slug="far-west"
              data-owner="penland"
-             data-days="365"
+             data-expires="2027-05-12"
+             data-days="199"
              data-score="44">
           <div class="card-header">
             <div class="card-title-group">
@@ -8314,7 +8512,7 @@
               <div class="dns-intel-item">
                 <span class="dns-label">Domain Expiration</span>
                 <span class="dns-val ">
-                  May 12, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (Active (Renews May 2027))</span>
+                  May 12, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (199 days)</span>
                 </span>
               </div>
               <div class="dns-intel-item">
@@ -8355,7 +8553,8 @@
              data-corridor="corridor 2 — southern plateau & regional mountain crest"
              data-corridor-slug="southern-plateau"
              data-owner="dustin & dave hoffman"
-             data-days="365"
+             data-expires="2027-05-12"
+             data-days="199"
              data-score="51">
           <div class="card-header">
             <div class="card-title-group">
@@ -8439,7 +8638,7 @@
               <div class="dns-intel-item">
                 <span class="dns-label">Domain Expiration</span>
                 <span class="dns-val ">
-                  May 12, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (Active (Renews May 2027))</span>
+                  May 12, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (199 days)</span>
                 </span>
               </div>
               <div class="dns-intel-item">
@@ -8480,7 +8679,8 @@
              data-corridor="corridor 2 — southern plateau & regional mountain crest"
              data-corridor-slug="southern-plateau"
              data-owner="maciek"
-             data-days="365"
+             data-expires="2027-05-12"
+             data-days="199"
              data-score="49">
           <div class="card-header">
             <div class="card-title-group">
@@ -8564,7 +8764,7 @@
               <div class="dns-intel-item">
                 <span class="dns-label">Domain Expiration</span>
                 <span class="dns-val ">
-                  May 12, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (Active (Renews May 2027))</span>
+                  May 12, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (199 days)</span>
                 </span>
               </div>
               <div class="dns-intel-item">
@@ -8605,7 +8805,8 @@
              data-corridor="corridor 6 — far west smokies"
              data-corridor-slug="far-west"
              data-owner="david"
-             data-days="365"
+             data-expires="2027-05-12"
+             data-days="199"
              data-score="39">
           <div class="card-header">
             <div class="card-title-group">
@@ -8689,7 +8890,7 @@
               <div class="dns-intel-item">
                 <span class="dns-label">Domain Expiration</span>
                 <span class="dns-val ">
-                  May 12, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (Active (Renews May 2027))</span>
+                  May 12, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (199 days)</span>
                 </span>
               </div>
               <div class="dns-intel-item">
@@ -8730,7 +8931,8 @@
              data-corridor="corridor 6 — far west smokies"
              data-corridor-slug="far-west"
              data-owner="jason rose"
-             data-days="365"
+             data-expires="2027-05-12"
+             data-days="199"
              data-score="46">
           <div class="card-header">
             <div class="card-title-group">
@@ -8814,7 +9016,7 @@
               <div class="dns-intel-item">
                 <span class="dns-label">Domain Expiration</span>
                 <span class="dns-val ">
-                  May 12, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (Active (Renews May 2027))</span>
+                  May 12, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (199 days)</span>
                 </span>
               </div>
               <div class="dns-intel-item">
@@ -8855,7 +9057,8 @@
              data-corridor="corridor 6 — far west smokies"
              data-corridor-slug="far-west"
              data-owner="cox"
-             data-days="365"
+             data-expires="2027-05-12"
+             data-days="199"
              data-score="41">
           <div class="card-header">
             <div class="card-title-group">
@@ -8939,7 +9142,7 @@
               <div class="dns-intel-item">
                 <span class="dns-label">Domain Expiration</span>
                 <span class="dns-val ">
-                  May 12, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (Active (Renews May 2027))</span>
+                  May 12, 2027 <span style="font-size: 0.72rem; color: #94a3b8;"> (199 days)</span>
                 </span>
               </div>
               <div class="dns-intel-item">
@@ -9143,12 +9346,41 @@
       const content = document.getElementById("ops-content");
       if (modal) modal.style.display = "none";
       if (content) content.style.display = "block";
+      updateExpirationDaysLive();
     }
     window.addEventListener("DOMContentLoaded", () => {
       if (sessionStorage.getItem("ridgeline_ops_unlocked") === "true") {
         showDashboard();
       }
+      updateExpirationDaysLive();
     });
+
+    function updateExpirationDaysLive() {
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+
+      document.querySelectorAll("tr[data-slug]").forEach(row => {
+        const expiresStr = row.getAttribute("data-expires");
+        const slug = row.getAttribute("data-slug");
+        if (!expiresStr || expiresStr === "N/A" || expiresStr.trim() === "") {
+          row.setAttribute("data-days", "9999");
+          return;
+        }
+
+        const parts = expiresStr.split("-");
+        if (parts.length !== 3) return;
+        const expDate = new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10));
+        const diffMs = expDate.getTime() - today.getTime();
+        const diffDays = Math.ceil(diffMs / (1000 * 60 * 60 * 24));
+
+        row.setAttribute("data-days", diffDays);
+
+        const card = document.getElementById("card-" + slug);
+        if (card) {
+          card.setAttribute("data-days", diffDays);
+        }
+      });
+    }
 
     function sortTable(column) {
       if (currentSortColumn === column) {
@@ -9208,7 +9440,11 @@
         cards.sort((a, b) => {
           let valA = a.getAttribute("data-" + (column === "score" ? "score" : column === "days" ? "days" : column)) || "";
           let valB = b.getAttribute("data-" + (column === "score" ? "score" : column === "days" ? "days" : column)) || "";
-          if (column === "score" || column === "days") {
+          if (column === "days") {
+            valA = parseInt(valA || "9999", 10);
+            valB = parseInt(valB || "9999", 10);
+            return currentSortDirection === "asc" ? valA - valB : valB - valA;
+          } else if (column === "score") {
             valA = parseInt(valA || "0", 10);
             valB = parseInt(valB || "0", 10);
             return currentSortDirection === "asc" ? valA - valB : valB - valA;

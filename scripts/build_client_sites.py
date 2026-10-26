@@ -16,6 +16,7 @@ import os
 import sys
 import json
 from pathlib import Path
+from datetime import datetime, date
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DATA_FILE = REPO_ROOT / "data" / "clients.json"
@@ -1233,6 +1234,7 @@ def generate_master_portal_html(clients):
     unique_trades = sorted(list({c.get("trade") for c in clients if c.get("trade")}))
     corridor_options = "".join(f'<option value="{corr}">{corr}</option>' for corr in unique_corridors)
     trade_options = "".join(f'<option value="{tr}">{tr}</option>' for tr in unique_trades)
+    today = datetime.now().date()
 
     table_rows = ""
     client_cards = ""
@@ -1299,28 +1301,71 @@ def generate_master_portal_html(clients):
         nameservers = whois.get("nameservers", [])
         login_url = whois.get("login_url", "#")
         action_tip = whois.get("action_tip", "Point CNAME @ and www to preview.ridgelinetrade.com")
-        expires = whois.get("expires", "")
-        expires_formatted = whois.get("expires_formatted", expires if expires else "N/A")
-        expiration_status = whois.get("expiration_status", "N/A")
-        is_expiring_soon = whois.get("is_expiring_soon", False)
-        days_until_exp = whois.get("days_until_expiration")
+        expires = whois.get("expires", "").strip()
         domain_age_short = whois.get("domain_age_short", "N/A")
         domain_age_display = whois.get("domain_age_display", "N/A")
         authority_tier = whois.get("authority_tier", "")
         domain_target = whois.get("domain", c.get("current_website", ""))
-        
+
+        # Calculate dynamic days until expiration
+        days_until_exp = None
+        if expires and expires not in ("N/A", "none", ""):
+            try:
+                exp_date = datetime.strptime(expires, "%Y-%m-%d").date()
+                days_until_exp = (exp_date - today).days
+                expires_formatted = exp_date.strftime("%b %d, %Y")
+            except Exception:
+                days_until_exp = None
+                expires_formatted = whois.get("expires_formatted", expires)
+        else:
+            expires_formatted = "N/A"
+
         # Table age and expiration badges
         if domain_age_short != "N/A":
             table_age_pill = f'<span style="font-size: 0.68rem; font-weight: 600; color: #a7f3d0; background: rgba(16, 185, 129, 0.12); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);" title="{domain_age_display}">🎂 Age: {domain_age_short}</span>'
         else:
             table_age_pill = f'<span style="font-size: 0.68rem; color: #94a3b8; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;">No Custom Domain</span>'
 
-        if is_expiring_soon:
-            table_exp_pill = f'<span style="font-size: 0.68rem; font-weight: 700; color: #f87171; background: rgba(239, 68, 68, 0.18); padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(239, 68, 68, 0.4);" title="{expiration_status}">⚠️ Exp: {expires_formatted} ({days_until_exp}d)</span>'
-        elif expires_formatted != "N/A":
-            table_exp_pill = f'<span style="font-size: 0.68rem; color: #cbd5e1; background: rgba(148, 163, 184, 0.1); padding: 0.1rem 0.35rem; border-radius: 4px;" title="{expiration_status}">📅 Exp: {expires_formatted}</span>'
+        if days_until_exp is not None:
+            if days_until_exp < 0:
+                abs_days = abs(days_until_exp)
+                table_exp_pill = f'<span class="exp-badge exp-expired" title="Expired {abs_days} days ago on {expires_formatted}">🚨 Expired ({abs_days}d ago)</span>'
+                exp_badge_html = f'<span class="dns-tag-badge alert">🚨 Expired {abs_days}d ago</span>'
+                exp_val_class = 'exp-alert'
+                is_expiring_soon = True
+                urgent_banner_html = f"""
+            <div style="background: rgba(239, 68, 68, 0.15); border-left: 3px solid #ef4444; padding: 0.65rem 0.85rem; border-radius: 0 6px 6px 0; font-size: 0.78rem; color: #fca5a5; line-height: 1.45; margin-bottom: 0.75rem;">
+              <strong>🚨 DOMAIN EXPIRED:</strong> Domain expired {abs_days} days ago on <strong>{expires_formatted}</strong>. Crucial outreach: Contact {c['owner_name']} immediately to rescue their domain registration or migrate to Cloudflare edge hosting!
+            </div>
+            """
+            elif days_until_exp <= 30:
+                table_exp_pill = f'<span class="exp-badge exp-critical" title="Urgent: Expires in {days_until_exp} days on {expires_formatted}">⚠️ Exp: {expires_formatted} ({days_until_exp}d left!)</span>'
+                exp_badge_html = f'<span class="dns-tag-badge alert">⚠️ {days_until_exp}d left!</span>'
+                exp_val_class = 'exp-alert'
+                is_expiring_soon = True
+                urgent_banner_html = f"""
+            <div style="background: rgba(239, 68, 68, 0.12); border-left: 3px solid #ef4444; padding: 0.65rem 0.85rem; border-radius: 0 6px 6px 0; font-size: 0.78rem; color: #fca5a5; line-height: 1.45; margin-bottom: 0.75rem;">
+              <strong>⚠️ URGENT DOMAIN EXPIRATION:</strong> Domain expires on <strong>{expires_formatted}</strong> ({days_until_exp} days remaining). High-trust outreach angle: Alert {c['owner_name']} so his website/email doesn't drop, or offer to transfer domain registration to Cloudflare wholesale ($10/yr)!
+            </div>
+            """
+            elif days_until_exp <= 90:
+                table_exp_pill = f'<span class="exp-badge exp-warning" title="Expires in {days_until_exp} days on {expires_formatted}">⏳ Exp: {expires_formatted} ({days_until_exp}d left)</span>'
+                exp_badge_html = f'<span class="dns-tag-badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3);">⏳ {days_until_exp}d left</span>'
+                exp_val_class = ''
+                is_expiring_soon = False
+                urgent_banner_html = ''
+            else:
+                table_exp_pill = f'<span class="exp-badge exp-normal" title="Expires in {days_until_exp} days on {expires_formatted}">📅 Exp: {expires_formatted} ({days_until_exp}d)</span>'
+                exp_badge_html = f'<span style="font-size: 0.72rem; color: #94a3b8;"> ({days_until_exp} days)</span>'
+                exp_val_class = ''
+                is_expiring_soon = False
+                urgent_banner_html = ''
         else:
-            table_exp_pill = ""
+            table_exp_pill = '<span class="exp-badge exp-none" title="No custom domain expiration registered">📅 No Domain Expiry</span>'
+            exp_badge_html = '<span style="font-size: 0.72rem; color: #64748b;"> (No custom domain)</span>'
+            exp_val_class = ''
+            is_expiring_soon = False
+            urgent_banner_html = ''
 
         slug_val = c["slug"]
         spanish_badge_html = '<br><span style="background: rgba(16, 185, 129, 0.15); color: #34d399; font-size: 0.68rem; font-weight: 700; padding: 0.1rem 0.35rem; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.3); display: inline-block; margin-top: 0.25rem;">🇪🇸 Se Habla Español</span>' if is_spanish else ''
@@ -1366,6 +1411,7 @@ def generate_master_portal_html(clients):
             data-corridor="{safe_corridor}"
             data-corridor-slug="{safe_corridor_slug}"
             data-owner="{safe_owner}"
+            data-expires="{expires}"
             data-days="{days_until_exp if days_until_exp is not None else 9999}"
             data-score="{old_score}">
           <td>
@@ -1385,12 +1431,14 @@ def generate_master_portal_html(clients):
           <td>
             <div style="font-weight: 700; color: #f8fafc; font-size: 0.85rem;">{dns_provider}</div>
             <div style="font-size: 0.75rem; color: #94a3b8; margin: 0.15rem 0;">{registrar.split(',')[0]}</div>
-            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap; margin: 0.2rem 0;">
-              {table_age_pill}
+            <div style="margin: 0.35rem 0 0.25rem 0;">
               {table_exp_pill}
             </div>
-            <div style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px; display: inline-block;">
-              NS: {nameservers[0] if nameservers else 'No Custom NS'}
+            <div style="display: flex; gap: 0.25rem; align-items: center; flex-wrap: wrap;">
+              {table_age_pill}
+              <span style="font-size: 0.68rem; font-family: monospace; color: #60a5fa; background: rgba(59, 130, 246, 0.08); padding: 0.08rem 0.3rem; border-radius: 4px;">
+                NS: {nameservers[0] if nameservers else 'No Custom NS'}
+              </span>
             </div>
           </td>
           <td>
@@ -1432,23 +1480,6 @@ def generate_master_portal_html(clients):
         else:
             age_badge_html = ''
 
-        if is_expiring_soon:
-            exp_badge_html = f'<span class="dns-tag-badge alert">⚠️ {days_until_exp}d left!</span>'
-            exp_val_class = 'exp-alert'
-            urgent_banner_html = f"""
-            <div style="background: rgba(239, 68, 68, 0.12); border-left: 3px solid #ef4444; padding: 0.65rem 0.85rem; border-radius: 0 6px 6px 0; font-size: 0.78rem; color: #fca5a5; line-height: 1.45; margin-bottom: 0.75rem;">
-              <strong>⚠️ URGENT DOMAIN EXPIRATION:</strong> Domain expires on <strong>{expires_formatted}</strong> ({days_until_exp} days remaining). High-trust outreach angle: Alert {c['owner_name']} so his website/email doesn't drop, or offer to transfer domain registration to Cloudflare wholesale ($10/yr)!
-            </div>
-            """
-        elif expires_formatted != "N/A":
-            exp_badge_html = f'<span style="font-size: 0.72rem; color: #94a3b8;"> ({expiration_status})</span>'
-            exp_val_class = ''
-            urgent_banner_html = ''
-        else:
-            exp_badge_html = ''
-            exp_val_class = ''
-            urgent_banner_html = ''
-
         if c.get("has_custom_logo") and c.get("logo_path"):
             logo_html = f'<div class="card-logo-badge"><img src="/sites/{c["slug"]}/{c["logo_path"]}" alt="{c["business_name"]} Logo" class="card-logo-img" width="48" height="48" loading="lazy"></div>'
         else:
@@ -1470,6 +1501,7 @@ def generate_master_portal_html(clients):
              data-corridor="{safe_corridor}"
              data-corridor-slug="{safe_corridor_slug}"
              data-owner="{safe_owner}"
+             data-expires="{expires}"
              data-days="{days_until_exp if days_until_exp is not None else 9999}"
              data-score="{old_score}">
           <div class="card-header">
@@ -2071,6 +2103,41 @@ def generate_master_portal_html(clients):
       color: #6ee7b7;
       border: 1px solid rgba(16, 185, 129, 0.3);
     }}
+    .exp-badge {{
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 0.12rem 0.45rem;
+      border-radius: 4px;
+      white-space: nowrap;
+    }}
+    .exp-badge.exp-expired {{
+      background: rgba(239, 68, 68, 0.25);
+      color: #fca5a5;
+      border: 1px solid #ef4444;
+    }}
+    .exp-badge.exp-critical {{
+      background: rgba(239, 68, 68, 0.18);
+      color: #f87171;
+      border: 1px solid rgba(239, 68, 68, 0.45);
+    }}
+    .exp-badge.exp-warning {{
+      background: rgba(245, 158, 11, 0.15);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.35);
+    }}
+    .exp-badge.exp-normal {{
+      background: rgba(148, 163, 184, 0.12);
+      color: #cbd5e1;
+      border: 1px solid rgba(148, 163, 184, 0.25);
+    }}
+    .exp-badge.exp-none {{
+      background: rgba(148, 163, 184, 0.08);
+      color: #94a3b8;
+      border: 1px solid rgba(148, 163, 184, 0.15);
+    }}
     .dns-intel-action {{
       background: rgba(245, 158, 11, 0.08);
       border-left: 3px solid #f59e0b;
@@ -2276,8 +2343,8 @@ def generate_master_portal_html(clients):
             <th onclick="sortTable('owner')" style="cursor: pointer; user-select: none;" title="Click to sort by Owner Name">
               Owner & Direct Phone <span class="sort-icon" id="sort-icon-owner">↕</span>
             </th>
-            <th onclick="sortTable('days')" style="cursor: pointer; user-select: none;" title="Click to sort by Expiry Urgency">
-              DNS Host, Age & Expiry <span class="sort-icon" id="sort-icon-days">↕</span>
+            <th onclick="sortTable('days')" style="cursor: pointer; user-select: none;" title="Click to sort by Days Until Expiration (Urgent First)">
+              DNS Host & Domain Expiry <span class="sort-icon" id="sort-icon-days">↕</span>
             </th>
             <th onclick="sortTable('score')" style="cursor: pointer; user-select: none;" title="Click to sort by Competitor Speed">
               Their Current Speed <span class="sort-icon" id="sort-icon-score">↕</span>
@@ -2471,12 +2538,41 @@ def generate_master_portal_html(clients):
       const content = document.getElementById("ops-content");
       if (modal) modal.style.display = "none";
       if (content) content.style.display = "block";
+      updateExpirationDaysLive();
     }}
     window.addEventListener("DOMContentLoaded", () => {{
       if (sessionStorage.getItem("ridgeline_ops_unlocked") === "true") {{
         showDashboard();
       }}
+      updateExpirationDaysLive();
     }});
+
+    function updateExpirationDaysLive() {{
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+
+      document.querySelectorAll("tr[data-slug]").forEach(row => {{
+        const expiresStr = row.getAttribute("data-expires");
+        const slug = row.getAttribute("data-slug");
+        if (!expiresStr || expiresStr === "N/A" || expiresStr.trim() === "") {{
+          row.setAttribute("data-days", "9999");
+          return;
+        }}
+
+        const parts = expiresStr.split("-");
+        if (parts.length !== 3) return;
+        const expDate = new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10));
+        const diffMs = expDate.getTime() - today.getTime();
+        const diffDays = Math.ceil(diffMs / (1000 * 60 * 60 * 24));
+
+        row.setAttribute("data-days", diffDays);
+
+        const card = document.getElementById("card-" + slug);
+        if (card) {{
+          card.setAttribute("data-days", diffDays);
+        }}
+      }});
+    }}
 
     function sortTable(column) {{
       if (currentSortColumn === column) {{
@@ -2536,7 +2632,11 @@ def generate_master_portal_html(clients):
         cards.sort((a, b) => {{
           let valA = a.getAttribute("data-" + (column === "score" ? "score" : column === "days" ? "days" : column)) || "";
           let valB = b.getAttribute("data-" + (column === "score" ? "score" : column === "days" ? "days" : column)) || "";
-          if (column === "score" || column === "days") {{
+          if (column === "days") {{
+            valA = parseInt(valA || "9999", 10);
+            valB = parseInt(valB || "9999", 10);
+            return currentSortDirection === "asc" ? valA - valB : valB - valA;
+          }} else if (column === "score") {{
             valA = parseInt(valA || "0", 10);
             valB = parseInt(valB || "0", 10);
             return currentSortDirection === "asc" ? valA - valB : valB - valA;
