@@ -107,3 +107,50 @@ To protect client trust, prevent dead calls to carrier test lines or random busi
    - **Verified Phone Connection:** Phone numbers must be verified against public directory listings or official contractor websites (no synthesized 4-digit line suffixes).
    - **Named Human Principal:** Must identify an actual owner, manager, or foreman who answers dispatch calls.
 3. **Automated Compliance Verification:** Any batch script or commit that violates this rule will be rejected by `scripts/test_sites_compliance.py`.
+
+---
+
+# VENTURE TOOLS CLI SUITE
+
+## Global Tools (`~/.venture-tools/bin/`)
+
+A centralized, zero-token-waste automation suite installed at `~/.venture-tools/` and registered on `$PATH` via `~/.zshrc`. **All agents MUST use these tools instead of autonomous browsing, scraping, or hallucinating external data.**
+
+| Command | Purpose | Completion Signal |
+|---------|---------|-------------------|
+| `v-research` | DuckDuckGo + Gemini live research → structured JSON | `[RESEARCH COMPLETE] Appended to <file>` |
+| `v-cad` | Trimesh watertightness + 3D printability validator | `[CAD COMPLETE] Appended to <file>` |
+| `v-geo` | Rank-and-rent local entity matrix via Gemini | `[GEO COMPLETE] Appended to <file>` |
+| `v-schema` | Schema.org JSON-LD generator (Product / LocalBusiness) | `[SCHEMA COMPLETE] Appended to <file>` |
+| `v-primer` | NetworkX Story Tree & Prerequisite Linter | `[PRIMER COMPLETE] Appended to <file>` |
+| `v-asset` | WebP image conversion + STL polygon reduction | `[ASSET COMPLETE] Appended to <file>` |
+| `v-gsc` | Google Search Console opportunity linter (striking-distance + low-CTR) | `[GSC COMPLETE] <site>: Found N targets...` |
+
+## Mandatory Execution Pattern
+
+1. **Run the tool:**
+   ```bash
+   v-research --query "<exact query>" [--site amazon] --output "data/<topic>.json"
+   v-geo --service "tree removal" --state NC --cities "Asheville,Hendersonville" --output "data/geo.json"
+   v-schema --type product --name "Part Name" --sku "SKU" --price 24.00 --output "data/schemas.json"
+   v-schema --type business --name "WNC Tree Removal" --city "Asheville" --state NC --output "data/schemas.json"
+   v-gsc --site "sc-domain:example.com" --days 28 --output "data/gsc_opportunities.json"
+   v-cad --stl "path/to/file.stl" --output "data/cad_reports.json"
+   v-asset --image "path/img.jpg" --quality 85 --output-dir "public/webp/"
+   ```
+2. **Wait** for the completion signal line printed to stdout.
+3. **Read ONLY the local output file** — never from memory, never hallucinate data.
+
+## Token Preservation Policy
+
+- **DO NOT** launch browser sub-agents, Puppeteer crawlers, or iterative web scrapers to gather specs, prices, dimensions, or competitor data.
+- **DO NOT** hardcode API keys in source files — all credentials live in `~/.venture-tools/.env`.
+- All factual research must be delegated to `v-research`. All GSC analysis must use `v-gsc`.
+
+## Infrastructure
+
+- **Venv:** `~/.venture-tools/.venv/bin/python3`
+- **Lib scripts:** `~/.venture-tools/lib/` (`v_research.py`, `v_cad.py`, `v_geo.py`, `v_schema.py`, `v_primer.py`, `v_asset.py`, `gsc_analyzer.py`)
+- **Credentials:** `~/.venture-tools/.env` (never commit)
+- **GSC auth:** `~/.venture-tools/service_account.json` (required by `v-gsc`)
+- **Global rules:** `~/.venture-tools/GLOBAL_AGENT_RULES.md`

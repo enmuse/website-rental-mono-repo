@@ -1,3 +1,4 @@
+import re
 #!/usr/bin/env python3
 """
 build_client_sites.py — Automated Programmatic Site Generator
@@ -42,12 +43,69 @@ def load_whois_info():
             return json.load(f)
     return {}
 
+
+def compute_seo_meta(c):
+    # 1. Title formatting (35 - 70 chars)
+    if "seo_title" in c and 35 <= len(c["seo_title"]) <= 70:
+        title = c["seo_title"]
+    else:
+        biz = c.get("short_name") or c["business_name"]
+        biz = re.sub(r'[\s,]+(LLC|Inc\.?|L\.L\.C\.?|Co\.?)\b.*', '', biz, flags=re.I).strip()
+        city = c["city"]
+        trade = c["trade"]
+        if ' & ' in trade and len(f"{biz} | {city}, NC {trade}") > 68:
+            trade_short = trade.split(' & ')[0]
+        else:
+            trade_short = trade
+        
+        title = f"{biz} | {city}, NC {trade_short}"
+        if len(title) > 68:
+            title = f"{biz} | {city}, NC"
+        if len(title) < 35:
+            title = f"{biz} | {city}, NC {c['trade']}"
+            if len(title) > 70:
+                title = f"{biz} | Mountain Contractor {city}, NC"
+
+    # 2. Description formatting (110 - 165 chars)
+    if "seo_description" in c and 110 <= len(c["seo_description"]) <= 165:
+        desc = c["seo_description"]
+    else:
+        tag = c["tagline"].rstrip('.')
+        owner = c["owner_name"].split()[0] if c.get("owner_name") else "Us"
+        phone = c["cell_phone"]
+        city = c["city"]
+        trade = c["trade"]
+        
+        opt1 = f"{tag}. Serving {city} & Western NC. Call {owner} directly at {phone} for rapid estimates."
+        if 110 <= len(opt1) <= 165:
+            desc = opt1
+        elif len(opt1) > 165:
+            opt2 = f"{tag}. Serving {city} & WNC. Call {phone} for rapid quotes."
+            if 110 <= len(opt2) <= 165:
+                desc = opt2
+            elif len(opt2) > 165:
+                short_tag = tag[:70].rsplit(' ', 1)[0]
+                desc = f"{short_tag}. Serving {city} & WNC. Call {phone} for rapid estimates."
+            else:
+                desc = f"{trade} specialists in {city}, NC. {tag}. Call {phone} today."
+        else:
+            desc = f"{tag}. Top-rated {trade.lower()} serving {city}, {c['hub_towns'][1] if len(c['hub_towns']) > 1 else 'WNC'} & surrounds. Call {phone} for rapid quotes."
+
+        if len(desc) > 165:
+            desc = desc[:162].rsplit(' ', 1)[0] + '...'
+        elif len(desc) < 110:
+            desc = desc.rstrip('.') + f". Licensed & insured local contractor in {city}, NC."
+            if len(desc) > 165:
+                desc = desc[:162].rsplit(' ', 1)[0] + '...'
+
+    return title, desc
+
 def generate_joel_rice_html(c):
     """Generates the bespoke authentic light mountain luxury design for Joel Rice Excavating & Grading Inc."""
     phone_clean = c["cell_phone"].replace("(", "").replace(")", "").replace(" ", "").replace("-", "")
     sms_number = c.get("direct_sms_number", f"+1{phone_clean}")
     seo_title = c.get("seo_title", "Joel Rice Excavating & Grading Inc. | Cashiers & Highlands NC")
-    seo_desc = c.get("seo_description", "The longest single-owned & operating excavating contractor on the Cashiers Plateau. Mountain foundation pads, granite ledge hammering, septic installs & road grading. Call Joel Rice: (828) 743-5801.")
+    seo_desc = c.get("seo_description", "Longest operating excavation contractor on Cashiers Plateau. Mountain foundation pads, ledge hammering & road grading. Call Joel Rice: (828) 743-5801.")
 
     # 1. Projects HTML
     projects = c.get("projects", [])
@@ -1598,9 +1656,8 @@ def generate_client_html(c):
         hero_headline_html = f"<h1>{tagline_raw} <span>Across {c['city']}, NC</span></h1>"
 
 
-    # SEO Title & Description Overrides
-    seo_title = c.get("seo_title", f"{c['business_name']} | {c['city']}, NC {c['trade']}")
-    seo_desc = c.get("seo_description", f"{c['tagline']}. Serving {', '.join(c['hub_towns'])}. Call {c['owner_name']} directly at {c['cell_phone']} for rapid quotes.")
+    # SEO Title & Description Overrides (Computed for strict 35-70 and 110-165 bounds)
+    seo_title, seo_desc = compute_seo_meta(c)
 
     # Community Grid Section
     if c.get("community_grid"):
@@ -4486,8 +4543,31 @@ def generate_public_gateway_html(clients):
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ridgeline Cloud Edge | High-Performance Regional Web Infrastructure</title>
-  <meta name="description" content="Dedicated high-availability cloud edge hosting, automated DNS routing, and sub-second web infrastructure for Western North Carolina trade contractors and specialty businesses.">
+  <meta name="description" content="Dedicated high-availability cloud edge hosting, DNS routing, and sub-second web infrastructure for Western North Carolina trade contractors and businesses.">
   <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://preview.ridgelinetrade.com/">
+  <!-- Schema.org JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://preview.ridgelinetrade.com/#website",
+        "url": "https://preview.ridgelinetrade.com/",
+        "name": "Ridgeline Cloud Edge",
+        "description": "Dedicated high-availability cloud edge hosting and sub-second web infrastructure for Western North Carolina trade contractors."
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://preview.ridgelinetrade.com/#organization",
+        "name": "Ridgeline Trade Network",
+        "url": "https://preview.ridgelinetrade.com/",
+        "areaServed": "Western North Carolina"
+      }
+    ]
+  }
+  </script>
   
   <style>
     :root {
@@ -4856,6 +4936,9 @@ def main():
         sitemap_content = generate_sitemap_xml(slug)
         atomic_write(site_dir / "sitemap.xml", sitemap_content)
 
+        # IndexNow verification key
+        atomic_write(site_dir / "8a2f3e4b5c6d7e8f9a0b1c2d3e4f5a6b.txt", "8a2f3e4b5c6d7e8f9a0b1c2d3e4f5a6b")
+
         print(f"   ✓ index.html (Real photos, Logo, Inlined CSS, Schema JSON-LD, 100/100 speed)")
         print(f"   ✓ robots.txt & sitemap.xml generated")
 
@@ -4863,6 +4946,7 @@ def main():
     print(f"\n🌐 Generating Public Edge Gateway at /index.html...")
     public_gateway_html = generate_public_gateway_html(clients)
     atomic_write(REPO_ROOT / "index.html", public_gateway_html)
+    atomic_write(REPO_ROOT / "8a2f3e4b5c6d7e8f9a0b1c2d3e4f5a6b.txt", "8a2f3e4b5c6d7e8f9a0b1c2d3e4f5a6b")
     print("   ✓ Public Edge Gateway generated successfully (Zero sales/upsell content)!")
 
     # 3. Build Custom 404 Handler at root /404.html
